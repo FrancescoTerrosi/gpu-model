@@ -1,0 +1,67 @@
+_______________________________Simulator Results______________________________
+Date:                        Tue Jan 11 18:48:54 CET 2022
+
+____________________________Simulator Configuration___________________________
+Simulation Type:             Terminating
+Project Name:                GPU_MODEL
+Study Name:                  GPU_STUDY
+Random Number Generator:     Lagged Fibonacci
+Random Number Seed:          31415
+Maximum Batches:             10000
+Minimum Batches:             10000
+Data Reporting Frequency:    1
+Display Update Frequency:    1
+BuildType:                   Optimize
+Execution Architecture:      64-bit
+Runname:                     Results
+Output File:                 Results_output.txt
+Results File:                Results_results
+Jackknife Variance:          On
+Processors Per Experiment:   1
+Maximize Processor Usage:    false
+Processors Selected for Simulation: 
+        DESKTOP-8DRGIFK      amd64
+
+_________________________________Experiment 1_________________________________
+Start Time:                  Tue Jan 11 18:48:43 CET 2022
+Finish Time:                 Tue Jan 11 18:48:54 CET 2022
+Elapsed Running Time:        10.643
+Total CPU Time:              9.628
+Batches Completed:           10000
+Experiment Name:             Experiment 1
+Global Variable Settings:    
+        float                dram_result_read_prob    0                      
+        float                dram_result_write_prob   0                      
+        float                dram_total_read_prob     0.02                   
+        short                end                      1000                   
+        float                l1_result_read_prob      1.0                    
+        float                l1_result_write_prob     1.0                    
+        float                l2_result_read_prob      0.0                    
+        float                l2_result_write_prob     0.0                    
+        float                l2_total_read_prob       0.98                   
+        short                size                     13                     
+
+
+_________________________________Mean Results_________________________________
+Name                  Time               Mean                     Confidence Interval
+dispatcher            0.0 - 1000        1.3000000000E01   +/-   0.0000000000E00 
+initial_memory_read   0 - 1000          2.0000000000E00   +/-   1.0117350766E-09
+intermediate_memory_read  0 - 1000          0.0000000000E00   +/-   0.0000000000E00 
+intermediate_memory_write  0 - 1000          2.0000000000E00   +/-   1.0117350766E-09
+final_memory_write    0 - 1000          1.0000000000E00   +/-   5.0586753828E-10
+alu_ops               0 - 1000          3.0000000000E00   +/-   0.0000000000E00 
+dram_reads            0.0 - 1000        4.0400000000E-02  +/-   3.8989616059E-03
+l2_reads              0.0 - 1000        1.9596000000E00   +/-   3.8989616059E-03
+l1_reads              0.0 - 1000        0.0000000000E00   +/-   0.0000000000E00 
+consts                0.0 - 1000        5.0000000000E00   +/-   2.3365020752E-09
+
+
+_______________________________Variance Results_______________________________
+
+
+_______________________________Interval Results_______________________________
+
+
+_____________________________Distribution Results_____________________________
+
+<END_MOBIUS_RESULTS>

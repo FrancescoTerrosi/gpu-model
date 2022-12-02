@@ -1,0 +1,47 @@
+_______________________________Simulator Results______________________________
+Date:                        Mon Oct 25 17:51:49 CEST 2021
+
+____________________________Simulator Configuration___________________________
+Simulation Type:             Terminating
+Project Name:                GPU
+Study Name:                  L2_STUDY
+Random Number Generator:     Lagged Fibonacci
+Random Number Seed:          31415
+Maximum Batches:             10000
+Minimum Batches:             1000
+Data Reporting Frequency:    1000
+Display Update Frequency:    1000
+BuildType:                   Normal
+Execution Architecture:      64-bit
+Runname:                     Results
+Output File:                 Results_output.txt
+Results File:                Results_results
+Jackknife Variance:          On
+Processors Per Experiment:   1
+Maximize Processor Usage:    false
+Processors Selected for Simulation: 
+        DESKTOP-3AHUC0F      amd64
+
+_________________________________Experiment 1_________________________________
+Start Time:                  Mon Oct 25 17:51:48 CEST 2021
+Finish Time:                 Mon Oct 25 17:51:49 CEST 2021
+Elapsed Running Time:        1.493
+Total CPU Time:              0.04
+Batches Completed:           1000
+Experiment Name:             Experiment 1
+
+
+_________________________________Mean Results_________________________________
+
+
+_______________________________Variance Results_______________________________
+
+
+_______________________________Interval Results_______________________________
+L2_CONTENT            0.0            
+  p( 0.0000000000E00 <=X<= 1.0000000000E00 )= 1.00000000E00  [ 9.96263279E-01,  1.00000000E00 ] (1000 samples)
+
+
+_____________________________Distribution Results_____________________________
+
+<END_MOBIUS_RESULTS>

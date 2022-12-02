@@ -1,0 +1,47 @@
+#ifndef GPU_PHYSICALRJ_H_
+#define GPU_PHYSICALRJ_H_
+#include <math.h>
+#include "Cpp/Composer/Join.h"
+#include "Cpp/Composer/AllStateVariableTypes.h"
+#include "Atomic/COMPUTE_UNIT/COMPUTE_UNITSAN.h"
+#include "Atomic/TOTAL_MEMORY_MODEL_PHYSICAL/TOTAL_MEMORY_MODEL_PHYSICALSAN.h"
+#include "Atomic/DRAM/DRAMSAN.h"
+#include "Atomic/OUTPUT_MEMORY_PHYSICAL/OUTPUT_MEMORY_PHYSICALSAN.h"
+#include "Atomic/RESULT_MEMORY_MODEL_PHYSICAL/RESULT_MEMORY_MODEL_PHYSICALSAN.h"
+#include "Atomic/L2_CACHE/L2_CACHESAN.h"
+#include "Atomic/L1_CACHE/L1_CACHESAN.h"
+
+//State variable headers
+#include "Cpp/BaseClasses/SAN/Place.h"
+extern Short size;
+
+class GPU_PHYSICALRJ: public Join {
+ public:
+  COMPUTE_UNITSAN * COMPUTE_UNIT;
+  TOTAL_MEMORY_MODEL_PHYSICALSAN * TOTAL_MEMORY_MODEL_PHYSICAL;
+  DRAMSAN * DRAM;
+  OUTPUT_MEMORY_PHYSICALSAN * OUTPUT_MEMORY_PHYSICAL;
+  RESULT_MEMORY_MODEL_PHYSICALSAN * RESULT_MEMORY_MODEL_PHYSICAL;
+  L2_CACHESAN * L2_CACHE;
+  L1_CACHESAN * L1_CACHE;
+  Place * KO_READ;
+  Place * MEM_OP_COMPLETE;
+  Place * OK_READ;
+  Place * READ_DRAM;
+  Place * READ_L1;
+  Place * READ_L2;
+  Place * READ_RESULT_MEMORY;
+  Place * READ_TOTAL_MEMORY;
+  Place * RESULT_KO;
+  Place * RESULT_OK;
+  Place * WRITE_DRAM;
+  Place * WRITE_L1;
+  Place * WRITE_L2;
+  Place * WRITE_OUTPUT_MEMORY;
+  Place * WRITE_RESULT_MEMORY;
+
+  GPU_PHYSICALRJ();
+  ~GPU_PHYSICALRJ();
+};
+
+#endif

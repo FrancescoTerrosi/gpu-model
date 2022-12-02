@@ -1,0 +1,54 @@
+_______________________________Simulator Results______________________________
+Date:                        Tue Dec 07 17:46:04 CET 2021
+
+____________________________Simulator Configuration___________________________
+Simulation Type:             Terminating
+Project Name:                GPU
+Study Name:                  GPU_COMPOSED_STUDY
+Random Number Generator:     Lagged Fibonacci
+Random Number Seed:          31415
+Maximum Batches:             1
+Minimum Batches:             1
+Data Reporting Frequency:    1000
+Display Update Frequency:    1000
+BuildType:                   Optimize
+Execution Architecture:      64-bit
+Runname:                     Results
+Output File:                 Results_output.txt
+Results File:                Results_results
+Jackknife Variance:          On
+Processors Per Experiment:   1
+Maximize Processor Usage:    false
+Processors Selected for Simulation: 
+        DESKTOP-8DRGIFK      amd64
+
+_________________________________Experiment 1_________________________________
+Start Time:                  Tue Dec 07 17:46:02 CET 2021
+Finish Time:                 Tue Dec 07 17:46:04 CET 2021
+Elapsed Running Time:        1.546
+Total CPU Time:              0.129
+Batches Completed:           1
+Experiment Name:             Experiment 1
+Global Variable Settings:    
+        short                size                     13                     
+
+
+_________________________________Mean Results_________________________________
+Name                  Time               Mean                     Confidence Interval
+scheduling            0.0 - 1.0         1.3000000000E01   +/-   0.0000000000E00 
+write_ok              0.0 - 1.0         1.0000000000E00   +/-   0.0000000000E00 
+write_ko              0.0 - 1.0         1.0000000000E00   +/-   0.0000000000E00 
+compute_ok            0.0 - 1.0         2.0000000000E00   +/-   0.0000000000E00 
+compute_ko            0.0 - 1.0         0.0000000000E00   +/-   0.0000000000E00 
+clock_steps           0.0 - 1.0         7.1400000000E02   +/-   0.0000000000E00 
+
+
+_______________________________Variance Results_______________________________
+
+
+_______________________________Interval Results_______________________________
+
+
+_____________________________Distribution Results_____________________________
+
+<END_MOBIUS_RESULTS>

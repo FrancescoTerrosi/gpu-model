@@ -1,0 +1,56 @@
+Simulator Results
+Date:, Tue Jan 11 18:48:54 CET 2022
+
+Simulator Configuration
+Simulation Type:,Terminating
+Project Name:,GPU_MODEL
+Study Name:,GPU_STUDY
+Random Number Generator:,Lagged Fibonacci
+Random Number Seed:,31415
+Maximum Batches:,10000
+Minimum Batches:,10000
+Data Reporting Frequency:,1
+Display Update Frequency:,1
+BuildType:,Optimize
+Execution Architecture:,64-bit
+Runname:,Results
+Output File:,Results_output.txt
+Results File:,Results_results
+Jackknife Variance:,On
+Processors Per Experiment:,1
+Maximize Processor Usage:,false
+Processors Selected for Simulation:
+DESKTOP-8DRGIFK,amd64
+
+Experiment 1
+Experiment 1,Start Time:,Tue Jan 11 18:48:43 CET 2022
+Experiment 1,Finish Time:,Tue Jan 11 18:48:54 CET 2022
+Experiment 1,Elapsed Running Time:,10.643
+Experiment 1,Total CPU Time:,9.628
+Experiment 1,Batches Completed:,10000
+Experiment 1,Experiment Name:,Experiment 1
+Experiment 1,Global Variable Settings:
+Experiment 1,float,dram_result_read_prob,0
+Experiment 1,float,dram_result_write_prob,0
+Experiment 1,float,dram_total_read_prob,0.02
+Experiment 1,short,end,1000
+Experiment 1,float,l1_result_read_prob,1.0
+Experiment 1,float,l1_result_write_prob,1.0
+Experiment 1,float,l2_result_read_prob,0.0
+Experiment 1,float,l2_result_write_prob,0.0
+Experiment 1,float,l2_total_read_prob,0.98
+Experiment 1,short,size,13
+Experiment 1, Results
+Experiment 1,Result Type,Name,Start Time,End Time,Mean,,Confidence Interval,Failed To Converge
+Experiment 1,Mean,dispatcher,0.0,1000,1.3000000000E01 ,+/-,0.0000000000E00 
+Experiment 1,Mean,initial_memory_read,0,1000,2.0000000000E00 ,+/-,1.0117350766E-09
+Experiment 1,Mean,intermediate_memory_read,0,1000,0.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,intermediate_memory_write,0,1000,2.0000000000E00 ,+/-,1.0117350766E-09
+Experiment 1,Mean,final_memory_write,0,1000,1.0000000000E00 ,+/-,5.0586753828E-10
+Experiment 1,Mean,alu_ops,0,1000,3.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,dram_reads,0.0,1000,4.0400000000E-02,+/-,3.8989616059E-03
+Experiment 1,Mean,l2_reads,0.0,1000,1.9596000000E00 ,+/-,3.8989616059E-03
+Experiment 1,Mean,l1_reads,0.0,1000,0.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,consts,0.0,1000,5.0000000000E00 ,+/-,2.3365020752E-09
+
+<END_MOBIUS_RESULTS>

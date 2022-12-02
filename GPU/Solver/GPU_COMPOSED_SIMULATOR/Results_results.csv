@@ -1,0 +1,43 @@
+Simulator Results
+Date:, Tue Dec 07 17:46:04 CET 2021
+
+Simulator Configuration
+Simulation Type:,Terminating
+Project Name:,GPU
+Study Name:,GPU_COMPOSED_STUDY
+Random Number Generator:,Lagged Fibonacci
+Random Number Seed:,31415
+Maximum Batches:,1
+Minimum Batches:,1
+Data Reporting Frequency:,1000
+Display Update Frequency:,1000
+BuildType:,Optimize
+Execution Architecture:,64-bit
+Runname:,Results
+Output File:,Results_output.txt
+Results File:,Results_results
+Jackknife Variance:,On
+Processors Per Experiment:,1
+Maximize Processor Usage:,false
+Processors Selected for Simulation:
+DESKTOP-8DRGIFK,amd64
+
+Experiment 1
+Experiment 1,Start Time:,Tue Dec 07 17:46:02 CET 2021
+Experiment 1,Finish Time:,Tue Dec 07 17:46:04 CET 2021
+Experiment 1,Elapsed Running Time:,1.546
+Experiment 1,Total CPU Time:,0.129
+Experiment 1,Batches Completed:,1
+Experiment 1,Experiment Name:,Experiment 1
+Experiment 1,Global Variable Settings:
+Experiment 1,short,size,13
+Experiment 1, Results
+Experiment 1,Result Type,Name,Start Time,End Time,Mean,,Confidence Interval,Failed To Converge
+Experiment 1,Mean,scheduling,0.0,1.0,1.3000000000E01 ,+/-,0.0000000000E00 
+Experiment 1,Mean,write_ok,0.0,1.0,1.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,write_ko,0.0,1.0,1.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,compute_ok,0.0,1.0,2.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,compute_ko,0.0,1.0,0.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,clock_steps,0.0,1.0,7.1400000000E02 ,+/-,0.0000000000E00 
+
+<END_MOBIUS_RESULTS>

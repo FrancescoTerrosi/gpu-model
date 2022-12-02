@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<class id="Mobius.ComposedModels.RepJoin.RepJoinInterface">
+	<int id="ClassVersion">1</int>
+	<class id="Mobius.BaseClasses.BaseInterfaceClass">
+		<int id="ClassVersion">3</int>
+		<string id="ModelName">GPU</string>
+		<class id="Mobius.BaseClasses.BaseInfoClass">
+			<int id="ClassVersion">2</int>
+		</class>
+		<class id="Mobius.BaseClasses.BaseEditorClass">
+			<int id="ClassVersion">3</int>
+			<boolean id="HasPanel">true</boolean>
+			<class id="Mobius.BaseClasses.BasePanelClass">
+				<int id="ClassVersion">2</int>
+				<point id="Size of Panel">
+					<int id="x">1901</int>
+					<int id="y">880</int>
+				</point>
+				<double id="ZoomFactor">1.0</double>
+				<boolean id="ShowGridEnabled">true</boolean>
+				<int id="ShowGridStep">10</int>
+				<boolean id="SnapGridEnabled">true</boolean>
+				<int id="SnapGridStep">10</int>
+				<class id="Mobius.ComposedModels.RepJoin.RepPanelObject">
+					<int id="ClassVersion">1</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">GPU</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">325</int>
+							<int id="y">85</int>
+						</point>
+					</class>
+					<string id="RepCount">1</string>
+					<int id="SharingInfoSize">0</int>
+				</class>
+				<class id="Mobius.ComposedModels.Common.JoinPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">PROCESSOR_JOIN_MEMORY</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">315</int>
+							<int id="y">205</int>
+						</point>
+					</class>
+					<int id="SharingInfoSize">4</int>
+					<string id="NewSharedObjName">READ</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">MEMORY_MODEL-&gt;READ</string>
+						<string id="1">PROCESSOR-&gt;READ</string>
+					</vector>
+					<string id="NewSharedObjName">READ_DATA_IS_KO</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">MEMORY_MODEL-&gt;READ_DATA_IS_KO</string>
+						<string id="1">PROCESSOR-&gt;READ_DATA_IS_KO</string>
+					</vector>
+					<string id="NewSharedObjName">READ_DATA_IS_OK</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">MEMORY_MODEL-&gt;READ_DATA_IS_OK</string>
+						<string id="1">PROCESSOR-&gt;READ_DATA_IS_OK</string>
+					</vector>
+					<string id="NewSharedObjName">WRITE</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">MEMORY_MODEL-&gt;WRITE</string>
+						<string id="1">PROCESSOR-&gt;WRITE</string>
+					</vector>
+				</class>
+				<class id="Mobius.ComposedModels.Common.AtomicPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">PROCESSOR</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">135</int>
+							<int id="y">325</int>
+						</point>
+					</class>
+					<string id="Model Name">PROCESSOR</string>
+				</class>
+				<class id="Mobius.ComposedModels.Common.AtomicPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">MEMORY_MODEL</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">475</int>
+							<int id="y">315</int>
+						</point>
+					</class>
+					<string id="Model Name">MEMORY_MODEL</string>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
+					<string id="StartVertex">PROCESSOR_JOIN_MEMORY</string>
+					<string id="FinishVertex">GPU</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">336</int>
+							<int id="y">203</int>
+						</point>
+						<point id="1">
+							<int id="x">337</int>
+							<int id="y">84</int>
+						</point>
+					</vector>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
+					<string id="StartVertex">PROCESSOR_JOIN_MEMORY</string>
+					<string id="FinishVertex">PROCESSOR</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">327</int>
+							<int id="y">209</int>
+						</point>
+						<point id="1">
+							<int id="x">130</int>
+							<int id="y">245</int>
+						</point>
+					</vector>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
+					<string id="StartVertex">PROCESSOR_JOIN_MEMORY</string>
+					<string id="FinishVertex">MEMORY_MODEL</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">340</int>
+							<int id="y">206</int>
+						</point>
+						<point id="1">
+							<int id="x">477</int>
+							<int id="y">235</int>
+						</point>
+					</vector>
+				</class>
+			</class>
+			<vector id="LocalGlobalNamesList">
+			</vector>
+			<vector id="LocalGlobalTypesList">
+			</vector>
+			<boolean id="DisplayToolTips">true</boolean>
+		</class>
+		<boolean id="Valid">false</boolean>
+	</class>
+</class>

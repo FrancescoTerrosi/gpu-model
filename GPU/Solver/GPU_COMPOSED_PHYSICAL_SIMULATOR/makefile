@@ -1,0 +1,69 @@
+OBJS=
+
+
+#include common Makefile for default targets
+include ../../Makefile.project
+include $(MOBIUSROOT)/Cpp/BaseClasses/Makefile.common
+
+BINDIR=
+MAINLIB=-lsimMain
+MAINLIB_debug=-lsimMain_debug
+SIMLIB=sim
+SIMLIB_debug=sim_debug
+SIMLIB_trace=sim_trace
+PROJECTLIBS=-lGPU_COMPOSED_PHYSICAL_STUDYSetStudy -lGPU_COMPOSED_PHYSICAL_REWARDPV -lGPU_PHYSICALRJ -lCOMPUTE_UNITSAN -lTOTAL_MEMORY_MODEL_PHYSICALSAN -lDRAMSAN -lOUTPUT_MEMORY_PHYSICALSAN -lRESULT_MEMORY_MODEL_PHYSICALSAN -lL2_CACHESAN -lL1_CACHESAN 
+PROJECTLIBS_debug=-lGPU_COMPOSED_PHYSICAL_STUDYSetStudy_debug -lGPU_COMPOSED_PHYSICAL_REWARDPV_debug -lGPU_PHYSICALRJ_debug -lCOMPUTE_UNITSAN_debug -lTOTAL_MEMORY_MODEL_PHYSICALSAN_debug -lDRAMSAN_debug -lOUTPUT_MEMORY_PHYSICALSAN_debug -lRESULT_MEMORY_MODEL_PHYSICALSAN_debug -lL2_CACHESAN_debug -lL1_CACHESAN_debug 
+MOBIUSLIBS=-lTRex -lStudy -lPV -lComposer_RepJoin -lSAN -lbase -lstate -lmobutil -ldist 
+MOBIUSLIBS_debug=-lTRex_debug -lStudy_debug -lPV_debug -lComposer_RepJoin_debug -lSAN_debug -lbase_debug -lstate_debug -lmobutil_debug -ldist_debug 
+USERDEFLIBNAME=
+USERDEFLIBDIR=
+
+all: normal
+
+opt \
+GPU_COMPOSED_PHYSICAL_SIMULATORSim_$(ARCH): SUBMODELS/opt
+	$(MAKE) exec3 "TARGET=GPU_COMPOSED_PHYSICAL_SIMULATORSim_$(ARCH)" "USERLIBDIR=-L$(MOBIUSROOT)/Cpp/lib/$(PLATFORM)$(FORCE_ARCH) $(USERDEFLIBDIR)" "USERLIB=$(MAINLIB) -l$(SIMLIB) $(USERDEFLIBNAME) $(PROJECTLIBS) $(USERDEFLIBNAME) $(MOBIUSLIBS)" 
+
+normal debug \
+GPU_COMPOSED_PHYSICAL_SIMULATORSim_$(ARCH)_debug: SUBMODELS/debug
+	$(MAKE) exec3 "TARGET=GPU_COMPOSED_PHYSICAL_SIMULATORSim_$(ARCH)_debug" "USERLIBDIR=-L$(MOBIUSROOT)/Cpp/lib/$(PLATFORM)$(FORCE_ARCH) $(USERDEFLIBDIR)" "USERLIB=$(MAINLIB_debug) -l$(SIMLIB_debug) $(USERDEFLIBNAME) $(PROJECTLIBS_debug) $(USERDEFLIBNAME) $(MOBIUSLIBS_debug) " "BUILDTARGET=_debug"
+
+trace \
+GPU_COMPOSED_PHYSICAL_SIMULATORSim_$(ARCH)_trace:
+	$(MAKE) exec3 "TARGET=GPU_COMPOSED_PHYSICAL_SIMULATORSim_$(ARCH)_trace" "USERLIBDIR=-L$(MOBIUSROOT)/Cpp/lib/$(PLATFORM)$(FORCE_ARCH) $(USERDEFLIBDIR)" "USERLIB=$(MAINLIB_debug) -l$(SIMLIB_trace) $(USERDEFLIBNAME) $(PROJECTLIBS_debug) $(USERDEFLIBNAME) $(MOBIUSLIBS_debug) " "BUILDTARGET=_debug"
+
+clean_sub_dirs:
+	cd ../../Atomic/L1_CACHE/ && $(MAKE) clean
+	cd ../../Atomic/L2_CACHE/ && $(MAKE) clean
+	cd ../../Atomic/RESULT_MEMORY_MODEL_PHYSICAL/ && $(MAKE) clean
+	cd ../../Atomic/OUTPUT_MEMORY_PHYSICAL/ && $(MAKE) clean
+	cd ../../Atomic/DRAM/ && $(MAKE) clean
+	cd ../../Atomic/TOTAL_MEMORY_MODEL_PHYSICAL/ && $(MAKE) clean
+	cd ../../Atomic/COMPUTE_UNIT/ && $(MAKE) clean
+	cd ../../Composed/GPU_PHYSICAL/ && $(MAKE) clean
+	cd ../../Reward/GPU_COMPOSED_PHYSICAL_REWARD/ && $(MAKE) clean
+	cd ../../Study/GPU_COMPOSED_PHYSICAL_STUDY/ && $(MAKE) clean
+
+SUBMODELS/opt SUBMODELS/debug:
+	@echo "NEW_SUBMODEL_LIB:[L1_CACHE]"
+	cd ../../Atomic/L1_CACHE/ && $(MAKE) $(@F)
+	@echo "NEW_SUBMODEL_LIB:[L2_CACHE]"
+	cd ../../Atomic/L2_CACHE/ && $(MAKE) $(@F)
+	@echo "NEW_SUBMODEL_LIB:[RESULT_MEMORY_MODEL_PHYSICAL]"
+	cd ../../Atomic/RESULT_MEMORY_MODEL_PHYSICAL/ && $(MAKE) $(@F)
+	@echo "NEW_SUBMODEL_LIB:[OUTPUT_MEMORY_PHYSICAL]"
+	cd ../../Atomic/OUTPUT_MEMORY_PHYSICAL/ && $(MAKE) $(@F)
+	@echo "NEW_SUBMODEL_LIB:[DRAM]"
+	cd ../../Atomic/DRAM/ && $(MAKE) $(@F)
+	@echo "NEW_SUBMODEL_LIB:[TOTAL_MEMORY_MODEL_PHYSICAL]"
+	cd ../../Atomic/TOTAL_MEMORY_MODEL_PHYSICAL/ && $(MAKE) $(@F)
+	@echo "NEW_SUBMODEL_LIB:[COMPUTE_UNIT]"
+	cd ../../Atomic/COMPUTE_UNIT/ && $(MAKE) $(@F)
+	@echo "NEW_SUBMODEL_LIB:[GPU_PHYSICAL]"
+	cd ../../Composed/GPU_PHYSICAL/ && $(MAKE) $(@F)
+	@echo "NEW_SUBMODEL_LIB:[GPU_COMPOSED_PHYSICAL_REWARD]"
+	cd ../../Reward/GPU_COMPOSED_PHYSICAL_REWARD/ && $(MAKE) $(@F)
+	@echo "NEW_SUBMODEL_LIB:[GPU_COMPOSED_PHYSICAL_STUDY]"
+	cd ../../Study/GPU_COMPOSED_PHYSICAL_STUDY/ && $(MAKE) $(@F)
+
+

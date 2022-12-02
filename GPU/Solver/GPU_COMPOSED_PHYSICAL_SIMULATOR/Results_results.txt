@@ -1,0 +1,68 @@
+_______________________________Simulator Results______________________________
+Date:                        Mon Jan 10 18:17:54 CET 2022
+
+____________________________Simulator Configuration___________________________
+Simulation Type:             Terminating
+Project Name:                GPU
+Study Name:                  GPU_COMPOSED_PHYSICAL_STUDY
+Random Number Generator:     Tausworthe
+Random Number Seed:          31415
+Maximum Batches:             100000
+Minimum Batches:             100000
+Data Reporting Frequency:    100000
+Display Update Frequency:    100000
+BuildType:                   Optimize
+Execution Architecture:      64-bit
+Runname:                     Results
+Output File:                 Results_output.txt
+Results File:                Results_results
+Jackknife Variance:          On
+Processors Per Experiment:   1
+Maximize Processor Usage:    false
+Processors Selected for Simulation: 
+        DESKTOP-3AHUC0F      amd64
+
+_________________________________Experiment 1_________________________________
+Start Time:                  Mon Jan 10 18:17:32 CET 2022
+Finish Time:                 Mon Jan 10 18:17:54 CET 2022
+Elapsed Running Time:        21.448
+Total CPU Time:              20.027
+Batches Completed:           100000
+Experiment Name:             Experiment 1
+Global Variable Settings:    
+        float                dram_result_read_rate    0.0                    
+        float                dram_result_write_rate   0.0                    
+        float                dram_total_read_rate     1.0                    
+        float                l1_result_read_rate      0.04                   
+        float                l1_result_write_rate     0.97                   
+        float                l2_result_read_rate      0.96                   
+        float                l2_result_write_rate     0.03                   
+        float                l2_total_read_rate       0.0                    
+        short                size                     13                     
+
+
+_________________________________Mean Results_________________________________
+Name                  Time               Mean                     Confidence Interval
+token_game            0.0 - 10000       1.3000000000E01   +/-   0.0000000000E00 
+output_writes         0.0 - 10000       1.0000000000E00   +/-   0.0000000000E00 
+result_writes         0.0 - 10000       2.0000000000E00   +/-   0.0000000000E00 
+result_reads          0.0 - 10000       2.0000000000E00   +/-   0.0000000000E00 
+total_reads           0.0 - 10000       5.0801500000E00   +/-   1.7213079854E-03
+compute               0.0 - 10000       3.0000000000E00   +/-   0.0000000000E00 
+dram_reads            0.0 - 10000       2.4971800000E00   +/-   6.9380804629E-03
+l2_reads              0.0 - 10000       9.6104000000E-01  +/-   4.3867546702E-03
+l1_reads              0.0 - 10000       8.0150000000E-02  +/-   1.7213079854E-03
+dram_writes           0.0 - 10000       1.0000000000E00   +/-   0.0000000000E00 
+l2_writes             0.0 - 10000       5.9820000000E-02  +/-   1.4927191642E-03
+l1_writes             0.0 - 10000       1.9401800000E00   +/-   1.4927191642E-03
+
+
+_______________________________Variance Results_______________________________
+
+
+_______________________________Interval Results_______________________________
+
+
+_____________________________Distribution Results_____________________________
+
+<END_MOBIUS_RESULTS>

@@ -1,0 +1,36 @@
+Simulator Results
+Date:, Mon Nov 22 17:09:53 CET 2021
+
+Simulator Configuration
+Simulation Type:,Terminating
+Project Name:,GPU
+Study Name:,GPUS_STUDY
+Random Number Generator:,Lagged Fibonacci
+Random Number Seed:,31415
+Maximum Batches:,10000
+Minimum Batches:,1000
+Data Reporting Frequency:,1000
+Display Update Frequency:,1000
+BuildType:,Normal
+Execution Architecture:,64-bit
+Runname:,Results
+Output File:,Results_output.txt
+Results File:,Results_results
+Jackknife Variance:,On
+Processors Per Experiment:,1
+Maximize Processor Usage:,false
+Processors Selected for Simulation:
+DESKTOP-3AHUC0F,amd64
+
+Experiment 1
+Experiment 1,Start Time:,Mon Nov 22 17:09:46 CET 2021
+Experiment 1,Finish Time:,Mon Nov 22 17:09:53 CET 2021
+Experiment 1,Elapsed Running Time:,6.627
+Experiment 1,Total CPU Time:,5.86
+Experiment 1,Batches Completed:,1000
+Experiment 1,Experiment Name:,Experiment 1
+Experiment 1, Results
+Experiment 1,Result Type,Name,Start Time,End Time,Mean,,Confidence Interval,Failed To Converge
+Experiment 1,Mean,token_game,0.0,1.0,0.0000000000E00 ,+/-,0.0000000000E00 
+
+<END_MOBIUS_RESULTS>

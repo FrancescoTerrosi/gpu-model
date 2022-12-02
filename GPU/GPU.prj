@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ASCII"?>
+<models:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:models="http://www.mobius.illinois.edu/projects" name="GPU" author="The_A" creationDate="2021-10-25T14:53:31.371+0200" lastSavedVersion="2.5.10.201907161116">
+  <atomic key="TOTAL_MEMORY_MODEL">
+    <value name="TOTAL_MEMORY_MODEL" type="SAN Model"/>
+  </atomic>
+  <atomic key="OUTPUT_MEMORY_MODEL">
+    <value name="OUTPUT_MEMORY_MODEL" type="SAN Model"/>
+  </atomic>
+  <atomic key="COMPUTE_UNIT">
+    <value name="COMPUTE_UNIT" type="SAN Model"/>
+  </atomic>
+  <atomic key="L1_CACHE">
+    <value name="L1_CACHE" type="SAN Model"/>
+  </atomic>
+  <atomic key="RESULT_MEMORY_MODEL">
+    <value name="RESULT_MEMORY_MODEL" type="SAN Model"/>
+  </atomic>
+  <atomic key="GPU_MODEL_ATOMIC_COMPOSITION">
+    <value name="GPU_MODEL_ATOMIC_COMPOSITION" type="SAN Model"/>
+  </atomic>
+  <atomic key="RESULT_MEMORY_MODEL_PHYSICAL">
+    <value name="RESULT_MEMORY_MODEL_PHYSICAL" type="SAN Model"/>
+  </atomic>
+  <atomic key="L2_CACHE">
+    <value name="L2_CACHE" type="SAN Model"/>
+  </atomic>
+  <atomic key="OUTPUT_MEMORY_PHYSICAL">
+    <value name="OUTPUT_MEMORY_PHYSICAL" type="SAN Model"/>
+  </atomic>
+  <atomic key="TOTAL_MEMORY_MODEL_PHYSICAL">
+    <value name="TOTAL_MEMORY_MODEL_PHYSICAL" type="SAN Model"/>
+  </atomic>
+  <atomic key="DRAM">
+    <value name="DRAM" type="SAN Model"/>
+  </atomic>
+  <composed key="GPU">
+    <value name="GPU" category="Composed" type="Rep/Join Model"/>
+  </composed>
+  <composed key="GPU_PHYSICAL">
+    <value name="GPU_PHYSICAL" category="Composed" type="Rep/Join Model"/>
+  </composed>
+  <reward key="GPU_COMPOSED_PHYSICAL_REWARD">
+    <value name="GPU_COMPOSED_PHYSICAL_REWARD" category="Reward" type="Performance Variables Model"/>
+  </reward>
+  <reward key="GPU_REWARD">
+    <value name="GPU_REWARD" category="Reward" type="Performance Variables Model"/>
+  </reward>
+  <reward key="GPU_COMPOSED_REWARD">
+    <value name="GPU_COMPOSED_REWARD" category="Reward" type="Performance Variables Model"/>
+  </reward>
+  <study key="GPU_COMPOSED_PHYSICAL_STUDY">
+    <value name="GPU_COMPOSED_PHYSICAL_STUDY" category="Study" type="Set Study"/>
+  </study>
+  <study key="GPU_COMPOSED_STUDY">
+    <value name="GPU_COMPOSED_STUDY" category="Study" type="Set Study"/>
+  </study>
+  <study key="GPUS_STUDY">
+    <value name="GPUS_STUDY" category="Study" type="Set Study"/>
+  </study>
+  <solver key="GPU_COMPOSED_SIMULATOR">
+    <value name="GPU_COMPOSED_SIMULATOR" category="Solver" type="Simulator"/>
+  </solver>
+  <solver key="GPU_SIM">
+    <value name="GPU_SIM" category="Solver" type="Simulator"/>
+  </solver>
+  <solver key="GPU_COMPOSED_PHYSICAL_SIMULATOR">
+    <value name="GPU_COMPOSED_PHYSICAL_SIMULATOR" category="Solver" type="Simulator"/>
+  </solver>
+</models:Project>

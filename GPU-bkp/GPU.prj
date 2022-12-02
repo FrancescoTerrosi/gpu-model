@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<models:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:models="http://www.mobius.illinois.edu/projects" name="GPU" author="The_A" creationDate="2021-10-25T14:53:31.371+0200" lastSavedVersion="2.5.10.201907161116">
+  <atomic key="MEMORY_MODEL">
+    <value name="MEMORY_MODEL" type="SAN Model"/>
+  </atomic>
+  <atomic key="GPU_MODEL_GLOBAL">
+    <value name="GPU_MODEL_GLOBAL" type="SAN Model"/>
+  </atomic>
+  <atomic key="PROCESSOR">
+    <value name="PROCESSOR" type="SAN Model"/>
+  </atomic>
+  <atomic key="GPU_MODEL_ATOMIC_COMPOSITION">
+    <value name="GPU_MODEL_ATOMIC_COMPOSITION" type="SAN Model"/>
+  </atomic>
+  <composed key="GPU">
+    <value name="GPU" category="Composed" type="Rep/Join Model"/>
+  </composed>
+  <reward key="L2_REWARD">
+    <value name="L2_REWARD" category="Reward" type="Performance Variables Model"/>
+  </reward>
+  <reward key="GPU_REWARD">
+    <value name="GPU_REWARD" category="Reward" type="Performance Variables Model"/>
+  </reward>
+  <study key="L2_STUDY">
+    <value name="L2_STUDY" category="Study" type="Set Study"/>
+  </study>
+  <study key="GPUS_STUDY">
+    <value name="GPUS_STUDY" category="Study" type="Set Study"/>
+  </study>
+  <solver key="L2_SIMULATOR">
+    <value name="L2_SIMULATOR" category="Solver" type="Simulator"/>
+  </solver>
+  <solver key="GPU_SIM">
+    <value name="GPU_SIM" category="Solver" type="Simulator"/>
+  </solver>
+</models:Project>

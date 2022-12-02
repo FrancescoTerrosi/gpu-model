@@ -1,0 +1,18 @@
+Port: 10000
+Random Number Generator: Lagged Fibonacci
+Random Number Seed: 187704482
+ReportSize: 1000
+ClientID: 0
+Experiment: 0
+Is Terminating Simulation: 1
+Wait For Socket Enabled
+TraceFile: G:\Shared drives\Terrosi - GPU\modeling\MOBIUS\GPU\Solver\GPU_SIM\Results_Exp1_DESKTOP-8DRGIFK_trace
+License File=C:\Users\The_A\AppData\Local\Temp\mobius8380491312124539391license
+TraceLevel: 1
+
+License Verified.
+GenerateConnectivityList()
+GenerateConnectivityList() Time=0
+SIMULATOR::Preparing to run()
+REGISTER:  Port: [10000]
+

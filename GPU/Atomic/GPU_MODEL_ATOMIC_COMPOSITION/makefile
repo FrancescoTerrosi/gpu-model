@@ -1,0 +1,19 @@
+OBJS=GPU_MODEL_ATOMIC_COMPOSITIONSAN.o 
+
+
+#include common Makefile for default targets
+include ../../Makefile.project
+include $(MOBIUSROOT)/Cpp/BaseClasses/Makefile.common
+
+all: normal
+opt: $(ROOTDIR)/lib/$(PLATFORM)/libGPU_MODEL_ATOMIC_COMPOSITIONSAN.a
+normal debug trace: $(ROOTDIR)/lib/$(PLATFORM)/libGPU_MODEL_ATOMIC_COMPOSITIONSAN_debug.a
+
+$(ROOTDIR)/lib/$(PLATFORM)/libGPU_MODEL_ATOMIC_COMPOSITIONSAN.a: FORCE
+	$(MAKE) lib TARGET=libGPU_MODEL_ATOMIC_COMPOSITIONSAN.a OBJS="$(OBJS)" USERINCLUDE="$(USERINCLUDE)" TYPE="" ROOTLIBDIR="."
+
+$(ROOTDIR)/lib/$(PLATFORM)/libGPU_MODEL_ATOMIC_COMPOSITIONSAN_debug.a: FORCE
+	$(MAKE) lib TARGET=libGPU_MODEL_ATOMIC_COMPOSITIONSAN_debug.a OBJS="$(OBJS)" USERINCLUDE="$(USERINCLUDE)" TYPE="_debug" ROOTLIBDIR="."
+
+clean_sub_dirs:
+

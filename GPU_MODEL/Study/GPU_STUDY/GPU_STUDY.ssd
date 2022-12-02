@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<class id="Mobius.Studies.SetStudy.SetStudyInterface">
+	<int id="ClassVersion">1</int>
+	<class id="Mobius.Studies.Common.BaseStudyInterface">
+		<int id="ClassVersion">1</int>
+		<class id="Mobius.BaseClasses.BaseInterfaceClass">
+			<int id="ClassVersion">3</int>
+			<string id="ModelName">GPU_STUDY</string>
+			<class id="Mobius.Studies.SetStudy.SetStudyInfoClass">
+				<int id="ClassVersion">1</int>
+				<class id="Mobius.Studies.BaseStudyInfoClass">
+					<int id="ClassVersion">1</int>
+					<class id="Mobius.BaseClasses.BaseInfoClass">
+						<int id="ClassVersion">2</int>
+					</class>
+				</class>
+			</class>
+			<class id="Mobius.Studies.SetStudy.SetStudyEditor">
+				<int id="ClassVersion">2</int>
+				<class id="Mobius.Studies.Common.BaseStudyEditor">
+					<int id="ClassVersion">4</int>
+					<class id="Mobius.BaseClasses.BaseEditorClass">
+						<int id="ClassVersion">3</int>
+						<boolean id="HasPanel">false</boolean>
+						<vector id="LocalGlobalNamesList">
+						</vector>
+						<vector id="LocalGlobalTypesList">
+						</vector>
+						<boolean id="DisplayToolTips">true</boolean>
+					</class>
+					<string id="FullPath">
+						G:\\Shared drives\\Terrosi - GPU\\modeling\\MOBIUS\\GPU_MODE
+						L\\Study\\GPU_STUDY\\
+					</string>
+					<string id="PVModelName">GPU_REWARD</string>
+					<vector id="ActiveExpVector">
+						<boolean id="0">true</boolean>
+					</vector>
+					<vector id="GVNameVector">
+						<string id="0">dram_result_read_prob</string>
+						<string id="1">dram_result_write_prob</string>
+						<string id="2">dram_total_read_prob</string>
+						<string id="3">end</string>
+						<string id="4">l1_result_read_prob</string>
+						<string id="5">l1_result_write_prob</string>
+						<string id="6">l2_result_read_prob</string>
+						<string id="7">l2_result_write_prob</string>
+						<string id="8">l2_total_read_prob</string>
+						<string id="9">size</string>
+					</vector>
+					<vector id="GVTypeStringVector">
+						<string id="0">float</string>
+						<string id="1">float</string>
+						<string id="2">float</string>
+						<string id="3">short</string>
+						<string id="4">float</string>
+						<string id="5">float</string>
+						<string id="6">float</string>
+						<string id="7">float</string>
+						<string id="8">float</string>
+						<string id="9">short</string>
+					</vector>
+				</class>
+				<int id="VectorLength">1</int>
+				<int id="NumOfGVs">10</int>
+				<string id="Name">Experiment 1</string>
+				<vector id="GVValueVector">
+					<string id="0">0</string>
+					<string id="1">0</string>
+					<string id="2">0.02</string>
+					<string id="3">1000</string>
+					<string id="4">1.0</string>
+					<string id="5">1.0</string>
+					<string id="6">0.0</string>
+					<string id="7">0.0</string>
+					<string id="8">0.98</string>
+					<string id="9">13</string>
+				</vector>
+			</class>
+			<boolean id="Valid">true</boolean>
+		</class>
+	</class>
+</class>

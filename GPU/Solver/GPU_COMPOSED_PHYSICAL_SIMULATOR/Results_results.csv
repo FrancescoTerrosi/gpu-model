@@ -1,0 +1,57 @@
+Simulator Results
+Date:, Mon Jan 10 18:17:54 CET 2022
+
+Simulator Configuration
+Simulation Type:,Terminating
+Project Name:,GPU
+Study Name:,GPU_COMPOSED_PHYSICAL_STUDY
+Random Number Generator:,Tausworthe
+Random Number Seed:,31415
+Maximum Batches:,100000
+Minimum Batches:,100000
+Data Reporting Frequency:,100000
+Display Update Frequency:,100000
+BuildType:,Optimize
+Execution Architecture:,64-bit
+Runname:,Results
+Output File:,Results_output.txt
+Results File:,Results_results
+Jackknife Variance:,On
+Processors Per Experiment:,1
+Maximize Processor Usage:,false
+Processors Selected for Simulation:
+DESKTOP-3AHUC0F,amd64
+
+Experiment 1
+Experiment 1,Start Time:,Mon Jan 10 18:17:32 CET 2022
+Experiment 1,Finish Time:,Mon Jan 10 18:17:54 CET 2022
+Experiment 1,Elapsed Running Time:,21.448
+Experiment 1,Total CPU Time:,20.027
+Experiment 1,Batches Completed:,100000
+Experiment 1,Experiment Name:,Experiment 1
+Experiment 1,Global Variable Settings:
+Experiment 1,float,dram_result_read_rate,0.0
+Experiment 1,float,dram_result_write_rate,0.0
+Experiment 1,float,dram_total_read_rate,1.0
+Experiment 1,float,l1_result_read_rate,0.04
+Experiment 1,float,l1_result_write_rate,0.97
+Experiment 1,float,l2_result_read_rate,0.96
+Experiment 1,float,l2_result_write_rate,0.03
+Experiment 1,float,l2_total_read_rate,0.0
+Experiment 1,short,size,13
+Experiment 1, Results
+Experiment 1,Result Type,Name,Start Time,End Time,Mean,,Confidence Interval,Failed To Converge
+Experiment 1,Mean,token_game,0.0,10000,1.3000000000E01 ,+/-,0.0000000000E00 
+Experiment 1,Mean,output_writes,0.0,10000,1.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,result_writes,0.0,10000,2.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,result_reads,0.0,10000,2.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,total_reads,0.0,10000,5.0801500000E00 ,+/-,1.7213079854E-03
+Experiment 1,Mean,compute,0.0,10000,3.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,dram_reads,0.0,10000,2.4971800000E00 ,+/-,6.9380804629E-03
+Experiment 1,Mean,l2_reads,0.0,10000,9.6104000000E-01,+/-,4.3867546702E-03
+Experiment 1,Mean,l1_reads,0.0,10000,8.0150000000E-02,+/-,1.7213079854E-03
+Experiment 1,Mean,dram_writes,0.0,10000,1.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,l2_writes,0.0,10000,5.9820000000E-02,+/-,1.4927191642E-03
+Experiment 1,Mean,l1_writes,0.0,10000,1.9401800000E00 ,+/-,1.4927191642E-03
+
+<END_MOBIUS_RESULTS>

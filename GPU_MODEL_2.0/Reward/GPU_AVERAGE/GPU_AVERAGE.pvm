@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<class id="Mobius.RewardModels.pvs.PVInterface">
+	<int id="ClassVersion">1</int>
+	<class id="Mobius.BaseClasses.BaseInterfaceClass">
+		<int id="ClassVersion">3</int>
+		<string id="ModelName">GPU_AVERAGE</string>
+		<class id="Mobius.RewardModels.pvs.PVInfo">
+			<int id="ClassVersion">3</int>
+			<class id="Mobius.BaseClasses.BaseInfoClass">
+				<int id="ClassVersion">2</int>
+			</class>
+			<string id="OutputDirectory">Reward\\GPU_AVERAGE\\</string>
+			<string id="PVModelFileName">GPU_AVERAGEPVModel</string>
+			<string id="PVNodeFileName">GPU_AVERAGEPVNodes</string>
+			<string id="PVArchiveName">GPU_AVERAGEPV</string>
+			<vector id="IncludePath">
+				<string id="0">Composed\\GPU_AVERAGE\\GPU_AVERAGERJ__Join1.h</string>
+				<string id="1">
+					Composed\\GPU_AVERAGE\\GPU_AVERAGERJ__STREAMING_MULTIPROCESS
+					OR.h
+				</string>
+				<string id="2">Composed\\GPU_AVERAGE\\GPU_AVERAGERJ.h</string>
+			</vector>
+			<vector id="HeaderFileList">
+				<string id="0">Reward\\GPU_AVERAGE\\GPU_AVERAGEPVNodes.h</string>
+				<string id="1">Reward\\GPU_AVERAGE\\GPU_AVERAGEPVModel.h</string>
+			</vector>
+			<vector id="CodeFileList">
+				<string id="0">Reward\\GPU_AVERAGE\\GPU_AVERAGEPVNodes.cpp</string>
+				<string id="1">Reward\\GPU_AVERAGE\\GPU_AVERAGEPVModel.cpp</string>
+			</vector>
+			<int id="NumVars">10</int>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
+				<string id="Name">inst_act4</string>
+				<vector id="AffectingModelList">
+					<string id="0">WARP_AVERAGE</string>
+				</vector>
+				<vector id="AffectingActionsList">
+					<string id="0">WARP_AVERAGE-&gt;Instantaneous_Activity4</string>
+				</vector>
+				<vector id="ImpulseFunctionsList">
+					<string id="0">return 1;</string>
+				</vector>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">0.0</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+				</vector>
+			</class>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
+				<string id="Name">l_mem</string>
+				<vector id="AffectingModelList">
+					<string id="0">LOCAL_MEMORY</string>
+				</vector>
+				<vector id="AffectingActionsList">
+					<string id="0">LOCAL_MEMORY-&gt;WRITE_TO_case1</string>
+					<string id="1">LOCAL_MEMORY-&gt;WRITE_TO_case2</string>
+					<string id="2">LOCAL_MEMORY-&gt;WRITE_TO_case3</string>
+					<string id="3">LOCAL_MEMORY-&gt;READ_FROM_case1</string>
+					<string id="4">LOCAL_MEMORY-&gt;READ_FROM_case2</string>
+					<string id="5">LOCAL_MEMORY-&gt;READ_FROM_case3</string>
+				</vector>
+				<vector id="ImpulseFunctionsList">
+					<string id="0">return 1;</string>
+					<string id="1">return 1;</string>
+					<string id="2">return 1;</string>
+					<string id="3">return 1;</string>
+					<string id="4">return 1;</string>
+					<string id="5">return 1;</string>
+				</vector>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">0.0</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+					<boolean id="1">true</boolean>
+					<boolean id="2">true</boolean>
+					<boolean id="3">true</boolean>
+					<boolean id="4">true</boolean>
+					<boolean id="5">true</boolean>
+				</vector>
+			</class>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
+				<string id="Name">g_mem</string>
+				<vector id="AffectingModelList">
+					<string id="0">GLOBAL_MEMORY</string>
+				</vector>
+				<vector id="AffectingActionsList">
+					<string id="0">GLOBAL_MEMORY-&gt;READ_FROM_case1</string>
+					<string id="1">GLOBAL_MEMORY-&gt;READ_FROM_case2</string>
+					<string id="2">GLOBAL_MEMORY-&gt;READ_FROM_case3</string>
+					<string id="3">GLOBAL_MEMORY-&gt;WRITE_TO_case3</string>
+					<string id="4">GLOBAL_MEMORY-&gt;WRITE_TO_case2</string>
+					<string id="5">GLOBAL_MEMORY-&gt;WRITE_TO_case1</string>
+				</vector>
+				<vector id="ImpulseFunctionsList">
+					<string id="0">return 1;</string>
+					<string id="1">return 1;</string>
+					<string id="2">return 1;</string>
+					<string id="3">return 1;</string>
+					<string id="4">return 1;</string>
+					<string id="5">return 1;</string>
+				</vector>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">0.0</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+					<boolean id="1">true</boolean>
+					<boolean id="2">true</boolean>
+					<boolean id="3">true</boolean>
+					<boolean id="4">true</boolean>
+					<boolean id="5">true</boolean>
+				</vector>
+			</class>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
+				<string id="Name">alu</string>
+				<vector id="AffectingModelList">
+					<string id="0">COMPUTE_UNIT</string>
+				</vector>
+				<vector id="AffectingActionsList">
+					<string id="0">COMPUTE_UNIT-&gt;COMPUTE_WITH_KO_DATA</string>
+					<string id="1">COMPUTE_UNIT-&gt;COMPUTE_WITH_OK_DATA</string>
+				</vector>
+				<vector id="ImpulseFunctionsList">
+					<string id="0">return 1;</string>
+					<string id="1">return 1;</string>
+				</vector>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">0.0</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+					<boolean id="1">true</boolean>
+				</vector>
+			</class>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
+				<string id="Name">mem_op</string>
+				<vector id="AffectingModelList">
+					<string id="0">L1_CACHE</string>
+					<string id="1">L2_CACHE</string>
+					<string id="2">DRAM</string>
+				</vector>
+				<vector id="AffectingActionsList">
+					<string id="0">L1_CACHE-&gt;WRITE_WITH_KO_DATA</string>
+					<string id="1">L1_CACHE-&gt;WRITE_WITH_OK_DATA</string>
+					<string id="2">L1_CACHE-&gt;READ_FROM_case1</string>
+					<string id="3">L1_CACHE-&gt;READ_FROM_case2</string>
+					<string id="4">L2_CACHE-&gt;WRITE_WITH_KO_DATA</string>
+					<string id="5">L2_CACHE-&gt;WRITE_WITH_OK_DATA</string>
+					<string id="6">L2_CACHE-&gt;READ_FROM_case1</string>
+					<string id="7">L2_CACHE-&gt;READ_FROM_case2</string>
+					<string id="8">DRAM-&gt;WRITE_WITH_KO_DATA</string>
+					<string id="9">DRAM-&gt;WRITE_WITH_OK_DATA</string>
+					<string id="10">DRAM-&gt;READ_FROM_case1</string>
+					<string id="11">DRAM-&gt;READ_FROM_case2</string>
+				</vector>
+				<vector id="ImpulseFunctionsList">
+					<string id="0">return 1;</string>
+					<string id="1">return 1;</string>
+					<string id="2">return 1;</string>
+					<string id="3">return 1;</string>
+					<string id="4">return 1;</string>
+					<string id="5">return 1;</string>
+					<string id="6">return 1;</string>
+					<string id="7">return 1;</string>
+					<string id="8">return 1;</string>
+					<string id="9">return 1;</string>
+					<string id="10">return 1;</string>
+					<string id="11">return 1;</string>
+				</vector>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">0.0</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+					<boolean id="1">true</boolean>
+					<boolean id="2">true</boolean>
+					<boolean id="3">true</boolean>
+					<boolean id="4">true</boolean>
+					<boolean id="5">true</boolean>
+					<boolean id="6">true</boolean>
+					<boolean id="7">true</boolean>
+					<boolean id="8">true</boolean>
+					<boolean id="9">true</boolean>
+					<boolean id="10">true</boolean>
+					<boolean id="11">true</boolean>
+					<boolean id="12">true</boolean>
+				</vector>
+			</class>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
+				<string id="Name">dispatch_warp_side</string>
+				<vector id="AffectingModelList">
+					<string id="0">WARP_AVERAGE</string>
+				</vector>
+				<vector id="AffectingActionsList">
+					<string id="0">WARP_AVERAGE-&gt;DISPATCHER_Copy_Copy</string>
+				</vector>
+				<vector id="ImpulseFunctionsList">
+					<string id="0">return 1;</string>
+				</vector>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">0.0</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+				</vector>
+			</class>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
+				<string id="Name">dispatch_compute_unit_side</string>
+				<vector id="AffectingModelList">
+					<string id="0">COMPUTE_UNIT</string>
+				</vector>
+				<vector id="AffectingActionsList">
+					<string id="0">COMPUTE_UNIT-&gt;DISPATCHER</string>
+				</vector>
+				<vector id="ImpulseFunctionsList">
+					<string id="0">return 1;</string>
+				</vector>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">0.0</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+				</vector>
+			</class>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
+				<string id="Name">alu_no_data</string>
+				<vector id="AffectingModelList">
+					<string id="0">COMPUTE_UNIT</string>
+				</vector>
+				<vector id="AffectingActionsList">
+					<string id="0">COMPUTE_UNIT-&gt;Instantaneous_Activity2_case1</string>
+					<string id="1">COMPUTE_UNIT-&gt;Instantaneous_Activity2_case2</string>
+				</vector>
+				<vector id="ImpulseFunctionsList">
+					<string id="0">return 1;</string>
+					<string id="1">return 1;</string>
+				</vector>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">0.0</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+					<boolean id="1">true</boolean>
+				</vector>
+			</class>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
+				<string id="Name">l_mem_complete</string>
+				<vector id="AffectingModelList">
+					<string id="0">COMPUTE_UNIT</string>
+				</vector>
+				<vector id="AffectingActionsList">
+					<string id="0">COMPUTE_UNIT-&gt;Instantaneous_Activity1</string>
+				</vector>
+				<vector id="ImpulseFunctionsList">
+					<string id="0">return 1;</string>
+				</vector>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">0.0</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+				</vector>
+			</class>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
+				<string id="Name">alu_complete</string>
+				<vector id="AffectingModelList">
+					<string id="0">COMPUTE_UNIT</string>
+				</vector>
+				<vector id="AffectingActionsList">
+					<string id="0">COMPUTE_UNIT-&gt;Instantaneous_Activity2_case1</string>
+					<string id="1">COMPUTE_UNIT-&gt;Instantaneous_Activity2_case2</string>
+				</vector>
+				<vector id="ImpulseFunctionsList">
+					<string id="0">return 1;</string>
+					<string id="1">return 1;</string>
+				</vector>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">0.0</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+					<boolean id="1">true</boolean>
+				</vector>
+			</class>
+			<string id="TopModelName">GPU_AVERAGE</string>
+			<string id="ModelName">GPU_AVERAGE</string>
+		</class>
+		<class id="PVEditor">
+			<int id="ClassVersion">2</int>
+			<string id="TheInterfaceName">GPU_AVERAGE</string>
+			<boolean id="SkipAcceptPopup">true</boolean>
+			<class id="Mobius.BaseClasses.BaseEditorClass">
+				<int id="ClassVersion">3</int>
+				<boolean id="HasPanel">false</boolean>
+				<vector id="LocalGlobalNamesList">
+					<string id="0">end</string>
+				</vector>
+				<vector id="LocalGlobalTypesList">
+					<string id="0">short</string>
+				</vector>
+				<boolean id="DisplayToolTips">true</boolean>
+			</class>
+		</class>
+		<boolean id="Valid">true</boolean>
+	</class>
+</class>

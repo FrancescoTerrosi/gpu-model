@@ -1,0 +1,64 @@
+_______________________________Simulator Results______________________________
+Date:                        Tue Dec 07 11:34:45 CET 2021
+
+____________________________Simulator Configuration___________________________
+Simulation Type:             Terminating
+Project Name:                GPU
+Study Name:                  GPUS_STUDY
+Random Number Generator:     Lagged Fibonacci
+Random Number Seed:          31415
+Maximum Batches:             10000
+Minimum Batches:             10000
+Data Reporting Frequency:    1000
+Display Update Frequency:    1000
+BuildType:                   Optimize
+Execution Architecture:      64-bit
+Runname:                     Results
+Output File:                 Results_output.txt
+Results File:                Results_results
+Jackknife Variance:          On
+Processors Per Experiment:   1
+Maximize Processor Usage:    false
+Processors Selected for Simulation: 
+        DESKTOP-8DRGIFK      amd64
+
+_________________________________Experiment 1_________________________________
+Start Time:                  Tue Dec 07 11:34:43 CET 2021
+Finish Time:                 Tue Dec 07 11:34:45 CET 2021
+Elapsed Running Time:        2.047
+Total CPU Time:              1.533
+Batches Completed:           10000
+Experiment Name:             Experiment 1
+Global Variable Settings:    
+        short                size                     13                     
+
+
+_________________________________Mean Results_________________________________
+Name                  Time               Mean                     Confidence Interval
+token_game            0.0 - 1.0         1.3000000000E01   +/-   0.0000000000E00 
+memory_ok             0.0 - 1.0         1.9020000000E00   +/-   5.9966186558E-03
+memory_ko             0.0 - 1.0         9.8000000000E-02  +/-   5.9966186558E-03
+output_ok             0.0 - 1.0         9.9980000000E-01  +/-   2.7717199720E-04
+output_ko             0.0 - 1.0         2.0000000000E-04  +/-   2.7717199720E-04  (*)
+alu_ops_ok            0.0 - 1.0         2.9997000000E00   +/-   3.3944800499E-04
+alu_ops_ko            0.0 - 1.0         3.0000000000E-04  +/-   3.3944800499E-04  (*)
+result_writes         0.0 - 1.0         2.0000000000E00   +/-   1.0117350766E-09
+alu_ops               0.0 - 1.0         3.0000000000E00   +/-   0.0000000000E00 
+output_writes         0.0 - 1.0         1.0000000000E00   +/-   5.0586753828E-10
+total_read            0.0 - 1.0         5.0000000000E00   +/-   2.3365020752E-09
+result_read           0.0 - 1.0         2.0000000000E00   +/-   1.0117350766E-09
+clock_steps           0.0 - 1.0         8.2700000000E02   +/-   0.0000000000E00 
+
+
+_______________________________Variance Results_______________________________
+
+
+_______________________________Interval Results_______________________________
+
+
+_____________________________Distribution Results_____________________________
+
+
+(*) This result did not converge to within the specified confidence interval
+
+<END_MOBIUS_RESULTS>

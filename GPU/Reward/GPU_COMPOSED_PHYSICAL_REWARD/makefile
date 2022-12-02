@@ -1,0 +1,19 @@
+OBJS=GPU_COMPOSED_PHYSICAL_REWARDPVNodes.o GPU_COMPOSED_PHYSICAL_REWARDPVModel.o 
+
+
+#include common Makefile for default targets
+include ../../Makefile.project
+include $(MOBIUSROOT)/Cpp/BaseClasses/Makefile.common
+
+all: normal
+opt: $(ROOTDIR)/lib/$(PLATFORM)/libGPU_COMPOSED_PHYSICAL_REWARDPV.a
+normal debug trace: $(ROOTDIR)/lib/$(PLATFORM)/libGPU_COMPOSED_PHYSICAL_REWARDPV_debug.a
+
+$(ROOTDIR)/lib/$(PLATFORM)/libGPU_COMPOSED_PHYSICAL_REWARDPV.a: FORCE
+	$(MAKE) lib TARGET=libGPU_COMPOSED_PHYSICAL_REWARDPV.a OBJS="$(OBJS)" USERINCLUDE="$(USERINCLUDE)" TYPE="" ROOTLIBDIR="."
+
+$(ROOTDIR)/lib/$(PLATFORM)/libGPU_COMPOSED_PHYSICAL_REWARDPV_debug.a: FORCE
+	$(MAKE) lib TARGET=libGPU_COMPOSED_PHYSICAL_REWARDPV_debug.a OBJS="$(OBJS)" USERINCLUDE="$(USERINCLUDE)" TYPE="_debug" ROOTLIBDIR="."
+
+clean_sub_dirs:
+

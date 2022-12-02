@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<class id="Mobius.Studies.SetStudy.SetStudyInterface">
+	<int id="ClassVersion">1</int>
+	<class id="Mobius.Studies.Common.BaseStudyInterface">
+		<int id="ClassVersion">1</int>
+		<class id="Mobius.BaseClasses.BaseInterfaceClass">
+			<int id="ClassVersion">3</int>
+			<string id="ModelName">GPU_STUDY</string>
+			<class id="Mobius.Studies.SetStudy.SetStudyInfoClass">
+				<int id="ClassVersion">1</int>
+				<class id="Mobius.Studies.BaseStudyInfoClass">
+					<int id="ClassVersion">1</int>
+					<class id="Mobius.BaseClasses.BaseInfoClass">
+						<int id="ClassVersion">2</int>
+					</class>
+				</class>
+			</class>
+			<class id="Mobius.Studies.SetStudy.SetStudyEditor">
+				<int id="ClassVersion">2</int>
+				<class id="Mobius.Studies.Common.BaseStudyEditor">
+					<int id="ClassVersion">4</int>
+					<class id="Mobius.BaseClasses.BaseEditorClass">
+						<int id="ClassVersion">3</int>
+						<boolean id="HasPanel">false</boolean>
+						<vector id="LocalGlobalNamesList">
+						</vector>
+						<vector id="LocalGlobalTypesList">
+						</vector>
+						<boolean id="DisplayToolTips">true</boolean>
+					</class>
+					<string id="FullPath">
+						G:\\Shared drives\\Terrosi - GPU\\modeling\\MOBIUS\\GPU_MODE
+						L_2.0\\Study\\GPU_STUDY\\
+					</string>
+					<string id="PVModelName">GPU4</string>
+					<vector id="ActiveExpVector">
+						<boolean id="0">true</boolean>
+					</vector>
+					<vector id="GVNameVector">
+						<string id="0">dram_global_read_prob</string>
+						<string id="1">dram_global_write_prob</string>
+						<string id="2">dram_local_read_prob</string>
+						<string id="3">dram_local_write_prob</string>
+						<string id="4">end</string>
+						<string id="5">l1_global_read_prob</string>
+						<string id="6">l1_global_write_prob</string>
+						<string id="7">l1_local_read_prob</string>
+						<string id="8">l1_local_write_prob</string>
+						<string id="9">l2_global_read_prob</string>
+						<string id="10">l2_global_write_prob</string>
+						<string id="11">l2_local_read_prob</string>
+						<string id="12">l2_local_write_prob</string>
+						<string id="13">nprocessors</string>
+						<string id="14">nwarps</string>
+						<string id="15">register_count_index</string>
+						<string id="16">size</string>
+					</vector>
+					<vector id="GVTypeStringVector">
+						<string id="0">float</string>
+						<string id="1">float</string>
+						<string id="2">float</string>
+						<string id="3">float</string>
+						<string id="4">short</string>
+						<string id="5">float</string>
+						<string id="6">float</string>
+						<string id="7">float</string>
+						<string id="8">float</string>
+						<string id="9">float</string>
+						<string id="10">float</string>
+						<string id="11">float</string>
+						<string id="12">float</string>
+						<string id="13">short</string>
+						<string id="14">short</string>
+						<string id="15">short</string>
+						<string id="16">short</string>
+					</vector>
+				</class>
+				<int id="VectorLength">1</int>
+				<int id="NumOfGVs">17</int>
+				<string id="Name">Experiment 1</string>
+				<vector id="GVValueVector">
+					<string id="0">0.067</string>
+					<string id="1">0.0</string>
+					<string id="2">0.0</string>
+					<string id="3">0.0</string>
+					<string id="4">100</string>
+					<string id="5">0.99</string>
+					<string id="6">0.93</string>
+					<string id="7">0.0</string>
+					<string id="8">0.0</string>
+					<string id="9">0.0</string>
+					<string id="10">0.07</string>
+					<string id="11">0.033</string>
+					<string id="12">0.0</string>
+					<string id="13">1.0</string>
+					<string id="14">1.0</string>
+					<string id="15">0</string>
+					<string id="16">3781</string>
+				</vector>
+			</class>
+			<boolean id="Valid">true</boolean>
+		</class>
+	</class>
+</class>

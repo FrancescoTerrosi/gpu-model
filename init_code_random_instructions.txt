@@ -1,0 +1,4 @@
+SCHEDULER->Index(0)->Mark() = 2;
+for (int i = 1; i < size; i++) {
+    SCHEDULER->Index(i)->Mark() = rand() % 5;
+}

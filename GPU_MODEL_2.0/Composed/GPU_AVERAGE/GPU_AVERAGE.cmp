@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<class id="Mobius.ComposedModels.RepJoin.RepJoinInterface">
+	<int id="ClassVersion">1</int>
+	<class id="Mobius.BaseClasses.BaseInterfaceClass">
+		<int id="ClassVersion">3</int>
+		<string id="ModelName">GPU_AVERAGE</string>
+		<class id="Mobius.BaseClasses.BaseInfoClass">
+			<int id="ClassVersion">2</int>
+		</class>
+		<class id="Mobius.BaseClasses.BaseEditorClass">
+			<int id="ClassVersion">3</int>
+			<boolean id="HasPanel">true</boolean>
+			<class id="Mobius.BaseClasses.BasePanelClass">
+				<int id="ClassVersion">2</int>
+				<point id="Size of Panel">
+					<int id="x">1901</int>
+					<int id="y">880</int>
+				</point>
+				<double id="ZoomFactor">1.0</double>
+				<boolean id="ShowGridEnabled">true</boolean>
+				<int id="ShowGridStep">10</int>
+				<boolean id="SnapGridEnabled">true</boolean>
+				<int id="SnapGridStep">10</int>
+				<class id="Mobius.ComposedModels.Common.JoinPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">Join1</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">455</int>
+							<int id="y">375</int>
+						</point>
+					</class>
+					<int id="SharingInfoSize">19</int>
+					<string id="NewSharedObjName">INSTRUCTION_READY</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">COMPUTE_UNIT-&gt;INSTRUCTION_READY</string>
+						<string id="1">WARP_AVERAGE-&gt;INSTRUCTION_READY</string>
+					</vector>
+					<string id="NewSharedObjName">KO_READ</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">REGISTER_FILE-&gt;KO_READ</string>
+						<string id="1">COMPUTE_UNIT-&gt;KO_READ</string>
+					</vector>
+					<string id="NewSharedObjName">MEM_OP_COMPLETE</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">REGISTER_FILE-&gt;MEM_OP_COMPLETE</string>
+						<string id="1">COMPUTE_UNIT-&gt;MEM_OP_COMPLETE</string>
+					</vector>
+					<string id="NewSharedObjName">OK_READ</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">REGISTER_FILE-&gt;OK_READ</string>
+						<string id="1">COMPUTE_UNIT-&gt;OK_READ</string>
+					</vector>
+					<string id="NewSharedObjName">READ_DRAM</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">GLOBAL_MEMORY-&gt;READ_DRAM</string>
+						<string id="1">LOCAL_MEMORY-&gt;READ_DRAM</string>
+					</vector>
+					<string id="NewSharedObjName">READ_GLOBAL_MEMORY</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">GLOBAL_MEMORY-&gt;READ_GLOBAL_MEMORY</string>
+						<string id="1">COMPUTE_UNIT-&gt;READ_GLOBAL_MEMORY</string>
+					</vector>
+					<string id="NewSharedObjName">READ_L1</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">LOCAL_MEMORY-&gt;READ_L1</string>
+						<string id="1">GLOBAL_MEMORY-&gt;READ_L1</string>
+					</vector>
+					<string id="NewSharedObjName">READ_L2</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">GLOBAL_MEMORY-&gt;READ_L2</string>
+						<string id="1">LOCAL_MEMORY-&gt;READ_L2</string>
+					</vector>
+					<string id="NewSharedObjName">READ_LOCAL_MEMORY</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">COMPUTE_UNIT-&gt;READ_LOCAL_MEMORY</string>
+						<string id="1">LOCAL_MEMORY-&gt;READ_LOCAL_MEMORY</string>
+					</vector>
+					<string id="NewSharedObjName">READ_REGISTER_FILE</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">REGISTER_FILE-&gt;READ_REGISTER_FILE</string>
+						<string id="1">COMPUTE_UNIT-&gt;READ_REGISTER_FILE</string>
+					</vector>
+					<string id="NewSharedObjName">RESULT_KO</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">REGISTER_FILE-&gt;RESULT_KO</string>
+						<string id="1">COMPUTE_UNIT-&gt;RESULT_KO</string>
+					</vector>
+					<string id="NewSharedObjName">RESULT_OK</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">REGISTER_FILE-&gt;RESULT_OK</string>
+						<string id="1">COMPUTE_UNIT-&gt;RESULT_OK</string>
+					</vector>
+					<string id="NewSharedObjName">SCHEDULER</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">COMPUTE_UNIT-&gt;SCHEDULER</string>
+						<string id="1">WARP_AVERAGE-&gt;SCHEDULER</string>
+					</vector>
+					<string id="NewSharedObjName">WRITE_DRAM</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">GLOBAL_MEMORY-&gt;WRITE_DRAM</string>
+						<string id="1">LOCAL_MEMORY-&gt;WRITE_DRAM</string>
+					</vector>
+					<string id="NewSharedObjName">WRITE_GLOBAL_MEMORY</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">GLOBAL_MEMORY-&gt;WRITE_GLOBAL_MEMORY</string>
+						<string id="1">COMPUTE_UNIT-&gt;WRITE_GLOBAL_MEMORY</string>
+					</vector>
+					<string id="NewSharedObjName">WRITE_L1</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">GLOBAL_MEMORY-&gt;WRITE_L1</string>
+						<string id="1">LOCAL_MEMORY-&gt;WRITE_L1</string>
+					</vector>
+					<string id="NewSharedObjName">WRITE_L2</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">GLOBAL_MEMORY-&gt;WRITE_L2</string>
+						<string id="1">LOCAL_MEMORY-&gt;WRITE_L2</string>
+					</vector>
+					<string id="NewSharedObjName">WRITE_LOCAL_MEMORY</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">COMPUTE_UNIT-&gt;WRITE_LOCAL_MEMORY</string>
+						<string id="1">LOCAL_MEMORY-&gt;WRITE_LOCAL_MEMORY</string>
+					</vector>
+					<string id="NewSharedObjName">WRITE_REGISTER_FILE</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">REGISTER_FILE-&gt;WRITE_REGISTER_FILE</string>
+						<string id="1">COMPUTE_UNIT-&gt;WRITE_REGISTER_FILE</string>
+					</vector>
+				</class>
+				<class id="Mobius.ComposedModels.Common.JoinPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">STREAMING_MULTIPROCESSOR</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">315</int>
+							<int id="y">215</int>
+						</point>
+					</class>
+					<int id="SharingInfoSize">8</int>
+					<string id="NewSharedObjName">INSTRUCTION_READY</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">Join1-&gt;INSTRUCTION_READY</string>
+					</vector>
+					<string id="NewSharedObjName">KO_READ</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">L1_CACHE-&gt;KO_READ</string>
+						<string id="1">Join1-&gt;KO_READ</string>
+					</vector>
+					<string id="NewSharedObjName">MEM_OP_COMPLETE</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">L1_CACHE-&gt;MEM_OP_COMPLETE</string>
+						<string id="1">Join1-&gt;MEM_OP_COMPLETE</string>
+					</vector>
+					<string id="NewSharedObjName">OK_READ</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">L1_CACHE-&gt;OK_READ</string>
+						<string id="1">Join1-&gt;OK_READ</string>
+					</vector>
+					<string id="NewSharedObjName">READ_L1</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">Join1-&gt;READ_L1</string>
+						<string id="1">L1_CACHE-&gt;READ_L1</string>
+					</vector>
+					<string id="NewSharedObjName">RESULT_KO</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">L1_CACHE-&gt;RESULT_KO</string>
+						<string id="1">Join1-&gt;RESULT_KO</string>
+					</vector>
+					<string id="NewSharedObjName">RESULT_OK</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">L1_CACHE-&gt;RESULT_OK</string>
+						<string id="1">Join1-&gt;RESULT_OK</string>
+					</vector>
+					<string id="NewSharedObjName">WRITE_L1</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">L1_CACHE-&gt;WRITE_L1</string>
+						<string id="1">Join1-&gt;WRITE_L1</string>
+					</vector>
+				</class>
+				<class id="Mobius.ComposedModels.Common.JoinPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">GPU</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">165</int>
+							<int id="y">115</int>
+						</point>
+					</class>
+					<int id="SharingInfoSize">10</int>
+					<string id="NewSharedObjName">INSTRUCTION_READY</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">STREAMING_MULTIPROCESSOR-&gt;INSTRUCTION_READY</string>
+					</vector>
+					<string id="NewSharedObjName">KO_CONTENT</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">DRAM-&gt;KO_CONTENT</string>
+						<string id="1">L2_CACHE-&gt;KO_CONTENT</string>
+					</vector>
+					<string id="NewSharedObjName">KO_READ</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">DRAM-&gt;KO_READ</string>
+						<string id="1">L2_CACHE-&gt;KO_READ</string>
+						<string id="2">STREAMING_MULTIPROCESSOR-&gt;KO_READ</string>
+					</vector>
+					<string id="NewSharedObjName">MEMORY_KO</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">DRAM-&gt;MEMORY_KO</string>
+						<string id="1">L2_CACHE-&gt;MEMORY_KO</string>
+					</vector>
+					<string id="NewSharedObjName">MEMORY_OK</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">DRAM-&gt;MEMORY_OK</string>
+						<string id="1">L2_CACHE-&gt;MEMORY_OK</string>
+					</vector>
+					<string id="NewSharedObjName">MEM_OP_COMPLETE</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">DRAM-&gt;MEM_OP_COMPLETE</string>
+						<string id="1">L2_CACHE-&gt;MEM_OP_COMPLETE</string>
+						<string id="2">STREAMING_MULTIPROCESSOR-&gt;MEM_OP_COMPLETE</string>
+					</vector>
+					<string id="NewSharedObjName">OK_CONTENT</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">DRAM-&gt;OK_CONTENT</string>
+						<string id="1">L2_CACHE-&gt;OK_CONTENT</string>
+					</vector>
+					<string id="NewSharedObjName">OK_READ</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">DRAM-&gt;OK_READ</string>
+						<string id="1">L2_CACHE-&gt;OK_READ</string>
+						<string id="2">STREAMING_MULTIPROCESSOR-&gt;OK_READ</string>
+					</vector>
+					<string id="NewSharedObjName">RESULT_KO</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">DRAM-&gt;RESULT_KO</string>
+						<string id="1">L2_CACHE-&gt;RESULT_KO</string>
+						<string id="2">STREAMING_MULTIPROCESSOR-&gt;RESULT_KO</string>
+					</vector>
+					<string id="NewSharedObjName">RESULT_OK</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">DRAM-&gt;RESULT_OK</string>
+						<string id="1">L2_CACHE-&gt;RESULT_OK</string>
+						<string id="2">STREAMING_MULTIPROCESSOR-&gt;RESULT_OK</string>
+					</vector>
+				</class>
+				<class id="Mobius.ComposedModels.Common.AtomicPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">LOCAL_MEMORY</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">445</int>
+							<int id="y">605</int>
+						</point>
+					</class>
+					<string id="Model Name">LOCAL_MEMORY</string>
+				</class>
+				<class id="Mobius.ComposedModels.Common.AtomicPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">WARP_AVERAGE</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">785</int>
+							<int id="y">405</int>
+						</point>
+					</class>
+					<string id="Model Name">WARP_AVERAGE</string>
+				</class>
+				<class id="Mobius.ComposedModels.Common.AtomicPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">GLOBAL_MEMORY</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">325</int>
+							<int id="y">555</int>
+						</point>
+					</class>
+					<string id="Model Name">GLOBAL_MEMORY</string>
+				</class>
+				<class id="Mobius.ComposedModels.Common.AtomicPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">REGISTER_FILE</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">575</int>
+							<int id="y">555</int>
+						</point>
+					</class>
+					<string id="Model Name">REGISTER_FILE</string>
+				</class>
+				<class id="Mobius.ComposedModels.Common.AtomicPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">COMPUTE_UNIT</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">665</int>
+							<int id="y">485</int>
+						</point>
+					</class>
+					<string id="Model Name">COMPUTE_UNIT</string>
+				</class>
+				<class id="Mobius.ComposedModels.Common.AtomicPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">L1_CACHE</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">195</int>
+							<int id="y">345</int>
+						</point>
+					</class>
+					<string id="Model Name">L1_CACHE</string>
+				</class>
+				<class id="Mobius.ComposedModels.Common.AtomicPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">L2_CACHE</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">285</int>
+							<int id="y">35</int>
+						</point>
+					</class>
+					<string id="Model Name">L2_CACHE</string>
+				</class>
+				<class id="Mobius.ComposedModels.Common.AtomicPanelObject">
+					<int id="ClassVersion">3</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">DRAM</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">65</int>
+							<int id="y">25</int>
+						</point>
+					</class>
+					<string id="Model Name">DRAM</string>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
+					<string id="StartVertex">STREAMING_MULTIPROCESSOR</string>
+					<string id="FinishVertex">Join1</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">359</int>
+							<int id="y">210</int>
+						</point>
+						<point id="1">
+							<int id="x">630</int>
+							<int id="y">429</int>
+						</point>
+					</vector>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
+					<string id="StartVertex">GPU</string>
+					<string id="FinishVertex">STREAMING_MULTIPROCESSOR</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">188</int>
+							<int id="y">106</int>
+						</point>
+						<point id="1">
+							<int id="x">474</int>
+							<int id="y">267</int>
+						</point>
+					</vector>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
+					<string id="StartVertex">Join1</string>
+					<string id="FinishVertex">LOCAL_MEMORY</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">479</int>
+							<int id="y">374</int>
+						</point>
+						<point id="1">
+							<int id="x">537</int>
+							<int id="y">382</int>
+						</point>
+					</vector>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
+					<string id="StartVertex">Join1</string>
+					<string id="FinishVertex">WARP_AVERAGE</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">480</int>
+							<int id="y">381</int>
+						</point>
+						<point id="1">
+							<int id="x">706</int>
+							<int id="y">523</int>
+						</point>
+					</vector>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
+					<string id="StartVertex">Join1</string>
+					<string id="FinishVertex">GLOBAL_MEMORY</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">477</int>
+							<int id="y">378</int>
+						</point>
+						<point id="1">
+							<int id="x">292</int>
+							<int id="y">503</int>
+						</point>
+					</vector>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
+					<string id="StartVertex">Join1</string>
+					<string id="FinishVertex">REGISTER_FILE</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">454</int>
+							<int id="y">375</int>
+						</point>
+						<point id="1">
+							<int id="x">384</int>
+							<int id="y">235</int>
+						</point>
+					</vector>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
+					<string id="StartVertex">Join1</string>
+					<string id="FinishVertex">COMPUTE_UNIT</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">447</int>
+							<int id="y">379</int>
+						</point>
+						<point id="1">
+							<int id="x">441</int>
+							<int id="y">527</int>
+						</point>
+					</vector>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
+					<string id="StartVertex">STREAMING_MULTIPROCESSOR</string>
+					<string id="FinishVertex">L1_CACHE</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">301</int>
+							<int id="y">219</int>
+						</point>
+						<point id="1">
+							<int id="x">271</int>
+							<int id="y">340</int>
+						</point>
+					</vector>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
+					<string id="StartVertex">GPU</string>
+					<string id="FinishVertex">L2_CACHE</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">149</int>
+							<int id="y">119</int>
+						</point>
+						<point id="1">
+							<int id="x">236</int>
+							<int id="y">74</int>
+						</point>
+					</vector>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
+					<string id="StartVertex">GPU</string>
+					<string id="FinishVertex">DRAM</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">161</int>
+							<int id="y">109</int>
+						</point>
+						<point id="1">
+							<int id="x">150</int>
+							<int id="y">152</int>
+						</point>
+					</vector>
+				</class>
+			</class>
+			<vector id="LocalGlobalNamesList">
+			</vector>
+			<vector id="LocalGlobalTypesList">
+			</vector>
+			<boolean id="DisplayToolTips">true</boolean>
+		</class>
+		<boolean id="Valid">true</boolean>
+	</class>
+</class>
