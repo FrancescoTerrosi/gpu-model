@@ -26,66 +26,7 @@
 			</class>
 			<string id="CustomInitialization">
 				WARP-&gt;Index(0)-&gt;Mark() = 5;WARP-&gt;Index(1)-&gt;Mark(
-				) = 5;WARP-&gt;Index(2)-&gt;Mark() = 5;WARP-&gt;Index(3)-&gt
-				;Mark() = 7;WARP-&gt;Index(4)-&gt;Mark() = 5;WARP-&gt;Index(
-				5)-&gt;Mark() = 2;WARP-&gt;Index(6)-&gt;Mark() = 5;WARP-&gt;
-				Index(7)-&gt;Mark() = 7;WARP-&gt;Index(8)-&gt;Mark() = 5;WAR
-				P-&gt;Index(9)-&gt;Mark() = 5;WARP-&gt;Index(10)-&gt;Mark() 
-				= 5;WARP-&gt;Index(11)-&gt;Mark() = 5;WARP-&gt;Index(12)-&gt
-				;Mark() = 7;WARP-&gt;Index(13)-&gt;Mark() = 7;WARP-&gt;Index
-				(14)-&gt;Mark() = 7;WARP-&gt;Index(15)-&gt;Mark() = 5;WARP-&
-				gt;Index(16)-&gt;Mark() = 7;WARP-&gt;Index(17)-&gt;Mark() = 
-				7;WARP-&gt;Index(18)-&gt;Mark() = 7;WARP-&gt;Index(19)-&gt;M
-				ark() = 0;WARP-&gt;Index(20)-&gt;Mark() = 0;WARP-&gt;Index(2
-				1)-&gt;Mark() = 7;WARP-&gt;Index(22)-&gt;Mark() = 1;WARP-&gt
-				;Index(23)-&gt;Mark() = 7;WARP-&gt;Index(24)-&gt;Mark() = 2;
-				WARP-&gt;Index(25)-&gt;Mark() = 7;WARP-&gt;Index(26)-&gt;Mar
-				k() = 7;WARP-&gt;Index(27)-&gt;Mark() = 7;WARP-&gt;Index(28)
-				-&gt;Mark() = 7;WARP-&gt;Index(29)-&gt;Mark() = 7;WARP-&gt;I
-				ndex(30)-&gt;Mark() = 5;WARP-&gt;Index(31)-&gt;Mark() = 2;WA
-				RP-&gt;Index(32)-&gt;Mark() = 5;WARP-&gt;Index(33)-&gt;Mark(
-				) = 7;WARP-&gt;Index(34)-&gt;Mark() = 5;WARP-&gt;Index(35)-&
-				gt;Mark() = 5;WARP-&gt;Index(36)-&gt;Mark() = 5;WARP-&gt;Ind
-				ex(37)-&gt;Mark() = 5;WARP-&gt;Index(38)-&gt;Mark() = 7;WARP
-				-&gt;Index(39)-&gt;Mark() = 7;WARP-&gt;Index(40)-&gt;Mark() 
-				= 7;WARP-&gt;Index(41)-&gt;Mark() = 5;WARP-&gt;Index(42)-&gt
-				;Mark() = 7;WARP-&gt;Index(43)-&gt;Mark() = 7;WARP-&gt;Index
-				(44)-&gt;Mark() = 7;WARP-&gt;Index(45)-&gt;Mark() = 0;WARP-&
-				gt;Index(46)-&gt;Mark() = 0;WARP-&gt;Index(47)-&gt;Mark() = 
-				7;WARP-&gt;Index(48)-&gt;Mark() = 1;WARP-&gt;Index(49)-&gt;M
-				ark() = 7;WARP-&gt;Index(50)-&gt;Mark() = 2;WARP-&gt;Index(5
-				1)-&gt;Mark() = 7;WARP-&gt;Index(52)-&gt;Mark() = 7;WARP-&gt
-				;Index(53)-&gt;Mark() = 7;WARP-&gt;Index(54)-&gt;Mark() = 7;
-				WARP-&gt;Index(55)-&gt;Mark() = 7;WARP-&gt;Index(56)-&gt;Mar
-				k() = 5;WARP-&gt;Index(57)-&gt;Mark() = 2;WARP-&gt;Index(58)
-				-&gt;Mark() = 5;WARP-&gt;Index(59)-&gt;Mark() = 7;WARP-&gt;I
-				ndex(60)-&gt;Mark() = 5;WARP-&gt;Index(61)-&gt;Mark() = 5;WA
-				RP-&gt;Index(62)-&gt;Mark() = 5;WARP-&gt;Index(63)-&gt;Mark(
-				) = 5;WARP-&gt;Index(64)-&gt;Mark() = 7;WARP-&gt;Index(65)-&
-				gt;Mark() = 7;WARP-&gt;Index(66)-&gt;Mark() = 7;WARP-&gt;Ind
-				ex(67)-&gt;Mark() = 5;WARP-&gt;Index(68)-&gt;Mark() = 7;WARP
-				-&gt;Index(69)-&gt;Mark() = 7;WARP-&gt;Index(70)-&gt;Mark() 
-				= 7;WARP-&gt;Index(71)-&gt;Mark() = 0;WARP-&gt;Index(72)-&gt
-				;Mark() = 0;WARP-&gt;Index(73)-&gt;Mark() = 7;WARP-&gt;Index
-				(74)-&gt;Mark() = 1;WARP-&gt;Index(75)-&gt;Mark() = 7;WARP-&
-				gt;Index(76)-&gt;Mark() = 2;WARP-&gt;Index(77)-&gt;Mark() = 
-				7;WARP-&gt;Index(78)-&gt;Mark() = 7;WARP-&gt;Index(79)-&gt;M
-				ark() = 7;WARP-&gt;Index(80)-&gt;Mark() = 7;WARP-&gt;Index(8
-				1)-&gt;Mark() = 7;WARP-&gt;Index(82)-&gt;Mark() = 5;WARP-&gt
-				;Index(83)-&gt;Mark() = 2;WARP-&gt;Index(84)-&gt;Mark() = 5;
-				WARP-&gt;Index(85)-&gt;Mark() = 7;WARP-&gt;Index(86)-&gt;Mar
-				k() = 5;WARP-&gt;Index(87)-&gt;Mark() = 5;WARP-&gt;Index(88)
-				-&gt;Mark() = 5;WARP-&gt;Index(89)-&gt;Mark() = 5;WARP-&gt;I
-				ndex(90)-&gt;Mark() = 7;WARP-&gt;Index(91)-&gt;Mark() = 7;WA
-				RP-&gt;Index(92)-&gt;Mark() = 7;WARP-&gt;Index(93)-&gt;Mark(
-				) = 5;WARP-&gt;Index(94)-&gt;Mark() = 7;WARP-&gt;Index(95)-&
-				gt;Mark() = 7;WARP-&gt;Index(96)-&gt;Mark() = 7;WARP-&gt;Ind
-				ex(97)-&gt;Mark() = 0;WARP-&gt;Index(98)-&gt;Mark() = 0;WARP
-				-&gt;Index(99)-&gt;Mark() = 7;WARP-&gt;Index(100)-&gt;Mark()
-				 = 1;WARP-&gt;Index(101)-&gt;Mark() = 7;WARP-&gt;Index(102)-
-				&gt;Mark() = 2;WARP-&gt;Index(103)-&gt;Mark() = 7;WARP-&gt;I
-				ndex(104)-&gt;Mark() = 7;WARP-&gt;Index(105)-&gt;Mark() = 7;
-				WARP-&gt;Index(106)-&gt;Mark() = 7;
+				) = 7;
 			</string>
 		</class>
 		<class id="Mobius.AtomicModels.San.SanEditor">

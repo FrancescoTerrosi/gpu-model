@@ -9,6 +9,7 @@
 #include "Atomic/GLOBAL_MEMORY/GLOBAL_MEMORYSAN.h"
 #include "Atomic/REGISTER_FILE/REGISTER_FILESAN.h"
 #include "Atomic/OUTPUT_MEMORY/OUTPUT_MEMORYSAN.h"
+#include "Atomic/EXEC_UNIT/EXEC_UNITSAN.h"
 
 //State variable headers
 #include "Cpp/BaseClasses/SAN/Place.h"
@@ -23,6 +24,7 @@ class GPU4RJ__PROCESSOR: public Join {
   GLOBAL_MEMORYSAN * GLOBAL_MEMORY;
   REGISTER_FILESAN * REGISTER_FILE;
   OUTPUT_MEMORYSAN * OUTPUT_MEMORY;
+  EXEC_UNITSAN * EXEC_UNIT;
   Place * INSTRUCTION_READY;
   Place * KO_READ;
   Place * MEM_OP_COMPLETE;

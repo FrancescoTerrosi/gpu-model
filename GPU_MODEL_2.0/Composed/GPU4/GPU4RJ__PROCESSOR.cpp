@@ -1,7 +1,7 @@
 #include "Composed/GPU4/GPU4RJ__PROCESSOR.h"
 char * GPU4RJ__PROCESSOR__SharedNames[] = {"INSTRUCTION_READY", "KO_READ", "MEM_OP_COMPLETE", "OK_CONTENT", "OK_READ", "READ_DRAM", "READ_GLOBAL_MEMORY", "READ_L1", "READ_L2", "READ_LOCAL_MEMORY", "READ_REGISTER_FILE", "REGISTERS_FILL", "RESULT_KO", "RESULT_OK", "SCHEDULER", "WRITE_DRAM", "WRITE_GLOBAL_MEMORY", "WRITE_L1", "WRITE_L2", "WRITE_LOCAL_MEMORY", "WRITE_OUTPUT_MEMORY", "WRITE_REGISTER_FILE"};
 
-GPU4RJ__PROCESSOR::GPU4RJ__PROCESSOR():Join("PROCESSOR", 6, 22,GPU4RJ__PROCESSOR__SharedNames) {
+GPU4RJ__PROCESSOR::GPU4RJ__PROCESSOR():Join("PROCESSOR", 7, 22,GPU4RJ__PROCESSOR__SharedNames) {
   Rep1 = new GPU4RJ__Rep1();
   ModelArray[0] = (BaseModelClass*) Rep1;
   ModelArray[0]->DefineName("Rep1");
@@ -20,6 +20,9 @@ GPU4RJ__PROCESSOR::GPU4RJ__PROCESSOR():Join("PROCESSOR", 6, 22,GPU4RJ__PROCESSOR
   OUTPUT_MEMORY = new OUTPUT_MEMORYSAN();
   ModelArray[5] = (BaseModelClass*) OUTPUT_MEMORY;
   ModelArray[5]->DefineName("OUTPUT_MEMORY");
+  EXEC_UNIT = new EXEC_UNITSAN();
+  ModelArray[6] = (BaseModelClass*) EXEC_UNIT;
+  ModelArray[6]->DefineName("EXEC_UNIT");
 
   SetupActions();
   if (AllChildrenEmpty())
@@ -33,57 +36,57 @@ GPU4RJ__PROCESSOR::GPU4RJ__PROCESSOR():Join("PROCESSOR", 6, 22,GPU4RJ__PROCESSOR
       INSTRUCTION_READY->ShareWith(getSharableSVPointer(Rep1->INSTRUCTION_READY));
       addSharingInfo(getSharableSVPointer(Rep1->INSTRUCTION_READY), INSTRUCTION_READY, Rep1);
     }
-    if (COMPUTE_UNIT->NumStateVariables > 0) {
-      INSTRUCTION_READY->ShareWith(getSharableSVPointer(COMPUTE_UNIT->INSTRUCTION_READY));
-      addSharingInfo(getSharableSVPointer(COMPUTE_UNIT->INSTRUCTION_READY), INSTRUCTION_READY, COMPUTE_UNIT);
+    if (EXEC_UNIT->NumStateVariables > 0) {
+      INSTRUCTION_READY->ShareWith(getSharableSVPointer(EXEC_UNIT->INSTRUCTION_READY));
+      addSharingInfo(getSharableSVPointer(EXEC_UNIT->INSTRUCTION_READY), INSTRUCTION_READY, EXEC_UNIT);
     }
 
     //Shared variable 1
     KO_READ = new Place("KO_READ");
     addSharedPtr(KO_READ, "KO_READ" );
-    if (COMPUTE_UNIT->NumStateVariables > 0) {
-      KO_READ->ShareWith(getSharableSVPointer(COMPUTE_UNIT->KO_READ));
-      addSharingInfo(getSharableSVPointer(COMPUTE_UNIT->KO_READ), KO_READ, COMPUTE_UNIT);
-    }
     if (REGISTER_FILE->NumStateVariables > 0) {
       KO_READ->ShareWith(getSharableSVPointer(REGISTER_FILE->KO_READ));
       addSharingInfo(getSharableSVPointer(REGISTER_FILE->KO_READ), KO_READ, REGISTER_FILE);
+    }
+    if (EXEC_UNIT->NumStateVariables > 0) {
+      KO_READ->ShareWith(getSharableSVPointer(EXEC_UNIT->KO_READ));
+      addSharingInfo(getSharableSVPointer(EXEC_UNIT->KO_READ), KO_READ, EXEC_UNIT);
     }
 
     //Shared variable 2
     MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE");
     addSharedPtr(MEM_OP_COMPLETE, "MEM_OP_COMPLETE" );
-    if (COMPUTE_UNIT->NumStateVariables > 0) {
-      MEM_OP_COMPLETE->ShareWith(getSharableSVPointer(COMPUTE_UNIT->MEM_OP_COMPLETE));
-      addSharingInfo(getSharableSVPointer(COMPUTE_UNIT->MEM_OP_COMPLETE), MEM_OP_COMPLETE, COMPUTE_UNIT);
-    }
     if (REGISTER_FILE->NumStateVariables > 0) {
       MEM_OP_COMPLETE->ShareWith(getSharableSVPointer(REGISTER_FILE->MEM_OP_COMPLETE));
       addSharingInfo(getSharableSVPointer(REGISTER_FILE->MEM_OP_COMPLETE), MEM_OP_COMPLETE, REGISTER_FILE);
+    }
+    if (EXEC_UNIT->NumStateVariables > 0) {
+      MEM_OP_COMPLETE->ShareWith(getSharableSVPointer(EXEC_UNIT->MEM_OP_COMPLETE));
+      addSharingInfo(getSharableSVPointer(EXEC_UNIT->MEM_OP_COMPLETE), MEM_OP_COMPLETE, EXEC_UNIT);
     }
 
     //Shared variable 3
     OK_CONTENT = new Place("OK_CONTENT");
     addSharedPtr(OK_CONTENT, "OK_CONTENT" );
-    if (COMPUTE_UNIT->NumStateVariables > 0) {
-      OK_CONTENT->ShareWith(getSharableSVPointer(COMPUTE_UNIT->OK_CONTENT));
-      addSharingInfo(getSharableSVPointer(COMPUTE_UNIT->OK_CONTENT), OK_CONTENT, COMPUTE_UNIT);
-    }
     if (REGISTER_FILE->NumStateVariables > 0) {
       OK_CONTENT->ShareWith(getSharableSVPointer(REGISTER_FILE->OK_CONTENT));
       addSharingInfo(getSharableSVPointer(REGISTER_FILE->OK_CONTENT), OK_CONTENT, REGISTER_FILE);
+    }
+    if (EXEC_UNIT->NumStateVariables > 0) {
+      OK_CONTENT->ShareWith(getSharableSVPointer(EXEC_UNIT->OK_CONTENT));
+      addSharingInfo(getSharableSVPointer(EXEC_UNIT->OK_CONTENT), OK_CONTENT, EXEC_UNIT);
     }
 
     //Shared variable 4
     OK_READ = new Place("OK_READ");
     addSharedPtr(OK_READ, "OK_READ" );
-    if (COMPUTE_UNIT->NumStateVariables > 0) {
-      OK_READ->ShareWith(getSharableSVPointer(COMPUTE_UNIT->OK_READ));
-      addSharingInfo(getSharableSVPointer(COMPUTE_UNIT->OK_READ), OK_READ, COMPUTE_UNIT);
-    }
     if (REGISTER_FILE->NumStateVariables > 0) {
       OK_READ->ShareWith(getSharableSVPointer(REGISTER_FILE->OK_READ));
       addSharingInfo(getSharableSVPointer(REGISTER_FILE->OK_READ), OK_READ, REGISTER_FILE);
+    }
+    if (EXEC_UNIT->NumStateVariables > 0) {
+      OK_READ->ShareWith(getSharableSVPointer(EXEC_UNIT->OK_READ));
+      addSharingInfo(getSharableSVPointer(EXEC_UNIT->OK_READ), OK_READ, EXEC_UNIT);
     }
 
     //Shared variable 5
@@ -165,49 +168,49 @@ GPU4RJ__PROCESSOR::GPU4RJ__PROCESSOR():Join("PROCESSOR", 6, 22,GPU4RJ__PROCESSOR
       REGISTERS_FILL->ShareWith(getSharableSVPointer(Rep1->REGISTERS_FILL));
       addSharingInfo(getSharableSVPointer(Rep1->REGISTERS_FILL), REGISTERS_FILL, Rep1);
     }
-    if (COMPUTE_UNIT->NumStateVariables > 0) {
-      REGISTERS_FILL->ShareWith(getSharableSVPointer(COMPUTE_UNIT->REGISTERS_FILL));
-      addSharingInfo(getSharableSVPointer(COMPUTE_UNIT->REGISTERS_FILL), REGISTERS_FILL, COMPUTE_UNIT);
-    }
     if (REGISTER_FILE->NumStateVariables > 0) {
       REGISTERS_FILL->ShareWith(getSharableSVPointer(REGISTER_FILE->REGISTERS_FILL));
       addSharingInfo(getSharableSVPointer(REGISTER_FILE->REGISTERS_FILL), REGISTERS_FILL, REGISTER_FILE);
+    }
+    if (EXEC_UNIT->NumStateVariables > 0) {
+      REGISTERS_FILL->ShareWith(getSharableSVPointer(EXEC_UNIT->REGISTERS_FILL));
+      addSharingInfo(getSharableSVPointer(EXEC_UNIT->REGISTERS_FILL), REGISTERS_FILL, EXEC_UNIT);
     }
 
     //Shared variable 12
     RESULT_KO = new Place("RESULT_KO");
     addSharedPtr(RESULT_KO, "RESULT_KO" );
-    if (COMPUTE_UNIT->NumStateVariables > 0) {
-      RESULT_KO->ShareWith(getSharableSVPointer(COMPUTE_UNIT->RESULT_KO));
-      addSharingInfo(getSharableSVPointer(COMPUTE_UNIT->RESULT_KO), RESULT_KO, COMPUTE_UNIT);
-    }
     if (REGISTER_FILE->NumStateVariables > 0) {
       RESULT_KO->ShareWith(getSharableSVPointer(REGISTER_FILE->RESULT_KO));
       addSharingInfo(getSharableSVPointer(REGISTER_FILE->RESULT_KO), RESULT_KO, REGISTER_FILE);
+    }
+    if (EXEC_UNIT->NumStateVariables > 0) {
+      RESULT_KO->ShareWith(getSharableSVPointer(EXEC_UNIT->RESULT_KO));
+      addSharingInfo(getSharableSVPointer(EXEC_UNIT->RESULT_KO), RESULT_KO, EXEC_UNIT);
     }
 
     //Shared variable 13
     RESULT_OK = new Place("RESULT_OK");
     addSharedPtr(RESULT_OK, "RESULT_OK" );
-    if (COMPUTE_UNIT->NumStateVariables > 0) {
-      RESULT_OK->ShareWith(getSharableSVPointer(COMPUTE_UNIT->RESULT_OK));
-      addSharingInfo(getSharableSVPointer(COMPUTE_UNIT->RESULT_OK), RESULT_OK, COMPUTE_UNIT);
-    }
     if (REGISTER_FILE->NumStateVariables > 0) {
       RESULT_OK->ShareWith(getSharableSVPointer(REGISTER_FILE->RESULT_OK));
       addSharingInfo(getSharableSVPointer(REGISTER_FILE->RESULT_OK), RESULT_OK, REGISTER_FILE);
+    }
+    if (EXEC_UNIT->NumStateVariables > 0) {
+      RESULT_OK->ShareWith(getSharableSVPointer(EXEC_UNIT->RESULT_OK));
+      addSharingInfo(getSharableSVPointer(EXEC_UNIT->RESULT_OK), RESULT_OK, EXEC_UNIT);
     }
 
     //Shared variable 14
     SCHEDULER = new Place("SCHEDULER");
     addSharedPtr(SCHEDULER, "SCHEDULER" );
-    if (COMPUTE_UNIT->NumStateVariables > 0) {
-      SCHEDULER->ShareWith(getSharableSVPointer(COMPUTE_UNIT->SCHEDULER));
-      addSharingInfo(getSharableSVPointer(COMPUTE_UNIT->SCHEDULER), SCHEDULER, COMPUTE_UNIT);
-    }
     if (Rep1->NumStateVariables > 0) {
       SCHEDULER->ShareWith(getSharableSVPointer(Rep1->SCHEDULER));
       addSharingInfo(getSharableSVPointer(Rep1->SCHEDULER), SCHEDULER, Rep1);
+    }
+    if (EXEC_UNIT->NumStateVariables > 0) {
+      SCHEDULER->ShareWith(getSharableSVPointer(EXEC_UNIT->SCHEDULER));
+      addSharingInfo(getSharableSVPointer(EXEC_UNIT->SCHEDULER), SCHEDULER, EXEC_UNIT);
     }
 
     //Shared variable 15
@@ -334,4 +337,5 @@ GPU4RJ__PROCESSOR::~GPU4RJ__PROCESSOR() {
   delete GLOBAL_MEMORY;
   delete REGISTER_FILE;
   delete OUTPUT_MEMORY;
+  delete EXEC_UNIT;
 }

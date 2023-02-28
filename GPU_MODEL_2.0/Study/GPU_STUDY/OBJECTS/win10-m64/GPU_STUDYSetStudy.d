@@ -1,6 +1,6 @@
 OBJECTS/win10-m64/GPU_STUDYSetStudy.o: GPU_STUDYSetStudy.cpp \
  ../../Study/GPU_STUDY/GPU_STUDYSetStudy.h \
- ../../Reward/GPU4/GPU4PVNodes.h \
+ ../../Reward/GPU5/GPU5PVNodes.h \
  c:/Mobius-2.5/Cpp/Performance_Variables/PerformanceVariableNode.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/ImpulseNodeClass.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/../BaseClasses/BaseModelClass.h \
@@ -56,7 +56,7 @@ OBJECTS/win10-m64/GPU_STUDYSetStudy.o: GPU_STUDYSetStudy.cpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/../BaseClasses/debug.h \
  c:/Mobius-2.5/Cpp/Performance_Variables/VarModelPairClass.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/ActionModelPairClass.hpp \
- ../../Composed/GPU4/GPU4RJ__Rep1.h c:/Mobius-2.5/Cpp/Composer/Rep.h \
+ ../../Composed/GPU5/GPU5RJ__Rep1.h c:/Mobius-2.5/Cpp/Composer/Rep.h \
  c:/Mobius-2.5/Cpp/Composer/BaseComposerClass.h \
  c:/Mobius-2.5/Cpp/Composer/../BaseClasses/primes.h \
  c:/Mobius-2.5/Cpp/Composer/AllStateVariableTypes.h \
@@ -89,20 +89,17 @@ OBJECTS/win10-m64/GPU_STUDYSetStudy.o: GPU_STUDYSetStudy.cpp \
  c:/Mobius-2.5/Cpp/BaseClasses/SAN/../primes.h \
  c:/Mobius-2.5/Cpp/BaseClasses/SAN/Place.h \
  c:/Mobius-2.5/Cpp/BaseClasses/SAN/ExtendedPlace.h \
- ../../Composed/GPU4/GPU4RJ__PROCESSOR_REP.h \
- ../../Composed/GPU4/GPU4RJ__PROCESSOR.h \
+ ../../Composed/GPU5/GPU5RJ__PROCESSOR_REP.h \
+ ../../Composed/GPU5/GPU5RJ__PROCESSOR.h \
  c:/Mobius-2.5/Cpp/Composer/Join.h \
- ../../Atomic/COMPUTE_UNIT/COMPUTE_UNITSAN.h \
- ../../Atomic/LOCAL_MEMORY/LOCAL_MEMORYSAN.h \
- ../../Atomic/GLOBAL_MEMORY/GLOBAL_MEMORYSAN.h \
  ../../Atomic/REGISTER_FILE/REGISTER_FILESAN.h \
- ../../Atomic/OUTPUT_MEMORY/OUTPUT_MEMORYSAN.h \
- ../../Composed/GPU4/GPU4RJ__STREAMING_MULTIPROCESSOR.h \
- ../../Atomic/L1_CACHE/L1_CACHESAN.h ../../Composed/GPU4/GPU4RJ.h \
+ ../../Atomic/EXEC_UNIT/EXEC_UNITSAN.h ../../Atomic/MEMORY/MEMORYSAN.h \
+ ../../Composed/GPU5/GPU5RJ__STREAMING_MULTIPROCESSOR.h \
+ ../../Atomic/L1_CACHE/L1_CACHESAN.h ../../Composed/GPU5/GPU5RJ.h \
  ../../Atomic/DRAM/DRAMSAN.h ../../Atomic/L2_CACHE/L2_CACHESAN.h \
  c:/Mobius-2.5/Cpp/Performance_Variables/IntervalOfTime.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/IntervalOfTimeImpulse.hpp \
- ../../Reward/GPU4/GPU4PVModel.h ../../Reward/GPU4/GPU4PVNodes.h \
+ ../../Reward/GPU5/GPU5PVModel.h ../../Reward/GPU5/GPU5PVNodes.h \
  c:/Mobius-2.5/Cpp/Performance_Variables/PVModel.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/../BaseClasses/BaseGroupClass.h \
  c:/Mobius-2.5/Cpp/Performance_Variables/../BaseClasses/BaseStateVariableClass.h \

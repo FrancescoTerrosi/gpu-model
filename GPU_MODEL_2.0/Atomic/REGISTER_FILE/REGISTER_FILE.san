@@ -26,85 +26,7 @@
 			</class>
 			<string id="CustomInitialization">
 				LIVE_REGISTERS-&gt;Index(0)-&gt;Mark() = 0;LIVE_REGISTERS-&g
-				t;Index(1)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(2)-&gt;Ma
-				rk() = 1;LIVE_REGISTERS-&gt;Index(3)-&gt;Mark() = 1;LIVE_REG
-				ISTERS-&gt;Index(4)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(
-				5)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(6)-&gt;Mark() = 1
-				;LIVE_REGISTERS-&gt;Index(7)-&gt;Mark() = 1;LIVE_REGISTERS-&
-				gt;Index(8)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(9)-&gt;M
-				ark() = -1;LIVE_REGISTERS-&gt;Index(10)-&gt;Mark() = 0;LIVE_
-				REGISTERS-&gt;Index(11)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;In
-				dex(12)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(13)-&gt;Mark
-				() = -1;LIVE_REGISTERS-&gt;Index(14)-&gt;Mark() = 1;LIVE_REG
-				ISTERS-&gt;Index(15)-&gt;Mark() = -1;LIVE_REGISTERS-&gt;Inde
-				x(16)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(17)-&gt;Mark()
-				 = -3;LIVE_REGISTERS-&gt;Index(18)-&gt;Mark() = -1;LIVE_REGI
-				STERS-&gt;Index(19)-&gt;Mark() = -1;LIVE_REGISTERS-&gt;Index
-				(20)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(21)-&gt;Mark() 
-				= 1;LIVE_REGISTERS-&gt;Index(22)-&gt;Mark() = -3;LIVE_REGIST
-				ERS-&gt;Index(23)-&gt;Mark() = -2;LIVE_REGISTERS-&gt;Index(2
-				4)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(25)-&gt;Mark() = 
-				-2;LIVE_REGISTERS-&gt;Index(26)-&gt;Mark() = 0;LIVE_REGISTER
-				S-&gt;Index(27)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(28)-
-				&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(29)-&gt;Mark() = 1;L
-				IVE_REGISTERS-&gt;Index(30)-&gt;Mark() = 0;LIVE_REGISTERS-&g
-				t;Index(31)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(32)-&gt;
-				Mark() = 1;LIVE_REGISTERS-&gt;Index(33)-&gt;Mark() = 1;LIVE_
-				REGISTERS-&gt;Index(34)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;In
-				dex(35)-&gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(36)-&gt;Mar
-				k() = 0;LIVE_REGISTERS-&gt;Index(37)-&gt;Mark() = 1;LIVE_REG
-				ISTERS-&gt;Index(38)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index
-				(39)-&gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(40)-&gt;Mark()
-				 = 1;LIVE_REGISTERS-&gt;Index(41)-&gt;Mark() = -1;LIVE_REGIS
-				TERS-&gt;Index(42)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(4
-				3)-&gt;Mark() = -3;LIVE_REGISTERS-&gt;Index(44)-&gt;Mark() =
-				 -1;LIVE_REGISTERS-&gt;Index(45)-&gt;Mark() = -1;LIVE_REGIST
-				ERS-&gt;Index(46)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(47
-				)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(48)-&gt;Mark() = -
-				3;LIVE_REGISTERS-&gt;Index(49)-&gt;Mark() = -2;LIVE_REGISTER
-				S-&gt;Index(50)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(51)-
-				&gt;Mark() = -2;LIVE_REGISTERS-&gt;Index(52)-&gt;Mark() = 0;
-				LIVE_REGISTERS-&gt;Index(53)-&gt;Mark() = 0;LIVE_REGISTERS-&
-				gt;Index(54)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(55)-&gt
-				;Mark() = 1;LIVE_REGISTERS-&gt;Index(56)-&gt;Mark() = 0;LIVE
-				_REGISTERS-&gt;Index(57)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;I
-				ndex(58)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(59)-&gt;Mar
-				k() = 1;LIVE_REGISTERS-&gt;Index(60)-&gt;Mark() = 1;LIVE_REG
-				ISTERS-&gt;Index(61)-&gt;Mark() = -1;LIVE_REGISTERS-&gt;Inde
-				x(62)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(63)-&gt;Mark()
-				 = 1;LIVE_REGISTERS-&gt;Index(64)-&gt;Mark() = 1;LIVE_REGIST
-				ERS-&gt;Index(65)-&gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(6
-				6)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(67)-&gt;Mark() = 
-				-1;LIVE_REGISTERS-&gt;Index(68)-&gt;Mark() = 1;LIVE_REGISTER
-				S-&gt;Index(69)-&gt;Mark() = -3;LIVE_REGISTERS-&gt;Index(70)
-				-&gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(71)-&gt;Mark() = -
-				1;LIVE_REGISTERS-&gt;Index(72)-&gt;Mark() = 0;LIVE_REGISTERS
-				-&gt;Index(73)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(74)-&
-				gt;Mark() = -3;LIVE_REGISTERS-&gt;Index(75)-&gt;Mark() = -2;
-				LIVE_REGISTERS-&gt;Index(76)-&gt;Mark() = 0;LIVE_REGISTERS-&
-				gt;Index(77)-&gt;Mark() = -2;LIVE_REGISTERS-&gt;Index(78)-&g
-				t;Mark() = 0;LIVE_REGISTERS-&gt;Index(79)-&gt;Mark() = 0;LIV
-				E_REGISTERS-&gt;Index(80)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;
-				Index(81)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(82)-&gt;Ma
-				rk() = 0;LIVE_REGISTERS-&gt;Index(83)-&gt;Mark() = 1;LIVE_RE
-				GISTERS-&gt;Index(84)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Inde
-				x(85)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(86)-&gt;Mark()
-				 = 1;LIVE_REGISTERS-&gt;Index(87)-&gt;Mark() = -1;LIVE_REGIS
-				TERS-&gt;Index(88)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(8
-				9)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(90)-&gt;Mark() = 
-				1;LIVE_REGISTERS-&gt;Index(91)-&gt;Mark() = -1;LIVE_REGISTER
-				S-&gt;Index(92)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(93)-
-				&gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(94)-&gt;Mark() = 1;
-				LIVE_REGISTERS-&gt;Index(95)-&gt;Mark() = -3;LIVE_REGISTERS-
-				&gt;Index(96)-&gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(97)-&
-				gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(98)-&gt;Mark() = 0;L
-				IVE_REGISTERS-&gt;Index(99)-&gt;Mark() = 1;LIVE_REGISTERS-&g
-				t;Index(100)-&gt;Mark() = -3;LIVE_REGISTERS-&gt;Index(101)-&
-				gt;Mark() = -2;LIVE_REGISTERS-&gt;Index(102)-&gt;Mark() = 0;
-				LIVE_REGISTERS-&gt;Index(103)-&gt;Mark() = -2;LIVE_REGISTERS
-				-&gt;Index(104)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(105)
-				-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(106)-&gt;Mark() = 0
-				;
+				t;Index(1)-&gt;Mark() = 0;
 			</string>
 		</class>
 		<class id="Mobius.AtomicModels.San.SanEditor">
@@ -418,7 +340,8 @@
 						</string>
 						<string id="Function">
 							OK_CONTENT-&gt;Mark() += LIVE_REGISTERS-&gt;Index(indexes-&g
-							t;Mark())-&gt;Mark();\nREGISTERS_FILL-&gt;Mark() = 0;
+							t;Mark())-&gt;Mark();\nREGISTERS_FILL-&gt;Mark() = 0;\nindex
+							es-&gt;Mark()++;
 						</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.InstantaneousActivityPanelObject">

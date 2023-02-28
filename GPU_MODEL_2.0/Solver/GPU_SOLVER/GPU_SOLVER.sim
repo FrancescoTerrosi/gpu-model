@@ -28,7 +28,7 @@
 			<boolean id="MaximizeProcessorUsage">false</boolean>
 			<int id="ProcessorsPerExperiment">1</int>
 			<int id="NumMachines">1</int>
-			<string id="MachineName">LAPTOP-RCC49NJA</string>
+			<string id="MachineName">DESKTOP-3AHUC0F</string>
 			<int id="NumGroups">0</int>
 			<string id="StudyName">GPU_STUDY</string>
 			<boolean id="TerminatingSimulation">true</boolean>

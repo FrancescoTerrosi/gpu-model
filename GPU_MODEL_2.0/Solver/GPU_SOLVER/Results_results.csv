@@ -1,5 +1,5 @@
 Simulator Results
-Date:, Wed Nov 30 16:09:29 BRT 2022
+Date:, Tue Feb 28 18:41:39 CET 2023
 
 Simulator Configuration
 Simulation Type:,Terminating
@@ -20,45 +20,23 @@ Jackknife Variance:,On
 Processors Per Experiment:,1
 Maximize Processor Usage:,false
 Processors Selected for Simulation:
-LAPTOP-RCC49NJA,amd64
+DESKTOP-3AHUC0F,amd64
 
 Experiment 1
-Experiment 1,Start Time:,Wed Nov 30 16:09:26 BRT 2022
-Experiment 1,Finish Time:,Wed Nov 30 16:09:29 BRT 2022
-Experiment 1,Elapsed Running Time:,2.828
-Experiment 1,Total CPU Time:,0.562
+Experiment 1,Start Time:,Tue Feb 28 18:41:37 CET 2023
+Experiment 1,Finish Time:,Tue Feb 28 18:41:39 CET 2023
+Experiment 1,Elapsed Running Time:,1.551
+Experiment 1,Total CPU Time:,0.002
 Experiment 1,Batches Completed:,1
 Experiment 1,Experiment Name:,Experiment 1
 Experiment 1,Global Variable Settings:
-Experiment 1,float,dram_global_read_prob,0.067
-Experiment 1,float,dram_global_write_prob,0.0
-Experiment 1,float,dram_local_read_prob,0.0
-Experiment 1,float,dram_local_write_prob,0.0
 Experiment 1,short,end,100
-Experiment 1,float,l1_global_read_prob,0.99
-Experiment 1,float,l1_global_write_prob,0.93
-Experiment 1,float,l1_local_read_prob,0.0
-Experiment 1,float,l1_local_write_prob,0.0
-Experiment 1,float,l2_global_read_prob,0.0
-Experiment 1,float,l2_global_write_prob,0.07
-Experiment 1,float,l2_local_read_prob,0.033
-Experiment 1,float,l2_local_write_prob,0.0
 Experiment 1,short,nprocessors,1.0
 Experiment 1,short,nwarps,1.0
 Experiment 1,short,register_count_index,0
-Experiment 1,short,size,3781
+Experiment 1,short,size,2
 Experiment 1, Results
 Experiment 1,Result Type,Name,Start Time,End Time,Mean,,Confidence Interval,Failed To Converge
-Experiment 1,Mean,warp,0.0,100,3.7810000000E03 ,+/-,0.0000000000E00 
-Experiment 1,Mean,read_l1,0.0,100,2.0000000000E00 ,+/-,0.0000000000E00 
-Experiment 1,Mean,write_l1,0.0,100,1.0000000000E00 ,+/-,0.0000000000E00 
-Experiment 1,Mean,read_l2,0.0,100,1.0000000000E00 ,+/-,0.0000000000E00 
-Experiment 1,Mean,write_l2,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
-Experiment 1,Mean,read_dram,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
-Experiment 1,Mean,write_dram,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
-Experiment 1,Mean,clock_cycles,0.0,100,8.6800000000E02 ,+/-,0.0000000000E00 
-Experiment 1,Mean,write_reg,0.0,100,1.3000000000E01 ,+/-,0.0000000000E00 
-Experiment 1,Mean,read_reg,0.0,100,2.0000000000E00 ,+/-,0.0000000000E00 
-Experiment 1,Mean,ciccio,0.0,100,3.7370000000E03 ,+/-,0.0000000000E00 
+Experiment 1,Mean,warp,0.0,100,2.0000000000E00 ,+/-,0.0000000000E00 
 
 <END_MOBIUS_RESULTS>

@@ -83,5 +83,6 @@ OBJECTS/win10-m64/GPU4RJ.o: GPU4RJ.cpp ../../Composed/GPU4/GPU4RJ.h \
  ../../Atomic/GLOBAL_MEMORY/GLOBAL_MEMORYSAN.h \
  ../../Atomic/REGISTER_FILE/REGISTER_FILESAN.h \
  ../../Atomic/OUTPUT_MEMORY/OUTPUT_MEMORYSAN.h \
+ ../../Atomic/EXEC_UNIT/EXEC_UNITSAN.h \
  ../../Atomic/L1_CACHE/L1_CACHESAN.h ../../Atomic/DRAM/DRAMSAN.h \
  ../../Atomic/L2_CACHE/L2_CACHESAN.h
