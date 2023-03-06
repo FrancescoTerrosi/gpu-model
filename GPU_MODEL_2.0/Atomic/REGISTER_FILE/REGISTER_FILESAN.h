@@ -98,8 +98,8 @@ public:
 class Instantaneous_Activity23Activity:public Activity {
 public:
 
-  Place* KO_CONTENT;
-  short* KO_CONTENT_Mobius_Mark;
+  Place* KO_CONTENT_TEMP;
+  short* KO_CONTENT_TEMP_Mobius_Mark;
   Place* MEM_OP_COMPLETE;
   short* MEM_OP_COMPLETE_Mobius_Mark;
 
@@ -120,8 +120,8 @@ public:
 class Instantaneous_Activity12Activity:public Activity {
 public:
 
-  Place* OK_CONTENT;
-  short* OK_CONTENT_Mobius_Mark;
+  Place* OK_CONTENT_TEMP;
+  short* OK_CONTENT_TEMP_Mobius_Mark;
   Place* MEM_OP_COMPLETE;
   short* MEM_OP_COMPLETE_Mobius_Mark;
 
@@ -146,6 +146,8 @@ public:
   short* WRITE_REGISTER_FILE_Mobius_Mark;
   Place* RESULT_KO;
   short* RESULT_KO_Mobius_Mark;
+  Place* KO_CONTENT_TEMP;
+  short* KO_CONTENT_TEMP_Mobius_Mark;
   Place* KO_CONTENT;
   short* KO_CONTENT_Mobius_Mark;
 
@@ -170,6 +172,8 @@ public:
   short* WRITE_REGISTER_FILE_Mobius_Mark;
   Place* RESULT_OK;
   short* RESULT_OK_Mobius_Mark;
+  Place* OK_CONTENT_TEMP;
+  short* OK_CONTENT_TEMP_Mobius_Mark;
   Place* OK_CONTENT;
   short* OK_CONTENT_Mobius_Mark;
 
@@ -289,6 +293,8 @@ public:
   Place* OK_CONTENT;
   short* OK_CONTENT_Mobius_Mark;
   registers_counter* LIVE_REGISTERS;
+  Place* OK_CONTENT_TEMP;
+  short* OK_CONTENT_TEMP_Mobius_Mark;
 
   double* TheDistributionParameters;
   Instantaneous_Activity3Activity();
@@ -305,9 +311,9 @@ public:
 }; // Instantaneous_Activity3ActivityActivity
 
   //List of user-specified place names
-  Place* KO_CONTENT;
+  Place* KO_CONTENT_TEMP;
   Place* MEM_OP_COMPLETE;
-  Place* OK_CONTENT;
+  Place* OK_CONTENT_TEMP;
   Place* WRITE_REGISTER_FILE;
   Place* RESULT_KO;
   Place* RESULT_OK;
@@ -318,6 +324,8 @@ public:
   Place* OK_READ;
   Place* indexes;
   Place* REGISTERS_FILL;
+  Place* OK_CONTENT;
+  Place* KO_CONTENT;
   registers_counter* LIVE_REGISTERS;
 
   // Create instances of all actvities

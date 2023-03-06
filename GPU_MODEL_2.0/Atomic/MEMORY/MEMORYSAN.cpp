@@ -109,7 +109,7 @@ MEMORYSAN::MEMORYSAN(){
   int AffectArcs[33][2]={ 
     {5,0}, {12,0}, {3,0}, {4,0}, {10,0}, {3,1}, {0,1}, {3,2}, 
     {1,2}, {3,3}, {2,3}, {4,4}, {0,4}, {4,5}, {1,5}, {4,6}, {2,6}, 
-    {6,7}, {5,7}, {13,7}, {11,7}, {5,8}, {7,8}, {5,9}, {8,9}, 
+    {6,7}, {13,7}, {5,7}, {11,7}, {5,8}, {7,8}, {5,9}, {8,9}, 
     {5,10}, {9,10}, {6,11}, {7,11}, {6,12}, {8,12}, {6,13}, {9,13}
   };
   for(int n=0;n<33;n++) {
@@ -227,23 +227,28 @@ int MEMORYSAN::PERFORM_READActivity::Rank(){
 }
 
 BaseActionClass* MEMORYSAN::PERFORM_READActivity::Fire(){
-  WRITE_LOCAL->Mark()++;
-WRITE_LOCAL->Mark()--;
+  WRITE_LOCAL->Mark()--;
+WRITE_LOCAL->Mark()++;
   switch (READ->Mark()) {
 
-	case 1:
+	case 0:
 		READ_LOCAL->Mark()++;
 	break;
 
-	case 3:
+	case 2:
 		READ_GLOBAL->Mark()++;
 	break;
 
-	case 5:
+	case 4:
 		READ_REGISTER_FILE->Mark()++;
 	break;
 
+	default:
+	break;
+
 }
+
+READ->Mark() = -1;
   return this;
 }
 
@@ -314,7 +319,7 @@ bool MEMORYSAN::LOCAL_READ_FROMActivity_case2::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_READ_FROMActivity_case2::Weight(){ 
-  return 1;
+  return 0;
 }
 
 bool MEMORYSAN::LOCAL_READ_FROMActivity_case2::ReactivationPredicate(){ 
@@ -362,7 +367,7 @@ bool MEMORYSAN::LOCAL_READ_FROMActivity_case3::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_READ_FROMActivity_case3::Weight(){ 
-  return 1;
+  return 0;
 }
 
 bool MEMORYSAN::LOCAL_READ_FROMActivity_case3::ReactivationPredicate(){ 
@@ -410,7 +415,7 @@ bool MEMORYSAN::GLOBAL_READ_FROMActivity_case1::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_READ_FROMActivity_case1::Weight(){ 
-  return 1;
+  return 1/3;
 }
 
 bool MEMORYSAN::GLOBAL_READ_FROMActivity_case1::ReactivationPredicate(){ 
@@ -458,7 +463,7 @@ bool MEMORYSAN::GLOBAL_READ_FROMActivity_case2::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_READ_FROMActivity_case2::Weight(){ 
-  return 1;
+  return 1/3;
 }
 
 bool MEMORYSAN::GLOBAL_READ_FROMActivity_case2::ReactivationPredicate(){ 
@@ -506,7 +511,7 @@ bool MEMORYSAN::GLOBAL_READ_FROMActivity_case3::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_READ_FROMActivity_case3::Weight(){ 
-  return 1;
+  return 1/3;
 }
 
 bool MEMORYSAN::GLOBAL_READ_FROMActivity_case3::ReactivationPredicate(){ 
@@ -581,20 +586,26 @@ int MEMORYSAN::PERFORM_WRITEActivity::Rank(){
 
 BaseActionClass* MEMORYSAN::PERFORM_WRITEActivity::Fire(){
   WRITE_GLOBAL->Mark()++;
-WRITE_LOCAL->Mark()++;
+WRITE_GLOBAL->Mark()--;
   switch (WRITE->Mark()) {
-	case 0:
+
+	case 1:
 		WRITE_LOCAL->Mark()++;
 	break;
 
-	case 2:
+	case 3:
 		WRITE_GLOBAL->Mark()++;
 	break;
 
-	case 4:
+	case 5:
 		WRITE_REGISTER_FILE->Mark()++;
 	break;
+
+	deafult:
+	break;
 }
+
+WRITE->Mark() = -1;
   return this;
 }
 
@@ -617,7 +628,7 @@ bool MEMORYSAN::LOCAL_WRITE_TOActivity_case1::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_WRITE_TOActivity_case1::Weight(){ 
-  return 1;
+  return 1/3;
 }
 
 bool MEMORYSAN::LOCAL_WRITE_TOActivity_case1::ReactivationPredicate(){ 
@@ -665,7 +676,7 @@ bool MEMORYSAN::LOCAL_WRITE_TOActivity_case2::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_WRITE_TOActivity_case2::Weight(){ 
-  return 1;
+  return 1/3;
 }
 
 bool MEMORYSAN::LOCAL_WRITE_TOActivity_case2::ReactivationPredicate(){ 
@@ -713,7 +724,7 @@ bool MEMORYSAN::LOCAL_WRITE_TOActivity_case3::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_WRITE_TOActivity_case3::Weight(){ 
-  return 1;
+  return 1/3;
 }
 
 bool MEMORYSAN::LOCAL_WRITE_TOActivity_case3::ReactivationPredicate(){ 
@@ -761,7 +772,7 @@ bool MEMORYSAN::GLOBAL_WRITE_TOActivity_case1::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_WRITE_TOActivity_case1::Weight(){ 
-  return 1;
+  return 1/3;
 }
 
 bool MEMORYSAN::GLOBAL_WRITE_TOActivity_case1::ReactivationPredicate(){ 
@@ -809,7 +820,7 @@ bool MEMORYSAN::GLOBAL_WRITE_TOActivity_case2::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_WRITE_TOActivity_case2::Weight(){ 
-  return 1;
+  return 1/3;
 }
 
 bool MEMORYSAN::GLOBAL_WRITE_TOActivity_case2::ReactivationPredicate(){ 
@@ -857,7 +868,7 @@ bool MEMORYSAN::GLOBAL_WRITE_TOActivity_case3::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_WRITE_TOActivity_case3::Weight(){ 
-  return 1;
+  return 1/3;
 }
 
 bool MEMORYSAN::GLOBAL_WRITE_TOActivity_case3::ReactivationPredicate(){ 

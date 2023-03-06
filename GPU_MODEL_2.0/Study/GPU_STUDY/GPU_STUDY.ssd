@@ -37,11 +37,14 @@
 						<boolean id="0">true</boolean>
 					</vector>
 					<vector id="GVNameVector">
-						<string id="0">end</string>
-						<string id="1">nprocessors</string>
-						<string id="2">nwarps</string>
-						<string id="3">register_count_index</string>
-						<string id="4">size</string>
+						<string id="0">dram_size</string>
+						<string id="1">end</string>
+						<string id="2">l1_size</string>
+						<string id="3">l2_size</string>
+						<string id="4">nprocessors</string>
+						<string id="5">nwarps</string>
+						<string id="6">register_count_index</string>
+						<string id="7">size</string>
 					</vector>
 					<vector id="GVTypeStringVector">
 						<string id="0">short</string>
@@ -49,17 +52,23 @@
 						<string id="2">short</string>
 						<string id="3">short</string>
 						<string id="4">short</string>
+						<string id="5">short</string>
+						<string id="6">short</string>
+						<string id="7">short</string>
 					</vector>
 				</class>
 				<int id="VectorLength">1</int>
-				<int id="NumOfGVs">5</int>
+				<int id="NumOfGVs">8</int>
 				<string id="Name">Experiment 1</string>
 				<vector id="GVValueVector">
 					<string id="0">100</string>
-					<string id="1">1.0</string>
-					<string id="2">1.0</string>
-					<string id="3">0</string>
-					<string id="4">2</string>
+					<string id="1">100</string>
+					<string id="2">100</string>
+					<string id="3">100</string>
+					<string id="4">1.0</string>
+					<string id="5">1.0</string>
+					<string id="6">0</string>
+					<string id="7">3781</string>
 				</vector>
 			</class>
 			<boolean id="Valid">true</boolean>

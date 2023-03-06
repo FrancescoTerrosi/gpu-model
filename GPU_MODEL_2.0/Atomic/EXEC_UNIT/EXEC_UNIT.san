@@ -34,10 +34,10 @@
 				<class id="Mobius.BaseClasses.BasePanelClass">
 					<int id="ClassVersion">2</int>
 					<point id="Size of Panel">
-						<int id="x">3804</int>
-						<int id="y">1862</int>
+						<int id="x">5944</int>
+						<int id="y">2910</int>
 					</point>
-					<double id="ZoomFactor">1.5625</double>
+					<double id="ZoomFactor">2.441406</double>
 					<boolean id="ShowGridEnabled">true</boolean>
 					<int id="ShowGridStep">10</int>
 					<boolean id="SnapGridEnabled">true</boolean>
@@ -213,25 +213,6 @@
 						<boolean id="ConstantMarking">true</boolean>
 						<int id="InitialState">0</int>
 					</class>
-					<class id="Mobius.AtomicModels.San.PlacePanelObject">
-						<int id="ClassVersion">1</int>
-						<class id="Mobius.BaseClasses.BaseVertexClass">
-							<int id="ClassVersion">3</int>
-							<class id="Mobius.BaseClasses.BasePanelObjectClass">
-								<int id="ClassVersion">5</int>
-								<string id="Name">OK_CONTENT</string>
-								<boolean id="ContainsLabel">true</boolean>
-								<boolean id="IsLabelShown">true</boolean>
-							</class>
-							<point id="CenterPoint">
-								<int id="x">440</int>
-								<int id="y">104</int>
-							</point>
-						</class>
-						<boolean id="ReadOnly">false</boolean>
-						<boolean id="ConstantMarking">true</boolean>
-						<int id="InitialState">0</int>
-					</class>
 					<class id="Mobius.AtomicModels.San.ExtendedPlacePanelObject">
 						<int id="ClassVersion">3</int>
 						<class id="Mobius.AtomicModels.San.PlacePanelObject">
@@ -271,8 +252,8 @@
 									<boolean id="IsLabelShown">true</boolean>
 								</class>
 								<point id="CenterPoint">
-									<int id="x">648</int>
-									<int id="y">200</int>
+									<int id="x">650</int>
+									<int id="y">210</int>
 								</point>
 							</class>
 							<boolean id="ReadOnly">false</boolean>
@@ -326,10 +307,7 @@
 							</point>
 						</class>
 						<boolean id="MirrorImage">false</boolean>
-						<string id="Predicate">
-							SCHEDULER-&gt;Mark() &gt; -1 &amp;&amp; REGISTERS_FILL-&gt;M
-							ark() == 0
-						</string>
+						<string id="Predicate">SCHEDULER-&gt;Mark() &gt; -1</string>
 						<string id="Function">
 							INSTRUCTION_READY-&gt;Mark()--;\nINSTRUCTION_READY-&gt;Mark(
 							)++;
@@ -352,16 +330,18 @@
 						</class>
 						<boolean id="MirrorImage">false</boolean>
 						<string id="Function">
-							switch( SCHEDULER-&gt;Mark() ) {\n\n    case 0:\n        WRI
-							TE-&gt;Mark() = 0;\n    break;\n\n    case 1:\n\tREAD-&gt;Ma
-							rk() = 1;\n    break;\n\n    case 2:\n        WRITE-&gt;Mark
-							() = 2;\n    break;\n\n    case 3:\n        READ-&gt;Mark() 
-							= 3;\n    break;\n\n    case 4:\n        WRITE-&gt;Mark() = 
-							4;\n    break;\n\n    case 5:\n        READ-&gt;Mark() = 5;\
-							n    break;\n\n    case 6:\n        ALU_INSTRUCTION_NO_DATA-
-							&gt;Mark()++;\n    break;\n\n    case 7:\n        ALU_INSTRU
-							CTION_NO_DATA-&gt;Mark()++;\n    break;\n\n    default:\n   
-							 break;\n}\nSCHEDULER-&gt;Mark() = -1;
+							switch( SCHEDULER-&gt;Mark() ) {\n\n    case 0:\n\tREAD-&gt;
+							Mark() = SCHEDULER-&gt;Mark();\n    break;\n\n    case 1:\n 
+							       WRITE-&gt;Mark() = SCHEDULER-&gt;Mark();\n    break;\
+							n\n    case 2:\n        READ-&gt;Mark() = SCHEDULER-&gt;Mark
+							();\n    break;\n\n    case 3:\n        WRITE-&gt;Mark() = S
+							CHEDULER-&gt;Mark();\n    break;\n\n    case 4:\n\tREAD-&gt;
+							Mark() = SCHEDULER-&gt;Mark();\n    break;\n\n    case 5:\n 
+							       WRITE-&gt;Mark() = SCHEDULER-&gt;Mark();\n    break;\
+							n\n    case 6:\n        ALU_INSTRUCTION_NO_DATA-&gt;Mark()++
+							;\n    break;\n\n    case 7:\n        ALU_INSTRUCTION_NO_DAT
+							A-&gt;Mark()++;\n    break;\n\n    default:\n    break;\n}\n
+							SCHEDULER-&gt;Mark() = -1;
 						</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.InstantaneousActivityPanelObject">
@@ -490,8 +470,8 @@
 							</class>
 							<int id="NumberOfCases">2</int>
 							<vector id="CaseDistributions">
-								<string id="0">return 0.5;</string>
-								<string id="1">return 0.5;</string>
+								<string id="0">return 0.9;</string>
+								<string id="1">return 0.1;</string>
 							</vector>
 						</class>
 					</class>
@@ -783,23 +763,6 @@
 							<point id="1">
 								<int id="x">259</int>
 								<int id="y">473</int>
-							</point>
-						</vector>
-					</class>
-					<class id="Mobius.BaseClasses.BaseEdgeClass">
-						<int id="ClassVersion">3</int>
-						<int id="LineType">0</int>
-						<string id="StartVertex">OK_CONTENT</string>
-						<string id="FinishVertex">Input_Gate1</string>
-						<boolean id="Arrows">false</boolean>
-						<vector id="PointList">
-							<point id="0">
-								<int id="x">438</int>
-								<int id="y">101</int>
-							</point>
-							<point id="1">
-								<int id="x">252</int>
-								<int id="y">476</int>
 							</point>
 						</vector>
 					</class>

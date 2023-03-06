@@ -22,7 +22,11 @@ DRAMSAN::DRAMSAN(){
   READ_FROMGroup.appendGroup((BaseGroupClass*) &READ_FROM_case1);
   READ_FROMGroup.appendGroup((BaseGroupClass*) &READ_FROM_case2);
 
-  Activity* InitialActionList[8]={
+  Instantaneous_Activity3Group.initialize(2, "Instantaneous_Activity3Group");
+  Instantaneous_Activity3Group.appendGroup((BaseGroupClass*) &Instantaneous_Activity3_case1);
+  Instantaneous_Activity3Group.appendGroup((BaseGroupClass*) &Instantaneous_Activity3_case2);
+
+  Activity* InitialActionList[10]={
     &Instantaneous_Activity23, //0
     &WRITE_WITH_KO_DATA, //1
     &Instantaneous_Activity12, //2
@@ -30,22 +34,25 @@ DRAMSAN::DRAMSAN(){
     &Instantaneous_Activity2, //4
     &READ_FROM_case1, //5
     &READ_FROM_case2, //6
-    &Instantaneous_Activity1  // 7
+    &Instantaneous_Activity1, //7
+    &Instantaneous_Activity3_case1, //8
+    &Instantaneous_Activity3_case2  // 9
   };
 
-  BaseGroupClass* InitialGroupList[7]={
+  BaseGroupClass* InitialGroupList[8]={
     (BaseGroupClass*) &(Instantaneous_Activity23), 
     (BaseGroupClass*) &(WRITE_WITH_KO_DATA), 
     (BaseGroupClass*) &(Instantaneous_Activity12), 
     (BaseGroupClass*) &(WRITE_WITH_OK_DATA), 
     (BaseGroupClass*) &(Instantaneous_Activity2), 
     (BaseGroupClass*) &(READ_FROMGroup), 
-    (BaseGroupClass*) &(Instantaneous_Activity1)
+    (BaseGroupClass*) &(Instantaneous_Activity1), 
+    (BaseGroupClass*) &(Instantaneous_Activity3Group)
   };
 
-  KO_CONTENT = new Place("KO_CONTENT" ,0);
+  KO_CONTENT_TEMP = new Place("KO_CONTENT_TEMP" ,0);
   MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE" ,0);
-  OK_CONTENT = new Place("OK_CONTENT" ,0);
+  OK_CONTENT_TEMP = new Place("OK_CONTENT_TEMP" ,0);
   WRITE_DRAM = new Place("WRITE_DRAM" ,0);
   RESULT_OK = new Place("RESULT_OK" ,10000);
   RESULT_KO = new Place("RESULT_KO" ,10000);
@@ -54,10 +61,13 @@ DRAMSAN::DRAMSAN(){
   READ_DRAM = new Place("READ_DRAM" ,0);
   OK_READ = new Place("OK_READ" ,0);
   MEMORY_OK = new Place("MEMORY_OK" ,0);
-  BaseStateVariableClass* InitialPlaces[11]={
-    KO_CONTENT,  // 0
+  OK_CONTENT = new Place("OK_CONTENT" ,0);
+  KO_CONTENT = new Place("KO_CONTENT" ,0);
+  REPLACE_CONTENT = new Place("REPLACE_CONTENT" ,0);
+  BaseStateVariableClass* InitialPlaces[14]={
+    KO_CONTENT_TEMP,  // 0
     MEM_OP_COMPLETE,  // 1
-    OK_CONTENT,  // 2
+    OK_CONTENT_TEMP,  // 2
     WRITE_DRAM,  // 3
     RESULT_OK,  // 4
     RESULT_KO,  // 5
@@ -65,37 +75,41 @@ DRAMSAN::DRAMSAN(){
     MEMORY_KO,  // 7
     READ_DRAM,  // 8
     OK_READ,  // 9
-    MEMORY_OK   // 10
+    MEMORY_OK,  // 10
+    OK_CONTENT,  // 11
+    KO_CONTENT,  // 12
+    REPLACE_CONTENT   // 13
   };
   BaseStateVariableClass* InitialROPlaces[0]={
   };
-  initializeSANModelNow("DRAM", 11, InitialPlaces, 
+  initializeSANModelNow("DRAM", 14, InitialPlaces, 
                         0, InitialROPlaces, 
-                        8, InitialActionList, 7, InitialGroupList);
+                        10, InitialActionList, 8, InitialGroupList);
 
 
   assignPlacesToActivitiesInst();
   assignPlacesToActivitiesTimed();
 
-  int AffectArcs[20][2]={ 
-    {0,0}, {1,0}, {3,1}, {5,1}, {0,1}, {2,2}, {1,2}, {3,3}, {4,3}, 
-    {2,3}, {7,4}, {1,4}, {6,4}, {8,5}, {10,5}, {8,6}, {7,6}, 
-    {10,7}, {1,7}, {9,7}
+  int AffectArcs[30][2]={ 
+    {0,0}, {1,0}, {3,1}, {5,1}, {0,1}, {12,1}, {2,2}, {1,2}, 
+    {3,3}, {4,3}, {2,3}, {11,3}, {7,4}, {1,4}, {6,4}, {8,5}, 
+    {10,5}, {8,6}, {7,6}, {10,7}, {1,7}, {9,7}, {13,8}, {11,8}, 
+    {2,8}, {12,8}, {13,9}, {12,9}, {0,9}, {11,9}
   };
-  for(int n=0;n<20;n++) {
+  for(int n=0;n<30;n++) {
     AddAffectArc(InitialPlaces[AffectArcs[n][0]],
                  InitialActionList[AffectArcs[n][1]]);
   }
-  int EnableArcs[10][2]={ 
+  int EnableArcs[12][2]={ 
     {0,0}, {3,1}, {5,1}, {2,2}, {3,3}, {4,3}, {7,4}, {8,5}, {8,6}, 
-    {10,7}
+    {10,7}, {13,8}, {13,9}
   };
-  for(int n=0;n<10;n++) {
+  for(int n=0;n<12;n++) {
     AddEnableArc(InitialPlaces[EnableArcs[n][0]],
                  InitialActionList[EnableArcs[n][1]]);
   }
 
-  for(int n=0;n<8;n++) {
+  for(int n=0;n<10;n++) {
     InitialActionList[n]->LinkVariables();
   }
   CustomInitialization();
@@ -111,16 +125,18 @@ DRAMSAN::~DRAMSAN(){
 };
 
 void DRAMSAN::assignPlacesToActivitiesInst(){
-  Instantaneous_Activity23.KO_CONTENT = (Place*) LocalStateVariables[0];
+  Instantaneous_Activity23.KO_CONTENT_TEMP = (Place*) LocalStateVariables[0];
   Instantaneous_Activity23.MEM_OP_COMPLETE = (Place*) LocalStateVariables[1];
   WRITE_WITH_KO_DATA.WRITE_DRAM = (Place*) LocalStateVariables[3];
   WRITE_WITH_KO_DATA.RESULT_KO = (Place*) LocalStateVariables[5];
-  WRITE_WITH_KO_DATA.KO_CONTENT = (Place*) LocalStateVariables[0];
-  Instantaneous_Activity12.OK_CONTENT = (Place*) LocalStateVariables[2];
+  WRITE_WITH_KO_DATA.KO_CONTENT_TEMP = (Place*) LocalStateVariables[0];
+  WRITE_WITH_KO_DATA.KO_CONTENT = (Place*) LocalStateVariables[12];
+  Instantaneous_Activity12.OK_CONTENT_TEMP = (Place*) LocalStateVariables[2];
   Instantaneous_Activity12.MEM_OP_COMPLETE = (Place*) LocalStateVariables[1];
   WRITE_WITH_OK_DATA.WRITE_DRAM = (Place*) LocalStateVariables[3];
   WRITE_WITH_OK_DATA.RESULT_OK = (Place*) LocalStateVariables[4];
-  WRITE_WITH_OK_DATA.OK_CONTENT = (Place*) LocalStateVariables[2];
+  WRITE_WITH_OK_DATA.OK_CONTENT_TEMP = (Place*) LocalStateVariables[2];
+  WRITE_WITH_OK_DATA.OK_CONTENT = (Place*) LocalStateVariables[11];
   Instantaneous_Activity2.MEMORY_KO = (Place*) LocalStateVariables[7];
   Instantaneous_Activity2.MEM_OP_COMPLETE = (Place*) LocalStateVariables[1];
   Instantaneous_Activity2.KO_READ = (Place*) LocalStateVariables[6];
@@ -131,6 +147,14 @@ void DRAMSAN::assignPlacesToActivitiesInst(){
   Instantaneous_Activity1.MEMORY_OK = (Place*) LocalStateVariables[10];
   Instantaneous_Activity1.MEM_OP_COMPLETE = (Place*) LocalStateVariables[1];
   Instantaneous_Activity1.OK_READ = (Place*) LocalStateVariables[9];
+  Instantaneous_Activity3_case1.REPLACE_CONTENT = (Place*) LocalStateVariables[13];
+  Instantaneous_Activity3_case1.OK_CONTENT = (Place*) LocalStateVariables[11];
+  Instantaneous_Activity3_case1.OK_CONTENT_TEMP = (Place*) LocalStateVariables[2];
+  Instantaneous_Activity3_case1.KO_CONTENT = (Place*) LocalStateVariables[12];
+  Instantaneous_Activity3_case2.REPLACE_CONTENT = (Place*) LocalStateVariables[13];
+  Instantaneous_Activity3_case2.KO_CONTENT = (Place*) LocalStateVariables[12];
+  Instantaneous_Activity3_case2.KO_CONTENT_TEMP = (Place*) LocalStateVariables[0];
+  Instantaneous_Activity3_case2.OK_CONTENT = (Place*) LocalStateVariables[11];
 }
 void DRAMSAN::assignPlacesToActivitiesTimed(){
 }
@@ -146,13 +170,13 @@ DRAMSAN::Instantaneous_Activity23Activity::Instantaneous_Activity23Activity(){
 }
 
 void DRAMSAN::Instantaneous_Activity23Activity::LinkVariables(){
-  KO_CONTENT->Register(&KO_CONTENT_Mobius_Mark);
+  KO_CONTENT_TEMP->Register(&KO_CONTENT_TEMP_Mobius_Mark);
   MEM_OP_COMPLETE->Register(&MEM_OP_COMPLETE_Mobius_Mark);
 }
 
 bool DRAMSAN::Instantaneous_Activity23Activity::Enabled(){
   OldEnabled=NewEnabled;
-  NewEnabled=(((*(KO_CONTENT_Mobius_Mark)) >=1));
+  NewEnabled=(((*(KO_CONTENT_TEMP_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
@@ -181,7 +205,7 @@ int DRAMSAN::Instantaneous_Activity23Activity::Rank(){
 }
 
 BaseActionClass* DRAMSAN::Instantaneous_Activity23Activity::Fire(){
-  (*(KO_CONTENT_Mobius_Mark))--;
+  (*(KO_CONTENT_TEMP_Mobius_Mark))--;
   (*(MEM_OP_COMPLETE_Mobius_Mark))++;
   return this;
 }
@@ -190,12 +214,13 @@ BaseActionClass* DRAMSAN::Instantaneous_Activity23Activity::Fire(){
 
 
 DRAMSAN::WRITE_WITH_KO_DATAActivity::WRITE_WITH_KO_DATAActivity(){
-  ActivityInitialize("WRITE_WITH_KO_DATA",1,Instantaneous , RaceEnabled, 3,2, false);
+  ActivityInitialize("WRITE_WITH_KO_DATA",1,Instantaneous , RaceEnabled, 4,2, false);
 }
 
 void DRAMSAN::WRITE_WITH_KO_DATAActivity::LinkVariables(){
   WRITE_DRAM->Register(&WRITE_DRAM_Mobius_Mark);
   RESULT_KO->Register(&RESULT_KO_Mobius_Mark);
+  KO_CONTENT_TEMP->Register(&KO_CONTENT_TEMP_Mobius_Mark);
   KO_CONTENT->Register(&KO_CONTENT_Mobius_Mark);
 }
 
@@ -232,7 +257,8 @@ int DRAMSAN::WRITE_WITH_KO_DATAActivity::Rank(){
 BaseActionClass* DRAMSAN::WRITE_WITH_KO_DATAActivity::Fire(){
   (*(WRITE_DRAM_Mobius_Mark))--;
   (*(RESULT_KO_Mobius_Mark))--;
-  (*(KO_CONTENT_Mobius_Mark))++;
+  KO_CONTENT_TEMP->Mark()++;
+KO_CONTENT->Mark()++;
   return this;
 }
 
@@ -244,13 +270,13 @@ DRAMSAN::Instantaneous_Activity12Activity::Instantaneous_Activity12Activity(){
 }
 
 void DRAMSAN::Instantaneous_Activity12Activity::LinkVariables(){
-  OK_CONTENT->Register(&OK_CONTENT_Mobius_Mark);
+  OK_CONTENT_TEMP->Register(&OK_CONTENT_TEMP_Mobius_Mark);
   MEM_OP_COMPLETE->Register(&MEM_OP_COMPLETE_Mobius_Mark);
 }
 
 bool DRAMSAN::Instantaneous_Activity12Activity::Enabled(){
   OldEnabled=NewEnabled;
-  NewEnabled=(((*(OK_CONTENT_Mobius_Mark)) >=1));
+  NewEnabled=(((*(OK_CONTENT_TEMP_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
@@ -279,7 +305,7 @@ int DRAMSAN::Instantaneous_Activity12Activity::Rank(){
 }
 
 BaseActionClass* DRAMSAN::Instantaneous_Activity12Activity::Fire(){
-  (*(OK_CONTENT_Mobius_Mark))--;
+  (*(OK_CONTENT_TEMP_Mobius_Mark))--;
   (*(MEM_OP_COMPLETE_Mobius_Mark))++;
   return this;
 }
@@ -288,12 +314,13 @@ BaseActionClass* DRAMSAN::Instantaneous_Activity12Activity::Fire(){
 
 
 DRAMSAN::WRITE_WITH_OK_DATAActivity::WRITE_WITH_OK_DATAActivity(){
-  ActivityInitialize("WRITE_WITH_OK_DATA",3,Instantaneous , RaceEnabled, 3,2, false);
+  ActivityInitialize("WRITE_WITH_OK_DATA",3,Instantaneous , RaceEnabled, 4,2, false);
 }
 
 void DRAMSAN::WRITE_WITH_OK_DATAActivity::LinkVariables(){
   WRITE_DRAM->Register(&WRITE_DRAM_Mobius_Mark);
   RESULT_OK->Register(&RESULT_OK_Mobius_Mark);
+  OK_CONTENT_TEMP->Register(&OK_CONTENT_TEMP_Mobius_Mark);
   OK_CONTENT->Register(&OK_CONTENT_Mobius_Mark);
 }
 
@@ -330,7 +357,8 @@ int DRAMSAN::WRITE_WITH_OK_DATAActivity::Rank(){
 BaseActionClass* DRAMSAN::WRITE_WITH_OK_DATAActivity::Fire(){
   (*(WRITE_DRAM_Mobius_Mark))--;
   (*(RESULT_OK_Mobius_Mark))--;
-  (*(OK_CONTENT_Mobius_Mark))++;
+  OK_CONTENT_TEMP->Mark()++;
+OK_CONTENT->Mark()++;
   return this;
 }
 
@@ -527,6 +555,114 @@ BaseActionClass* DRAMSAN::Instantaneous_Activity1Activity::Fire(){
   (*(MEMORY_OK_Mobius_Mark))--;
   (*(MEM_OP_COMPLETE_Mobius_Mark))++;
   (*(OK_READ_Mobius_Mark))++;
+  return this;
+}
+
+/*======================Instantaneous_Activity3Activity_case1========================*/
+
+
+DRAMSAN::Instantaneous_Activity3Activity_case1::Instantaneous_Activity3Activity_case1(){
+  ActivityInitialize("Instantaneous_Activity3_case1",7,Instantaneous , RaceEnabled, 4,1, false);
+}
+
+void DRAMSAN::Instantaneous_Activity3Activity_case1::LinkVariables(){
+  REPLACE_CONTENT->Register(&REPLACE_CONTENT_Mobius_Mark);
+  OK_CONTENT->Register(&OK_CONTENT_Mobius_Mark);
+  OK_CONTENT_TEMP->Register(&OK_CONTENT_TEMP_Mobius_Mark);
+  KO_CONTENT->Register(&KO_CONTENT_Mobius_Mark);
+}
+
+bool DRAMSAN::Instantaneous_Activity3Activity_case1::Enabled(){
+  OldEnabled=NewEnabled;
+  NewEnabled=(((*(REPLACE_CONTENT_Mobius_Mark)) >=1));
+  return NewEnabled;
+}
+
+double DRAMSAN::Instantaneous_Activity3Activity_case1::Weight(){ 
+  return 1;
+}
+
+bool DRAMSAN::Instantaneous_Activity3Activity_case1::ReactivationPredicate(){ 
+  return false;
+}
+
+bool DRAMSAN::Instantaneous_Activity3Activity_case1::ReactivationFunction(){ 
+  return false;
+}
+
+double DRAMSAN::Instantaneous_Activity3Activity_case1::SampleDistribution(){
+  return 0;
+}
+
+double* DRAMSAN::Instantaneous_Activity3Activity_case1::ReturnDistributionParameters(){
+    return NULL;
+}
+
+int DRAMSAN::Instantaneous_Activity3Activity_case1::Rank(){
+  return 1;
+}
+
+BaseActionClass* DRAMSAN::Instantaneous_Activity3Activity_case1::Fire(){
+  (*(REPLACE_CONTENT_Mobius_Mark))--;
+  OK_CONTENT->Mark()++;
+OK_CONTENT_TEMP->Mark()++;
+if (KO_CONTENT->Mark() > 0) {
+	KO_CONTENT->Mark()--;
+}
+  return this;
+}
+
+/*======================Instantaneous_Activity3Activity_case2========================*/
+
+
+DRAMSAN::Instantaneous_Activity3Activity_case2::Instantaneous_Activity3Activity_case2(){
+  ActivityInitialize("Instantaneous_Activity3_case2",7,Instantaneous , RaceEnabled, 4,1, false);
+}
+
+void DRAMSAN::Instantaneous_Activity3Activity_case2::LinkVariables(){
+  REPLACE_CONTENT->Register(&REPLACE_CONTENT_Mobius_Mark);
+  KO_CONTENT->Register(&KO_CONTENT_Mobius_Mark);
+  KO_CONTENT_TEMP->Register(&KO_CONTENT_TEMP_Mobius_Mark);
+  OK_CONTENT->Register(&OK_CONTENT_Mobius_Mark);
+}
+
+bool DRAMSAN::Instantaneous_Activity3Activity_case2::Enabled(){
+  OldEnabled=NewEnabled;
+  NewEnabled=(((*(REPLACE_CONTENT_Mobius_Mark)) >=1));
+  return NewEnabled;
+}
+
+double DRAMSAN::Instantaneous_Activity3Activity_case2::Weight(){ 
+  return 1;
+}
+
+bool DRAMSAN::Instantaneous_Activity3Activity_case2::ReactivationPredicate(){ 
+  return false;
+}
+
+bool DRAMSAN::Instantaneous_Activity3Activity_case2::ReactivationFunction(){ 
+  return false;
+}
+
+double DRAMSAN::Instantaneous_Activity3Activity_case2::SampleDistribution(){
+  return 0;
+}
+
+double* DRAMSAN::Instantaneous_Activity3Activity_case2::ReturnDistributionParameters(){
+    return NULL;
+}
+
+int DRAMSAN::Instantaneous_Activity3Activity_case2::Rank(){
+  return 1;
+}
+
+BaseActionClass* DRAMSAN::Instantaneous_Activity3Activity_case2::Fire(){
+  (*(REPLACE_CONTENT_Mobius_Mark))--;
+  KO_CONTENT->Mark()++;
+KO_CONTENT_TEMP->Mark()++;
+if (OK_CONTENT->Mark() > 0) {
+	OK_CONTENT->Mark()--;
+}
   return this;
 }
 

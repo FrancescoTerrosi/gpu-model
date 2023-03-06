@@ -23,8 +23,8 @@
 				<class id="Mobius.BaseClasses.BasePanelClass">
 					<int id="ClassVersion">2</int>
 					<point id="Size of Panel">
-						<int id="x">2700</int>
-						<int id="y">1526</int>
+						<int id="x">3804</int>
+						<int id="y">1862</int>
 					</point>
 					<double id="ZoomFactor">1.953125</double>
 					<boolean id="ShowGridEnabled">true</boolean>
@@ -328,7 +328,7 @@
 						</class>
 						<boolean id="MirrorImage">false</boolean>
 						<string id="Predicate">READ-&gt;Mark() &gt; -1</string>
-						<string id="Function">WRITE_LOCAL-&gt;Mark()++;\nWRITE_LOCAL-&gt;Mark()--;</string>
+						<string id="Function">WRITE_LOCAL-&gt;Mark()--;\nWRITE_LOCAL-&gt;Mark()++;</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.InputGatePanelObject">
 						<int id="ClassVersion">1</int>
@@ -347,7 +347,7 @@
 						</class>
 						<boolean id="MirrorImage">false</boolean>
 						<string id="Predicate">WRITE-&gt;Mark() &gt; -1</string>
-						<string id="Function">WRITE_GLOBAL-&gt;Mark()++;\nWRITE_LOCAL-&gt;Mark()++;</string>
+						<string id="Function">WRITE_GLOBAL-&gt;Mark()++;\nWRITE_GLOBAL-&gt;Mark()--;</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.OutputGatePanelObject">
 						<int id="ClassVersion">1</int>
@@ -366,10 +366,11 @@
 						</class>
 						<boolean id="MirrorImage">false</boolean>
 						<string id="Function">
-							switch (READ-&gt;Mark()) {\n\n\tcase 1:\n\t\tREAD_LOCAL-&gt;
-							Mark()++;\n\tbreak;\n\n\tcase 3:\n\t\tREAD_GLOBAL-&gt;Mark()
-							++;\n\tbreak;\n\n\tcase 5:\n\t\tREAD_REGISTER_FILE-&gt;Mark(
-							)++;\n\tbreak;\n\n}
+							switch (READ-&gt;Mark()) {\n\n\tcase 0:\n\t\tREAD_LOCAL-&gt;
+							Mark()++;\n\tbreak;\n\n\tcase 2:\n\t\tREAD_GLOBAL-&gt;Mark()
+							++;\n\tbreak;\n\n\tcase 4:\n\t\tREAD_REGISTER_FILE-&gt;Mark(
+							)++;\n\tbreak;\n\n\tdefault:\n\tbreak;\n\n}\n\nREAD-&gt;Mark
+							() = -1;
 						</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.OutputGatePanelObject">
@@ -389,10 +390,11 @@
 						</class>
 						<boolean id="MirrorImage">false</boolean>
 						<string id="Function">
-							switch (WRITE-&gt;Mark()) {\n\tcase 0:\n\t\tWRITE_LOCAL-&gt;
-							Mark()++;\n\tbreak;\n\n\tcase 2:\n\t\tWRITE_GLOBAL-&gt;Mark(
-							)++;\n\tbreak;\n\n\tcase 4:\n\t\tWRITE_REGISTER_FILE-&gt;Mar
-							k()++;\n\tbreak;\n}
+							switch (WRITE-&gt;Mark()) {\n\n\tcase 1:\n\t\tWRITE_LOCAL-&g
+							t;Mark()++;\n\tbreak;\n\n\tcase 3:\n\t\tWRITE_GLOBAL-&gt;Mar
+							k()++;\n\tbreak;\n\n\tcase 5:\n\t\tWRITE_REGISTER_FILE-&gt;M
+							ark()++;\n\tbreak;\n\n\tdeafult:\n\tbreak;\n}\n\nWRITE-&gt;M
+							ark() = -1;
 						</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.InstantaneousActivityPanelObject">
@@ -444,8 +446,8 @@
 							<int id="NumberOfCases">3</int>
 							<vector id="CaseDistributions">
 								<string id="0">1</string>
-								<string id="1">1</string>
-								<string id="2">1</string>
+								<string id="1">0</string>
+								<string id="2">0</string>
 							</vector>
 						</class>
 					</class>
@@ -471,9 +473,9 @@
 							</class>
 							<int id="NumberOfCases">3</int>
 							<vector id="CaseDistributions">
-								<string id="0">1</string>
-								<string id="1">1</string>
-								<string id="2">1</string>
+								<string id="0">1/3</string>
+								<string id="1">1/3</string>
+								<string id="2">1/3</string>
 							</vector>
 						</class>
 					</class>
@@ -525,9 +527,9 @@
 							</class>
 							<int id="NumberOfCases">3</int>
 							<vector id="CaseDistributions">
-								<string id="0">1</string>
-								<string id="1">1</string>
-								<string id="2">1</string>
+								<string id="0">1/3</string>
+								<string id="1">1/3</string>
+								<string id="2">1/3</string>
 							</vector>
 						</class>
 					</class>
@@ -553,9 +555,9 @@
 							</class>
 							<int id="NumberOfCases">3</int>
 							<vector id="CaseDistributions">
-								<string id="0">1</string>
-								<string id="1">1</string>
-								<string id="2">1</string>
+								<string id="0">1/3</string>
+								<string id="1">1/3</string>
+								<string id="2">1/3</string>
 							</vector>
 						</class>
 					</class>
@@ -907,12 +909,12 @@
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">429</int>
-								<int id="y">152</int>
+								<int id="x">430</int>
+								<int id="y">144</int>
 							</point>
 							<point id="1">
-								<int id="x">951</int>
-								<int id="y">407</int>
+								<int id="x">605</int>
+								<int id="y">144</int>
 							</point>
 						</vector>
 					</class>

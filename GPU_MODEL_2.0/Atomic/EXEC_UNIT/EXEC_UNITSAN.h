@@ -120,12 +120,10 @@ class DISPATCHERActivity:public Activity {
 public:
 
   ExtendedPlace<short>* SCHEDULER;
-  Place* REGISTERS_FILL;
-  short* REGISTERS_FILL_Mobius_Mark;
   Place* INSTRUCTION_READY;
   short* INSTRUCTION_READY_Mobius_Mark;
-  ExtendedPlace<short>* WRITE;
   ExtendedPlace<short>* READ;
+  ExtendedPlace<short>* WRITE;
   Place* ALU_INSTRUCTION_NO_DATA;
   short* ALU_INSTRUCTION_NO_DATA_Mobius_Mark;
 
@@ -253,7 +251,6 @@ public:
   Place* MEM_OP_COMPLETE;
   Place* ALU_INSTRUCTION_NO_DATA;
   Place* REGISTERS_FILL;
-  Place* OK_CONTENT;
   ExtendedPlace<short>* SCHEDULER;
   ExtendedPlace<short>* READ;
   ExtendedPlace<short>* WRITE;

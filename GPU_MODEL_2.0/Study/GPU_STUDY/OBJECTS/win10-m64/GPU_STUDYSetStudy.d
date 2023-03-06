@@ -96,7 +96,8 @@ OBJECTS/win10-m64/GPU_STUDYSetStudy.o: GPU_STUDYSetStudy.cpp \
  ../../Atomic/EXEC_UNIT/EXEC_UNITSAN.h ../../Atomic/MEMORY/MEMORYSAN.h \
  ../../Composed/GPU5/GPU5RJ__STREAMING_MULTIPROCESSOR.h \
  ../../Atomic/L1_CACHE/L1_CACHESAN.h ../../Composed/GPU5/GPU5RJ.h \
- ../../Atomic/DRAM/DRAMSAN.h ../../Atomic/L2_CACHE/L2_CACHESAN.h \
+ ../../Composed/GPU5/GPU5RJ__DEVICE.h ../../Atomic/DRAM/DRAMSAN.h \
+ ../../Atomic/L2_CACHE/L2_CACHESAN.h \
  c:/Mobius-2.5/Cpp/Performance_Variables/IntervalOfTime.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/IntervalOfTimeImpulse.hpp \
  ../../Reward/GPU5/GPU5PVModel.h ../../Reward/GPU5/GPU5PVNodes.h \

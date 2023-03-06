@@ -7,7 +7,10 @@
 #include "Cpp/BaseClasses/GlobalVariables.h"
 #include "Cpp/Study/BaseStudyClass.hpp"
 
+extern Short dram_size;
 extern Short end;
+extern Short l1_size;
+extern Short l2_size;
 extern Short nprocessors;
 extern Short nwarps;
 extern Short register_count_index;
@@ -21,13 +24,19 @@ GPU_STUDYSetStudy();
 
 private:
 
+short *dram_sizeValues;
 short *endValues;
+short *l1_sizeValues;
+short *l2_sizeValues;
 short *nprocessorsValues;
 short *nwarpsValues;
 short *register_count_indexValues;
 short *sizeValues;
 
+void SetValues_dram_size();
 void SetValues_end();
+void SetValues_l1_size();
+void SetValues_l2_size();
 void SetValues_nprocessors();
 void SetValues_nwarps();
 void SetValues_register_count_index();

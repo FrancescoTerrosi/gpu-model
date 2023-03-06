@@ -10,6 +10,7 @@
 #include "Cpp/BaseClasses/SAN/SANModel.h" 
 #include "Cpp/BaseClasses/SAN/Place.h"
 #include "Cpp/BaseClasses/SAN/ExtendedPlace.h"
+extern Short l2_size;
 extern UserDistributions* TheDistribution;
 
 void MemoryError();
@@ -25,8 +26,8 @@ public:
 class Instantaneous_Activity23Activity:public Activity {
 public:
 
-  Place* KO_CONTENT;
-  short* KO_CONTENT_Mobius_Mark;
+  Place* KO_CONTENT_TEMP;
+  short* KO_CONTENT_TEMP_Mobius_Mark;
   Place* MEM_OP_COMPLETE;
   short* MEM_OP_COMPLETE_Mobius_Mark;
 
@@ -51,8 +52,14 @@ public:
   short* WRITE_L2_Mobius_Mark;
   Place* RESULT_KO;
   short* RESULT_KO_Mobius_Mark;
+  Place* OK_CONTENT;
+  short* OK_CONTENT_Mobius_Mark;
   Place* KO_CONTENT;
   short* KO_CONTENT_Mobius_Mark;
+  Place* KO_CONTENT_TEMP;
+  short* KO_CONTENT_TEMP_Mobius_Mark;
+  Place* REPLACE_CONTENT;
+  short* REPLACE_CONTENT_Mobius_Mark;
 
   double* TheDistributionParameters;
   WRITE_WITH_KO_DATAActivity();
@@ -71,8 +78,8 @@ public:
 class Instantaneous_Activity12Activity:public Activity {
 public:
 
-  Place* OK_CONTENT;
-  short* OK_CONTENT_Mobius_Mark;
+  Place* OK_CONTENT_TEMP;
+  short* OK_CONTENT_TEMP_Mobius_Mark;
   Place* MEM_OP_COMPLETE;
   short* MEM_OP_COMPLETE_Mobius_Mark;
 
@@ -99,6 +106,12 @@ public:
   short* RESULT_OK_Mobius_Mark;
   Place* OK_CONTENT;
   short* OK_CONTENT_Mobius_Mark;
+  Place* KO_CONTENT;
+  short* KO_CONTENT_Mobius_Mark;
+  Place* OK_CONTENT_TEMP;
+  short* OK_CONTENT_TEMP_Mobius_Mark;
+  Place* REPLACE_CONTENT;
+  short* REPLACE_CONTENT_Mobius_Mark;
 
   double* TheDistributionParameters;
   WRITE_WITH_OK_DATAActivity();
@@ -206,11 +219,63 @@ public:
   BaseActionClass* Fire();
 }; // Instantaneous_Activity1ActivityActivity
 
-  //List of user-specified place names
+class REPLACEActivity_case1:public Activity {
+public:
+
+  Place* REPLACE_CONTENT;
+  short* REPLACE_CONTENT_Mobius_Mark;
+  Place* OK_CONTENT;
+  short* OK_CONTENT_Mobius_Mark;
+  Place* OK_CONTENT_TEMP;
+  short* OK_CONTENT_TEMP_Mobius_Mark;
   Place* KO_CONTENT;
+  short* KO_CONTENT_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  REPLACEActivity_case1();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // REPLACEActivity_case1Activity
+
+class REPLACEActivity_case2:public Activity {
+public:
+
+  Place* REPLACE_CONTENT;
+  short* REPLACE_CONTENT_Mobius_Mark;
+  Place* KO_CONTENT;
+  short* KO_CONTENT_Mobius_Mark;
+  Place* KO_CONTENT_TEMP;
+  short* KO_CONTENT_TEMP_Mobius_Mark;
+  Place* OK_CONTENT;
+  short* OK_CONTENT_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  REPLACEActivity_case2();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // REPLACEActivity_case2Activity
+
+  //List of user-specified place names
+  Place* KO_CONTENT_TEMP;
   Place* WRITE_L2;
   Place* MEM_OP_COMPLETE;
-  Place* OK_CONTENT;
+  Place* OK_CONTENT_TEMP;
   Place* RESULT_KO;
   Place* RESULT_OK;
   Place* KO_READ;
@@ -218,6 +283,9 @@ public:
   Place* READ_L2;
   Place* MEMORY_OK;
   Place* OK_READ;
+  Place* KO_CONTENT;
+  Place* OK_CONTENT;
+  Place* REPLACE_CONTENT;
 
   // Create instances of all actvities
   Instantaneous_Activity23Activity Instantaneous_Activity23;
@@ -228,6 +296,8 @@ public:
   READ_FROMActivity_case1 READ_FROM_case1;
   READ_FROMActivity_case2 READ_FROM_case2;
   Instantaneous_Activity1Activity Instantaneous_Activity1;
+  REPLACEActivity_case1 REPLACE_case1;
+  REPLACEActivity_case2 REPLACE_case2;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
   PostselectGroup Instantaneous_Activity23Group;
@@ -237,6 +307,7 @@ public:
   PostselectGroup Instantaneous_Activity2Group;
   PostselectGroup READ_FROMGroup;
   PostselectGroup Instantaneous_Activity1Group;
+  PostselectGroup REPLACEGroup;
 
   L2_CACHESAN();
   ~L2_CACHESAN();

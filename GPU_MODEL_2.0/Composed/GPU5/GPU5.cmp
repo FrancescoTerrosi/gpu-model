@@ -58,10 +58,9 @@
 						</point>
 					</class>
 					<string id="RepCount">nprocessors</string>
-					<int id="SharingInfoSize">12</int>
+					<int id="SharingInfoSize">11</int>
 					<string id="RepSharingInfoElement">KO_READ</string>
 					<string id="RepSharingInfoElement">MEM_OP_COMPLETE</string>
-					<string id="RepSharingInfoElement">OK_CONTENT</string>
 					<string id="RepSharingInfoElement">OK_READ</string>
 					<string id="RepSharingInfoElement">READ_DRAM</string>
 					<string id="RepSharingInfoElement">READ_L1</string>
@@ -71,6 +70,24 @@
 					<string id="RepSharingInfoElement">WRITE_DRAM</string>
 					<string id="RepSharingInfoElement">WRITE_L1</string>
 					<string id="RepSharingInfoElement">WRITE_L2</string>
+				</class>
+				<class id="Mobius.ComposedModels.RepJoin.RepPanelObject">
+					<int id="ClassVersion">1</int>
+					<class id="Mobius.BaseClasses.BaseVertexClass">
+						<int id="ClassVersion">3</int>
+						<class id="Mobius.BaseClasses.BasePanelObjectClass">
+							<int id="ClassVersion">5</int>
+							<string id="Name">Rep</string>
+							<boolean id="ContainsLabel">true</boolean>
+							<boolean id="IsLabelShown">true</boolean>
+						</class>
+						<point id="CenterPoint">
+							<int id="x">252</int>
+							<int id="y">204</int>
+						</point>
+					</class>
+					<string id="RepCount">50</string>
+					<int id="SharingInfoSize">0</int>
 				</class>
 				<class id="Mobius.ComposedModels.Common.JoinPanelObject">
 					<int id="ClassVersion">3</int>
@@ -83,11 +100,11 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">984</int>
-							<int id="y">392</int>
+							<int id="x">996</int>
+							<int id="y">396</int>
 						</point>
 					</class>
-					<int id="SharingInfoSize">19</int>
+					<int id="SharingInfoSize">18</int>
 					<string id="NewSharedObjName">INSTRUCTION_READY</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -111,14 +128,6 @@
 					<vector id="FullAccessPathStrings">
 						<string id="0">REGISTER_FILE-&gt;MEM_OP_COMPLETE</string>
 						<string id="1">EXEC_UNIT-&gt;MEM_OP_COMPLETE</string>
-					</vector>
-					<string id="NewSharedObjName">OK_CONTENT</string>
-					<string id="Function"></string>
-					<int id="FunctionIndex">-1</int>
-					<boolean id="actionFlag">false</boolean>
-					<vector id="FullAccessPathStrings">
-						<string id="0">REGISTER_FILE-&gt;OK_CONTENT</string>
-						<string id="1">EXEC_UNIT-&gt;OK_CONTENT</string>
 					</vector>
 					<string id="NewSharedObjName">OK_READ</string>
 					<string id="Function"></string>
@@ -247,8 +256,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">710</int>
-							<int id="y">250</int>
+							<int id="x">708</int>
+							<int id="y">252</int>
 						</point>
 					</class>
 					<int id="SharingInfoSize">11</int>
@@ -352,7 +361,15 @@
 							<int id="y">190</int>
 						</point>
 					</class>
-					<int id="SharingInfoSize">9</int>
+					<int id="SharingInfoSize">13</int>
+					<string id="NewSharedObjName">KO_CONTENT</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">DRAM-&gt;KO_CONTENT</string>
+						<string id="1">L2_CACHE-&gt;KO_CONTENT</string>
+					</vector>
 					<string id="NewSharedObjName">KO_READ</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -362,6 +379,22 @@
 						<string id="1">DRAM-&gt;KO_READ</string>
 						<string id="2">L2_CACHE-&gt;KO_READ</string>
 					</vector>
+					<string id="NewSharedObjName">MEMORY_KO</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">DRAM-&gt;MEMORY_KO</string>
+						<string id="1">L2_CACHE-&gt;MEMORY_KO</string>
+					</vector>
+					<string id="NewSharedObjName">MEMORY_OK</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">DRAM-&gt;MEMORY_OK</string>
+						<string id="1">L2_CACHE-&gt;MEMORY_OK</string>
+					</vector>
 					<string id="NewSharedObjName">MEM_OP_COMPLETE</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -370,6 +403,14 @@
 						<string id="0">STREAMING_MULTIPROCESSOR-&gt;MEM_OP_COMPLETE</string>
 						<string id="1">DRAM-&gt;MEM_OP_COMPLETE</string>
 						<string id="2">L2_CACHE-&gt;MEM_OP_COMPLETE</string>
+					</vector>
+					<string id="NewSharedObjName">OK_CONTENT</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">DRAM-&gt;OK_CONTENT</string>
+						<string id="1">L2_CACHE-&gt;OK_CONTENT</string>
 					</vector>
 					<string id="NewSharedObjName">OK_READ</string>
 					<string id="Function"></string>
@@ -558,8 +599,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">982</int>
-							<int id="y">398</int>
+							<int id="x">994</int>
+							<int id="y">402</int>
 						</point>
 						<point id="1">
 							<int id="x">1024</int>
@@ -575,8 +616,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">747</int>
-							<int id="y">251</int>
+							<int id="x">745</int>
+							<int id="y">253</int>
 						</point>
 						<point id="1">
 							<int id="x">884</int>
@@ -621,13 +662,30 @@
 				<class id="Mobius.BaseClasses.BaseEdgeClass">
 					<int id="ClassVersion">3</int>
 					<int id="LineType">0</int>
+					<string id="StartVertex">Rep</string>
+					<string id="FinishVertex">DEVICE</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">276</int>
+							<int id="y">206</int>
+						</point>
+						<point id="1">
+							<int id="x">480</int>
+							<int id="y">191</int>
+						</point>
+					</vector>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
 					<string id="StartVertex">PROCESSOR</string>
 					<string id="FinishVertex">REGISTER_FILE</string>
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">1011</int>
-							<int id="y">401</int>
+							<int id="x">1023</int>
+							<int id="y">405</int>
 						</point>
 						<point id="1">
 							<int id="x">923</int>
@@ -643,8 +701,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">709</int>
-							<int id="y">245</int>
+							<int id="x">707</int>
+							<int id="y">247</int>
 						</point>
 						<point id="1">
 							<int id="x">823</int>
@@ -711,8 +769,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">948</int>
-							<int id="y">388</int>
+							<int id="x">960</int>
+							<int id="y">392</int>
 						</point>
 						<point id="1">
 							<int id="x">681</int>
@@ -728,8 +786,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">975</int>
-							<int id="y">396</int>
+							<int id="x">987</int>
+							<int id="y">400</int>
 						</point>
 						<point id="1">
 							<int id="x">881</int>

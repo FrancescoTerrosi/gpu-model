@@ -48,14 +48,13 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
   MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE" ,0);
   ALU_INSTRUCTION_NO_DATA = new Place("ALU_INSTRUCTION_NO_DATA" ,0);
   REGISTERS_FILL = new Place("REGISTERS_FILL" ,0);
-  OK_CONTENT = new Place("OK_CONTENT" ,0);
   short temp_SCHEDULERshort = -1;
   SCHEDULER = new ExtendedPlace<short>("SCHEDULER",temp_SCHEDULERshort);
   short temp_READshort = -1;
   READ = new ExtendedPlace<short>("READ",temp_READshort);
   short temp_WRITEshort = -1;
   WRITE = new ExtendedPlace<short>("WRITE",temp_WRITEshort);
-  BaseStateVariableClass* InitialPlaces[13]={
+  BaseStateVariableClass* InitialPlaces[12]={
     INSTRUCTION_READY,  // 0
     ALU_INSTRUCTION,  // 1
     KO_READ,  // 2
@@ -65,14 +64,13 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
     MEM_OP_COMPLETE,  // 6
     ALU_INSTRUCTION_NO_DATA,  // 7
     REGISTERS_FILL,  // 8
-    OK_CONTENT,  // 9
-    SCHEDULER,  // 10
-    READ,  // 11
-    WRITE   // 12
+    SCHEDULER,  // 9
+    READ,  // 10
+    WRITE   // 11
   };
   BaseStateVariableClass* InitialROPlaces[0]={
   };
-  initializeSANModelNow("EXEC_UNIT", 13, InitialPlaces, 
+  initializeSANModelNow("EXEC_UNIT", 12, InitialPlaces, 
                         0, InitialROPlaces, 
                         6, InitialActionList, 5, InitialGroupList);
 
@@ -81,7 +79,7 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
   assignPlacesToActivitiesTimed();
 
   int AffectArcs[21][2]={ 
-    {6,0}, {0,0}, {0,1}, {10,1}, {12,1}, {11,1}, {7,1}, {1,2}, 
+    {6,0}, {0,0}, {0,1}, {9,1}, {10,1}, {11,1}, {7,1}, {1,2}, 
     {2,2}, {0,2}, {3,2}, {1,3}, {4,3}, {0,3}, {5,3}, {7,4}, {0,4}, 
     {3,4}, {7,5}, {0,5}, {5,5}
   };
@@ -89,11 +87,10 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
     AddAffectArc(InitialPlaces[AffectArcs[n][0]],
                  InitialActionList[AffectArcs[n][1]]);
   }
-  int EnableArcs[9][2]={ 
-    {6,0}, {10,1}, {8,1}, {1,2}, {2,2}, {1,3}, {4,3}, {7,4}, 
-    {7,5}
+  int EnableArcs[8][2]={ 
+    {6,0}, {9,1}, {1,2}, {2,2}, {1,3}, {4,3}, {7,4}, {7,5}
   };
-  for(int n=0;n<9;n++) {
+  for(int n=0;n<8;n++) {
     AddEnableArc(InitialPlaces[EnableArcs[n][0]],
                  InitialActionList[EnableArcs[n][1]]);
   }
@@ -116,11 +113,10 @@ EXEC_UNITSAN::~EXEC_UNITSAN(){
 void EXEC_UNITSAN::assignPlacesToActivitiesInst(){
   Instantaneous_Activity1.MEM_OP_COMPLETE = (Place*) LocalStateVariables[6];
   Instantaneous_Activity1.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
-  DISPATCHER.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[10];
-  DISPATCHER.REGISTERS_FILL = (Place*) LocalStateVariables[8];
+  DISPATCHER.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[9];
   DISPATCHER.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
-  DISPATCHER.WRITE = (ExtendedPlace<short>*) LocalStateVariables[12];
-  DISPATCHER.READ = (ExtendedPlace<short>*) LocalStateVariables[11];
+  DISPATCHER.READ = (ExtendedPlace<short>*) LocalStateVariables[10];
+  DISPATCHER.WRITE = (ExtendedPlace<short>*) LocalStateVariables[11];
   DISPATCHER.ALU_INSTRUCTION_NO_DATA = (Place*) LocalStateVariables[7];
   COMPUTE_WITH_KO_DATA.ALU_INSTRUCTION = (Place*) LocalStateVariables[1];
   COMPUTE_WITH_KO_DATA.KO_READ = (Place*) LocalStateVariables[2];
@@ -195,12 +191,11 @@ BaseActionClass* EXEC_UNITSAN::Instantaneous_Activity1Activity::Fire(){
 
 
 EXEC_UNITSAN::DISPATCHERActivity::DISPATCHERActivity(){
-  ActivityInitialize("DISPATCHER",1,Instantaneous , RaceEnabled, 5,2, false);
+  ActivityInitialize("DISPATCHER",1,Instantaneous , RaceEnabled, 5,1, false);
 }
 
 void EXEC_UNITSAN::DISPATCHERActivity::LinkVariables(){
 
-  REGISTERS_FILL->Register(&REGISTERS_FILL_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 
 
@@ -209,7 +204,7 @@ void EXEC_UNITSAN::DISPATCHERActivity::LinkVariables(){
 
 bool EXEC_UNITSAN::DISPATCHERActivity::Enabled(){
   OldEnabled=NewEnabled;
-  NewEnabled=((SCHEDULER->Mark() > -1 && REGISTERS_FILL->Mark() == 0));
+  NewEnabled=((SCHEDULER->Mark() > -1));
   return NewEnabled;
 }
 
@@ -243,27 +238,27 @@ INSTRUCTION_READY->Mark()++;
   switch( SCHEDULER->Mark() ) {
 
     case 0:
-        WRITE->Mark() = 0;
+	READ->Mark() = SCHEDULER->Mark();
     break;
 
     case 1:
-	READ->Mark() = 1;
+        WRITE->Mark() = SCHEDULER->Mark();
     break;
 
     case 2:
-        WRITE->Mark() = 2;
+        READ->Mark() = SCHEDULER->Mark();
     break;
 
     case 3:
-        READ->Mark() = 3;
+        WRITE->Mark() = SCHEDULER->Mark();
     break;
 
     case 4:
-        WRITE->Mark() = 4;
+	READ->Mark() = SCHEDULER->Mark();
     break;
 
     case 5:
-        READ->Mark() = 5;
+        WRITE->Mark() = SCHEDULER->Mark();
     break;
 
     case 6:
@@ -405,7 +400,7 @@ bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Enabled(){
 }
 
 double EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Weight(){ 
-  return 0.5;
+  return 0.9;
 }
 
 bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::ReactivationPredicate(){ 
@@ -455,7 +450,7 @@ bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Enabled(){
 }
 
 double EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Weight(){ 
-  return 0.5;
+  return 0.1;
 }
 
 bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::ReactivationPredicate(){ 
