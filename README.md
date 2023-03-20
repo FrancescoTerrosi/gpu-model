@@ -5,11 +5,17 @@
 <h2>Atomic</h2>
 
 EXEC_UNIT
+
 MEMORY
+
 DRAM
+
 L2_CACHE
+
 L1_CACHE
+
 REGISTER_FILE
+
 WARP
 
 <h2>Composed</h2>
