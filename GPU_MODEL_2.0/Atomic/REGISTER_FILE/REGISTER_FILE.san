@@ -3193,7 +3193,7 @@
 							<int id="ClassVersion">3</int>
 							<class id="Mobius.BaseClasses.BasePanelObjectClass">
 								<int id="ClassVersion">5</int>
-								<string id="Name">OK_CONTENT</string>
+								<string id="Name">REG_OK_CONTENT</string>
 								<boolean id="ContainsLabel">true</boolean>
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
@@ -3212,7 +3212,7 @@
 							<int id="ClassVersion">3</int>
 							<class id="Mobius.BaseClasses.BasePanelObjectClass">
 								<int id="ClassVersion">5</int>
-								<string id="Name">KO_CONTENT</string>
+								<string id="Name">REG_KO_CONTENT</string>
 								<boolean id="ContainsLabel">true</boolean>
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
@@ -3272,9 +3272,9 @@
 							ark() == 1
 						</string>
 						<string id="Function">
-							OK_CONTENT-&gt;Mark() += LIVE_REGISTERS-&gt;Index(indexes-&g
-							t;Mark())-&gt;Mark();\nREGISTERS_FILL-&gt;Mark() = 0;\nindex
-							es-&gt;Mark()++;
+							REG_OK_CONTENT-&gt;Mark() += LIVE_REGISTERS-&gt;Index(indexe
+							s-&gt;Mark())-&gt;Mark();\nREGISTERS_FILL-&gt;Mark() = 0;\ni
+							ndexes-&gt;Mark()++;
 						</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.OutputGatePanelObject">
@@ -3293,7 +3293,7 @@
 							</point>
 						</class>
 						<boolean id="MirrorImage">false</boolean>
-						<string id="Function">OK_CONTENT_TEMP-&gt;Mark()++;\nOK_CONTENT-&gt;Mark()++;</string>
+						<string id="Function">OK_CONTENT_TEMP-&gt;Mark()++;\nREG_OK_CONTENT-&gt;Mark()++;</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.OutputGatePanelObject">
 						<int id="ClassVersion">1</int>
@@ -3311,7 +3311,7 @@
 							</point>
 						</class>
 						<boolean id="MirrorImage">false</boolean>
-						<string id="Function">KO_CONTENT_TEMP-&gt;Mark()++;\nKO_CONTENT-&gt;Mark()++;</string>
+						<string id="Function">KO_CONTENT_TEMP-&gt;Mark()++;\nREG_KO_CONTENT-&gt;Mark()++;</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.InstantaneousActivityPanelObject">
 						<int id="ClassVersion">1</int>
@@ -3696,7 +3696,7 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">Output_Gate1</string>
-						<string id="FinishVertex">OK_CONTENT</string>
+						<string id="FinishVertex">REG_OK_CONTENT</string>
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
@@ -3713,7 +3713,7 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">Output_Gate2</string>
-						<string id="FinishVertex">KO_CONTENT</string>
+						<string id="FinishVertex">REG_KO_CONTENT</string>
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">

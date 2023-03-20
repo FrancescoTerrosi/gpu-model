@@ -148,8 +148,8 @@ public:
   short* RESULT_KO_Mobius_Mark;
   Place* KO_CONTENT_TEMP;
   short* KO_CONTENT_TEMP_Mobius_Mark;
-  Place* KO_CONTENT;
-  short* KO_CONTENT_Mobius_Mark;
+  Place* REG_KO_CONTENT;
+  short* REG_KO_CONTENT_Mobius_Mark;
 
   double* TheDistributionParameters;
   WRITE_WITH_KO_DATAActivity();
@@ -174,8 +174,8 @@ public:
   short* RESULT_OK_Mobius_Mark;
   Place* OK_CONTENT_TEMP;
   short* OK_CONTENT_TEMP_Mobius_Mark;
-  Place* OK_CONTENT;
-  short* OK_CONTENT_Mobius_Mark;
+  Place* REG_OK_CONTENT;
+  short* REG_OK_CONTENT_Mobius_Mark;
 
   double* TheDistributionParameters;
   WRITE_WITH_OK_DATAActivity();
@@ -290,8 +290,8 @@ public:
   short* indexes_Mobius_Mark;
   Place* REGISTERS_FILL;
   short* REGISTERS_FILL_Mobius_Mark;
-  Place* OK_CONTENT;
-  short* OK_CONTENT_Mobius_Mark;
+  Place* REG_OK_CONTENT;
+  short* REG_OK_CONTENT_Mobius_Mark;
   registers_counter* LIVE_REGISTERS;
   Place* OK_CONTENT_TEMP;
   short* OK_CONTENT_TEMP_Mobius_Mark;
@@ -324,8 +324,8 @@ public:
   Place* OK_READ;
   Place* indexes;
   Place* REGISTERS_FILL;
-  Place* OK_CONTENT;
-  Place* KO_CONTENT;
+  Place* REG_OK_CONTENT;
+  Place* REG_KO_CONTENT;
   registers_counter* LIVE_REGISTERS;
 
   // Create instances of all actvities

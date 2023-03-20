@@ -58,8 +58,8 @@ REGISTER_FILESAN::REGISTER_FILESAN(){
   OK_READ = new Place("OK_READ" ,0);
   indexes = new Place("indexes" ,0);
   REGISTERS_FILL = new Place("REGISTERS_FILL" ,0);
-  OK_CONTENT = new Place("OK_CONTENT" ,0);
-  KO_CONTENT = new Place("KO_CONTENT" ,0);
+  REG_OK_CONTENT = new Place("REG_OK_CONTENT" ,0);
+  REG_KO_CONTENT = new Place("REG_KO_CONTENT" ,0);
   short temp_LIVE_REGISTERSregisters_countervalue = 0;
   LIVE_REGISTERS = new registers_counter("LIVE_REGISTERS",temp_LIVE_REGISTERSregisters_countervalue);
   BaseStateVariableClass* InitialPlaces[16]={
@@ -76,8 +76,8 @@ REGISTER_FILESAN::REGISTER_FILESAN(){
     OK_READ,  // 10
     indexes,  // 11
     REGISTERS_FILL,  // 12
-    OK_CONTENT,  // 13
-    KO_CONTENT,  // 14
+    REG_OK_CONTENT,  // 13
+    REG_KO_CONTENT,  // 14
     LIVE_REGISTERS   // 15
   };
   BaseStateVariableClass* InitialROPlaces[0]={
@@ -132,11 +132,11 @@ void REGISTER_FILESAN::assignPlacesToActivitiesInst(){
   WRITE_WITH_KO_DATA.WRITE_REGISTER_FILE = (Place*) LocalStateVariables[3];
   WRITE_WITH_KO_DATA.RESULT_KO = (Place*) LocalStateVariables[4];
   WRITE_WITH_KO_DATA.KO_CONTENT_TEMP = (Place*) LocalStateVariables[0];
-  WRITE_WITH_KO_DATA.KO_CONTENT = (Place*) LocalStateVariables[14];
+  WRITE_WITH_KO_DATA.REG_KO_CONTENT = (Place*) LocalStateVariables[14];
   WRITE_WITH_OK_DATA.WRITE_REGISTER_FILE = (Place*) LocalStateVariables[3];
   WRITE_WITH_OK_DATA.RESULT_OK = (Place*) LocalStateVariables[5];
   WRITE_WITH_OK_DATA.OK_CONTENT_TEMP = (Place*) LocalStateVariables[2];
-  WRITE_WITH_OK_DATA.OK_CONTENT = (Place*) LocalStateVariables[13];
+  WRITE_WITH_OK_DATA.REG_OK_CONTENT = (Place*) LocalStateVariables[13];
   Instantaneous_Activity2.MEMORY_KO = (Place*) LocalStateVariables[7];
   Instantaneous_Activity2.MEM_OP_COMPLETE = (Place*) LocalStateVariables[1];
   Instantaneous_Activity2.KO_READ = (Place*) LocalStateVariables[6];
@@ -149,7 +149,7 @@ void REGISTER_FILESAN::assignPlacesToActivitiesInst(){
   Instantaneous_Activity1.OK_READ = (Place*) LocalStateVariables[10];
   Instantaneous_Activity3.indexes = (Place*) LocalStateVariables[11];
   Instantaneous_Activity3.REGISTERS_FILL = (Place*) LocalStateVariables[12];
-  Instantaneous_Activity3.OK_CONTENT = (Place*) LocalStateVariables[13];
+  Instantaneous_Activity3.REG_OK_CONTENT = (Place*) LocalStateVariables[13];
   Instantaneous_Activity3.LIVE_REGISTERS = (registers_counter*) LocalStateVariables[15];
   Instantaneous_Activity3.OK_CONTENT_TEMP = (Place*) LocalStateVariables[2];
 }
@@ -266,7 +266,7 @@ void REGISTER_FILESAN::WRITE_WITH_KO_DATAActivity::LinkVariables(){
   WRITE_REGISTER_FILE->Register(&WRITE_REGISTER_FILE_Mobius_Mark);
   RESULT_KO->Register(&RESULT_KO_Mobius_Mark);
   KO_CONTENT_TEMP->Register(&KO_CONTENT_TEMP_Mobius_Mark);
-  KO_CONTENT->Register(&KO_CONTENT_Mobius_Mark);
+  REG_KO_CONTENT->Register(&REG_KO_CONTENT_Mobius_Mark);
 }
 
 bool REGISTER_FILESAN::WRITE_WITH_KO_DATAActivity::Enabled(){
@@ -303,7 +303,7 @@ BaseActionClass* REGISTER_FILESAN::WRITE_WITH_KO_DATAActivity::Fire(){
   (*(WRITE_REGISTER_FILE_Mobius_Mark))--;
   (*(RESULT_KO_Mobius_Mark))--;
   KO_CONTENT_TEMP->Mark()++;
-KO_CONTENT->Mark()++;
+REG_KO_CONTENT->Mark()++;
   return this;
 }
 
@@ -318,7 +318,7 @@ void REGISTER_FILESAN::WRITE_WITH_OK_DATAActivity::LinkVariables(){
   WRITE_REGISTER_FILE->Register(&WRITE_REGISTER_FILE_Mobius_Mark);
   RESULT_OK->Register(&RESULT_OK_Mobius_Mark);
   OK_CONTENT_TEMP->Register(&OK_CONTENT_TEMP_Mobius_Mark);
-  OK_CONTENT->Register(&OK_CONTENT_Mobius_Mark);
+  REG_OK_CONTENT->Register(&REG_OK_CONTENT_Mobius_Mark);
 }
 
 bool REGISTER_FILESAN::WRITE_WITH_OK_DATAActivity::Enabled(){
@@ -355,7 +355,7 @@ BaseActionClass* REGISTER_FILESAN::WRITE_WITH_OK_DATAActivity::Fire(){
   (*(WRITE_REGISTER_FILE_Mobius_Mark))--;
   (*(RESULT_OK_Mobius_Mark))--;
   OK_CONTENT_TEMP->Mark()++;
-OK_CONTENT->Mark()++;
+REG_OK_CONTENT->Mark()++;
   return this;
 }
 
@@ -565,7 +565,7 @@ REGISTER_FILESAN::Instantaneous_Activity3Activity::Instantaneous_Activity3Activi
 void REGISTER_FILESAN::Instantaneous_Activity3Activity::LinkVariables(){
   indexes->Register(&indexes_Mobius_Mark);
   REGISTERS_FILL->Register(&REGISTERS_FILL_Mobius_Mark);
-  OK_CONTENT->Register(&OK_CONTENT_Mobius_Mark);
+  REG_OK_CONTENT->Register(&REG_OK_CONTENT_Mobius_Mark);
 
   OK_CONTENT_TEMP->Register(&OK_CONTENT_TEMP_Mobius_Mark);
 }
@@ -601,11 +601,11 @@ int REGISTER_FILESAN::Instantaneous_Activity3Activity::Rank(){
 }
 
 BaseActionClass* REGISTER_FILESAN::Instantaneous_Activity3Activity::Fire(){
-  OK_CONTENT->Mark() += LIVE_REGISTERS->Index(indexes->Mark())->Mark();
+  REG_OK_CONTENT->Mark() += LIVE_REGISTERS->Index(indexes->Mark())->Mark();
 REGISTERS_FILL->Mark() = 0;
 indexes->Mark()++;
   OK_CONTENT_TEMP->Mark()++;
-OK_CONTENT->Mark()++;
+REG_OK_CONTENT->Mark()++;
   return this;
 }
 

@@ -338,6 +338,54 @@ public:
   BaseActionClass* Fire();
 }; // GLOBAL_WRITE_TOActivity_case3Activity
 
+class inst1Activity:public Activity {
+public:
+
+  Place* OK_READ;
+  short* OK_READ_Mobius_Mark;
+  Place* RESULT_OK;
+  short* RESULT_OK_Mobius_Mark;
+  Place* WRITE_REGISTER_FILE;
+  short* WRITE_REGISTER_FILE_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  inst1Activity();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // inst1ActivityActivity
+
+class inst2Activity:public Activity {
+public:
+
+  Place* KO_READ;
+  short* KO_READ_Mobius_Mark;
+  Place* RESULT_KO;
+  short* RESULT_KO_Mobius_Mark;
+  Place* WRITE_REGISTER_FILE;
+  short* WRITE_REGISTER_FILE_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  inst2Activity();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // inst2ActivityActivity
+
   //List of user-specified place names
   Place* READ_L1;
   Place* READ_L2;
@@ -351,6 +399,10 @@ public:
   Place* WRITE_DRAM;
   Place* READ_REGISTER_FILE;
   Place* WRITE_REGISTER_FILE;
+  Place* OK_READ;
+  Place* KO_READ;
+  Place* RESULT_OK;
+  Place* RESULT_KO;
   ExtendedPlace<short>* READ;
   ExtendedPlace<short>* WRITE;
 
@@ -369,6 +421,8 @@ public:
   GLOBAL_WRITE_TOActivity_case1 GLOBAL_WRITE_TO_case1;
   GLOBAL_WRITE_TOActivity_case2 GLOBAL_WRITE_TO_case2;
   GLOBAL_WRITE_TOActivity_case3 GLOBAL_WRITE_TO_case3;
+  inst1Activity inst1;
+  inst2Activity inst2;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
   PostselectGroup PERFORM_READGroup;
@@ -377,6 +431,8 @@ public:
   PostselectGroup PERFORM_WRITEGroup;
   PostselectGroup LOCAL_WRITE_TOGroup;
   PostselectGroup GLOBAL_WRITE_TOGroup;
+  PostselectGroup inst1Group;
+  PostselectGroup inst2Group;
 
   MEMORYSAN();
   ~MEMORYSAN();

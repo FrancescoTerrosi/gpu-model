@@ -20,15 +20,15 @@ class GPU5RJ__PROCESSOR: public Join {
   EXEC_UNITSAN * EXEC_UNIT;
   MEMORYSAN * MEMORY;
   Place * INSTRUCTION_READY;
-  Place * KO_READ;
   Place * MEM_OP_COMPLETE;
-  Place * OK_READ;
   Place * READ;
   Place * READ_DRAM;
   Place * READ_L1;
   Place * READ_L2;
   Place * READ_REGISTER_FILE;
   Place * REGISTERS_FILL;
+  Place * REG_KO_CONTENT;
+  Place * REG_OK_CONTENT;
   Place * RESULT_KO;
   Place * RESULT_OK;
   Place * SCHEDULER;
