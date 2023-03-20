@@ -1,5 +1,5 @@
 Simulator Results
-Date:, Mon Mar 06 15:19:42 CET 2023
+Date:, Mon Mar 20 18:32:03 CET 2023
 
 Simulator Configuration
 Simulation Type:,Terminating
@@ -23,10 +23,10 @@ Processors Selected for Simulation:
 DESKTOP-3AHUC0F,amd64
 
 Experiment 1
-Experiment 1,Start Time:,Mon Mar 06 15:15:51 CET 2023
-Experiment 1,Finish Time:,Mon Mar 06 15:19:42 CET 2023
-Experiment 1,Elapsed Running Time:,231.028
-Experiment 1,Total CPU Time:,229.119
+Experiment 1,Start Time:,Mon Mar 20 18:32:01 CET 2023
+Experiment 1,Finish Time:,Mon Mar 20 18:32:03 CET 2023
+Experiment 1,Elapsed Running Time:,2.095
+Experiment 1,Total CPU Time:,0.987
 Experiment 1,Batches Completed:,1
 Experiment 1,Experiment Name:,Experiment 1
 Experiment 1,Global Variable Settings:
@@ -40,9 +40,11 @@ Experiment 1,short,register_count_index,0
 Experiment 1,short,size,3781
 Experiment 1, Results
 Experiment 1,Result Type,Name,Start Time,End Time,Mean,,Confidence Interval,Failed To Converge
-Experiment 1,Mean,warp,0.0,100,1.8905000000E05 ,+/-,0.0000000000E00 
-Experiment 1,Mean,reg_ok,0.0,100,6.4140000000E04 ,+/-,0.0000000000E00 
-Experiment 1,Mean,temp,0.0,100,1.0240000000E05 ,+/-,0.0000000000E00 
-Experiment 1,Mean,temp_due,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,warp,0.0,100,3.7810000000E03 ,+/-,0.0000000000E00 
+Experiment 1,Mean,reg_ok,0.0,100,1.1361000000E05 ,+/-,0.0000000000E00 
+Experiment 1,Mean,reg_ko,0.0,100,4.5000000000E01 ,+/-,0.0000000000E00 
+Experiment 1,Mean,l1_read,0.0,100,6.5900000000E02 ,+/-,0.0000000000E00 
+Experiment 1,Mean,l2_read,0.0,100,6.8300000000E02 ,+/-,0.0000000000E00 
+Experiment 1,Mean,dram_read,0.0,100,7.0600000000E02 ,+/-,0.0000000000E00 
 
 <END_MOBIUS_RESULTS>

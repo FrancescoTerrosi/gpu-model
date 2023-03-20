@@ -2443,7 +2443,7 @@
 						<boolean id="MirrorImage">false</boolean>
 						<string id="Function">
 							SCHEDULER-&gt;Mark() = WARP-&gt;Index(INST_COUNTER-&gt;Mark(
-							))-&gt;Mark();
+							))-&gt;Mark();\nREGISTERS_FILL-&gt;Mark() = 1;
 						</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.InstantaneousActivityPanelObject">

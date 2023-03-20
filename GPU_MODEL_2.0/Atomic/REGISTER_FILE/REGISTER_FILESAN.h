@@ -283,7 +283,7 @@ public:
   BaseActionClass* Fire();
 }; // Instantaneous_Activity1ActivityActivity
 
-class Instantaneous_Activity3Activity:public Activity {
+class Instantaneous_Activity3Activity_case1:public Activity {
 public:
 
   Place* indexes;
@@ -293,11 +293,9 @@ public:
   Place* OK_CONTENT;
   short* OK_CONTENT_Mobius_Mark;
   registers_counter* LIVE_REGISTERS;
-  Place* OK_CONTENT_TEMP;
-  short* OK_CONTENT_TEMP_Mobius_Mark;
 
   double* TheDistributionParameters;
-  Instantaneous_Activity3Activity();
+  Instantaneous_Activity3Activity_case1();
   double Rate(){return 0;}
   bool Enabled();
   void LinkVariables();
@@ -308,7 +306,34 @@ public:
   double* ReturnDistributionParameters();
   int Rank();
   BaseActionClass* Fire();
-}; // Instantaneous_Activity3ActivityActivity
+}; // Instantaneous_Activity3Activity_case1Activity
+
+class Instantaneous_Activity3Activity_case2:public Activity {
+public:
+
+  Place* indexes;
+  short* indexes_Mobius_Mark;
+  Place* REGISTERS_FILL;
+  short* REGISTERS_FILL_Mobius_Mark;
+  Place* KO_CONTENT;
+  short* KO_CONTENT_Mobius_Mark;
+  Place* OK_CONTENT;
+  short* OK_CONTENT_Mobius_Mark;
+  registers_counter* LIVE_REGISTERS;
+
+  double* TheDistributionParameters;
+  Instantaneous_Activity3Activity_case2();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // Instantaneous_Activity3Activity_case2Activity
 
   //List of user-specified place names
   Place* KO_CONTENT_TEMP;
@@ -337,7 +362,8 @@ public:
   READ_FROMActivity_case1 READ_FROM_case1;
   READ_FROMActivity_case2 READ_FROM_case2;
   Instantaneous_Activity1Activity Instantaneous_Activity1;
-  Instantaneous_Activity3Activity Instantaneous_Activity3;
+  Instantaneous_Activity3Activity_case1 Instantaneous_Activity3_case1;
+  Instantaneous_Activity3Activity_case2 Instantaneous_Activity3_case2;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
   PostselectGroup Instantaneous_Activity23Group;

@@ -18,12 +18,10 @@ class GPU5RJ__DEVICE: public Join {
   DRAMSAN * DRAM;
   L2_CACHESAN * L2_CACHE;
   Place * KO_CONTENT;
-  Place * KO_READ;
   Place * MEMORY_KO;
   Place * MEMORY_OK;
   Place * MEM_OP_COMPLETE;
   Place * OK_CONTENT;
-  Place * OK_READ;
   Place * READ_DRAM;
   Place * READ_L2;
   Place * RESULT_KO;

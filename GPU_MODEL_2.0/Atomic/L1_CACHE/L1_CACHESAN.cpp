@@ -456,7 +456,7 @@ bool L1_CACHESAN::READ_FROMActivity_case1::Enabled(){
 }
 
 double L1_CACHESAN::READ_FROMActivity_case1::Weight(){ 
-  return 1 - (1*(10^(-11)));
+  return 0.5;
 }
 
 bool L1_CACHESAN::READ_FROMActivity_case1::ReactivationPredicate(){ 
@@ -504,7 +504,7 @@ bool L1_CACHESAN::READ_FROMActivity_case2::Enabled(){
 }
 
 double L1_CACHESAN::READ_FROMActivity_case2::Weight(){ 
-  return (1*(10^(-11)));
+  return 0.5;
 }
 
 bool L1_CACHESAN::READ_FROMActivity_case2::ReactivationPredicate(){ 

@@ -50,10 +50,10 @@ WARPSAN::WARPSAN(){
   assignPlacesToActivitiesInst();
   assignPlacesToActivitiesTimed();
 
-  int AffectArcs[4][2]={ 
-    {1,0}, {0,0}, {4,0}, {3,0}
+  int AffectArcs[5][2]={ 
+    {1,0}, {0,0}, {4,0}, {2,0}, {3,0}
   };
-  for(int n=0;n<4;n++) {
+  for(int n=0;n<5;n++) {
     AddAffectArc(InitialPlaces[AffectArcs[n][0]],
                  InitialActionList[AffectArcs[n][1]]);
   }
@@ -85,6 +85,7 @@ void WARPSAN::assignPlacesToActivitiesInst(){
   DISPATCHER_Copy.INST_COUNTER = (Place*) LocalStateVariables[0];
   DISPATCHER_Copy.INSTRUCTION_READY = (Place*) LocalStateVariables[1];
   DISPATCHER_Copy.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[4];
+  DISPATCHER_Copy.REGISTERS_FILL = (Place*) LocalStateVariables[2];
   DISPATCHER_Copy.WARP = (instructions*) LocalStateVariables[3];
 }
 void WARPSAN::assignPlacesToActivitiesTimed(){
@@ -97,13 +98,14 @@ void WARPSAN::assignPlacesToActivitiesTimed(){
 
 
 WARPSAN::DISPATCHER_CopyActivity::DISPATCHER_CopyActivity(){
-  ActivityInitialize("DISPATCHER_Copy",0,Instantaneous , RaceEnabled, 4,2, false);
+  ActivityInitialize("DISPATCHER_Copy",0,Instantaneous , RaceEnabled, 5,2, false);
 }
 
 void WARPSAN::DISPATCHER_CopyActivity::LinkVariables(){
   INST_COUNTER->Register(&INST_COUNTER_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 
+  REGISTERS_FILL->Register(&REGISTERS_FILL_Mobius_Mark);
 
 }
 
@@ -141,6 +143,7 @@ BaseActionClass* WARPSAN::DISPATCHER_CopyActivity::Fire(){
   INSTRUCTION_READY->Mark()--;
 INST_COUNTER->Mark()++;
   SCHEDULER->Mark() = WARP->Index(INST_COUNTER->Mark())->Mark();
+REGISTERS_FILL->Mark() = 1;
   return this;
 }
 

@@ -102,6 +102,8 @@ public:
   Place* INSTRUCTION_READY;
   short* INSTRUCTION_READY_Mobius_Mark;
   ExtendedPlace<short>* SCHEDULER;
+  Place* REGISTERS_FILL;
+  short* REGISTERS_FILL_Mobius_Mark;
   instructions* WARP;
 
   double* TheDistributionParameters;

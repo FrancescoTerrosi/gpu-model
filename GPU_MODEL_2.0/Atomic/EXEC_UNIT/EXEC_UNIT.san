@@ -86,25 +86,6 @@
 							<int id="ClassVersion">3</int>
 							<class id="Mobius.BaseClasses.BasePanelObjectClass">
 								<int id="ClassVersion">5</int>
-								<string id="Name">KO_READ</string>
-								<boolean id="ContainsLabel">true</boolean>
-								<boolean id="IsLabelShown">true</boolean>
-							</class>
-							<point id="CenterPoint">
-								<int id="x">396</int>
-								<int id="y">630</int>
-							</point>
-						</class>
-						<boolean id="ReadOnly">false</boolean>
-						<boolean id="ConstantMarking">true</boolean>
-						<int id="InitialState">0</int>
-					</class>
-					<class id="Mobius.AtomicModels.San.PlacePanelObject">
-						<int id="ClassVersion">1</int>
-						<class id="Mobius.BaseClasses.BaseVertexClass">
-							<int id="ClassVersion">3</int>
-							<class id="Mobius.BaseClasses.BasePanelObjectClass">
-								<int id="ClassVersion">5</int>
 								<string id="Name">RESULT_KO</string>
 								<boolean id="ContainsLabel">true</boolean>
 								<boolean id="IsLabelShown">true</boolean>
@@ -117,25 +98,6 @@
 						<boolean id="ReadOnly">false</boolean>
 						<boolean id="ConstantMarking">true</boolean>
 						<int id="InitialState">10000</int>
-					</class>
-					<class id="Mobius.AtomicModels.San.PlacePanelObject">
-						<int id="ClassVersion">1</int>
-						<class id="Mobius.BaseClasses.BaseVertexClass">
-							<int id="ClassVersion">3</int>
-							<class id="Mobius.BaseClasses.BasePanelObjectClass">
-								<int id="ClassVersion">5</int>
-								<string id="Name">OK_READ</string>
-								<boolean id="ContainsLabel">true</boolean>
-								<boolean id="IsLabelShown">true</boolean>
-							</class>
-							<point id="CenterPoint">
-								<int id="x">357</int>
-								<int id="y">747</int>
-							</point>
-						</class>
-						<boolean id="ReadOnly">false</boolean>
-						<boolean id="ConstantMarking">true</boolean>
-						<int id="InitialState">0</int>
 					</class>
 					<class id="Mobius.AtomicModels.San.PlacePanelObject">
 						<int id="ClassVersion">1</int>
@@ -167,8 +129,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">279</int>
-								<int id="y">45</int>
+								<int id="x">300</int>
+								<int id="y">60</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -207,6 +169,44 @@
 							<point id="CenterPoint">
 								<int id="x">232</int>
 								<int id="y">328</int>
+							</point>
+						</class>
+						<boolean id="ReadOnly">false</boolean>
+						<boolean id="ConstantMarking">true</boolean>
+						<int id="InitialState">0</int>
+					</class>
+					<class id="Mobius.AtomicModels.San.PlacePanelObject">
+						<int id="ClassVersion">1</int>
+						<class id="Mobius.BaseClasses.BaseVertexClass">
+							<int id="ClassVersion">3</int>
+							<class id="Mobius.BaseClasses.BasePanelObjectClass">
+								<int id="ClassVersion">5</int>
+								<string id="Name">OK_CONTENT</string>
+								<boolean id="ContainsLabel">true</boolean>
+								<boolean id="IsLabelShown">true</boolean>
+							</class>
+							<point id="CenterPoint">
+								<int id="x">348</int>
+								<int id="y">588</int>
+							</point>
+						</class>
+						<boolean id="ReadOnly">false</boolean>
+						<boolean id="ConstantMarking">true</boolean>
+						<int id="InitialState">0</int>
+					</class>
+					<class id="Mobius.AtomicModels.San.PlacePanelObject">
+						<int id="ClassVersion">1</int>
+						<class id="Mobius.BaseClasses.BaseVertexClass">
+							<int id="ClassVersion">3</int>
+							<class id="Mobius.BaseClasses.BasePanelObjectClass">
+								<int id="ClassVersion">5</int>
+								<string id="Name">KO_CONTENT</string>
+								<boolean id="ContainsLabel">true</boolean>
+								<boolean id="IsLabelShown">true</boolean>
+							</class>
+							<point id="CenterPoint">
+								<int id="x">324</int>
+								<int id="y">660</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -302,12 +302,15 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">248</int>
-								<int id="y">408</int>
+								<int id="x">252</int>
+								<int id="y">420</int>
 							</point>
 						</class>
 						<boolean id="MirrorImage">false</boolean>
-						<string id="Predicate">SCHEDULER-&gt;Mark() &gt; -1</string>
+						<string id="Predicate">
+							SCHEDULER-&gt;Mark() &gt; -1 &amp;&amp; REGISTERS_FILL-&gt;M
+							ark() == 0
+						</string>
 						<string id="Function">
 							INSTRUCTION_READY-&gt;Mark()--;\nINSTRUCTION_READY-&gt;Mark(
 							)++;
@@ -470,8 +473,8 @@
 							</class>
 							<int id="NumberOfCases">2</int>
 							<vector id="CaseDistributions">
-								<string id="0">return 0.9;</string>
-								<string id="1">return 0.1;</string>
+								<string id="0">1</string>
+								<string id="1">0</string>
 							</vector>
 						</class>
 					</class>
@@ -791,8 +794,8 @@
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">270</int>
-								<int id="y">36</int>
+								<int id="x">291</int>
+								<int id="y">51</int>
 							</point>
 							<point id="1">
 								<int id="x">184</int>
@@ -808,8 +811,8 @@
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">253</int>
-								<int id="y">412</int>
+								<int id="x">257</int>
+								<int id="y">424</int>
 							</point>
 							<point id="1">
 								<int id="x">324</int>
@@ -837,23 +840,6 @@
 					<class id="Mobius.BaseClasses.BaseEdgeClass">
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
-						<string id="StartVertex">KO_READ</string>
-						<string id="FinishVertex">COMPUTE_WITH_KO_DATA</string>
-						<boolean id="Arrows">true</boolean>
-						<vector id="PointList">
-							<point id="0">
-								<int id="x">397</int>
-								<int id="y">632</int>
-							</point>
-							<point id="1">
-								<int id="x">653</int>
-								<int id="y">694</int>
-							</point>
-						</vector>
-					</class>
-					<class id="Mobius.BaseClasses.BaseEdgeClass">
-						<int id="ClassVersion">3</int>
-						<int id="LineType">0</int>
 						<string id="StartVertex">ALU_INSTRUCTION</string>
 						<string id="FinishVertex">COMPUTE_WITH_OK_DATA</string>
 						<boolean id="Arrows">true</boolean>
@@ -865,23 +851,6 @@
 							<point id="1">
 								<int id="x">495</int>
 								<int id="y">736</int>
-							</point>
-						</vector>
-					</class>
-					<class id="Mobius.BaseClasses.BaseEdgeClass">
-						<int id="ClassVersion">3</int>
-						<int id="LineType">0</int>
-						<string id="StartVertex">OK_READ</string>
-						<string id="FinishVertex">COMPUTE_WITH_OK_DATA</string>
-						<boolean id="Arrows">true</boolean>
-						<vector id="PointList">
-							<point id="0">
-								<int id="x">359</int>
-								<int id="y">750</int>
-							</point>
-							<point id="1">
-								<int id="x">580</int>
-								<int id="y">818</int>
 							</point>
 						</vector>
 					</class>

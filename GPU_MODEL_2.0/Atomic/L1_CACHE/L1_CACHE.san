@@ -538,8 +538,8 @@
 							</class>
 							<int id="NumberOfCases">2</int>
 							<vector id="CaseDistributions">
-								<string id="0">return 1 - (1*(10^(-11)));</string>
-								<string id="1">return (1*(10^(-11)));</string>
+								<string id="0">0.5</string>
+								<string id="1">0.5</string>
 							</vector>
 						</class>
 					</class>

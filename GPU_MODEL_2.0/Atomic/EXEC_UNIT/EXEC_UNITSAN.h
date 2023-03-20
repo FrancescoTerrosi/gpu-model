@@ -120,6 +120,8 @@ class DISPATCHERActivity:public Activity {
 public:
 
   ExtendedPlace<short>* SCHEDULER;
+  Place* REGISTERS_FILL;
+  short* REGISTERS_FILL_Mobius_Mark;
   Place* INSTRUCTION_READY;
   short* INSTRUCTION_READY_Mobius_Mark;
   ExtendedPlace<short>* READ;
@@ -146,8 +148,6 @@ public:
 
   Place* ALU_INSTRUCTION;
   short* ALU_INSTRUCTION_Mobius_Mark;
-  Place* KO_READ;
-  short* KO_READ_Mobius_Mark;
   Place* INSTRUCTION_READY;
   short* INSTRUCTION_READY_Mobius_Mark;
   Place* RESULT_KO;
@@ -172,8 +172,6 @@ public:
 
   Place* ALU_INSTRUCTION;
   short* ALU_INSTRUCTION_Mobius_Mark;
-  Place* OK_READ;
-  short* OK_READ_Mobius_Mark;
   Place* INSTRUCTION_READY;
   short* INSTRUCTION_READY_Mobius_Mark;
   Place* RESULT_OK;
@@ -244,13 +242,13 @@ public:
   //List of user-specified place names
   Place* INSTRUCTION_READY;
   Place* ALU_INSTRUCTION;
-  Place* KO_READ;
   Place* RESULT_KO;
-  Place* OK_READ;
   Place* RESULT_OK;
   Place* MEM_OP_COMPLETE;
   Place* ALU_INSTRUCTION_NO_DATA;
   Place* REGISTERS_FILL;
+  Place* OK_CONTENT;
+  Place* KO_CONTENT;
   ExtendedPlace<short>* SCHEDULER;
   ExtendedPlace<short>* READ;
   ExtendedPlace<short>* WRITE;

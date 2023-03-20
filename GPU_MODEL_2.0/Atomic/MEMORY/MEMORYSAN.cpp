@@ -271,7 +271,7 @@ bool MEMORYSAN::LOCAL_READ_FROMActivity_case1::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_READ_FROMActivity_case1::Weight(){ 
-  return 1;
+  return 0.3;
 }
 
 bool MEMORYSAN::LOCAL_READ_FROMActivity_case1::ReactivationPredicate(){ 
@@ -319,7 +319,7 @@ bool MEMORYSAN::LOCAL_READ_FROMActivity_case2::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_READ_FROMActivity_case2::Weight(){ 
-  return 0;
+  return 0.3;
 }
 
 bool MEMORYSAN::LOCAL_READ_FROMActivity_case2::ReactivationPredicate(){ 
@@ -367,7 +367,7 @@ bool MEMORYSAN::LOCAL_READ_FROMActivity_case3::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_READ_FROMActivity_case3::Weight(){ 
-  return 0;
+  return 0.3;
 }
 
 bool MEMORYSAN::LOCAL_READ_FROMActivity_case3::ReactivationPredicate(){ 
@@ -415,7 +415,7 @@ bool MEMORYSAN::GLOBAL_READ_FROMActivity_case1::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_READ_FROMActivity_case1::Weight(){ 
-  return 1/3;
+  return 0.3;
 }
 
 bool MEMORYSAN::GLOBAL_READ_FROMActivity_case1::ReactivationPredicate(){ 
@@ -463,7 +463,7 @@ bool MEMORYSAN::GLOBAL_READ_FROMActivity_case2::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_READ_FROMActivity_case2::Weight(){ 
-  return 1/3;
+  return 0.3;
 }
 
 bool MEMORYSAN::GLOBAL_READ_FROMActivity_case2::ReactivationPredicate(){ 
@@ -511,7 +511,7 @@ bool MEMORYSAN::GLOBAL_READ_FROMActivity_case3::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_READ_FROMActivity_case3::Weight(){ 
-  return 1/3;
+  return 0.3;
 }
 
 bool MEMORYSAN::GLOBAL_READ_FROMActivity_case3::ReactivationPredicate(){ 

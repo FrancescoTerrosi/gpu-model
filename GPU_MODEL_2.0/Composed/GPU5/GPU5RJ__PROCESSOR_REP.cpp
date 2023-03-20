@@ -1,7 +1,7 @@
 #include "Composed/GPU5/GPU5RJ__PROCESSOR_REP.h"
-char * GPU5RJ__PROCESSOR_REP__SharedNames[] = {"KO_READ", "MEM_OP_COMPLETE", "OK_READ", "READ_DRAM", "READ_L1", "READ_L2", "RESULT_KO", "RESULT_OK", "WRITE_DRAM", "WRITE_L1", "WRITE_L2"};
+char * GPU5RJ__PROCESSOR_REP__SharedNames[] = {"MEM_OP_COMPLETE", "READ_DRAM", "READ_L1", "READ_L2", "RESULT_KO", "RESULT_OK", "WRITE_DRAM", "WRITE_L1", "WRITE_L2"};
 
-GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors, 11, GPU5RJ__PROCESSOR_REP__SharedNames)
+GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors, 9, GPU5RJ__PROCESSOR_REP__SharedNames)
 {
   InstanceArray = new GPU5RJ__PROCESSOR * [NumModels];
   delete[] ModelArray;
@@ -16,17 +16,9 @@ GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors,
     NumSharedStateVariables = 0;
   else {
     //**************** Initialize local variables ****************
-    KO_READ = new Place("KO_READ");
-    addSharedPtr(KO_READ, "KO_READ");
-    KO_READ->ShareWith(InstanceArray[0]->KO_READ);
-
     MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE");
     addSharedPtr(MEM_OP_COMPLETE, "MEM_OP_COMPLETE");
     MEM_OP_COMPLETE->ShareWith(InstanceArray[0]->MEM_OP_COMPLETE);
-
-    OK_READ = new Place("OK_READ");
-    addSharedPtr(OK_READ, "OK_READ");
-    OK_READ->ShareWith(InstanceArray[0]->OK_READ);
 
     READ_DRAM = new Place("READ_DRAM");
     addSharedPtr(READ_DRAM, "READ_DRAM");
@@ -63,13 +55,7 @@ GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors,
 
     //Share state in submodels
     for (counter = 0; counter < NumModels; counter++) {
-      addSharingInfo(InstanceArray[counter]->KO_READ, KO_READ);
-    }
-    for (counter = 0; counter < NumModels; counter++) {
       addSharingInfo(InstanceArray[counter]->MEM_OP_COMPLETE, MEM_OP_COMPLETE);
-    }
-    for (counter = 0; counter < NumModels; counter++) {
-      addSharingInfo(InstanceArray[counter]->OK_READ, OK_READ);
     }
     for (counter = 0; counter < NumModels; counter++) {
       addSharingInfo(InstanceArray[counter]->READ_DRAM, READ_DRAM);
@@ -96,9 +82,7 @@ GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors,
       addSharingInfo(InstanceArray[counter]->WRITE_L2, WRITE_L2);
     }
     for (counter = 1; counter < NumModels; counter++) {
-      InstanceArray[0]->KO_READ->ShareWith(InstanceArray[counter]->KO_READ);
       InstanceArray[0]->MEM_OP_COMPLETE->ShareWith(InstanceArray[counter]->MEM_OP_COMPLETE);
-      InstanceArray[0]->OK_READ->ShareWith(InstanceArray[counter]->OK_READ);
       InstanceArray[0]->READ_DRAM->ShareWith(InstanceArray[counter]->READ_DRAM);
       InstanceArray[0]->READ_L1->ShareWith(InstanceArray[counter]->READ_L1);
       InstanceArray[0]->READ_L2->ShareWith(InstanceArray[counter]->READ_L2);
@@ -114,9 +98,7 @@ GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors,
 
 GPU5RJ__PROCESSOR_REP::~GPU5RJ__PROCESSOR_REP() {
   if (NumModels == 0) return;
-  delete KO_READ;
   delete MEM_OP_COMPLETE;
-  delete OK_READ;
   delete READ_DRAM;
   delete READ_L1;
   delete READ_L2;

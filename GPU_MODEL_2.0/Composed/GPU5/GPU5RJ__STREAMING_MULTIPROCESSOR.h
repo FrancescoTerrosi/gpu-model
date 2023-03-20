@@ -15,9 +15,7 @@ class GPU5RJ__STREAMING_MULTIPROCESSOR: public Join {
  public:
   GPU5RJ__PROCESSOR_REP * PROCESSOR_REP;
   L1_CACHESAN * L1_CACHE;
-  Place * KO_READ;
   Place * MEM_OP_COMPLETE;
-  Place * OK_READ;
   Place * READ_DRAM;
   Place * READ_L1;
   Place * READ_L2;

@@ -1,7 +1,7 @@
 #include "Composed/GPU5/GPU5RJ.h"
 char * GPU5RJ__SharedNames[] = {};
 
-GPU5RJ::GPU5RJ():Rep("Rep", 50, 0, GPU5RJ__SharedNames)
+GPU5RJ::GPU5RJ():Rep("Rep", 1, 0, GPU5RJ__SharedNames)
 {
   InstanceArray = new GPU5RJ__DEVICE * [NumModels];
   delete[] ModelArray;
