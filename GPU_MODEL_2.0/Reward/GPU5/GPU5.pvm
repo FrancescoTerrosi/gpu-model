@@ -143,7 +143,7 @@
 					<string id="0">REGISTER_FILE-&gt;WRITE_WITH_KO_DATA</string>
 				</vector>
 				<vector id="ImpulseFunctionsList">
-					<string id="0">return 1;</string>
+					<string id="0">return REGISTER_FILE-&gt;KO_CONTENT-&gt;Mark();</string>
 				</vector>
 				<string id="RewardFunction"></string>
 				<int id="Type">1</int>

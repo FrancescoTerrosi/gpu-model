@@ -396,7 +396,7 @@ bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Enabled(){
 }
 
 double EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Weight(){ 
-  return 1;
+  return 0.5;
 }
 
 bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::ReactivationPredicate(){ 
@@ -446,7 +446,7 @@ bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Enabled(){
 }
 
 double EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Weight(){ 
-  return 0;
+  return 0.5;
 }
 
 bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::ReactivationPredicate(){ 

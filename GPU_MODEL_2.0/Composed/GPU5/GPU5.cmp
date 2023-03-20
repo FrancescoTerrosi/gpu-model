@@ -84,7 +84,7 @@
 							<int id="y">204</int>
 						</point>
 					</class>
-					<string id="RepCount">1</string>
+					<string id="RepCount">ngpu</string>
 					<int id="SharingInfoSize">0</int>
 				</class>
 				<class id="Mobius.ComposedModels.Common.JoinPanelObject">
@@ -763,10 +763,12 @@
 			<vector id="LocalGlobalNamesList">
 				<string id="0">nwarps</string>
 				<string id="1">nprocessors</string>
+				<string id="2">ngpu</string>
 			</vector>
 			<vector id="LocalGlobalTypesList">
 				<string id="0">short</string>
 				<string id="1">short</string>
+				<string id="2">short</string>
 			</vector>
 			<boolean id="DisplayToolTips">true</boolean>
 		</class>

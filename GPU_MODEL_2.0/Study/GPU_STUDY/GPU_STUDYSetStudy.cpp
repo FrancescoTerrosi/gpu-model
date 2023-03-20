@@ -8,6 +8,7 @@ Short dram_size;
 Short end;
 Short l1_size;
 Short l2_size;
+Short ngpu;
 Short nprocessors;
 Short nwarps;
 Short register_count_index;
@@ -19,7 +20,7 @@ Short size;
 GPU_STUDYSetStudy::GPU_STUDYSetStudy() {
 
   // define arrays of global variable names and types
-  NumGVs = 8;
+  NumGVs = 9;
   NumExps = 1;
 
   GVNames = new char*[NumGVs];
@@ -32,20 +33,23 @@ GPU_STUDYSetStudy::GPU_STUDYSetStudy() {
   GVTypes[2]=strdup("short");
   GVNames[3]=strdup("l2_size");
   GVTypes[3]=strdup("short");
-  GVNames[4]=strdup("nprocessors");
+  GVNames[4]=strdup("ngpu");
   GVTypes[4]=strdup("short");
-  GVNames[5]=strdup("nwarps");
+  GVNames[5]=strdup("nprocessors");
   GVTypes[5]=strdup("short");
-  GVNames[6]=strdup("register_count_index");
+  GVNames[6]=strdup("nwarps");
   GVTypes[6]=strdup("short");
-  GVNames[7]=strdup("size");
+  GVNames[7]=strdup("register_count_index");
   GVTypes[7]=strdup("short");
+  GVNames[8]=strdup("size");
+  GVTypes[8]=strdup("short");
 
   // create the arrays to store the values of each gv
   dram_sizeValues = new short[NumExps];
   endValues = new short[NumExps];
   l1_sizeValues = new short[NumExps];
   l2_sizeValues = new short[NumExps];
+  ngpuValues = new short[NumExps];
   nprocessorsValues = new short[NumExps];
   nwarpsValues = new short[NumExps];
   register_count_indexValues = new short[NumExps];
@@ -56,6 +60,7 @@ GPU_STUDYSetStudy::GPU_STUDYSetStudy() {
   SetValues_end();
   SetValues_l1_size();
   SetValues_l2_size();
+  SetValues_ngpu();
   SetValues_nprocessors();
   SetValues_nwarps();
   SetValues_register_count_index();
@@ -72,6 +77,7 @@ GPU_STUDYSetStudy::~GPU_STUDYSetStudy() {
   delete [] endValues;
   delete [] l1_sizeValues;
   delete [] l2_sizeValues;
+  delete [] ngpuValues;
   delete [] nprocessorsValues;
   delete [] nwarpsValues;
   delete [] register_count_indexValues;
@@ -109,6 +115,14 @@ void GPU_STUDYSetStudy::SetValues_l1_size() {
 //******************************************************
 void GPU_STUDYSetStudy::SetValues_l2_size() {
   l2_sizeValues[0] = 100;
+}
+
+
+//******************************************************
+// set values for ngpu
+//******************************************************
+void GPU_STUDYSetStudy::SetValues_ngpu() {
+  ngpuValues[0] = 100;
 }
 
 
@@ -162,6 +176,7 @@ void GPU_STUDYSetStudy::PrintGlobalValues(int expNum) {
   cout << "end\tshort\t" << end << endl;
   cout << "l1_size\tshort\t" << l1_size << endl;
   cout << "l2_size\tshort\t" << l2_size << endl;
+  cout << "ngpu\tshort\t" << ngpu << endl;
   cout << "nprocessors\tshort\t" << nprocessors << endl;
   cout << "nwarps\tshort\t" << nwarps << endl;
   cout << "register_count_index\tshort\t" << register_count_index << endl;
@@ -181,6 +196,8 @@ void *GPU_STUDYSetStudy::GetGVValue(char *TheGVName) {
     return &l1_size;
   else if (strcmp("l2_size", TheGVName) == 0)
     return &l2_size;
+  else if (strcmp("ngpu", TheGVName) == 0)
+    return &ngpu;
   else if (strcmp("nprocessors", TheGVName) == 0)
     return &nprocessors;
   else if (strcmp("nwarps", TheGVName) == 0)
@@ -207,6 +224,8 @@ void GPU_STUDYSetStudy::OverrideGVValue(char *TheGVName,void *TheGVValue) {
     SetGvValue(l1_size, *(short *)TheGVValue);
   else if (strcmp("l2_size", TheGVName) == 0)
     SetGvValue(l2_size, *(short *)TheGVValue);
+  else if (strcmp("ngpu", TheGVName) == 0)
+    SetGvValue(ngpu, *(short *)TheGVValue);
   else if (strcmp("nprocessors", TheGVName) == 0)
     SetGvValue(nprocessors, *(short *)TheGVValue);
   else if (strcmp("nwarps", TheGVName) == 0)
@@ -228,6 +247,7 @@ void GPU_STUDYSetStudy::SetGVs(int expNum) {
   SetGvValue(end, endValues[expNum]);
   SetGvValue(l1_size, l1_sizeValues[expNum]);
   SetGvValue(l2_size, l2_sizeValues[expNum]);
+  SetGvValue(ngpu, ngpuValues[expNum]);
   SetGvValue(nprocessors, nprocessorsValues[expNum]);
   SetGvValue(nwarps, nwarpsValues[expNum]);
   SetGvValue(register_count_index, register_count_indexValues[expNum]);

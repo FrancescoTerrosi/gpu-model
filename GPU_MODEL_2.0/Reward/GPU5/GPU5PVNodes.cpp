@@ -162,7 +162,7 @@ GPU5PV2Impulse0::~GPU5PV2Impulse0() {
 
 double GPU5PV2Impulse0::Impulse_Function(double FiringTime)
 {
-return 1;
+return REGISTER_FILE->KO_CONTENT->Mark();
 
 return(0);
 }

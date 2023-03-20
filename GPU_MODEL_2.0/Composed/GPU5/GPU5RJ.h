@@ -8,6 +8,7 @@
 #include "Composed/GPU5/GPU5RJ__DEVICE.h"
 extern Short nwarps;
 extern Short nprocessors;
+extern Short ngpu;
 
 class GPU5RJ: public Rep {
  public:

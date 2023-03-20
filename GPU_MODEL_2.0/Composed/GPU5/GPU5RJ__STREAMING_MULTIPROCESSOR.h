@@ -10,6 +10,7 @@
 #include "Cpp/BaseClasses/SAN/Place.h"
 extern Short nwarps;
 extern Short nprocessors;
+extern Short ngpu;
 
 class GPU5RJ__STREAMING_MULTIPROCESSOR: public Join {
  public:

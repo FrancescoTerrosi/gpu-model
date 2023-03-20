@@ -473,8 +473,8 @@
 							</class>
 							<int id="NumberOfCases">2</int>
 							<vector id="CaseDistributions">
-								<string id="0">1</string>
-								<string id="1">0</string>
+								<string id="0">0.5</string>
+								<string id="1">0.5</string>
 							</vector>
 						</class>
 					</class>
