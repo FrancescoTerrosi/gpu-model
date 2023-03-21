@@ -25,8 +25,6 @@ class GPU5RJ__DEVICE: public Join {
   Place * OK_CONTENT;
   Place * READ_DRAM;
   Place * READ_L2;
-  Place * RESULT_KO;
-  Place * RESULT_OK;
   Place * WRITE_DRAM;
   Place * WRITE_L2;
 

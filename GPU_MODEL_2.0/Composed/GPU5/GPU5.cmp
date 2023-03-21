@@ -58,13 +58,11 @@
 						</point>
 					</class>
 					<string id="RepCount">nprocessors</string>
-					<int id="SharingInfoSize">9</int>
+					<int id="SharingInfoSize">7</int>
 					<string id="RepSharingInfoElement">MEM_OP_COMPLETE</string>
 					<string id="RepSharingInfoElement">READ_DRAM</string>
 					<string id="RepSharingInfoElement">READ_L1</string>
 					<string id="RepSharingInfoElement">READ_L2</string>
-					<string id="RepSharingInfoElement">RESULT_KO</string>
-					<string id="RepSharingInfoElement">RESULT_OK</string>
 					<string id="RepSharingInfoElement">WRITE_DRAM</string>
 					<string id="RepSharingInfoElement">WRITE_L1</string>
 					<string id="RepSharingInfoElement">WRITE_L2</string>
@@ -102,7 +100,7 @@
 							<int id="y">396</int>
 						</point>
 					</class>
-					<int id="SharingInfoSize">18</int>
+					<int id="SharingInfoSize">14</int>
 					<string id="NewSharedObjName">INSTRUCTION_READY</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -124,8 +122,7 @@
 					<int id="FunctionIndex">-1</int>
 					<boolean id="actionFlag">false</boolean>
 					<vector id="FullAccessPathStrings">
-						<string id="0">REGISTER_FILE-&gt;MEM_OP_COMPLETE</string>
-						<string id="1">EXEC_UNIT-&gt;MEM_OP_COMPLETE</string>
+						<string id="0">EXEC_UNIT-&gt;MEM_OP_COMPLETE</string>
 					</vector>
 					<string id="NewSharedObjName">OK_CONTENT</string>
 					<string id="Function"></string>
@@ -164,14 +161,6 @@
 					<vector id="FullAccessPathStrings">
 						<string id="0">MEMORY-&gt;READ_L2</string>
 					</vector>
-					<string id="NewSharedObjName">READ_REGISTER_FILE</string>
-					<string id="Function"></string>
-					<int id="FunctionIndex">-1</int>
-					<boolean id="actionFlag">false</boolean>
-					<vector id="FullAccessPathStrings">
-						<string id="0">REGISTER_FILE-&gt;READ_REGISTER_FILE</string>
-						<string id="1">MEMORY-&gt;READ_REGISTER_FILE</string>
-					</vector>
 					<string id="NewSharedObjName">REGISTERS_FILL</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -180,22 +169,6 @@
 						<string id="0">Rep1-&gt;REGISTERS_FILL</string>
 						<string id="1">REGISTER_FILE-&gt;REGISTERS_FILL</string>
 						<string id="2">EXEC_UNIT-&gt;REGISTERS_FILL</string>
-					</vector>
-					<string id="NewSharedObjName">RESULT_KO</string>
-					<string id="Function"></string>
-					<int id="FunctionIndex">-1</int>
-					<boolean id="actionFlag">false</boolean>
-					<vector id="FullAccessPathStrings">
-						<string id="0">REGISTER_FILE-&gt;RESULT_KO</string>
-						<string id="1">EXEC_UNIT-&gt;RESULT_KO</string>
-					</vector>
-					<string id="NewSharedObjName">RESULT_OK</string>
-					<string id="Function"></string>
-					<int id="FunctionIndex">-1</int>
-					<boolean id="actionFlag">false</boolean>
-					<vector id="FullAccessPathStrings">
-						<string id="0">REGISTER_FILE-&gt;RESULT_OK</string>
-						<string id="1">EXEC_UNIT-&gt;RESULT_OK</string>
 					</vector>
 					<string id="NewSharedObjName">SCHEDULER</string>
 					<string id="Function"></string>
@@ -234,14 +207,6 @@
 					<vector id="FullAccessPathStrings">
 						<string id="0">MEMORY-&gt;WRITE_L2</string>
 					</vector>
-					<string id="NewSharedObjName">WRITE_REGISTER_FILE</string>
-					<string id="Function"></string>
-					<int id="FunctionIndex">-1</int>
-					<boolean id="actionFlag">false</boolean>
-					<vector id="FullAccessPathStrings">
-						<string id="0">REGISTER_FILE-&gt;WRITE_REGISTER_FILE</string>
-						<string id="1">MEMORY-&gt;WRITE_REGISTER_FILE</string>
-					</vector>
 				</class>
 				<class id="Mobius.ComposedModels.Common.JoinPanelObject">
 					<int id="ClassVersion">3</int>
@@ -258,7 +223,7 @@
 							<int id="y">252</int>
 						</point>
 					</class>
-					<int id="SharingInfoSize">9</int>
+					<int id="SharingInfoSize">7</int>
 					<string id="NewSharedObjName">MEM_OP_COMPLETE</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -288,22 +253,6 @@
 					<boolean id="actionFlag">false</boolean>
 					<vector id="FullAccessPathStrings">
 						<string id="0">PROCESSOR_REP-&gt;READ_L2</string>
-					</vector>
-					<string id="NewSharedObjName">RESULT_KO</string>
-					<string id="Function"></string>
-					<int id="FunctionIndex">-1</int>
-					<boolean id="actionFlag">false</boolean>
-					<vector id="FullAccessPathStrings">
-						<string id="0">PROCESSOR_REP-&gt;RESULT_KO</string>
-						<string id="1">L1_CACHE-&gt;RESULT_KO</string>
-					</vector>
-					<string id="NewSharedObjName">RESULT_OK</string>
-					<string id="Function"></string>
-					<int id="FunctionIndex">-1</int>
-					<boolean id="actionFlag">false</boolean>
-					<vector id="FullAccessPathStrings">
-						<string id="0">PROCESSOR_REP-&gt;RESULT_OK</string>
-						<string id="1">L1_CACHE-&gt;RESULT_OK</string>
 					</vector>
 					<string id="NewSharedObjName">WRITE_DRAM</string>
 					<string id="Function"></string>
@@ -343,7 +292,7 @@
 							<int id="y">190</int>
 						</point>
 					</class>
-					<int id="SharingInfoSize">11</int>
+					<int id="SharingInfoSize">9</int>
 					<string id="NewSharedObjName">KO_CONTENT</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -400,24 +349,6 @@
 					<vector id="FullAccessPathStrings">
 						<string id="0">STREAMING_MULTIPROCESSOR-&gt;READ_L2</string>
 						<string id="1">L2_CACHE-&gt;READ_L2</string>
-					</vector>
-					<string id="NewSharedObjName">RESULT_KO</string>
-					<string id="Function"></string>
-					<int id="FunctionIndex">-1</int>
-					<boolean id="actionFlag">false</boolean>
-					<vector id="FullAccessPathStrings">
-						<string id="0">STREAMING_MULTIPROCESSOR-&gt;RESULT_KO</string>
-						<string id="1">DRAM-&gt;RESULT_KO</string>
-						<string id="2">L2_CACHE-&gt;RESULT_KO</string>
-					</vector>
-					<string id="NewSharedObjName">RESULT_OK</string>
-					<string id="Function"></string>
-					<int id="FunctionIndex">-1</int>
-					<boolean id="actionFlag">false</boolean>
-					<vector id="FullAccessPathStrings">
-						<string id="0">STREAMING_MULTIPROCESSOR-&gt;RESULT_OK</string>
-						<string id="1">DRAM-&gt;RESULT_OK</string>
-						<string id="2">L2_CACHE-&gt;RESULT_OK</string>
 					</vector>
 					<string id="NewSharedObjName">WRITE_DRAM</string>
 					<string id="Function"></string>

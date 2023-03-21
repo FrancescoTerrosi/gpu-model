@@ -90,21 +90,21 @@ DRAMSAN::DRAMSAN(){
   assignPlacesToActivitiesInst();
   assignPlacesToActivitiesTimed();
 
-  int AffectArcs[30][2]={ 
-    {0,0}, {1,0}, {3,1}, {5,1}, {0,1}, {12,1}, {2,2}, {1,2}, 
-    {3,3}, {4,3}, {2,3}, {11,3}, {7,4}, {1,4}, {6,4}, {8,5}, 
-    {10,5}, {8,6}, {7,6}, {10,7}, {1,7}, {9,7}, {13,8}, {11,8}, 
-    {2,8}, {12,8}, {13,9}, {12,9}, {0,9}, {11,9}
+  int AffectArcs[28][2]={ 
+    {0,0}, {1,0}, {3,1}, {0,1}, {12,1}, {2,2}, {1,2}, {3,3}, 
+    {2,3}, {11,3}, {7,4}, {1,4}, {6,4}, {8,5}, {10,5}, {8,6}, 
+    {7,6}, {10,7}, {1,7}, {9,7}, {13,8}, {11,8}, {2,8}, {12,8}, 
+    {13,9}, {12,9}, {0,9}, {11,9}
   };
-  for(int n=0;n<30;n++) {
+  for(int n=0;n<28;n++) {
     AddAffectArc(InitialPlaces[AffectArcs[n][0]],
                  InitialActionList[AffectArcs[n][1]]);
   }
-  int EnableArcs[12][2]={ 
-    {0,0}, {3,1}, {5,1}, {2,2}, {3,3}, {4,3}, {7,4}, {8,5}, {8,6}, 
-    {10,7}, {13,8}, {13,9}
+  int EnableArcs[10][2]={ 
+    {0,0}, {3,1}, {2,2}, {3,3}, {7,4}, {8,5}, {8,6}, {10,7}, 
+    {13,8}, {13,9}
   };
-  for(int n=0;n<12;n++) {
+  for(int n=0;n<10;n++) {
     AddEnableArc(InitialPlaces[EnableArcs[n][0]],
                  InitialActionList[EnableArcs[n][1]]);
   }
@@ -128,13 +128,11 @@ void DRAMSAN::assignPlacesToActivitiesInst(){
   Instantaneous_Activity23.KO_CONTENT_TEMP = (Place*) LocalStateVariables[0];
   Instantaneous_Activity23.MEM_OP_COMPLETE = (Place*) LocalStateVariables[1];
   WRITE_WITH_KO_DATA.WRITE_DRAM = (Place*) LocalStateVariables[3];
-  WRITE_WITH_KO_DATA.RESULT_KO = (Place*) LocalStateVariables[5];
   WRITE_WITH_KO_DATA.KO_CONTENT_TEMP = (Place*) LocalStateVariables[0];
   WRITE_WITH_KO_DATA.KO_CONTENT = (Place*) LocalStateVariables[12];
   Instantaneous_Activity12.OK_CONTENT_TEMP = (Place*) LocalStateVariables[2];
   Instantaneous_Activity12.MEM_OP_COMPLETE = (Place*) LocalStateVariables[1];
   WRITE_WITH_OK_DATA.WRITE_DRAM = (Place*) LocalStateVariables[3];
-  WRITE_WITH_OK_DATA.RESULT_OK = (Place*) LocalStateVariables[4];
   WRITE_WITH_OK_DATA.OK_CONTENT_TEMP = (Place*) LocalStateVariables[2];
   WRITE_WITH_OK_DATA.OK_CONTENT = (Place*) LocalStateVariables[11];
   Instantaneous_Activity2.MEMORY_KO = (Place*) LocalStateVariables[7];
@@ -214,19 +212,18 @@ BaseActionClass* DRAMSAN::Instantaneous_Activity23Activity::Fire(){
 
 
 DRAMSAN::WRITE_WITH_KO_DATAActivity::WRITE_WITH_KO_DATAActivity(){
-  ActivityInitialize("WRITE_WITH_KO_DATA",1,Instantaneous , RaceEnabled, 4,2, false);
+  ActivityInitialize("WRITE_WITH_KO_DATA",1,Instantaneous , RaceEnabled, 3,1, false);
 }
 
 void DRAMSAN::WRITE_WITH_KO_DATAActivity::LinkVariables(){
   WRITE_DRAM->Register(&WRITE_DRAM_Mobius_Mark);
-  RESULT_KO->Register(&RESULT_KO_Mobius_Mark);
   KO_CONTENT_TEMP->Register(&KO_CONTENT_TEMP_Mobius_Mark);
   KO_CONTENT->Register(&KO_CONTENT_Mobius_Mark);
 }
 
 bool DRAMSAN::WRITE_WITH_KO_DATAActivity::Enabled(){
   OldEnabled=NewEnabled;
-  NewEnabled=(((*(WRITE_DRAM_Mobius_Mark)) >=1)&&((*(RESULT_KO_Mobius_Mark)) >=1));
+  NewEnabled=(((*(WRITE_DRAM_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
@@ -256,7 +253,6 @@ int DRAMSAN::WRITE_WITH_KO_DATAActivity::Rank(){
 
 BaseActionClass* DRAMSAN::WRITE_WITH_KO_DATAActivity::Fire(){
   (*(WRITE_DRAM_Mobius_Mark))--;
-  (*(RESULT_KO_Mobius_Mark))--;
   KO_CONTENT_TEMP->Mark()++;
 KO_CONTENT->Mark()++;
   return this;
@@ -314,19 +310,18 @@ BaseActionClass* DRAMSAN::Instantaneous_Activity12Activity::Fire(){
 
 
 DRAMSAN::WRITE_WITH_OK_DATAActivity::WRITE_WITH_OK_DATAActivity(){
-  ActivityInitialize("WRITE_WITH_OK_DATA",3,Instantaneous , RaceEnabled, 4,2, false);
+  ActivityInitialize("WRITE_WITH_OK_DATA",3,Instantaneous , RaceEnabled, 3,1, false);
 }
 
 void DRAMSAN::WRITE_WITH_OK_DATAActivity::LinkVariables(){
   WRITE_DRAM->Register(&WRITE_DRAM_Mobius_Mark);
-  RESULT_OK->Register(&RESULT_OK_Mobius_Mark);
   OK_CONTENT_TEMP->Register(&OK_CONTENT_TEMP_Mobius_Mark);
   OK_CONTENT->Register(&OK_CONTENT_Mobius_Mark);
 }
 
 bool DRAMSAN::WRITE_WITH_OK_DATAActivity::Enabled(){
   OldEnabled=NewEnabled;
-  NewEnabled=(((*(WRITE_DRAM_Mobius_Mark)) >=1)&&((*(RESULT_OK_Mobius_Mark)) >=1));
+  NewEnabled=(((*(WRITE_DRAM_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
@@ -356,7 +351,6 @@ int DRAMSAN::WRITE_WITH_OK_DATAActivity::Rank(){
 
 BaseActionClass* DRAMSAN::WRITE_WITH_OK_DATAActivity::Fire(){
   (*(WRITE_DRAM_Mobius_Mark))--;
-  (*(RESULT_OK_Mobius_Mark))--;
   OK_CONTENT_TEMP->Mark()++;
 OK_CONTENT->Mark()++;
   return this;

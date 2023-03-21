@@ -28,16 +28,12 @@ class GPU5RJ__PROCESSOR: public Join {
   Place * READ_DRAM;
   Place * READ_L1;
   Place * READ_L2;
-  Place * READ_REGISTER_FILE;
   Place * REGISTERS_FILL;
-  Place * RESULT_KO;
-  Place * RESULT_OK;
   Place * SCHEDULER;
   Place * WRITE;
   Place * WRITE_DRAM;
   Place * WRITE_L1;
   Place * WRITE_L2;
-  Place * WRITE_REGISTER_FILE;
 
   GPU5RJ__PROCESSOR();
   ~GPU5RJ__PROCESSOR();

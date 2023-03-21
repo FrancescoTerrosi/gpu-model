@@ -50,8 +50,6 @@ public:
 
   Place* WRITE_DRAM;
   short* WRITE_DRAM_Mobius_Mark;
-  Place* RESULT_KO;
-  short* RESULT_KO_Mobius_Mark;
   Place* KO_CONTENT_TEMP;
   short* KO_CONTENT_TEMP_Mobius_Mark;
   Place* KO_CONTENT;
@@ -98,8 +96,6 @@ public:
 
   Place* WRITE_DRAM;
   short* WRITE_DRAM_Mobius_Mark;
-  Place* RESULT_OK;
-  short* RESULT_OK_Mobius_Mark;
   Place* OK_CONTENT_TEMP;
   short* OK_CONTENT_TEMP_Mobius_Mark;
   Place* OK_CONTENT;

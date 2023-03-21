@@ -20,8 +20,6 @@ class GPU5RJ__STREAMING_MULTIPROCESSOR: public Join {
   Place * READ_DRAM;
   Place * READ_L1;
   Place * READ_L2;
-  Place * RESULT_KO;
-  Place * RESULT_OK;
   Place * WRITE_DRAM;
   Place * WRITE_L1;
   Place * WRITE_L2;

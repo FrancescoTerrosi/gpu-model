@@ -1006,23 +1006,6 @@
 					<class id="Mobius.BaseClasses.BaseEdgeClass">
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
-						<string id="StartVertex">RESULT_KO</string>
-						<string id="FinishVertex">WRITE_WITH_KO_DATA</string>
-						<boolean id="Arrows">true</boolean>
-						<vector id="PointList">
-							<point id="0">
-								<int id="x">166</int>
-								<int id="y">684</int>
-							</point>
-							<point id="1">
-								<int id="x">315</int>
-								<int id="y">602</int>
-							</point>
-						</vector>
-					</class>
-					<class id="Mobius.BaseClasses.BaseEdgeClass">
-						<int id="ClassVersion">3</int>
-						<int id="LineType">0</int>
 						<string id="StartVertex">OK_CONTENT_TEMP</string>
 						<string id="FinishVertex">Instantaneous_Activity12</string>
 						<boolean id="Arrows">true</boolean>
@@ -1051,23 +1034,6 @@
 							<point id="1">
 								<int id="x">335</int>
 								<int id="y">401</int>
-							</point>
-						</vector>
-					</class>
-					<class id="Mobius.BaseClasses.BaseEdgeClass">
-						<int id="ClassVersion">3</int>
-						<int id="LineType">0</int>
-						<string id="StartVertex">RESULT_OK</string>
-						<string id="FinishVertex">WRITE_WITH_OK_DATA</string>
-						<boolean id="Arrows">true</boolean>
-						<vector id="PointList">
-							<point id="0">
-								<int id="x">156</int>
-								<int id="y">476</int>
-							</point>
-							<point id="1">
-								<int id="x">335</int>
-								<int id="y">398</int>
 							</point>
 						</vector>
 					</class>

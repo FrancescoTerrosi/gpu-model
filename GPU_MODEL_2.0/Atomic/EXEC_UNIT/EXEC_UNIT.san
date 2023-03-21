@@ -338,13 +338,13 @@
 							       WRITE-&gt;Mark() = SCHEDULER-&gt;Mark();\n    break;\
 							n\n    case 2:\n        READ-&gt;Mark() = SCHEDULER-&gt;Mark
 							();\n    break;\n\n    case 3:\n        WRITE-&gt;Mark() = S
-							CHEDULER-&gt;Mark();\n    break;\n\n    case 4:\n        REA
-							D-&gt;Mark() = SCHEDULER-&gt;Mark();\n    break;\n\n    case
-							 5:\n        ALU_INSTRUCTION_NO_DATA-&gt;Mark()++;\n    brea
-							k;\n\n    case 6:\n        ALU_INSTRUCTION_NO_DATA-&gt;Mark(
-							)++;\n    break;\n\n    case 7:\n        ALU_INSTRUCTION_NO_
-							DATA-&gt;Mark()++;\n    break;\n\n    default:\n    break;\n
-							}\nSCHEDULER-&gt;Mark() = -1;
+							CHEDULER-&gt;Mark();\n    break;\n\n    case 4:\n        ALU
+							_INSTRUCTION_NO_DATA-&gt;Mark()++;\n    break;\n\n    case 5
+							:\n        ALU_INSTRUCTION_NO_DATA-&gt;Mark()++;\n    break;
+							\n\n    case 6:\n        ALU_INSTRUCTION_NO_DATA-&gt;Mark()+
+							+;\n    break;\n\n    case 7:\n        ALU_INSTRUCTION_NO_DA
+							TA-&gt;Mark()++;\n    break;\n\n    default:\n    break;\n}\
+							nSCHEDULER-&gt;Mark() = -1;
 						</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.InstantaneousActivityPanelObject">

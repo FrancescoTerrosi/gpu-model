@@ -258,7 +258,7 @@ INSTRUCTION_READY->Mark()++;
     break;
 
     case 4:
-        READ->Mark() = SCHEDULER->Mark();
+        ALU_INSTRUCTION_NO_DATA->Mark()++;
     break;
 
     case 5:

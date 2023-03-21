@@ -1,7 +1,7 @@
 #include "Composed/GPU5/GPU5RJ__STREAMING_MULTIPROCESSOR.h"
-char * GPU5RJ__STREAMING_MULTIPROCESSOR__SharedNames[] = {"MEM_OP_COMPLETE", "READ_DRAM", "READ_L1", "READ_L2", "RESULT_KO", "RESULT_OK", "WRITE_DRAM", "WRITE_L1", "WRITE_L2"};
+char * GPU5RJ__STREAMING_MULTIPROCESSOR__SharedNames[] = {"MEM_OP_COMPLETE", "READ_DRAM", "READ_L1", "READ_L2", "WRITE_DRAM", "WRITE_L1", "WRITE_L2"};
 
-GPU5RJ__STREAMING_MULTIPROCESSOR::GPU5RJ__STREAMING_MULTIPROCESSOR():Join("STREAMING_MULTIPROCESSOR", 2, 9,GPU5RJ__STREAMING_MULTIPROCESSOR__SharedNames) {
+GPU5RJ__STREAMING_MULTIPROCESSOR::GPU5RJ__STREAMING_MULTIPROCESSOR():Join("STREAMING_MULTIPROCESSOR", 2, 7,GPU5RJ__STREAMING_MULTIPROCESSOR__SharedNames) {
   PROCESSOR_REP = new GPU5RJ__PROCESSOR_REP();
   ModelArray[0] = (BaseModelClass*) PROCESSOR_REP;
   ModelArray[0]->DefineName("PROCESSOR_REP");
@@ -55,30 +55,6 @@ GPU5RJ__STREAMING_MULTIPROCESSOR::GPU5RJ__STREAMING_MULTIPROCESSOR():Join("STREA
     }
 
     //Shared variable 4
-    RESULT_KO = new Place("RESULT_KO");
-    addSharedPtr(RESULT_KO, "RESULT_KO" );
-    if (PROCESSOR_REP->NumStateVariables > 0) {
-      RESULT_KO->ShareWith(getSharableSVPointer(PROCESSOR_REP->RESULT_KO));
-      addSharingInfo(getSharableSVPointer(PROCESSOR_REP->RESULT_KO), RESULT_KO, PROCESSOR_REP);
-    }
-    if (L1_CACHE->NumStateVariables > 0) {
-      RESULT_KO->ShareWith(getSharableSVPointer(L1_CACHE->RESULT_KO));
-      addSharingInfo(getSharableSVPointer(L1_CACHE->RESULT_KO), RESULT_KO, L1_CACHE);
-    }
-
-    //Shared variable 5
-    RESULT_OK = new Place("RESULT_OK");
-    addSharedPtr(RESULT_OK, "RESULT_OK" );
-    if (PROCESSOR_REP->NumStateVariables > 0) {
-      RESULT_OK->ShareWith(getSharableSVPointer(PROCESSOR_REP->RESULT_OK));
-      addSharingInfo(getSharableSVPointer(PROCESSOR_REP->RESULT_OK), RESULT_OK, PROCESSOR_REP);
-    }
-    if (L1_CACHE->NumStateVariables > 0) {
-      RESULT_OK->ShareWith(getSharableSVPointer(L1_CACHE->RESULT_OK));
-      addSharingInfo(getSharableSVPointer(L1_CACHE->RESULT_OK), RESULT_OK, L1_CACHE);
-    }
-
-    //Shared variable 6
     WRITE_DRAM = new Place("WRITE_DRAM");
     addSharedPtr(WRITE_DRAM, "WRITE_DRAM" );
     if (PROCESSOR_REP->NumStateVariables > 0) {
@@ -86,7 +62,7 @@ GPU5RJ__STREAMING_MULTIPROCESSOR::GPU5RJ__STREAMING_MULTIPROCESSOR():Join("STREA
       addSharingInfo(getSharableSVPointer(PROCESSOR_REP->WRITE_DRAM), WRITE_DRAM, PROCESSOR_REP);
     }
 
-    //Shared variable 7
+    //Shared variable 5
     WRITE_L1 = new Place("WRITE_L1");
     addSharedPtr(WRITE_L1, "WRITE_L1" );
     if (PROCESSOR_REP->NumStateVariables > 0) {
@@ -98,7 +74,7 @@ GPU5RJ__STREAMING_MULTIPROCESSOR::GPU5RJ__STREAMING_MULTIPROCESSOR():Join("STREA
       addSharingInfo(getSharableSVPointer(L1_CACHE->WRITE_L1), WRITE_L1, L1_CACHE);
     }
 
-    //Shared variable 8
+    //Shared variable 6
     WRITE_L2 = new Place("WRITE_L2");
     addSharedPtr(WRITE_L2, "WRITE_L2" );
     if (PROCESSOR_REP->NumStateVariables > 0) {
@@ -117,8 +93,6 @@ GPU5RJ__STREAMING_MULTIPROCESSOR::~GPU5RJ__STREAMING_MULTIPROCESSOR() {
     delete READ_DRAM;
     delete READ_L1;
     delete READ_L2;
-    delete RESULT_KO;
-    delete RESULT_OK;
     delete WRITE_DRAM;
     delete WRITE_L1;
     delete WRITE_L2;

@@ -50,8 +50,6 @@ public:
 
   Place* WRITE_L2;
   short* WRITE_L2_Mobius_Mark;
-  Place* RESULT_KO;
-  short* RESULT_KO_Mobius_Mark;
   Place* OK_CONTENT;
   short* OK_CONTENT_Mobius_Mark;
   Place* KO_CONTENT;
@@ -102,8 +100,6 @@ public:
 
   Place* WRITE_L2;
   short* WRITE_L2_Mobius_Mark;
-  Place* RESULT_OK;
-  short* RESULT_OK_Mobius_Mark;
   Place* OK_CONTENT;
   short* OK_CONTENT_Mobius_Mark;
   Place* KO_CONTENT;

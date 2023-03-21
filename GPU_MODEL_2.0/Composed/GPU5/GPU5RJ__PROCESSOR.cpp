@@ -1,7 +1,7 @@
 #include "Composed/GPU5/GPU5RJ__PROCESSOR.h"
-char * GPU5RJ__PROCESSOR__SharedNames[] = {"INSTRUCTION_READY", "KO_CONTENT", "MEM_OP_COMPLETE", "OK_CONTENT", "READ", "READ_DRAM", "READ_L1", "READ_L2", "READ_REGISTER_FILE", "REGISTERS_FILL", "RESULT_KO", "RESULT_OK", "SCHEDULER", "WRITE", "WRITE_DRAM", "WRITE_L1", "WRITE_L2", "WRITE_REGISTER_FILE"};
+char * GPU5RJ__PROCESSOR__SharedNames[] = {"INSTRUCTION_READY", "KO_CONTENT", "MEM_OP_COMPLETE", "OK_CONTENT", "READ", "READ_DRAM", "READ_L1", "READ_L2", "REGISTERS_FILL", "SCHEDULER", "WRITE", "WRITE_DRAM", "WRITE_L1", "WRITE_L2"};
 
-GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 18,GPU5RJ__PROCESSOR__SharedNames) {
+GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 14,GPU5RJ__PROCESSOR__SharedNames) {
   Rep1 = new GPU5RJ__Rep1();
   ModelArray[0] = (BaseModelClass*) Rep1;
   ModelArray[0]->DefineName("Rep1");
@@ -47,10 +47,6 @@ GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 18,GPU5RJ__PROCESSOR
     //Shared variable 2
     MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE");
     addSharedPtr(MEM_OP_COMPLETE, "MEM_OP_COMPLETE" );
-    if (REGISTER_FILE->NumStateVariables > 0) {
-      MEM_OP_COMPLETE->ShareWith(getSharableSVPointer(REGISTER_FILE->MEM_OP_COMPLETE));
-      addSharingInfo(getSharableSVPointer(REGISTER_FILE->MEM_OP_COMPLETE), MEM_OP_COMPLETE, REGISTER_FILE);
-    }
     if (EXEC_UNIT->NumStateVariables > 0) {
       MEM_OP_COMPLETE->ShareWith(getSharableSVPointer(EXEC_UNIT->MEM_OP_COMPLETE));
       addSharingInfo(getSharableSVPointer(EXEC_UNIT->MEM_OP_COMPLETE), MEM_OP_COMPLETE, EXEC_UNIT);
@@ -105,18 +101,6 @@ GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 18,GPU5RJ__PROCESSOR
     }
 
     //Shared variable 8
-    READ_REGISTER_FILE = new Place("READ_REGISTER_FILE");
-    addSharedPtr(READ_REGISTER_FILE, "READ_REGISTER_FILE" );
-    if (REGISTER_FILE->NumStateVariables > 0) {
-      READ_REGISTER_FILE->ShareWith(getSharableSVPointer(REGISTER_FILE->READ_REGISTER_FILE));
-      addSharingInfo(getSharableSVPointer(REGISTER_FILE->READ_REGISTER_FILE), READ_REGISTER_FILE, REGISTER_FILE);
-    }
-    if (MEMORY->NumStateVariables > 0) {
-      READ_REGISTER_FILE->ShareWith(getSharableSVPointer(MEMORY->READ_REGISTER_FILE));
-      addSharingInfo(getSharableSVPointer(MEMORY->READ_REGISTER_FILE), READ_REGISTER_FILE, MEMORY);
-    }
-
-    //Shared variable 9
     REGISTERS_FILL = new Place("REGISTERS_FILL");
     addSharedPtr(REGISTERS_FILL, "REGISTERS_FILL" );
     if (Rep1->NumStateVariables > 0) {
@@ -132,31 +116,7 @@ GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 18,GPU5RJ__PROCESSOR
       addSharingInfo(getSharableSVPointer(EXEC_UNIT->REGISTERS_FILL), REGISTERS_FILL, EXEC_UNIT);
     }
 
-    //Shared variable 10
-    RESULT_KO = new Place("RESULT_KO");
-    addSharedPtr(RESULT_KO, "RESULT_KO" );
-    if (REGISTER_FILE->NumStateVariables > 0) {
-      RESULT_KO->ShareWith(getSharableSVPointer(REGISTER_FILE->RESULT_KO));
-      addSharingInfo(getSharableSVPointer(REGISTER_FILE->RESULT_KO), RESULT_KO, REGISTER_FILE);
-    }
-    if (EXEC_UNIT->NumStateVariables > 0) {
-      RESULT_KO->ShareWith(getSharableSVPointer(EXEC_UNIT->RESULT_KO));
-      addSharingInfo(getSharableSVPointer(EXEC_UNIT->RESULT_KO), RESULT_KO, EXEC_UNIT);
-    }
-
-    //Shared variable 11
-    RESULT_OK = new Place("RESULT_OK");
-    addSharedPtr(RESULT_OK, "RESULT_OK" );
-    if (REGISTER_FILE->NumStateVariables > 0) {
-      RESULT_OK->ShareWith(getSharableSVPointer(REGISTER_FILE->RESULT_OK));
-      addSharingInfo(getSharableSVPointer(REGISTER_FILE->RESULT_OK), RESULT_OK, REGISTER_FILE);
-    }
-    if (EXEC_UNIT->NumStateVariables > 0) {
-      RESULT_OK->ShareWith(getSharableSVPointer(EXEC_UNIT->RESULT_OK));
-      addSharingInfo(getSharableSVPointer(EXEC_UNIT->RESULT_OK), RESULT_OK, EXEC_UNIT);
-    }
-
-    //Shared variable 12
+    //Shared variable 9
     SCHEDULER = new Place("SCHEDULER");
     addSharedPtr(SCHEDULER, "SCHEDULER" );
     if (Rep1->NumStateVariables > 0) {
@@ -168,7 +128,7 @@ GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 18,GPU5RJ__PROCESSOR
       addSharingInfo(getSharableSVPointer(EXEC_UNIT->SCHEDULER), SCHEDULER, EXEC_UNIT);
     }
 
-    //Shared variable 13
+    //Shared variable 10
     WRITE = new Place("WRITE");
     addSharedPtr(WRITE, "WRITE" );
     if (EXEC_UNIT->NumStateVariables > 0) {
@@ -180,7 +140,7 @@ GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 18,GPU5RJ__PROCESSOR
       addSharingInfo(getSharableSVPointer(MEMORY->WRITE), WRITE, MEMORY);
     }
 
-    //Shared variable 14
+    //Shared variable 11
     WRITE_DRAM = new Place("WRITE_DRAM");
     addSharedPtr(WRITE_DRAM, "WRITE_DRAM" );
     if (MEMORY->NumStateVariables > 0) {
@@ -188,7 +148,7 @@ GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 18,GPU5RJ__PROCESSOR
       addSharingInfo(getSharableSVPointer(MEMORY->WRITE_DRAM), WRITE_DRAM, MEMORY);
     }
 
-    //Shared variable 15
+    //Shared variable 12
     WRITE_L1 = new Place("WRITE_L1");
     addSharedPtr(WRITE_L1, "WRITE_L1" );
     if (MEMORY->NumStateVariables > 0) {
@@ -196,24 +156,12 @@ GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 18,GPU5RJ__PROCESSOR
       addSharingInfo(getSharableSVPointer(MEMORY->WRITE_L1), WRITE_L1, MEMORY);
     }
 
-    //Shared variable 16
+    //Shared variable 13
     WRITE_L2 = new Place("WRITE_L2");
     addSharedPtr(WRITE_L2, "WRITE_L2" );
     if (MEMORY->NumStateVariables > 0) {
       WRITE_L2->ShareWith(getSharableSVPointer(MEMORY->WRITE_L2));
       addSharingInfo(getSharableSVPointer(MEMORY->WRITE_L2), WRITE_L2, MEMORY);
-    }
-
-    //Shared variable 17
-    WRITE_REGISTER_FILE = new Place("WRITE_REGISTER_FILE");
-    addSharedPtr(WRITE_REGISTER_FILE, "WRITE_REGISTER_FILE" );
-    if (REGISTER_FILE->NumStateVariables > 0) {
-      WRITE_REGISTER_FILE->ShareWith(getSharableSVPointer(REGISTER_FILE->WRITE_REGISTER_FILE));
-      addSharingInfo(getSharableSVPointer(REGISTER_FILE->WRITE_REGISTER_FILE), WRITE_REGISTER_FILE, REGISTER_FILE);
-    }
-    if (MEMORY->NumStateVariables > 0) {
-      WRITE_REGISTER_FILE->ShareWith(getSharableSVPointer(MEMORY->WRITE_REGISTER_FILE));
-      addSharingInfo(getSharableSVPointer(MEMORY->WRITE_REGISTER_FILE), WRITE_REGISTER_FILE, MEMORY);
     }
 
   }
@@ -231,16 +179,12 @@ GPU5RJ__PROCESSOR::~GPU5RJ__PROCESSOR() {
     delete READ_DRAM;
     delete READ_L1;
     delete READ_L2;
-    delete READ_REGISTER_FILE;
     delete REGISTERS_FILL;
-    delete RESULT_KO;
-    delete RESULT_OK;
     delete SCHEDULER;
     delete WRITE;
     delete WRITE_DRAM;
     delete WRITE_L1;
     delete WRITE_L2;
-    delete WRITE_REGISTER_FILE;
   }
   delete Rep1;
   delete REGISTER_FILE;

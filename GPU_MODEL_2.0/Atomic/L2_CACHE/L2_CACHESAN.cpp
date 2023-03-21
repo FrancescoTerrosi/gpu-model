@@ -90,22 +90,21 @@ L2_CACHESAN::L2_CACHESAN(){
   assignPlacesToActivitiesInst();
   assignPlacesToActivitiesTimed();
 
-  int AffectArcs[34][2]={ 
-    {0,0}, {2,0}, {1,1}, {4,1}, {12,1}, {11,1}, {0,1}, {13,1}, 
-    {3,2}, {2,2}, {1,3}, {5,3}, {12,3}, {11,3}, {3,3}, {13,3}, 
-    {7,4}, {2,4}, {6,4}, {8,5}, {9,5}, {8,6}, {7,6}, {9,7}, {2,7}, 
-    {10,7}, {13,8}, {12,8}, {3,8}, {11,8}, {13,9}, {11,9}, {0,9}, 
-    {12,9}
+  int AffectArcs[32][2]={ 
+    {0,0}, {2,0}, {1,1}, {12,1}, {11,1}, {0,1}, {13,1}, {3,2}, 
+    {2,2}, {1,3}, {12,3}, {11,3}, {3,3}, {13,3}, {7,4}, {2,4}, 
+    {6,4}, {8,5}, {9,5}, {8,6}, {7,6}, {9,7}, {2,7}, {10,7}, 
+    {13,8}, {12,8}, {3,8}, {11,8}, {13,9}, {11,9}, {0,9}, {12,9}
   };
-  for(int n=0;n<34;n++) {
+  for(int n=0;n<32;n++) {
     AddAffectArc(InitialPlaces[AffectArcs[n][0]],
                  InitialActionList[AffectArcs[n][1]]);
   }
-  int EnableArcs[12][2]={ 
-    {0,0}, {1,1}, {4,1}, {3,2}, {1,3}, {5,3}, {7,4}, {8,5}, {8,6}, 
-    {9,7}, {13,8}, {13,9}
+  int EnableArcs[10][2]={ 
+    {0,0}, {1,1}, {3,2}, {1,3}, {7,4}, {8,5}, {8,6}, {9,7}, {13,8}, 
+    {13,9}
   };
-  for(int n=0;n<12;n++) {
+  for(int n=0;n<10;n++) {
     AddEnableArc(InitialPlaces[EnableArcs[n][0]],
                  InitialActionList[EnableArcs[n][1]]);
   }
@@ -129,7 +128,6 @@ void L2_CACHESAN::assignPlacesToActivitiesInst(){
   Instantaneous_Activity23.KO_CONTENT_TEMP = (Place*) LocalStateVariables[0];
   Instantaneous_Activity23.MEM_OP_COMPLETE = (Place*) LocalStateVariables[2];
   WRITE_WITH_KO_DATA.WRITE_L2 = (Place*) LocalStateVariables[1];
-  WRITE_WITH_KO_DATA.RESULT_KO = (Place*) LocalStateVariables[4];
   WRITE_WITH_KO_DATA.OK_CONTENT = (Place*) LocalStateVariables[12];
   WRITE_WITH_KO_DATA.KO_CONTENT = (Place*) LocalStateVariables[11];
   WRITE_WITH_KO_DATA.KO_CONTENT_TEMP = (Place*) LocalStateVariables[0];
@@ -137,7 +135,6 @@ void L2_CACHESAN::assignPlacesToActivitiesInst(){
   Instantaneous_Activity12.OK_CONTENT_TEMP = (Place*) LocalStateVariables[3];
   Instantaneous_Activity12.MEM_OP_COMPLETE = (Place*) LocalStateVariables[2];
   WRITE_WITH_OK_DATA.WRITE_L2 = (Place*) LocalStateVariables[1];
-  WRITE_WITH_OK_DATA.RESULT_OK = (Place*) LocalStateVariables[5];
   WRITE_WITH_OK_DATA.OK_CONTENT = (Place*) LocalStateVariables[12];
   WRITE_WITH_OK_DATA.KO_CONTENT = (Place*) LocalStateVariables[11];
   WRITE_WITH_OK_DATA.OK_CONTENT_TEMP = (Place*) LocalStateVariables[3];
@@ -219,12 +216,11 @@ BaseActionClass* L2_CACHESAN::Instantaneous_Activity23Activity::Fire(){
 
 
 L2_CACHESAN::WRITE_WITH_KO_DATAActivity::WRITE_WITH_KO_DATAActivity(){
-  ActivityInitialize("WRITE_WITH_KO_DATA",1,Instantaneous , RaceEnabled, 6,2, false);
+  ActivityInitialize("WRITE_WITH_KO_DATA",1,Instantaneous , RaceEnabled, 5,1, false);
 }
 
 void L2_CACHESAN::WRITE_WITH_KO_DATAActivity::LinkVariables(){
   WRITE_L2->Register(&WRITE_L2_Mobius_Mark);
-  RESULT_KO->Register(&RESULT_KO_Mobius_Mark);
   OK_CONTENT->Register(&OK_CONTENT_Mobius_Mark);
   KO_CONTENT->Register(&KO_CONTENT_Mobius_Mark);
   KO_CONTENT_TEMP->Register(&KO_CONTENT_TEMP_Mobius_Mark);
@@ -233,7 +229,7 @@ void L2_CACHESAN::WRITE_WITH_KO_DATAActivity::LinkVariables(){
 
 bool L2_CACHESAN::WRITE_WITH_KO_DATAActivity::Enabled(){
   OldEnabled=NewEnabled;
-  NewEnabled=(((*(WRITE_L2_Mobius_Mark)) >=1)&&((*(RESULT_KO_Mobius_Mark)) >=1));
+  NewEnabled=(((*(WRITE_L2_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
@@ -263,7 +259,6 @@ int L2_CACHESAN::WRITE_WITH_KO_DATAActivity::Rank(){
 
 BaseActionClass* L2_CACHESAN::WRITE_WITH_KO_DATAActivity::Fire(){
   (*(WRITE_L2_Mobius_Mark))--;
-  (*(RESULT_KO_Mobius_Mark))--;
   if (OK_CONTENT->Mark() + KO_CONTENT->Mark() < l2_size) {
 	KO_CONTENT_TEMP->Mark()++;
 	KO_CONTENT->Mark()++;
@@ -325,12 +320,11 @@ BaseActionClass* L2_CACHESAN::Instantaneous_Activity12Activity::Fire(){
 
 
 L2_CACHESAN::WRITE_WITH_OK_DATAActivity::WRITE_WITH_OK_DATAActivity(){
-  ActivityInitialize("WRITE_WITH_OK_DATA",3,Instantaneous , RaceEnabled, 6,2, false);
+  ActivityInitialize("WRITE_WITH_OK_DATA",3,Instantaneous , RaceEnabled, 5,1, false);
 }
 
 void L2_CACHESAN::WRITE_WITH_OK_DATAActivity::LinkVariables(){
   WRITE_L2->Register(&WRITE_L2_Mobius_Mark);
-  RESULT_OK->Register(&RESULT_OK_Mobius_Mark);
   OK_CONTENT->Register(&OK_CONTENT_Mobius_Mark);
   KO_CONTENT->Register(&KO_CONTENT_Mobius_Mark);
   OK_CONTENT_TEMP->Register(&OK_CONTENT_TEMP_Mobius_Mark);
@@ -339,7 +333,7 @@ void L2_CACHESAN::WRITE_WITH_OK_DATAActivity::LinkVariables(){
 
 bool L2_CACHESAN::WRITE_WITH_OK_DATAActivity::Enabled(){
   OldEnabled=NewEnabled;
-  NewEnabled=(((*(WRITE_L2_Mobius_Mark)) >=1)&&((*(RESULT_OK_Mobius_Mark)) >=1));
+  NewEnabled=(((*(WRITE_L2_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
@@ -369,7 +363,6 @@ int L2_CACHESAN::WRITE_WITH_OK_DATAActivity::Rank(){
 
 BaseActionClass* L2_CACHESAN::WRITE_WITH_OK_DATAActivity::Fire(){
   (*(WRITE_L2_Mobius_Mark))--;
-  (*(RESULT_OK_Mobius_Mark))--;
   if (OK_CONTENT->Mark() + KO_CONTENT->Mark() < l2_size) {
 	OK_CONTENT->Mark()++;
 	OK_CONTENT_TEMP->Mark()++;
