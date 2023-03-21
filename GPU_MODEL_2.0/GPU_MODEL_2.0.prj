@@ -1,43 +1,40 @@
 <?xml version="1.0" encoding="ASCII"?>
 <models:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:models="http://www.mobius.illinois.edu/projects" name="GPU_MODEL_2.0" author="The_A" creationDate="2022-01-11T19:07:29.792+0100" lastSavedVersion="2.5.10.201907161116">
-  <atomic key="EXEC_UNIT">
-    <value name="EXEC_UNIT" type="SAN Model"/>
-  </atomic>
-  <atomic key="REGISTER_MEMORY">
-    <value name="REGISTER_MEMORY" type="SAN Model"/>
-  </atomic>
   <atomic key="OUTPUT_MEMORY">
     <value name="OUTPUT_MEMORY" type="SAN Model"/>
   </atomic>
   <atomic key="L1_CACHE">
     <value name="L1_CACHE" type="SAN Model"/>
   </atomic>
-  <atomic key="DRAM">
-    <value name="DRAM" type="SAN Model"/>
-  </atomic>
   <atomic key="WARP_AVERAGE">
     <value name="WARP_AVERAGE" type="SAN Model"/>
-  </atomic>
-  <atomic key="GLOBAL_MEMORY">
-    <value name="GLOBAL_MEMORY" type="SAN Model"/>
-  </atomic>
-  <atomic key="LOCAL_MEMORY">
-    <value name="LOCAL_MEMORY" type="SAN Model"/>
-  </atomic>
-  <atomic key="REGISTER_FILE">
-    <value name="REGISTER_FILE" type="SAN Model"/>
-  </atomic>
-  <atomic key="COMPUTE_UNIT">
-    <value name="COMPUTE_UNIT" type="SAN Model"/>
   </atomic>
   <atomic key="WARP">
     <value name="WARP" type="SAN Model"/>
   </atomic>
-  <atomic key="MEMORY">
-    <value name="MEMORY" type="SAN Model"/>
+  <atomic key="COMPUTE_UNIT">
+    <value name="COMPUTE_UNIT" type="SAN Model"/>
   </atomic>
   <atomic key="L2_CACHE">
     <value name="L2_CACHE" type="SAN Model"/>
+  </atomic>
+  <atomic key="DRAM">
+    <value name="DRAM" type="SAN Model"/>
+  </atomic>
+  <atomic key="EXEC_UNIT">
+    <value name="EXEC_UNIT" type="SAN Model"/>
+  </atomic>
+  <atomic key="MEMORY">
+    <value name="MEMORY" type="SAN Model"/>
+  </atomic>
+  <atomic key="GLOBAL_MEMORY">
+    <value name="GLOBAL_MEMORY" type="SAN Model"/>
+  </atomic>
+  <atomic key="REGISTER_FILE">
+    <value name="REGISTER_FILE" type="SAN Model"/>
+  </atomic>
+  <atomic key="LOCAL_MEMORY">
+    <value name="LOCAL_MEMORY" type="SAN Model"/>
   </atomic>
   <composed key="GPU4.BKP">
     <value name="GPU4.BKP" category="Composed" type="Rep/Join Model"/>

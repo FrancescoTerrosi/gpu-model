@@ -1,5 +1,5 @@
 _______________________________Simulator Results______________________________
-Date:                        Mon Mar 20 18:39:23 CET 2023
+Date:                        Tue Mar 21 15:05:35 CET 2023
 
 ____________________________Simulator Configuration___________________________
 Simulation Type:             Terminating
@@ -23,10 +23,10 @@ Processors Selected for Simulation:
         DESKTOP-3AHUC0F      amd64
 
 _________________________________Experiment 1_________________________________
-Start Time:                  Mon Mar 20 18:39:21 CET 2023
-Finish Time:                 Mon Mar 20 18:39:23 CET 2023
-Elapsed Running Time:        2.259
-Total CPU Time:              1.019
+Start Time:                  Tue Mar 21 15:05:33 CET 2023
+Finish Time:                 Tue Mar 21 15:05:35 CET 2023
+Elapsed Running Time:        1.66
+Total CPU Time:              1.218
 Batches Completed:           1
 Experiment Name:             Experiment 1
 Global Variable Settings:    
@@ -34,6 +34,7 @@ Global Variable Settings:
         short                end                      100                    
         short                l1_size                  100                    
         short                l2_size                  100                    
+        short                ngpu                     1                      
         short                nprocessors              1.0                    
         short                nwarps                   1.0                    
         short                register_count_index     0                      
@@ -43,11 +44,13 @@ Global Variable Settings:
 _________________________________Mean Results_________________________________
 Name                  Time               Mean                     Confidence Interval
 warp                  0.0 - 100         3.7810000000E03   +/-   0.0000000000E00 
-reg_ok                0.0 - 100         1.1361000000E05   +/-   0.0000000000E00 
-reg_ko                0.0 - 100         4.3158000000E04   +/-   0.0000000000E00 
-l1_read               0.0 - 100         6.5900000000E02   +/-   0.0000000000E00 
-l2_read               0.0 - 100         6.8300000000E02   +/-   0.0000000000E00 
-dram_read             0.0 - 100         7.0600000000E02   +/-   0.0000000000E00 
+l1_read               0.0 - 100         6.9500000000E02   +/-   0.0000000000E00 
+l2_read               0.0 - 100         6.2100000000E02   +/-   0.0000000000E00 
+dram_read             0.0 - 100         7.3000000000E02   +/-   0.0000000000E00 
+alu_ok                0.0 - 100         1.6980000000E03   +/-   0.0000000000E00 
+alu_ko                0.0 - 100         1.0000000000E00   +/-   0.0000000000E00 
+read_ok               0.0 - 100         1.0000000000E00   +/-   0.0000000000E00 
+read_ko               0.0 - 100         3.0000000000E00   +/-   0.0000000000E00 
 
 
 _______________________________Variance Results_______________________________

@@ -3033,7 +3033,7 @@
 						</class>
 						<boolean id="ReadOnly">false</boolean>
 						<boolean id="ConstantMarking">true</boolean>
-						<int id="InitialState">10000</int>
+						<int id="InitialState">0</int>
 					</class>
 					<class id="Mobius.AtomicModels.San.PlacePanelObject">
 						<int id="ClassVersion">1</int>
@@ -3052,7 +3052,7 @@
 						</class>
 						<boolean id="ReadOnly">false</boolean>
 						<boolean id="ConstantMarking">true</boolean>
-						<int id="InitialState">10000</int>
+						<int id="InitialState">0</int>
 					</class>
 					<class id="Mobius.AtomicModels.San.PlacePanelObject">
 						<int id="ClassVersion">1</int>
@@ -3103,8 +3103,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">266</int>
-								<int id="y">188</int>
+								<int id="x">252</int>
+								<int id="y">204</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -3465,8 +3465,8 @@
 							</class>
 							<int id="NumberOfCases">2</int>
 							<vector id="CaseDistributions">
-								<string id="0">0</string>
-								<string id="1">1</string>
+								<string id="0">0.5</string>
+								<string id="1">0.5</string>
 							</vector>
 						</class>
 					</class>
@@ -3511,8 +3511,8 @@
 										<boolean id="IsLabelShown">true</boolean>
 									</class>
 									<point id="CenterPoint">
-										<int id="x">451</int>
-										<int id="y">422</int>
+										<int id="x">420</int>
+										<int id="y">420</int>
 									</point>
 								</class>
 							</class>
@@ -3718,8 +3718,8 @@
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">450</int>
-								<int id="y">416</int>
+								<int id="x">419</int>
+								<int id="y">414</int>
 							</point>
 							<point id="1">
 								<int id="x">631</int>
@@ -3752,8 +3752,8 @@
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">454</int>
-								<int id="y">429</int>
+								<int id="x">423</int>
+								<int id="y">427</int>
 							</point>
 							<point id="1">
 								<int id="x">612</int>
@@ -3973,8 +3973,8 @@
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">269</int>
-								<int id="y">186</int>
+								<int id="x">255</int>
+								<int id="y">202</int>
 							</point>
 							<point id="1">
 								<int id="x">462</int>

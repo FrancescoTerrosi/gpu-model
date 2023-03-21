@@ -122,7 +122,7 @@ void GPU_STUDYSetStudy::SetValues_l2_size() {
 // set values for ngpu
 //******************************************************
 void GPU_STUDYSetStudy::SetValues_ngpu() {
-  ngpuValues[0] = 100;
+  ngpuValues[0] = 1;
 }
 
 

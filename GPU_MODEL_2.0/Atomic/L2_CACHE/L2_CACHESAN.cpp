@@ -54,8 +54,8 @@ L2_CACHESAN::L2_CACHESAN(){
   WRITE_L2 = new Place("WRITE_L2" ,0);
   MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE" ,0);
   OK_CONTENT_TEMP = new Place("OK_CONTENT_TEMP" ,0);
-  RESULT_KO = new Place("RESULT_KO" ,10000);
-  RESULT_OK = new Place("RESULT_OK" ,10000);
+  RESULT_KO = new Place("RESULT_KO" ,0);
+  RESULT_OK = new Place("RESULT_OK" ,0);
   KO_READ = new Place("KO_READ" ,0);
   MEMORY_KO = new Place("MEMORY_KO" ,0);
   READ_L2 = new Place("READ_L2" ,0);

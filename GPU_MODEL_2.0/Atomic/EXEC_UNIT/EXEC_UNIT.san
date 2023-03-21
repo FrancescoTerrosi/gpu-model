@@ -72,8 +72,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">504</int>
-								<int id="y">440</int>
+								<int id="x">156</int>
+								<int id="y">564</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -97,7 +97,7 @@
 						</class>
 						<boolean id="ReadOnly">false</boolean>
 						<boolean id="ConstantMarking">true</boolean>
-						<int id="InitialState">10000</int>
+						<int id="InitialState">0</int>
 					</class>
 					<class id="Mobius.AtomicModels.San.PlacePanelObject">
 						<int id="ClassVersion">1</int>
@@ -116,7 +116,7 @@
 						</class>
 						<boolean id="ReadOnly">false</boolean>
 						<boolean id="ConstantMarking">true</boolean>
-						<int id="InitialState">10000</int>
+						<int id="InitialState">0</int>
 					</class>
 					<class id="Mobius.AtomicModels.San.PlacePanelObject">
 						<int id="ClassVersion">1</int>
@@ -338,13 +338,13 @@
 							       WRITE-&gt;Mark() = SCHEDULER-&gt;Mark();\n    break;\
 							n\n    case 2:\n        READ-&gt;Mark() = SCHEDULER-&gt;Mark
 							();\n    break;\n\n    case 3:\n        WRITE-&gt;Mark() = S
-							CHEDULER-&gt;Mark();\n    break;\n\n    case 4:\n\tREAD-&gt;
-							Mark() = SCHEDULER-&gt;Mark();\n    break;\n\n    case 5:\n 
-							       WRITE-&gt;Mark() = SCHEDULER-&gt;Mark();\n    break;\
-							n\n    case 6:\n        ALU_INSTRUCTION_NO_DATA-&gt;Mark()++
-							;\n    break;\n\n    case 7:\n        ALU_INSTRUCTION_NO_DAT
-							A-&gt;Mark()++;\n    break;\n\n    default:\n    break;\n}\n
-							SCHEDULER-&gt;Mark() = -1;
+							CHEDULER-&gt;Mark();\n    break;\n\n    case 4:\n        REA
+							D-&gt;Mark() = SCHEDULER-&gt;Mark();\n    break;\n\n    case
+							 5:\n        ALU_INSTRUCTION_NO_DATA-&gt;Mark()++;\n    brea
+							k;\n\n    case 6:\n        ALU_INSTRUCTION_NO_DATA-&gt;Mark(
+							)++;\n    break;\n\n    case 7:\n        ALU_INSTRUCTION_NO_
+							DATA-&gt;Mark()++;\n    break;\n\n    default:\n    break;\n
+							}\nSCHEDULER-&gt;Mark() = -1;
 						</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.InstantaneousActivityPanelObject">
@@ -473,8 +473,16 @@
 							</class>
 							<int id="NumberOfCases">2</int>
 							<vector id="CaseDistributions">
-								<string id="0">0.5</string>
-								<string id="1">0.5</string>
+								<string id="0">
+									return OK_CONTENT-&gt;Mark() + KO_CONTENT-&gt;Mark() == 0 ? 
+									0.5 : KO_CONTENT-&gt;Mark() == 0 ? 0,1 : KO_CONTENT-&gt;Mark
+									() / (OK_CONTENT-&gt;Mark() + KO_CONTENT-&gt;Mark());
+								</string>
+								<string id="1">
+									return OK_CONTENT-&gt;Mark() + KO_CONTENT-&gt;Mark() == 0 ? 
+									0.5 : OK_CONTENT-&gt;Mark() == 0 ? 0,1 : OK_CONTENT-&gt;Mark
+									() / (OK_CONTENT-&gt;Mark() + KO_CONTENT-&gt;Mark());\n
+								</string>
 							</vector>
 						</class>
 					</class>
@@ -828,8 +836,8 @@
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">510</int>
-								<int id="y">444</int>
+								<int id="x">162</int>
+								<int id="y">568</int>
 							</point>
 							<point id="1">
 								<int id="x">554</int>
@@ -845,8 +853,8 @@
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">498</int>
-								<int id="y">446</int>
+								<int id="x">150</int>
+								<int id="y">570</int>
 							</point>
 							<point id="1">
 								<int id="x">495</int>

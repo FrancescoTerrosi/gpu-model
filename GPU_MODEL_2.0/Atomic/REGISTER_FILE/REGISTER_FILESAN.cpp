@@ -54,8 +54,8 @@ REGISTER_FILESAN::REGISTER_FILESAN(){
   MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE" ,0);
   OK_CONTENT_TEMP = new Place("OK_CONTENT_TEMP" ,0);
   WRITE_REGISTER_FILE = new Place("WRITE_REGISTER_FILE" ,0);
-  RESULT_KO = new Place("RESULT_KO" ,10000);
-  RESULT_OK = new Place("RESULT_OK" ,10000);
+  RESULT_KO = new Place("RESULT_KO" ,0);
+  RESULT_OK = new Place("RESULT_OK" ,0);
   KO_READ = new Place("KO_READ" ,0);
   MEMORY_KO = new Place("MEMORY_KO" ,0);
   READ_REGISTER_FILE = new Place("READ_REGISTER_FILE" ,0);
@@ -437,7 +437,7 @@ bool REGISTER_FILESAN::READ_FROMActivity_case1::Enabled(){
 }
 
 double REGISTER_FILESAN::READ_FROMActivity_case1::Weight(){ 
-  return 0;
+  return 0.5;
 }
 
 bool REGISTER_FILESAN::READ_FROMActivity_case1::ReactivationPredicate(){ 
@@ -485,7 +485,7 @@ bool REGISTER_FILESAN::READ_FROMActivity_case2::Enabled(){
 }
 
 double REGISTER_FILESAN::READ_FROMActivity_case2::Weight(){ 
-  return 1;
+  return 0.5;
 }
 
 bool REGISTER_FILESAN::READ_FROMActivity_case2::ReactivationPredicate(){ 
