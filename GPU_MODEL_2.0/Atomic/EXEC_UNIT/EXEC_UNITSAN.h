@@ -126,8 +126,8 @@ public:
   short* INSTRUCTION_READY_Mobius_Mark;
   ExtendedPlace<short>* READ;
   ExtendedPlace<short>* WRITE;
-  Place* ALU_INSTRUCTION_NO_DATA;
-  short* ALU_INSTRUCTION_NO_DATA_Mobius_Mark;
+  Place* ALU_INT_INSTRUCTION;
+  short* ALU_INT_INSTRUCTION_Mobius_Mark;
 
   double* TheDistributionParameters;
   DISPATCHERActivity();
@@ -194,8 +194,8 @@ public:
 class Instantaneous_Activity2Activity_case1:public Activity {
 public:
 
-  Place* ALU_INSTRUCTION_NO_DATA;
-  short* ALU_INSTRUCTION_NO_DATA_Mobius_Mark;
+  Place* ALU_INT_INSTRUCTION;
+  short* ALU_INT_INSTRUCTION_Mobius_Mark;
   Place* INSTRUCTION_READY;
   short* INSTRUCTION_READY_Mobius_Mark;
   Place* RESULT_KO;
@@ -222,8 +222,8 @@ public:
 class Instantaneous_Activity2Activity_case2:public Activity {
 public:
 
-  Place* ALU_INSTRUCTION_NO_DATA;
-  short* ALU_INSTRUCTION_NO_DATA_Mobius_Mark;
+  Place* ALU_INT_INSTRUCTION;
+  short* ALU_INT_INSTRUCTION_Mobius_Mark;
   Place* INSTRUCTION_READY;
   short* INSTRUCTION_READY_Mobius_Mark;
   Place* RESULT_OK;
@@ -253,10 +253,12 @@ public:
   Place* RESULT_KO;
   Place* RESULT_OK;
   Place* MEM_OP_COMPLETE;
-  Place* ALU_INSTRUCTION_NO_DATA;
+  Place* ALU_INT_INSTRUCTION;
   Place* REGISTERS_FILL;
   Place* OK_CONTENT;
   Place* KO_CONTENT;
+  Place* FLOAT_FAILURE;
+  Place* INT_FAILURE;
   ExtendedPlace<short>* SCHEDULER;
   ExtendedPlace<short>* READ;
   ExtendedPlace<short>* WRITE;

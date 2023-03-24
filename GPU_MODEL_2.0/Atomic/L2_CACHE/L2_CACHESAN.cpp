@@ -54,8 +54,6 @@ L2_CACHESAN::L2_CACHESAN(){
   WRITE_L2 = new Place("WRITE_L2" ,0);
   MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE" ,0);
   OK_CONTENT_TEMP = new Place("OK_CONTENT_TEMP" ,0);
-  RESULT_KO = new Place("RESULT_KO" ,0);
-  RESULT_OK = new Place("RESULT_OK" ,0);
   KO_READ = new Place("KO_READ" ,0);
   MEMORY_KO = new Place("MEMORY_KO" ,0);
   READ_L2 = new Place("READ_L2" ,0);
@@ -64,25 +62,25 @@ L2_CACHESAN::L2_CACHESAN(){
   KO_CONTENT = new Place("KO_CONTENT" ,0);
   OK_CONTENT = new Place("OK_CONTENT" ,0);
   REPLACE_CONTENT = new Place("REPLACE_CONTENT" ,0);
-  BaseStateVariableClass* InitialPlaces[14]={
+  MEM_FAILURE = new Place("MEM_FAILURE" ,0);
+  BaseStateVariableClass* InitialPlaces[13]={
     KO_CONTENT_TEMP,  // 0
     WRITE_L2,  // 1
     MEM_OP_COMPLETE,  // 2
     OK_CONTENT_TEMP,  // 3
-    RESULT_KO,  // 4
-    RESULT_OK,  // 5
-    KO_READ,  // 6
-    MEMORY_KO,  // 7
-    READ_L2,  // 8
-    MEMORY_OK,  // 9
-    OK_READ,  // 10
-    KO_CONTENT,  // 11
-    OK_CONTENT,  // 12
-    REPLACE_CONTENT   // 13
+    KO_READ,  // 4
+    MEMORY_KO,  // 5
+    READ_L2,  // 6
+    MEMORY_OK,  // 7
+    OK_READ,  // 8
+    KO_CONTENT,  // 9
+    OK_CONTENT,  // 10
+    REPLACE_CONTENT,  // 11
+    MEM_FAILURE   // 12
   };
   BaseStateVariableClass* InitialROPlaces[0]={
   };
-  initializeSANModelNow("L2_CACHE", 14, InitialPlaces, 
+  initializeSANModelNow("L2_CACHE", 13, InitialPlaces, 
                         0, InitialROPlaces, 
                         10, InitialActionList, 8, InitialGroupList);
 
@@ -91,18 +89,18 @@ L2_CACHESAN::L2_CACHESAN(){
   assignPlacesToActivitiesTimed();
 
   int AffectArcs[32][2]={ 
-    {0,0}, {2,0}, {1,1}, {12,1}, {11,1}, {0,1}, {13,1}, {3,2}, 
-    {2,2}, {1,3}, {12,3}, {11,3}, {3,3}, {13,3}, {7,4}, {2,4}, 
-    {6,4}, {8,5}, {9,5}, {8,6}, {7,6}, {9,7}, {2,7}, {10,7}, 
-    {13,8}, {12,8}, {3,8}, {11,8}, {13,9}, {11,9}, {0,9}, {12,9}
+    {0,0}, {2,0}, {1,1}, {10,1}, {9,1}, {0,1}, {11,1}, {3,2}, 
+    {2,2}, {1,3}, {10,3}, {9,3}, {3,3}, {11,3}, {5,4}, {2,4}, 
+    {4,4}, {6,5}, {7,5}, {6,6}, {5,6}, {7,7}, {2,7}, {8,7}, {11,8}, 
+    {10,8}, {3,8}, {9,8}, {11,9}, {9,9}, {0,9}, {10,9}
   };
   for(int n=0;n<32;n++) {
     AddAffectArc(InitialPlaces[AffectArcs[n][0]],
                  InitialActionList[AffectArcs[n][1]]);
   }
   int EnableArcs[10][2]={ 
-    {0,0}, {1,1}, {3,2}, {1,3}, {7,4}, {8,5}, {8,6}, {9,7}, {13,8}, 
-    {13,9}
+    {0,0}, {1,1}, {3,2}, {1,3}, {5,4}, {6,5}, {6,6}, {7,7}, {11,8}, 
+    {11,9}
   };
   for(int n=0;n<10;n++) {
     AddEnableArc(InitialPlaces[EnableArcs[n][0]],
@@ -128,35 +126,35 @@ void L2_CACHESAN::assignPlacesToActivitiesInst(){
   Instantaneous_Activity23.KO_CONTENT_TEMP = (Place*) LocalStateVariables[0];
   Instantaneous_Activity23.MEM_OP_COMPLETE = (Place*) LocalStateVariables[2];
   WRITE_WITH_KO_DATA.WRITE_L2 = (Place*) LocalStateVariables[1];
-  WRITE_WITH_KO_DATA.OK_CONTENT = (Place*) LocalStateVariables[12];
-  WRITE_WITH_KO_DATA.KO_CONTENT = (Place*) LocalStateVariables[11];
+  WRITE_WITH_KO_DATA.OK_CONTENT = (Place*) LocalStateVariables[10];
+  WRITE_WITH_KO_DATA.KO_CONTENT = (Place*) LocalStateVariables[9];
   WRITE_WITH_KO_DATA.KO_CONTENT_TEMP = (Place*) LocalStateVariables[0];
-  WRITE_WITH_KO_DATA.REPLACE_CONTENT = (Place*) LocalStateVariables[13];
+  WRITE_WITH_KO_DATA.REPLACE_CONTENT = (Place*) LocalStateVariables[11];
   Instantaneous_Activity12.OK_CONTENT_TEMP = (Place*) LocalStateVariables[3];
   Instantaneous_Activity12.MEM_OP_COMPLETE = (Place*) LocalStateVariables[2];
   WRITE_WITH_OK_DATA.WRITE_L2 = (Place*) LocalStateVariables[1];
-  WRITE_WITH_OK_DATA.OK_CONTENT = (Place*) LocalStateVariables[12];
-  WRITE_WITH_OK_DATA.KO_CONTENT = (Place*) LocalStateVariables[11];
+  WRITE_WITH_OK_DATA.OK_CONTENT = (Place*) LocalStateVariables[10];
+  WRITE_WITH_OK_DATA.KO_CONTENT = (Place*) LocalStateVariables[9];
   WRITE_WITH_OK_DATA.OK_CONTENT_TEMP = (Place*) LocalStateVariables[3];
-  WRITE_WITH_OK_DATA.REPLACE_CONTENT = (Place*) LocalStateVariables[13];
-  Instantaneous_Activity2.MEMORY_KO = (Place*) LocalStateVariables[7];
+  WRITE_WITH_OK_DATA.REPLACE_CONTENT = (Place*) LocalStateVariables[11];
+  Instantaneous_Activity2.MEMORY_KO = (Place*) LocalStateVariables[5];
   Instantaneous_Activity2.MEM_OP_COMPLETE = (Place*) LocalStateVariables[2];
-  Instantaneous_Activity2.KO_READ = (Place*) LocalStateVariables[6];
-  READ_FROM_case1.READ_L2 = (Place*) LocalStateVariables[8];
-  READ_FROM_case1.MEMORY_OK = (Place*) LocalStateVariables[9];
-  READ_FROM_case2.READ_L2 = (Place*) LocalStateVariables[8];
-  READ_FROM_case2.MEMORY_KO = (Place*) LocalStateVariables[7];
-  Instantaneous_Activity1.MEMORY_OK = (Place*) LocalStateVariables[9];
+  Instantaneous_Activity2.KO_READ = (Place*) LocalStateVariables[4];
+  READ_FROM_case1.READ_L2 = (Place*) LocalStateVariables[6];
+  READ_FROM_case1.MEMORY_OK = (Place*) LocalStateVariables[7];
+  READ_FROM_case2.READ_L2 = (Place*) LocalStateVariables[6];
+  READ_FROM_case2.MEMORY_KO = (Place*) LocalStateVariables[5];
+  Instantaneous_Activity1.MEMORY_OK = (Place*) LocalStateVariables[7];
   Instantaneous_Activity1.MEM_OP_COMPLETE = (Place*) LocalStateVariables[2];
-  Instantaneous_Activity1.OK_READ = (Place*) LocalStateVariables[10];
-  REPLACE_case1.REPLACE_CONTENT = (Place*) LocalStateVariables[13];
-  REPLACE_case1.OK_CONTENT = (Place*) LocalStateVariables[12];
+  Instantaneous_Activity1.OK_READ = (Place*) LocalStateVariables[8];
+  REPLACE_case1.REPLACE_CONTENT = (Place*) LocalStateVariables[11];
+  REPLACE_case1.OK_CONTENT = (Place*) LocalStateVariables[10];
   REPLACE_case1.OK_CONTENT_TEMP = (Place*) LocalStateVariables[3];
-  REPLACE_case1.KO_CONTENT = (Place*) LocalStateVariables[11];
-  REPLACE_case2.REPLACE_CONTENT = (Place*) LocalStateVariables[13];
-  REPLACE_case2.KO_CONTENT = (Place*) LocalStateVariables[11];
+  REPLACE_case1.KO_CONTENT = (Place*) LocalStateVariables[9];
+  REPLACE_case2.REPLACE_CONTENT = (Place*) LocalStateVariables[11];
+  REPLACE_case2.KO_CONTENT = (Place*) LocalStateVariables[9];
   REPLACE_case2.KO_CONTENT_TEMP = (Place*) LocalStateVariables[0];
-  REPLACE_case2.OK_CONTENT = (Place*) LocalStateVariables[12];
+  REPLACE_case2.OK_CONTENT = (Place*) LocalStateVariables[10];
 }
 void L2_CACHESAN::assignPlacesToActivitiesTimed(){
 }

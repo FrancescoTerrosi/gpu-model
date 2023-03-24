@@ -19,11 +19,11 @@ WARPSAN::WARPSAN(){
 
 
   Activity* InitialActionList[1]={
-    &DISPATCHER_Copy  // 0
+    &Instantaneous_Activity2  // 0
   };
 
   BaseGroupClass* InitialGroupList[1]={
-    (BaseGroupClass*) &(DISPATCHER_Copy)
+    (BaseGroupClass*) &(Instantaneous_Activity2)
   };
 
   INST_COUNTER = new Place("INST_COUNTER" ,-1);
@@ -82,11 +82,11 @@ WARPSAN::~WARPSAN(){
 };
 
 void WARPSAN::assignPlacesToActivitiesInst(){
-  DISPATCHER_Copy.INST_COUNTER = (Place*) LocalStateVariables[0];
-  DISPATCHER_Copy.INSTRUCTION_READY = (Place*) LocalStateVariables[1];
-  DISPATCHER_Copy.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[4];
-  DISPATCHER_Copy.REGISTERS_FILL = (Place*) LocalStateVariables[2];
-  DISPATCHER_Copy.WARP = (instructions*) LocalStateVariables[3];
+  Instantaneous_Activity2.INST_COUNTER = (Place*) LocalStateVariables[0];
+  Instantaneous_Activity2.INSTRUCTION_READY = (Place*) LocalStateVariables[1];
+  Instantaneous_Activity2.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[4];
+  Instantaneous_Activity2.REGISTERS_FILL = (Place*) LocalStateVariables[2];
+  Instantaneous_Activity2.WARP = (instructions*) LocalStateVariables[3];
 }
 void WARPSAN::assignPlacesToActivitiesTimed(){
 }
@@ -94,14 +94,14 @@ void WARPSAN::assignPlacesToActivitiesTimed(){
 /*                  Activity Method Definitions                  */
 /*****************************************************************/
 
-/*======================DISPATCHER_CopyActivity========================*/
+/*======================Instantaneous_Activity2Activity========================*/
 
 
-WARPSAN::DISPATCHER_CopyActivity::DISPATCHER_CopyActivity(){
-  ActivityInitialize("DISPATCHER_Copy",0,Instantaneous , RaceEnabled, 5,2, false);
+WARPSAN::Instantaneous_Activity2Activity::Instantaneous_Activity2Activity(){
+  ActivityInitialize("Instantaneous_Activity2",0,Instantaneous , RaceEnabled, 5,2, false);
 }
 
-void WARPSAN::DISPATCHER_CopyActivity::LinkVariables(){
+void WARPSAN::Instantaneous_Activity2Activity::LinkVariables(){
   INST_COUNTER->Register(&INST_COUNTER_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 
@@ -109,37 +109,37 @@ void WARPSAN::DISPATCHER_CopyActivity::LinkVariables(){
 
 }
 
-bool WARPSAN::DISPATCHER_CopyActivity::Enabled(){
+bool WARPSAN::Instantaneous_Activity2Activity::Enabled(){
   OldEnabled=NewEnabled;
   NewEnabled=(((INST_COUNTER->Mark() < size-1) && (INSTRUCTION_READY->Mark() > 0)));
   return NewEnabled;
 }
 
-double WARPSAN::DISPATCHER_CopyActivity::Weight(){ 
+double WARPSAN::Instantaneous_Activity2Activity::Weight(){ 
   return 1;
 }
 
-bool WARPSAN::DISPATCHER_CopyActivity::ReactivationPredicate(){ 
+bool WARPSAN::Instantaneous_Activity2Activity::ReactivationPredicate(){ 
   return false;
 }
 
-bool WARPSAN::DISPATCHER_CopyActivity::ReactivationFunction(){ 
+bool WARPSAN::Instantaneous_Activity2Activity::ReactivationFunction(){ 
   return false;
 }
 
-double WARPSAN::DISPATCHER_CopyActivity::SampleDistribution(){
+double WARPSAN::Instantaneous_Activity2Activity::SampleDistribution(){
   return 0;
 }
 
-double* WARPSAN::DISPATCHER_CopyActivity::ReturnDistributionParameters(){
+double* WARPSAN::Instantaneous_Activity2Activity::ReturnDistributionParameters(){
     return NULL;
 }
 
-int WARPSAN::DISPATCHER_CopyActivity::Rank(){
+int WARPSAN::Instantaneous_Activity2Activity::Rank(){
   return 1;
 }
 
-BaseActionClass* WARPSAN::DISPATCHER_CopyActivity::Fire(){
+BaseActionClass* WARPSAN::Instantaneous_Activity2Activity::Fire(){
   INSTRUCTION_READY->Mark()--;
 INST_COUNTER->Mark()++;
   SCHEDULER->Mark() = WARP->Index(INST_COUNTER->Mark())->Mark();

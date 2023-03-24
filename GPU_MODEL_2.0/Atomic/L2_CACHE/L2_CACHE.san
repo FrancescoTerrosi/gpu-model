@@ -113,44 +113,6 @@
 							<int id="ClassVersion">3</int>
 							<class id="Mobius.BaseClasses.BasePanelObjectClass">
 								<int id="ClassVersion">5</int>
-								<string id="Name">RESULT_KO</string>
-								<boolean id="ContainsLabel">true</boolean>
-								<boolean id="IsLabelShown">true</boolean>
-							</class>
-							<point id="CenterPoint">
-								<int id="x">165</int>
-								<int id="y">685</int>
-							</point>
-						</class>
-						<boolean id="ReadOnly">false</boolean>
-						<boolean id="ConstantMarking">true</boolean>
-						<int id="InitialState">0</int>
-					</class>
-					<class id="Mobius.AtomicModels.San.PlacePanelObject">
-						<int id="ClassVersion">1</int>
-						<class id="Mobius.BaseClasses.BaseVertexClass">
-							<int id="ClassVersion">3</int>
-							<class id="Mobius.BaseClasses.BasePanelObjectClass">
-								<int id="ClassVersion">5</int>
-								<string id="Name">RESULT_OK</string>
-								<boolean id="ContainsLabel">true</boolean>
-								<boolean id="IsLabelShown">true</boolean>
-							</class>
-							<point id="CenterPoint">
-								<int id="x">155</int>
-								<int id="y">475</int>
-							</point>
-						</class>
-						<boolean id="ReadOnly">false</boolean>
-						<boolean id="ConstantMarking">true</boolean>
-						<int id="InitialState">0</int>
-					</class>
-					<class id="Mobius.AtomicModels.San.PlacePanelObject">
-						<int id="ClassVersion">1</int>
-						<class id="Mobius.BaseClasses.BaseVertexClass">
-							<int id="ClassVersion">3</int>
-							<class id="Mobius.BaseClasses.BasePanelObjectClass">
-								<int id="ClassVersion">5</int>
 								<string id="Name">KO_READ</string>
 								<boolean id="ContainsLabel">true</boolean>
 								<boolean id="IsLabelShown">true</boolean>
@@ -291,6 +253,25 @@
 							<point id="CenterPoint">
 								<int id="x">430</int>
 								<int id="y">590</int>
+							</point>
+						</class>
+						<boolean id="ReadOnly">false</boolean>
+						<boolean id="ConstantMarking">true</boolean>
+						<int id="InitialState">0</int>
+					</class>
+					<class id="Mobius.AtomicModels.San.PlacePanelObject">
+						<int id="ClassVersion">1</int>
+						<class id="Mobius.BaseClasses.BaseVertexClass">
+							<int id="ClassVersion">3</int>
+							<class id="Mobius.BaseClasses.BasePanelObjectClass">
+								<int id="ClassVersion">5</int>
+								<string id="Name">MEM_FAILURE</string>
+								<boolean id="ContainsLabel">true</boolean>
+								<boolean id="IsLabelShown">true</boolean>
+							</class>
+							<point id="CenterPoint">
+								<int id="x">410</int>
+								<int id="y">90</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>

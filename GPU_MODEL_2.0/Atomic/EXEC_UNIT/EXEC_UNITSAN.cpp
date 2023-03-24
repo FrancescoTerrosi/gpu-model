@@ -44,33 +44,37 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
   RESULT_KO = new Place("RESULT_KO" ,0);
   RESULT_OK = new Place("RESULT_OK" ,0);
   MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE" ,0);
-  ALU_INSTRUCTION_NO_DATA = new Place("ALU_INSTRUCTION_NO_DATA" ,0);
+  ALU_INT_INSTRUCTION = new Place("ALU_INT_INSTRUCTION" ,0);
   REGISTERS_FILL = new Place("REGISTERS_FILL" ,0);
   OK_CONTENT = new Place("OK_CONTENT" ,0);
   KO_CONTENT = new Place("KO_CONTENT" ,0);
+  FLOAT_FAILURE = new Place("FLOAT_FAILURE" ,0);
+  INT_FAILURE = new Place("INT_FAILURE" ,0);
   short temp_SCHEDULERshort = -1;
   SCHEDULER = new ExtendedPlace<short>("SCHEDULER",temp_SCHEDULERshort);
   short temp_READshort = -1;
   READ = new ExtendedPlace<short>("READ",temp_READshort);
   short temp_WRITEshort = -1;
   WRITE = new ExtendedPlace<short>("WRITE",temp_WRITEshort);
-  BaseStateVariableClass* InitialPlaces[12]={
+  BaseStateVariableClass* InitialPlaces[14]={
     INSTRUCTION_READY,  // 0
     ALU_INSTRUCTION,  // 1
     RESULT_KO,  // 2
     RESULT_OK,  // 3
     MEM_OP_COMPLETE,  // 4
-    ALU_INSTRUCTION_NO_DATA,  // 5
+    ALU_INT_INSTRUCTION,  // 5
     REGISTERS_FILL,  // 6
     OK_CONTENT,  // 7
     KO_CONTENT,  // 8
-    SCHEDULER,  // 9
-    READ,  // 10
-    WRITE   // 11
+    FLOAT_FAILURE,  // 9
+    INT_FAILURE,  // 10
+    SCHEDULER,  // 11
+    READ,  // 12
+    WRITE   // 13
   };
   BaseStateVariableClass* InitialROPlaces[0]={
   };
-  initializeSANModelNow("EXEC_UNIT", 12, InitialPlaces, 
+  initializeSANModelNow("EXEC_UNIT", 14, InitialPlaces, 
                         0, InitialROPlaces, 
                         6, InitialActionList, 5, InitialGroupList);
 
@@ -79,7 +83,7 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
   assignPlacesToActivitiesTimed();
 
   int AffectArcs[19][2]={ 
-    {4,0}, {0,0}, {0,1}, {9,1}, {10,1}, {11,1}, {5,1}, {1,2}, 
+    {4,0}, {0,0}, {0,1}, {11,1}, {12,1}, {13,1}, {5,1}, {1,2}, 
     {0,2}, {2,2}, {1,3}, {0,3}, {3,3}, {5,4}, {0,4}, {2,4}, {5,5}, 
     {0,5}, {3,5}
   };
@@ -88,7 +92,7 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
                  InitialActionList[AffectArcs[n][1]]);
   }
   int EnableArcs[7][2]={ 
-    {4,0}, {9,1}, {6,1}, {1,2}, {1,3}, {5,4}, {5,5}
+    {4,0}, {11,1}, {6,1}, {1,2}, {1,3}, {5,4}, {5,5}
   };
   for(int n=0;n<7;n++) {
     AddEnableArc(InitialPlaces[EnableArcs[n][0]],
@@ -113,24 +117,24 @@ EXEC_UNITSAN::~EXEC_UNITSAN(){
 void EXEC_UNITSAN::assignPlacesToActivitiesInst(){
   Instantaneous_Activity1.MEM_OP_COMPLETE = (Place*) LocalStateVariables[4];
   Instantaneous_Activity1.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
-  DISPATCHER.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[9];
+  DISPATCHER.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[11];
   DISPATCHER.REGISTERS_FILL = (Place*) LocalStateVariables[6];
   DISPATCHER.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
-  DISPATCHER.READ = (ExtendedPlace<short>*) LocalStateVariables[10];
-  DISPATCHER.WRITE = (ExtendedPlace<short>*) LocalStateVariables[11];
-  DISPATCHER.ALU_INSTRUCTION_NO_DATA = (Place*) LocalStateVariables[5];
+  DISPATCHER.READ = (ExtendedPlace<short>*) LocalStateVariables[12];
+  DISPATCHER.WRITE = (ExtendedPlace<short>*) LocalStateVariables[13];
+  DISPATCHER.ALU_INT_INSTRUCTION = (Place*) LocalStateVariables[5];
   COMPUTE_WITH_KO_DATA.ALU_INSTRUCTION = (Place*) LocalStateVariables[1];
   COMPUTE_WITH_KO_DATA.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
   COMPUTE_WITH_KO_DATA.RESULT_KO = (Place*) LocalStateVariables[2];
   COMPUTE_WITH_OK_DATA.ALU_INSTRUCTION = (Place*) LocalStateVariables[1];
   COMPUTE_WITH_OK_DATA.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
   COMPUTE_WITH_OK_DATA.RESULT_OK = (Place*) LocalStateVariables[3];
-  Instantaneous_Activity2_case1.ALU_INSTRUCTION_NO_DATA = (Place*) LocalStateVariables[5];
+  Instantaneous_Activity2_case1.ALU_INT_INSTRUCTION = (Place*) LocalStateVariables[5];
   Instantaneous_Activity2_case1.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
   Instantaneous_Activity2_case1.RESULT_KO = (Place*) LocalStateVariables[2];
   Instantaneous_Activity2_case1.OK_CONTENT = (Place*) LocalStateVariables[7];
   Instantaneous_Activity2_case1.KO_CONTENT = (Place*) LocalStateVariables[8];
-  Instantaneous_Activity2_case2.ALU_INSTRUCTION_NO_DATA = (Place*) LocalStateVariables[5];
+  Instantaneous_Activity2_case2.ALU_INT_INSTRUCTION = (Place*) LocalStateVariables[5];
   Instantaneous_Activity2_case2.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
   Instantaneous_Activity2_case2.RESULT_OK = (Place*) LocalStateVariables[3];
   Instantaneous_Activity2_case2.OK_CONTENT = (Place*) LocalStateVariables[7];
@@ -203,7 +207,7 @@ void EXEC_UNITSAN::DISPATCHERActivity::LinkVariables(){
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 
 
-  ALU_INSTRUCTION_NO_DATA->Register(&ALU_INSTRUCTION_NO_DATA_Mobius_Mark);
+  ALU_INT_INSTRUCTION->Register(&ALU_INT_INSTRUCTION_Mobius_Mark);
 }
 
 bool EXEC_UNITSAN::DISPATCHERActivity::Enabled(){
@@ -258,19 +262,19 @@ INSTRUCTION_READY->Mark()++;
     break;
 
     case 4:
-        ALU_INSTRUCTION_NO_DATA->Mark()++;
+        ALU_INT_INSTRUCTION->Mark()++;
     break;
 
     case 5:
-        ALU_INSTRUCTION_NO_DATA->Mark()++;
+        ALU_INT_INSTRUCTION->Mark()++;
     break;
 
     case 6:
-        ALU_INSTRUCTION_NO_DATA->Mark()++;
+        ALU_INT_INSTRUCTION->Mark()++;
     break;
 
     case 7:
-        ALU_INSTRUCTION_NO_DATA->Mark()++;
+        ALU_INT_INSTRUCTION->Mark()++;
     break;
 
     default:
@@ -388,7 +392,7 @@ EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Instantaneous_Activity2Acti
 }
 
 void EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::LinkVariables(){
-  ALU_INSTRUCTION_NO_DATA->Register(&ALU_INSTRUCTION_NO_DATA_Mobius_Mark);
+  ALU_INT_INSTRUCTION->Register(&ALU_INT_INSTRUCTION_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
   RESULT_KO->Register(&RESULT_KO_Mobius_Mark);
   OK_CONTENT->Register(&OK_CONTENT_Mobius_Mark);
@@ -397,12 +401,12 @@ void EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::LinkVariables(){
 
 bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Enabled(){
   OldEnabled=NewEnabled;
-  NewEnabled=(((*(ALU_INSTRUCTION_NO_DATA_Mobius_Mark)) >=1));
+  NewEnabled=(((*(ALU_INT_INSTRUCTION_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
 double EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Weight(){ 
-  return OK_CONTENT->Mark() + KO_CONTENT->Mark() == 0 ? 0.5 : KO_CONTENT->Mark() == 0 ? 0,1 : KO_CONTENT->Mark() / (OK_CONTENT->Mark() + KO_CONTENT->Mark());
+  return OK_CONTENT->Mark() + KO_CONTENT->Mark() == 0 ? 0.5 : KO_CONTENT->Mark() == 0 ? 0.1 : KO_CONTENT->Mark() / (OK_CONTENT->Mark() + KO_CONTENT->Mark());
 }
 
 bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::ReactivationPredicate(){ 
@@ -426,7 +430,7 @@ int EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Rank(){
 }
 
 BaseActionClass* EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Fire(){
-  (*(ALU_INSTRUCTION_NO_DATA_Mobius_Mark))--;
+  (*(ALU_INT_INSTRUCTION_Mobius_Mark))--;
   (*(INSTRUCTION_READY_Mobius_Mark))++;
   (*(RESULT_KO_Mobius_Mark))++;
   return this;
@@ -440,7 +444,7 @@ EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Instantaneous_Activity2Acti
 }
 
 void EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::LinkVariables(){
-  ALU_INSTRUCTION_NO_DATA->Register(&ALU_INSTRUCTION_NO_DATA_Mobius_Mark);
+  ALU_INT_INSTRUCTION->Register(&ALU_INT_INSTRUCTION_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
   RESULT_OK->Register(&RESULT_OK_Mobius_Mark);
   OK_CONTENT->Register(&OK_CONTENT_Mobius_Mark);
@@ -449,12 +453,12 @@ void EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::LinkVariables(){
 
 bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Enabled(){
   OldEnabled=NewEnabled;
-  NewEnabled=(((*(ALU_INSTRUCTION_NO_DATA_Mobius_Mark)) >=1));
+  NewEnabled=(((*(ALU_INT_INSTRUCTION_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
 double EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Weight(){ 
-  return OK_CONTENT->Mark() + KO_CONTENT->Mark() == 0 ? 0.5 : OK_CONTENT->Mark() == 0 ? 0,1 : OK_CONTENT->Mark() / (OK_CONTENT->Mark() + KO_CONTENT->Mark());
+  return OK_CONTENT->Mark() + KO_CONTENT->Mark() == 0 ? 0.5 : OK_CONTENT->Mark() == 0 ? 0.1 : OK_CONTENT->Mark() / (OK_CONTENT->Mark() + KO_CONTENT->Mark());
 
 }
 
@@ -479,7 +483,7 @@ int EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Rank(){
 }
 
 BaseActionClass* EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Fire(){
-  (*(ALU_INSTRUCTION_NO_DATA_Mobius_Mark))--;
+  (*(ALU_INT_INSTRUCTION_Mobius_Mark))--;
   (*(INSTRUCTION_READY_Mobius_Mark))++;
   (*(RESULT_OK_Mobius_Mark))++;
   return this;

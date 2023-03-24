@@ -272,8 +272,6 @@ public:
   Place* WRITE_L2;
   Place* MEM_OP_COMPLETE;
   Place* OK_CONTENT_TEMP;
-  Place* RESULT_KO;
-  Place* RESULT_OK;
   Place* KO_READ;
   Place* MEMORY_KO;
   Place* READ_L2;
@@ -282,6 +280,7 @@ public:
   Place* KO_CONTENT;
   Place* OK_CONTENT;
   Place* REPLACE_CONTENT;
+  Place* MEM_FAILURE;
 
   // Create instances of all actvities
   Instantaneous_Activity23Activity Instantaneous_Activity23;

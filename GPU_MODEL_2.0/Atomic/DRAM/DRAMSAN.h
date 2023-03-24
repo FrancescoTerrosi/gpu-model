@@ -45,30 +45,6 @@ public:
   BaseActionClass* Fire();
 }; // Instantaneous_Activity23ActivityActivity
 
-class WRITE_WITH_KO_DATAActivity:public Activity {
-public:
-
-  Place* WRITE_DRAM;
-  short* WRITE_DRAM_Mobius_Mark;
-  Place* KO_CONTENT_TEMP;
-  short* KO_CONTENT_TEMP_Mobius_Mark;
-  Place* KO_CONTENT;
-  short* KO_CONTENT_Mobius_Mark;
-
-  double* TheDistributionParameters;
-  WRITE_WITH_KO_DATAActivity();
-  double Rate(){return 0;}
-  bool Enabled();
-  void LinkVariables();
-  double Weight();
-  bool ReactivationPredicate();
-  bool ReactivationFunction();
-  double SampleDistribution();
-  double* ReturnDistributionParameters();
-  int Rank();
-  BaseActionClass* Fire();
-}; // WRITE_WITH_KO_DATAActivityActivity
-
 class Instantaneous_Activity12Activity:public Activity {
 public:
 
@@ -90,30 +66,6 @@ public:
   int Rank();
   BaseActionClass* Fire();
 }; // Instantaneous_Activity12ActivityActivity
-
-class WRITE_WITH_OK_DATAActivity:public Activity {
-public:
-
-  Place* WRITE_DRAM;
-  short* WRITE_DRAM_Mobius_Mark;
-  Place* OK_CONTENT_TEMP;
-  short* OK_CONTENT_TEMP_Mobius_Mark;
-  Place* OK_CONTENT;
-  short* OK_CONTENT_Mobius_Mark;
-
-  double* TheDistributionParameters;
-  WRITE_WITH_OK_DATAActivity();
-  double Rate(){return 0;}
-  bool Enabled();
-  void LinkVariables();
-  double Weight();
-  bool ReactivationPredicate();
-  bool ReactivationFunction();
-  double SampleDistribution();
-  double* ReturnDistributionParameters();
-  int Rank();
-  BaseActionClass* Fire();
-}; // WRITE_WITH_OK_DATAActivityActivity
 
 class Instantaneous_Activity2Activity:public Activity {
 public:
@@ -144,6 +96,10 @@ public:
 
   Place* READ_DRAM;
   short* READ_DRAM_Mobius_Mark;
+  Place* MEM_FAILURE;
+  short* MEM_FAILURE_Mobius_Mark;
+  Place* MEMORY_KO;
+  short* MEMORY_KO_Mobius_Mark;
   Place* MEMORY_OK;
   short* MEMORY_OK_Mobius_Mark;
 
@@ -259,13 +215,63 @@ public:
   BaseActionClass* Fire();
 }; // Instantaneous_Activity3Activity_case2Activity
 
+class Instantaneous_Activity4Activity_case1:public Activity {
+public:
+
+  Place* WRITE_DRAM;
+  short* WRITE_DRAM_Mobius_Mark;
+  Place* OK_CONTENT_TEMP;
+  short* OK_CONTENT_TEMP_Mobius_Mark;
+  Place* OK_CONTENT;
+  short* OK_CONTENT_Mobius_Mark;
+  Place* MEM_FAILURE;
+  short* MEM_FAILURE_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  Instantaneous_Activity4Activity_case1();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // Instantaneous_Activity4Activity_case1Activity
+
+class Instantaneous_Activity4Activity_case2:public Activity {
+public:
+
+  Place* WRITE_DRAM;
+  short* WRITE_DRAM_Mobius_Mark;
+  Place* KO_CONTENT_TEMP;
+  short* KO_CONTENT_TEMP_Mobius_Mark;
+  Place* KO_CONTENT;
+  short* KO_CONTENT_Mobius_Mark;
+  Place* MEM_FAILURE;
+  short* MEM_FAILURE_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  Instantaneous_Activity4Activity_case2();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // Instantaneous_Activity4Activity_case2Activity
+
   //List of user-specified place names
   Place* KO_CONTENT_TEMP;
   Place* MEM_OP_COMPLETE;
   Place* OK_CONTENT_TEMP;
   Place* WRITE_DRAM;
-  Place* RESULT_OK;
-  Place* RESULT_KO;
   Place* KO_READ;
   Place* MEMORY_KO;
   Place* READ_DRAM;
@@ -274,28 +280,28 @@ public:
   Place* OK_CONTENT;
   Place* KO_CONTENT;
   Place* REPLACE_CONTENT;
+  Place* MEM_FAILURE;
 
   // Create instances of all actvities
   Instantaneous_Activity23Activity Instantaneous_Activity23;
-  WRITE_WITH_KO_DATAActivity WRITE_WITH_KO_DATA;
   Instantaneous_Activity12Activity Instantaneous_Activity12;
-  WRITE_WITH_OK_DATAActivity WRITE_WITH_OK_DATA;
   Instantaneous_Activity2Activity Instantaneous_Activity2;
   READ_FROMActivity_case1 READ_FROM_case1;
   READ_FROMActivity_case2 READ_FROM_case2;
   Instantaneous_Activity1Activity Instantaneous_Activity1;
   Instantaneous_Activity3Activity_case1 Instantaneous_Activity3_case1;
   Instantaneous_Activity3Activity_case2 Instantaneous_Activity3_case2;
+  Instantaneous_Activity4Activity_case1 Instantaneous_Activity4_case1;
+  Instantaneous_Activity4Activity_case2 Instantaneous_Activity4_case2;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
   PostselectGroup Instantaneous_Activity23Group;
-  PostselectGroup WRITE_WITH_KO_DATAGroup;
   PostselectGroup Instantaneous_Activity12Group;
-  PostselectGroup WRITE_WITH_OK_DATAGroup;
   PostselectGroup Instantaneous_Activity2Group;
   PostselectGroup READ_FROMGroup;
   PostselectGroup Instantaneous_Activity1Group;
   PostselectGroup Instantaneous_Activity3Group;
+  PostselectGroup Instantaneous_Activity4Group;
 
   DRAMSAN();
   ~DRAMSAN();

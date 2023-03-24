@@ -2456,12 +2456,12 @@
 									<int id="ClassVersion">3</int>
 									<class id="Mobius.BaseClasses.BasePanelObjectClass">
 										<int id="ClassVersion">5</int>
-										<string id="Name">DISPATCHER_Copy</string>
+										<string id="Name">Instantaneous_Activity2</string>
 										<boolean id="ContainsLabel">true</boolean>
 										<boolean id="IsLabelShown">true</boolean>
 									</class>
 									<point id="CenterPoint">
-										<int id="x">410</int>
+										<int id="x">370</int>
 										<int id="y">350</int>
 									</point>
 								</class>
@@ -2560,17 +2560,17 @@
 					<class id="Mobius.BaseClasses.BaseEdgeClass">
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
-						<string id="StartVertex">DISPATCHER_Copy</string>
+						<string id="StartVertex">Instantaneous_Activity2</string>
 						<string id="FinishVertex">Output_Gate_Copy</string>
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">410</int>
-								<int id="y">346</int>
+								<int id="x">371</int>
+								<int id="y">345</int>
 							</point>
 							<point id="1">
-								<int id="x">309</int>
-								<int id="y">184</int>
+								<int id="x">314</int>
+								<int id="y">190</int>
 							</point>
 						</vector>
 					</class>
@@ -2578,25 +2578,27 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">Input_Gate1_Copy</string>
-						<string id="FinishVertex">DISPATCHER_Copy</string>
+						<string id="FinishVertex">Instantaneous_Activity2</string>
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
 								<int id="x">315</int>
-								<int id="y">534</int>
+								<int id="y">525</int>
 							</point>
 							<point id="1">
-								<int id="x">324</int>
-								<int id="y">431</int>
+								<int id="x">371</int>
+								<int id="y">345</int>
 							</point>
 						</vector>
 					</class>
 				</class>
 				<vector id="LocalGlobalNamesList">
 					<string id="0">size</string>
+					<string id="1">failure_index</string>
 				</vector>
 				<vector id="LocalGlobalTypesList">
 					<string id="0">short</string>
+					<string id="1">short</string>
 				</vector>
 				<boolean id="DisplayToolTips">true</boolean>
 			</class>

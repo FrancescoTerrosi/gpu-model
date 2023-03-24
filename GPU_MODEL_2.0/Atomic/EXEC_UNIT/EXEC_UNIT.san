@@ -143,7 +143,7 @@
 							<int id="ClassVersion">3</int>
 							<class id="Mobius.BaseClasses.BasePanelObjectClass">
 								<int id="ClassVersion">5</int>
-								<string id="Name">ALU_INSTRUCTION_NO_DATA</string>
+								<string id="Name">ALU_INT_INSTRUCTION</string>
 								<boolean id="ContainsLabel">true</boolean>
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
@@ -207,6 +207,44 @@
 							<point id="CenterPoint">
 								<int id="x">324</int>
 								<int id="y">660</int>
+							</point>
+						</class>
+						<boolean id="ReadOnly">false</boolean>
+						<boolean id="ConstantMarking">true</boolean>
+						<int id="InitialState">0</int>
+					</class>
+					<class id="Mobius.AtomicModels.San.PlacePanelObject">
+						<int id="ClassVersion">1</int>
+						<class id="Mobius.BaseClasses.BaseVertexClass">
+							<int id="ClassVersion">3</int>
+							<class id="Mobius.BaseClasses.BasePanelObjectClass">
+								<int id="ClassVersion">5</int>
+								<string id="Name">FLOAT_FAILURE</string>
+								<boolean id="ContainsLabel">true</boolean>
+								<boolean id="IsLabelShown">true</boolean>
+							</class>
+							<point id="CenterPoint">
+								<int id="x">564</int>
+								<int id="y">84</int>
+							</point>
+						</class>
+						<boolean id="ReadOnly">false</boolean>
+						<boolean id="ConstantMarking">true</boolean>
+						<int id="InitialState">0</int>
+					</class>
+					<class id="Mobius.AtomicModels.San.PlacePanelObject">
+						<int id="ClassVersion">1</int>
+						<class id="Mobius.BaseClasses.BaseVertexClass">
+							<int id="ClassVersion">3</int>
+							<class id="Mobius.BaseClasses.BasePanelObjectClass">
+								<int id="ClassVersion">5</int>
+								<string id="Name">INT_FAILURE</string>
+								<boolean id="ContainsLabel">true</boolean>
+								<boolean id="IsLabelShown">true</boolean>
+							</class>
+							<point id="CenterPoint">
+								<int id="x">468</int>
+								<int id="y">12</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -339,12 +377,12 @@
 							n\n    case 2:\n        READ-&gt;Mark() = SCHEDULER-&gt;Mark
 							();\n    break;\n\n    case 3:\n        WRITE-&gt;Mark() = S
 							CHEDULER-&gt;Mark();\n    break;\n\n    case 4:\n        ALU
-							_INSTRUCTION_NO_DATA-&gt;Mark()++;\n    break;\n\n    case 5
-							:\n        ALU_INSTRUCTION_NO_DATA-&gt;Mark()++;\n    break;
-							\n\n    case 6:\n        ALU_INSTRUCTION_NO_DATA-&gt;Mark()+
-							+;\n    break;\n\n    case 7:\n        ALU_INSTRUCTION_NO_DA
-							TA-&gt;Mark()++;\n    break;\n\n    default:\n    break;\n}\
-							nSCHEDULER-&gt;Mark() = -1;
+							_INT_INSTRUCTION-&gt;Mark()++;\n    break;\n\n    case 5:\n 
+							       ALU_INT_INSTRUCTION-&gt;Mark()++;\n    break;\n\n    
+							case 6:\n        ALU_INT_INSTRUCTION-&gt;Mark()++;\n    brea
+							k;\n\n    case 7:\n        ALU_INT_INSTRUCTION-&gt;Mark()++;
+							\n    break;\n\n    default:\n    break;\n}\nSCHEDULER-&gt;M
+							ark() = -1;
 						</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.InstantaneousActivityPanelObject">
@@ -475,12 +513,12 @@
 							<vector id="CaseDistributions">
 								<string id="0">
 									return OK_CONTENT-&gt;Mark() + KO_CONTENT-&gt;Mark() == 0 ? 
-									0.5 : KO_CONTENT-&gt;Mark() == 0 ? 0,1 : KO_CONTENT-&gt;Mark
+									0.5 : KO_CONTENT-&gt;Mark() == 0 ? 0.1 : KO_CONTENT-&gt;Mark
 									() / (OK_CONTENT-&gt;Mark() + KO_CONTENT-&gt;Mark());
 								</string>
 								<string id="1">
 									return OK_CONTENT-&gt;Mark() + KO_CONTENT-&gt;Mark() == 0 ? 
-									0.5 : OK_CONTENT-&gt;Mark() == 0 ? 0,1 : OK_CONTENT-&gt;Mark
+									0.5 : OK_CONTENT-&gt;Mark() == 0 ? 0.1 : OK_CONTENT-&gt;Mark
 									() / (OK_CONTENT-&gt;Mark() + KO_CONTENT-&gt;Mark());\n
 								</string>
 							</vector>
@@ -696,7 +734,7 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">Output_Gate</string>
-						<string id="FinishVertex">ALU_INSTRUCTION_NO_DATA</string>
+						<string id="FinishVertex">ALU_INT_INSTRUCTION</string>
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
@@ -865,7 +903,7 @@
 					<class id="Mobius.BaseClasses.BaseEdgeClass">
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
-						<string id="StartVertex">ALU_INSTRUCTION_NO_DATA</string>
+						<string id="StartVertex">ALU_INT_INSTRUCTION</string>
 						<string id="FinishVertex">Instantaneous_Activity2</string>
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">

@@ -1,5 +1,5 @@
 Simulator Results
-Date:, Tue Mar 21 15:30:09 CET 2023
+Date:, Tue Mar 21 15:41:24 CET 2023
 
 Simulator Configuration
 Simulation Type:,Terminating
@@ -23,10 +23,10 @@ Processors Selected for Simulation:
 DESKTOP-3AHUC0F,amd64
 
 Experiment 1
-Experiment 1,Start Time:,Tue Mar 21 15:30:07 CET 2023
-Experiment 1,Finish Time:,Tue Mar 21 15:30:09 CET 2023
-Experiment 1,Elapsed Running Time:,1.314
-Experiment 1,Total CPU Time:,0.82
+Experiment 1,Start Time:,Tue Mar 21 15:41:22 CET 2023
+Experiment 1,Finish Time:,Tue Mar 21 15:41:24 CET 2023
+Experiment 1,Elapsed Running Time:,1.634
+Experiment 1,Total CPU Time:,0.926
 Experiment 1,Batches Completed:,1
 Experiment 1,Experiment Name:,Experiment 1
 Experiment 1,Global Variable Settings:
@@ -45,7 +45,7 @@ Experiment 1,Mean,warp,0.0,100,3.7810000000E03 ,+/-,0.0000000000E00
 Experiment 1,Mean,l1_read,0.0,100,6.5500000000E02 ,+/-,0.0000000000E00 
 Experiment 1,Mean,l2_read,0.0,100,6.6500000000E02 ,+/-,0.0000000000E00 
 Experiment 1,Mean,dram_read,0.0,100,7.2600000000E02 ,+/-,0.0000000000E00 
-Experiment 1,Mean,alu_ok,0.0,100,1.7010000000E03 ,+/-,0.0000000000E00 
-Experiment 1,Mean,alu_ko,0.0,100,2.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,alu_ok,0.0,100,1.6990000000E03 ,+/-,0.0000000000E00 
+Experiment 1,Mean,alu_ko,0.0,100,4.0000000000E00 ,+/-,0.0000000000E00 
 
 <END_MOBIUS_RESULTS>

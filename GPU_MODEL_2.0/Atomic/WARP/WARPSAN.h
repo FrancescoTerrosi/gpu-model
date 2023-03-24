@@ -11,6 +11,7 @@
 #include "Cpp/BaseClasses/SAN/Place.h"
 #include "Cpp/BaseClasses/SAN/ExtendedPlace.h"
 extern Short size;
+extern Short failure_index;
 extern UserDistributions* TheDistribution;
 
 void MemoryError();
@@ -94,7 +95,7 @@ class instructions: public ArrayStateVariable<ExtendedPlace<short> > {
 class WARPSAN:public SANModel{
 public:
 
-class DISPATCHER_CopyActivity:public Activity {
+class Instantaneous_Activity2Activity:public Activity {
 public:
 
   Place* INST_COUNTER;
@@ -107,7 +108,7 @@ public:
   instructions* WARP;
 
   double* TheDistributionParameters;
-  DISPATCHER_CopyActivity();
+  Instantaneous_Activity2Activity();
   double Rate(){return 0;}
   bool Enabled();
   void LinkVariables();
@@ -118,7 +119,7 @@ public:
   double* ReturnDistributionParameters();
   int Rank();
   BaseActionClass* Fire();
-}; // DISPATCHER_CopyActivityActivity
+}; // Instantaneous_Activity2ActivityActivity
 
   //List of user-specified place names
   Place* INST_COUNTER;
@@ -128,10 +129,10 @@ public:
   ExtendedPlace<short>* SCHEDULER;
 
   // Create instances of all actvities
-  DISPATCHER_CopyActivity DISPATCHER_Copy;
+  Instantaneous_Activity2Activity Instantaneous_Activity2;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
-  PostselectGroup DISPATCHER_CopyGroup;
+  PostselectGroup Instantaneous_Activity2Group;
 
   WARPSAN();
   ~WARPSAN();

@@ -95,19 +95,19 @@ class registers_counter: public ArrayStateVariable<ExtendedPlace<short> > {
 class REGISTER_FILESAN:public SANModel{
 public:
 
-class Instantaneous_Activity3Activity_case1:public Activity {
+class Instantaneous_Activity3Activity:public Activity {
 public:
 
   Place* indexes;
   short* indexes_Mobius_Mark;
   Place* REGISTERS_FILL;
   short* REGISTERS_FILL_Mobius_Mark;
-  Place* OK_CONTENT;
-  short* OK_CONTENT_Mobius_Mark;
+  Place* WRITE_REG;
+  short* WRITE_REG_Mobius_Mark;
   registers_counter* LIVE_REGISTERS;
 
   double* TheDistributionParameters;
-  Instantaneous_Activity3Activity_case1();
+  Instantaneous_Activity3Activity();
   double Rate(){return 0;}
   bool Enabled();
   void LinkVariables();
@@ -118,23 +118,40 @@ public:
   double* ReturnDistributionParameters();
   int Rank();
   BaseActionClass* Fire();
-}; // Instantaneous_Activity3Activity_case1Activity
+}; // Instantaneous_Activity3ActivityActivity
 
-class Instantaneous_Activity3Activity_case2:public Activity {
+class Instantaneous_Activity1Activity:public Activity {
 public:
 
-  Place* indexes;
-  short* indexes_Mobius_Mark;
-  Place* REGISTERS_FILL;
-  short* REGISTERS_FILL_Mobius_Mark;
+  Place* WRITE_REG;
+  short* WRITE_REG_Mobius_Mark;
+  Place* OK_CONTENT;
+  short* OK_CONTENT_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  Instantaneous_Activity1Activity();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // Instantaneous_Activity1ActivityActivity
+
+class Instantaneous_Activity2Activity:public Activity {
+public:
+
+  Place* WRITE_REG;
+  short* WRITE_REG_Mobius_Mark;
   Place* KO_CONTENT;
   short* KO_CONTENT_Mobius_Mark;
-  Place* OK_CONTENT;
-  short* OK_CONTENT_Mobius_Mark;
-  registers_counter* LIVE_REGISTERS;
 
   double* TheDistributionParameters;
-  Instantaneous_Activity3Activity_case2();
+  Instantaneous_Activity2Activity();
   double Rate(){return 0;}
   bool Enabled();
   void LinkVariables();
@@ -145,21 +162,28 @@ public:
   double* ReturnDistributionParameters();
   int Rank();
   BaseActionClass* Fire();
-}; // Instantaneous_Activity3Activity_case2Activity
+}; // Instantaneous_Activity2ActivityActivity
 
   //List of user-specified place names
   Place* indexes;
   Place* REGISTERS_FILL;
   Place* OK_CONTENT;
   Place* KO_CONTENT;
+  Place* REG_FAILURE;
+  Place* WRITE_REG;
+  Place* RESULT_OK;
+  Place* RESULT_KO;
   registers_counter* LIVE_REGISTERS;
 
   // Create instances of all actvities
-  Instantaneous_Activity3Activity_case1 Instantaneous_Activity3_case1;
-  Instantaneous_Activity3Activity_case2 Instantaneous_Activity3_case2;
+  Instantaneous_Activity3Activity Instantaneous_Activity3;
+  Instantaneous_Activity1Activity Instantaneous_Activity1;
+  Instantaneous_Activity2Activity Instantaneous_Activity2;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
   PostselectGroup Instantaneous_Activity3Group;
+  PostselectGroup Instantaneous_Activity1Group;
+  PostselectGroup Instantaneous_Activity2Group;
 
   REGISTER_FILESAN();
   ~REGISTER_FILESAN();
