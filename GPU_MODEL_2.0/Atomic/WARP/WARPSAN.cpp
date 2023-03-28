@@ -18,54 +18,68 @@
 WARPSAN::WARPSAN(){
 
 
-  Activity* InitialActionList[1]={
-    &DISPATCHER_Copy  // 0
+  Activity* InitialActionList[2]={
+    &DISPATCHER_Copy, //0
+    &Instantaneous_Activity1  // 1
   };
 
-  BaseGroupClass* InitialGroupList[1]={
-    (BaseGroupClass*) &(DISPATCHER_Copy)
+  BaseGroupClass* InitialGroupList[2]={
+    (BaseGroupClass*) &(DISPATCHER_Copy), 
+    (BaseGroupClass*) &(Instantaneous_Activity1)
   };
 
   INST_COUNTER = new Place("INST_COUNTER" ,-1);
   INSTRUCTION_READY = new Place("INSTRUCTION_READY" ,1);
   REGISTERS_FILL = new Place("REGISTERS_FILL" ,0);
+  INT_ALU_FAILURE = new Place("INT_ALU_FAILURE" ,0);
+  FLOAT_ALU_FAILURE = new Place("FLOAT_ALU_FAILURE" ,0);
+  MEM_FAILURE = new Place("MEM_FAILURE" ,0);
+  REG_FAILURE = new Place("REG_FAILURE" ,0);
   short temp_WARPinstructionsvalue = -1;
   WARP = new instructions("WARP",temp_WARPinstructionsvalue);
   short temp_SCHEDULERshort = -1;
   SCHEDULER = new ExtendedPlace<short>("SCHEDULER",temp_SCHEDULERshort);
-  BaseStateVariableClass* InitialPlaces[5]={
+  short temp_FAILURE_INSTshort = failure_index;
+  FAILURE_INST = new ExtendedPlace<short>("FAILURE_INST",temp_FAILURE_INSTshort);
+  BaseStateVariableClass* InitialPlaces[10]={
     INST_COUNTER,  // 0
     INSTRUCTION_READY,  // 1
     REGISTERS_FILL,  // 2
-    WARP,  // 3
-    SCHEDULER   // 4
+    INT_ALU_FAILURE,  // 3
+    FLOAT_ALU_FAILURE,  // 4
+    MEM_FAILURE,  // 5
+    REG_FAILURE,  // 6
+    WARP,  // 7
+    SCHEDULER,  // 8
+    FAILURE_INST   // 9
   };
   BaseStateVariableClass* InitialROPlaces[0]={
   };
-  initializeSANModelNow("WARP", 5, InitialPlaces, 
+  initializeSANModelNow("WARP", 10, InitialPlaces, 
                         0, InitialROPlaces, 
-                        1, InitialActionList, 1, InitialGroupList);
+                        2, InitialActionList, 2, InitialGroupList);
 
 
   assignPlacesToActivitiesInst();
   assignPlacesToActivitiesTimed();
 
-  int AffectArcs[5][2]={ 
-    {1,0}, {0,0}, {4,0}, {2,0}, {3,0}
+  int AffectArcs[14][2]={ 
+    {1,0}, {0,0}, {8,0}, {2,0}, {7,0}, {5,1}, {3,1}, {6,1}, {4,1}, 
+    {1,1}, {0,1}, {8,1}, {2,1}, {7,1}
   };
-  for(int n=0;n<5;n++) {
+  for(int n=0;n<14;n++) {
     AddAffectArc(InitialPlaces[AffectArcs[n][0]],
                  InitialActionList[AffectArcs[n][1]]);
   }
-  int EnableArcs[2][2]={ 
-    {0,0}, {1,0}
+  int EnableArcs[6][2]={ 
+    {0,0}, {1,0}, {9,0}, {9,1}, {0,1}, {1,1}
   };
-  for(int n=0;n<2;n++) {
+  for(int n=0;n<6;n++) {
     AddEnableArc(InitialPlaces[EnableArcs[n][0]],
                  InitialActionList[EnableArcs[n][1]]);
   }
 
-  for(int n=0;n<1;n++) {
+  for(int n=0;n<2;n++) {
     InitialActionList[n]->LinkVariables();
   }
   CustomInitialization();
@@ -84,9 +98,20 @@ WARPSAN::~WARPSAN(){
 void WARPSAN::assignPlacesToActivitiesInst(){
   DISPATCHER_Copy.INST_COUNTER = (Place*) LocalStateVariables[0];
   DISPATCHER_Copy.INSTRUCTION_READY = (Place*) LocalStateVariables[1];
-  DISPATCHER_Copy.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[4];
+  DISPATCHER_Copy.FAILURE_INST = (ExtendedPlace<short>*) LocalStateVariables[9];
+  DISPATCHER_Copy.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[8];
   DISPATCHER_Copy.REGISTERS_FILL = (Place*) LocalStateVariables[2];
-  DISPATCHER_Copy.WARP = (instructions*) LocalStateVariables[3];
+  DISPATCHER_Copy.WARP = (instructions*) LocalStateVariables[7];
+  Instantaneous_Activity1.FAILURE_INST = (ExtendedPlace<short>*) LocalStateVariables[9];
+  Instantaneous_Activity1.INST_COUNTER = (Place*) LocalStateVariables[0];
+  Instantaneous_Activity1.INSTRUCTION_READY = (Place*) LocalStateVariables[1];
+  Instantaneous_Activity1.MEM_FAILURE = (Place*) LocalStateVariables[5];
+  Instantaneous_Activity1.INT_ALU_FAILURE = (Place*) LocalStateVariables[3];
+  Instantaneous_Activity1.REG_FAILURE = (Place*) LocalStateVariables[6];
+  Instantaneous_Activity1.FLOAT_ALU_FAILURE = (Place*) LocalStateVariables[4];
+  Instantaneous_Activity1.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[8];
+  Instantaneous_Activity1.REGISTERS_FILL = (Place*) LocalStateVariables[2];
+  Instantaneous_Activity1.WARP = (instructions*) LocalStateVariables[7];
 }
 void WARPSAN::assignPlacesToActivitiesTimed(){
 }
@@ -98,12 +123,13 @@ void WARPSAN::assignPlacesToActivitiesTimed(){
 
 
 WARPSAN::DISPATCHER_CopyActivity::DISPATCHER_CopyActivity(){
-  ActivityInitialize("DISPATCHER_Copy",0,Instantaneous , RaceEnabled, 5,2, false);
+  ActivityInitialize("DISPATCHER_Copy",0,Instantaneous , RaceEnabled, 5,3, false);
 }
 
 void WARPSAN::DISPATCHER_CopyActivity::LinkVariables(){
   INST_COUNTER->Register(&INST_COUNTER_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
+
 
   REGISTERS_FILL->Register(&REGISTERS_FILL_Mobius_Mark);
 
@@ -111,7 +137,7 @@ void WARPSAN::DISPATCHER_CopyActivity::LinkVariables(){
 
 bool WARPSAN::DISPATCHER_CopyActivity::Enabled(){
   OldEnabled=NewEnabled;
-  NewEnabled=(((INST_COUNTER->Mark() < size-1) && (INSTRUCTION_READY->Mark() > 0)));
+  NewEnabled=(((INST_COUNTER->Mark() < size-1) && (INSTRUCTION_READY->Mark() > 0) && (FAILURE_INST->Mark() != INST_COUNTER->Mark())));
   return NewEnabled;
 }
 
@@ -144,6 +170,68 @@ BaseActionClass* WARPSAN::DISPATCHER_CopyActivity::Fire(){
 INST_COUNTER->Mark()++;
   SCHEDULER->Mark() = WARP->Index(INST_COUNTER->Mark())->Mark();
 REGISTERS_FILL->Mark() = 1;
+  return this;
+}
+
+/*======================Instantaneous_Activity1Activity========================*/
+
+
+WARPSAN::Instantaneous_Activity1Activity::Instantaneous_Activity1Activity(){
+  ActivityInitialize("Instantaneous_Activity1",1,Instantaneous , RaceEnabled, 9,3, false);
+}
+
+void WARPSAN::Instantaneous_Activity1Activity::LinkVariables(){
+
+  INST_COUNTER->Register(&INST_COUNTER_Mobius_Mark);
+  INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
+  MEM_FAILURE->Register(&MEM_FAILURE_Mobius_Mark);
+  INT_ALU_FAILURE->Register(&INT_ALU_FAILURE_Mobius_Mark);
+  REG_FAILURE->Register(&REG_FAILURE_Mobius_Mark);
+  FLOAT_ALU_FAILURE->Register(&FLOAT_ALU_FAILURE_Mobius_Mark);
+
+  REGISTERS_FILL->Register(&REGISTERS_FILL_Mobius_Mark);
+
+}
+
+bool WARPSAN::Instantaneous_Activity1Activity::Enabled(){
+  OldEnabled=NewEnabled;
+  NewEnabled=(((FAILURE_INST->Mark() == INST_COUNTER->Mark()) && (INSTRUCTION_READY->Mark() == 1)));
+  return NewEnabled;
+}
+
+double WARPSAN::Instantaneous_Activity1Activity::Weight(){ 
+  return 1;
+}
+
+bool WARPSAN::Instantaneous_Activity1Activity::ReactivationPredicate(){ 
+  return false;
+}
+
+bool WARPSAN::Instantaneous_Activity1Activity::ReactivationFunction(){ 
+  return false;
+}
+
+double WARPSAN::Instantaneous_Activity1Activity::SampleDistribution(){
+  return 0;
+}
+
+double* WARPSAN::Instantaneous_Activity1Activity::ReturnDistributionParameters(){
+    return NULL;
+}
+
+int WARPSAN::Instantaneous_Activity1Activity::Rank(){
+  return 1;
+}
+
+BaseActionClass* WARPSAN::Instantaneous_Activity1Activity::Fire(){
+  INSTRUCTION_READY->Mark()--;
+INST_COUNTER->Mark()++;
+  SCHEDULER->Mark() = WARP->Index(INST_COUNTER->Mark())->Mark();
+REGISTERS_FILL->Mark() = 1;
+  (*(MEM_FAILURE_Mobius_Mark))++;
+  (*(INT_ALU_FAILURE_Mobius_Mark))++;
+  (*(REG_FAILURE_Mobius_Mark))++;
+  (*(FLOAT_ALU_FAILURE_Mobius_Mark))++;
   return this;
 }
 

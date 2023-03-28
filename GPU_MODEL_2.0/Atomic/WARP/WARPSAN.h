@@ -11,6 +11,7 @@
 #include "Cpp/BaseClasses/SAN/Place.h"
 #include "Cpp/BaseClasses/SAN/ExtendedPlace.h"
 extern Short size;
+extern Short failure_index;
 extern UserDistributions* TheDistribution;
 
 void MemoryError();
@@ -101,6 +102,7 @@ public:
   short* INST_COUNTER_Mobius_Mark;
   Place* INSTRUCTION_READY;
   short* INSTRUCTION_READY_Mobius_Mark;
+  ExtendedPlace<short>* FAILURE_INST;
   ExtendedPlace<short>* SCHEDULER;
   Place* REGISTERS_FILL;
   short* REGISTERS_FILL_Mobius_Mark;
@@ -120,18 +122,60 @@ public:
   BaseActionClass* Fire();
 }; // DISPATCHER_CopyActivityActivity
 
+class Instantaneous_Activity1Activity:public Activity {
+public:
+
+  ExtendedPlace<short>* FAILURE_INST;
+  Place* INST_COUNTER;
+  short* INST_COUNTER_Mobius_Mark;
+  Place* INSTRUCTION_READY;
+  short* INSTRUCTION_READY_Mobius_Mark;
+  Place* MEM_FAILURE;
+  short* MEM_FAILURE_Mobius_Mark;
+  Place* INT_ALU_FAILURE;
+  short* INT_ALU_FAILURE_Mobius_Mark;
+  Place* REG_FAILURE;
+  short* REG_FAILURE_Mobius_Mark;
+  Place* FLOAT_ALU_FAILURE;
+  short* FLOAT_ALU_FAILURE_Mobius_Mark;
+  ExtendedPlace<short>* SCHEDULER;
+  Place* REGISTERS_FILL;
+  short* REGISTERS_FILL_Mobius_Mark;
+  instructions* WARP;
+
+  double* TheDistributionParameters;
+  Instantaneous_Activity1Activity();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // Instantaneous_Activity1ActivityActivity
+
   //List of user-specified place names
   Place* INST_COUNTER;
   Place* INSTRUCTION_READY;
   Place* REGISTERS_FILL;
+  Place* INT_ALU_FAILURE;
+  Place* FLOAT_ALU_FAILURE;
+  Place* MEM_FAILURE;
+  Place* REG_FAILURE;
   instructions* WARP;
   ExtendedPlace<short>* SCHEDULER;
+  ExtendedPlace<short>* FAILURE_INST;
 
   // Create instances of all actvities
   DISPATCHER_CopyActivity DISPATCHER_Copy;
+  Instantaneous_Activity1Activity Instantaneous_Activity1;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
   PostselectGroup DISPATCHER_CopyGroup;
+  PostselectGroup Instantaneous_Activity1Group;
 
   WARPSAN();
   ~WARPSAN();

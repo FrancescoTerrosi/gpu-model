@@ -9,6 +9,7 @@
 
 extern Short dram_size;
 extern Short end;
+extern Short failure_index;
 extern Short l1_size;
 extern Short l2_size;
 extern Short ngpu;
@@ -27,6 +28,7 @@ private:
 
 short *dram_sizeValues;
 short *endValues;
+short *failure_indexValues;
 short *l1_sizeValues;
 short *l2_sizeValues;
 short *ngpuValues;
@@ -37,6 +39,7 @@ short *sizeValues;
 
 void SetValues_dram_size();
 void SetValues_end();
+void SetValues_failure_index();
 void SetValues_l1_size();
 void SetValues_l2_size();
 void SetValues_ngpu();

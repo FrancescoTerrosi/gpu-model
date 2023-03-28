@@ -17,7 +17,7 @@
 			<string id="ArchiveFile"></string>
 			<byte id="RandomNumberGenerator">0</byte>
 			<long id="RandomNumberSeed">31415</long>
-			<long id="MaximumBatches">1</long>
+			<long id="MaximumBatches">1000</long>
 			<long id="MinimumBatches">1000</long>
 			<long id="ReportFrequency">100</long>
 			<byte id="BuildType">0</byte>

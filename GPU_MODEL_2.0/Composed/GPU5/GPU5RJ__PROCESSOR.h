@@ -20,8 +20,11 @@ class GPU5RJ__PROCESSOR: public Join {
   REGISTER_FILESAN * REGISTER_FILE;
   EXEC_UNITSAN * EXEC_UNIT;
   MEMORYSAN * MEMORY;
+  Place * FLOAT_ALU_FAILURE;
   Place * INSTRUCTION_READY;
+  Place * INT_ALU_FAILURE;
   Place * KO_CONTENT;
+  Place * MEM_FAILURE;
   Place * MEM_OP_COMPLETE;
   Place * OK_CONTENT;
   Place * READ;
@@ -29,6 +32,9 @@ class GPU5RJ__PROCESSOR: public Join {
   Place * READ_L1;
   Place * READ_L2;
   Place * REGISTERS_FILL;
+  Place * REG_FAILURE;
+  Place * RESULT_KO;
+  Place * RESULT_OK;
   Place * SCHEDULER;
   Place * WRITE;
   Place * WRITE_DRAM;

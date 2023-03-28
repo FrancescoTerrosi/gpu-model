@@ -21,8 +21,12 @@ class GPU5RJ__Rep1: public Rep {
   ~GPU5RJ__Rep1();
 
   // Declare new variables
+  Place * FLOAT_ALU_FAILURE;
   Place * INSTRUCTION_READY;
+  Place * INT_ALU_FAILURE;
+  Place * MEM_FAILURE;
   Place * REGISTERS_FILL;
+  Place * REG_FAILURE;
   Place * SCHEDULER;
 };
 

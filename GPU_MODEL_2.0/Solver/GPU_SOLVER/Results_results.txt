@@ -1,5 +1,5 @@
 _______________________________Simulator Results______________________________
-Date:                        Tue Mar 21 15:30:09 CET 2023
+Date:                        Tue Mar 28 17:34:22 CEST 2023
 
 ____________________________Simulator Configuration___________________________
 Simulation Type:             Terminating
@@ -7,7 +7,7 @@ Project Name:                GPU_MODEL_2.0
 Study Name:                  GPU_STUDY
 Random Number Generator:     Lagged Fibonacci
 Random Number Seed:          31415
-Maximum Batches:             1
+Maximum Batches:             1000
 Minimum Batches:             1000
 Data Reporting Frequency:    100
 Display Update Frequency:    100
@@ -23,32 +23,37 @@ Processors Selected for Simulation:
         DESKTOP-3AHUC0F      amd64
 
 _________________________________Experiment 1_________________________________
-Start Time:                  Tue Mar 21 15:30:07 CET 2023
-Finish Time:                 Tue Mar 21 15:30:09 CET 2023
-Elapsed Running Time:        1.314
-Total CPU Time:              0.82
-Batches Completed:           1
+Start Time:                  Tue Mar 28 17:33:57 CEST 2023
+Finish Time:                 Tue Mar 28 17:34:22 CEST 2023
+Elapsed Running Time:        24.66
+Total CPU Time:              23.795
+Batches Completed:           1000
 Experiment Name:             Experiment 1
 Global Variable Settings:    
         short                dram_size                100                    
         short                end                      100                    
+        short                failure_index            100                    
         short                l1_size                  100                    
         short                l2_size                  100                    
         short                ngpu                     1                      
         short                nprocessors              1.0                    
         short                nwarps                   1.0                    
         short                register_count_index     0                      
-        short                size                     3781                   
+        short                size                     3782                   
 
 
 _________________________________Mean Results_________________________________
 Name                  Time               Mean                     Confidence Interval
 warp                  0.0 - 100         3.7810000000E03   +/-   0.0000000000E00 
-l1_read               0.0 - 100         6.5500000000E02   +/-   0.0000000000E00 
-l2_read               0.0 - 100         6.6500000000E02   +/-   0.0000000000E00 
-dram_read             0.0 - 100         7.2600000000E02   +/-   0.0000000000E00 
-alu_ok                0.0 - 100         1.7010000000E03   +/-   0.0000000000E00 
-alu_ko                0.0 - 100         2.0000000000E00   +/-   0.0000000000E00 
+l1_read               0.0 - 100         6.8039500000E02   +/-   1.3222085840E00 
+l2_read               0.0 - 100         6.8386800000E02   +/-   1.3045940386E00 
+dram_read             0.0 - 100         6.8173700000E02   +/-   1.3482107380E00 
+alu_ok                0.0 - 100         1.6941850000E03   +/-   3.0497364440E-01
+alu_ko                0.0 - 100         7.8150000000E00   +/-   3.0497364438E-01
+l1_read_ko            0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
+l2_read_ko            0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
+dram_read_ko          0.0 - 100         1.0000000000E00   +/-   0.0000000000E00 
+failure               100               1.0000000000E00   +/-   0.0000000000E00 
 
 
 _______________________________Variance Results_______________________________

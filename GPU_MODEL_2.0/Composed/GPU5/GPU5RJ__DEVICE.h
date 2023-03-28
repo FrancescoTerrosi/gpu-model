@@ -21,6 +21,7 @@ class GPU5RJ__DEVICE: public Join {
   Place * KO_CONTENT;
   Place * MEMORY_KO;
   Place * MEMORY_OK;
+  Place * MEM_FAILURE;
   Place * MEM_OP_COMPLETE;
   Place * OK_CONTENT;
   Place * READ_DRAM;

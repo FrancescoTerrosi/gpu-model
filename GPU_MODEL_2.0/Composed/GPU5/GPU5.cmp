@@ -37,9 +37,13 @@
 						</point>
 					</class>
 					<string id="RepCount">nwarps</string>
-					<int id="SharingInfoSize">3</int>
+					<int id="SharingInfoSize">7</int>
+					<string id="RepSharingInfoElement">FLOAT_ALU_FAILURE</string>
 					<string id="RepSharingInfoElement">INSTRUCTION_READY</string>
+					<string id="RepSharingInfoElement">INT_ALU_FAILURE</string>
+					<string id="RepSharingInfoElement">MEM_FAILURE</string>
 					<string id="RepSharingInfoElement">REGISTERS_FILL</string>
+					<string id="RepSharingInfoElement">REG_FAILURE</string>
 					<string id="RepSharingInfoElement">SCHEDULER</string>
 				</class>
 				<class id="Mobius.ComposedModels.RepJoin.RepPanelObject">
@@ -58,7 +62,8 @@
 						</point>
 					</class>
 					<string id="RepCount">nprocessors</string>
-					<int id="SharingInfoSize">7</int>
+					<int id="SharingInfoSize">8</int>
+					<string id="RepSharingInfoElement">MEM_FAILURE</string>
 					<string id="RepSharingInfoElement">MEM_OP_COMPLETE</string>
 					<string id="RepSharingInfoElement">READ_DRAM</string>
 					<string id="RepSharingInfoElement">READ_L1</string>
@@ -100,7 +105,15 @@
 							<int id="y">396</int>
 						</point>
 					</class>
-					<int id="SharingInfoSize">14</int>
+					<int id="SharingInfoSize">20</int>
+					<string id="NewSharedObjName">FLOAT_ALU_FAILURE</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">Rep1-&gt;FLOAT_ALU_FAILURE</string>
+						<string id="1">EXEC_UNIT-&gt;FLOAT_ALU_FAILURE</string>
+					</vector>
 					<string id="NewSharedObjName">INSTRUCTION_READY</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -109,6 +122,14 @@
 						<string id="0">Rep1-&gt;INSTRUCTION_READY</string>
 						<string id="1">EXEC_UNIT-&gt;INSTRUCTION_READY</string>
 					</vector>
+					<string id="NewSharedObjName">INT_ALU_FAILURE</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">Rep1-&gt;INT_ALU_FAILURE</string>
+						<string id="1">EXEC_UNIT-&gt;INT_ALU_FAILURE</string>
+					</vector>
 					<string id="NewSharedObjName">KO_CONTENT</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -116,6 +137,13 @@
 					<vector id="FullAccessPathStrings">
 						<string id="0">REGISTER_FILE-&gt;KO_CONTENT</string>
 						<string id="1">EXEC_UNIT-&gt;KO_CONTENT</string>
+					</vector>
+					<string id="NewSharedObjName">MEM_FAILURE</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">Rep1-&gt;MEM_FAILURE</string>
 					</vector>
 					<string id="NewSharedObjName">MEM_OP_COMPLETE</string>
 					<string id="Function"></string>
@@ -170,6 +198,30 @@
 						<string id="1">REGISTER_FILE-&gt;REGISTERS_FILL</string>
 						<string id="2">EXEC_UNIT-&gt;REGISTERS_FILL</string>
 					</vector>
+					<string id="NewSharedObjName">REG_FAILURE</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">Rep1-&gt;REG_FAILURE</string>
+						<string id="1">REGISTER_FILE-&gt;REG_FAILURE</string>
+					</vector>
+					<string id="NewSharedObjName">RESULT_KO</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">REGISTER_FILE-&gt;RESULT_KO</string>
+						<string id="1">EXEC_UNIT-&gt;RESULT_KO</string>
+					</vector>
+					<string id="NewSharedObjName">RESULT_OK</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">REGISTER_FILE-&gt;RESULT_OK</string>
+						<string id="1">EXEC_UNIT-&gt;RESULT_OK</string>
+					</vector>
 					<string id="NewSharedObjName">SCHEDULER</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -223,7 +275,15 @@
 							<int id="y">252</int>
 						</point>
 					</class>
-					<int id="SharingInfoSize">7</int>
+					<int id="SharingInfoSize">8</int>
+					<string id="NewSharedObjName">MEM_FAILURE</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">PROCESSOR_REP-&gt;MEM_FAILURE</string>
+						<string id="1">L1_CACHE-&gt;MEM_FAILURE</string>
+					</vector>
 					<string id="NewSharedObjName">MEM_OP_COMPLETE</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -292,7 +352,7 @@
 							<int id="y">190</int>
 						</point>
 					</class>
-					<int id="SharingInfoSize">9</int>
+					<int id="SharingInfoSize">10</int>
 					<string id="NewSharedObjName">KO_CONTENT</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -316,6 +376,15 @@
 					<vector id="FullAccessPathStrings">
 						<string id="0">DRAM-&gt;MEMORY_OK</string>
 						<string id="1">L2_CACHE-&gt;MEMORY_OK</string>
+					</vector>
+					<string id="NewSharedObjName">MEM_FAILURE</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">STREAMING_MULTIPROCESSOR-&gt;MEM_FAILURE</string>
+						<string id="1">DRAM-&gt;MEM_FAILURE</string>
+						<string id="2">L2_CACHE-&gt;MEM_FAILURE</string>
 					</vector>
 					<string id="NewSharedObjName">MEM_OP_COMPLETE</string>
 					<string id="Function"></string>

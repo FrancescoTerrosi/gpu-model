@@ -94,6 +94,34 @@ class Instructions: public ArrayStateVariable<ExtendedPlace<short> > {
 class EXEC_UNITSAN:public SANModel{
 public:
 
+class handle_failure_floatActivity:public Activity {
+public:
+
+  Place* FLOAT_ALU;
+  short* FLOAT_ALU_Mobius_Mark;
+  Place* FLOAT_ALU_FAILURE;
+  short* FLOAT_ALU_FAILURE_Mobius_Mark;
+  Place* RESULT_KO;
+  short* RESULT_KO_Mobius_Mark;
+  Place* INSTRUCTION_READY;
+  short* INSTRUCTION_READY_Mobius_Mark;
+  Place* ROUTE_ALU_FLOAT;
+  short* ROUTE_ALU_FLOAT_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  handle_failure_floatActivity();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // handle_failure_floatActivityActivity
+
 class Instantaneous_Activity1Activity:public Activity {
 public:
 
@@ -126,8 +154,8 @@ public:
   short* INSTRUCTION_READY_Mobius_Mark;
   ExtendedPlace<short>* READ;
   ExtendedPlace<short>* WRITE;
-  Place* ALU_INSTRUCTION_NO_DATA;
-  short* ALU_INSTRUCTION_NO_DATA_Mobius_Mark;
+  Place* INT_ALU;
+  short* INT_ALU_Mobius_Mark;
 
   double* TheDistributionParameters;
   DISPATCHERActivity();
@@ -143,59 +171,11 @@ public:
   BaseActionClass* Fire();
 }; // DISPATCHERActivityActivity
 
-class COMPUTE_WITH_KO_DATAActivity:public Activity {
-public:
-
-  Place* ALU_INSTRUCTION;
-  short* ALU_INSTRUCTION_Mobius_Mark;
-  Place* INSTRUCTION_READY;
-  short* INSTRUCTION_READY_Mobius_Mark;
-  Place* RESULT_KO;
-  short* RESULT_KO_Mobius_Mark;
-
-  double* TheDistributionParameters;
-  COMPUTE_WITH_KO_DATAActivity();
-  double Rate(){return 0;}
-  bool Enabled();
-  void LinkVariables();
-  double Weight();
-  bool ReactivationPredicate();
-  bool ReactivationFunction();
-  double SampleDistribution();
-  double* ReturnDistributionParameters();
-  int Rank();
-  BaseActionClass* Fire();
-}; // COMPUTE_WITH_KO_DATAActivityActivity
-
-class COMPUTE_WITH_OK_DATAActivity:public Activity {
-public:
-
-  Place* ALU_INSTRUCTION;
-  short* ALU_INSTRUCTION_Mobius_Mark;
-  Place* INSTRUCTION_READY;
-  short* INSTRUCTION_READY_Mobius_Mark;
-  Place* RESULT_OK;
-  short* RESULT_OK_Mobius_Mark;
-
-  double* TheDistributionParameters;
-  COMPUTE_WITH_OK_DATAActivity();
-  double Rate(){return 0;}
-  bool Enabled();
-  void LinkVariables();
-  double Weight();
-  bool ReactivationPredicate();
-  bool ReactivationFunction();
-  double SampleDistribution();
-  double* ReturnDistributionParameters();
-  int Rank();
-  BaseActionClass* Fire();
-}; // COMPUTE_WITH_OK_DATAActivityActivity
-
 class Instantaneous_Activity2Activity_case1:public Activity {
 public:
 
-  Place* ALU_INSTRUCTION_NO_DATA;
-  short* ALU_INSTRUCTION_NO_DATA_Mobius_Mark;
+  Place* ROUTE_ALU_INT;
+  short* ROUTE_ALU_INT_Mobius_Mark;
   Place* INSTRUCTION_READY;
   short* INSTRUCTION_READY_Mobius_Mark;
   Place* RESULT_KO;
@@ -222,8 +202,8 @@ public:
 class Instantaneous_Activity2Activity_case2:public Activity {
 public:
 
-  Place* ALU_INSTRUCTION_NO_DATA;
-  short* ALU_INSTRUCTION_NO_DATA_Mobius_Mark;
+  Place* ROUTE_ALU_INT;
+  short* ROUTE_ALU_INT_Mobius_Mark;
   Place* INSTRUCTION_READY;
   short* INSTRUCTION_READY_Mobius_Mark;
   Place* RESULT_OK;
@@ -247,34 +227,142 @@ public:
   BaseActionClass* Fire();
 }; // Instantaneous_Activity2Activity_case2Activity
 
-  //List of user-specified place names
+class handle_failureActivity:public Activity {
+public:
+
+  Place* INT_ALU;
+  short* INT_ALU_Mobius_Mark;
+  Place* INT_ALU_FAILURE;
+  short* INT_ALU_FAILURE_Mobius_Mark;
+  Place* RESULT_KO;
+  short* RESULT_KO_Mobius_Mark;
   Place* INSTRUCTION_READY;
-  Place* ALU_INSTRUCTION;
+  short* INSTRUCTION_READY_Mobius_Mark;
+  Place* ROUTE_ALU_INT;
+  short* ROUTE_ALU_INT_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  handle_failureActivity();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // handle_failureActivityActivity
+
+class dhnActivity:public Activity {
+public:
+
+  Place* RESULT_KO;
+  short* RESULT_KO_Mobius_Mark;
+  Place* Place1;
+  short* Place1_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  dhnActivity();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // dhnActivityActivity
+
+class Instantaneous_Activity3Activity_case1:public Activity {
+public:
+
+  Place* ROUTE_ALU_FLOAT;
+  short* ROUTE_ALU_FLOAT_Mobius_Mark;
+  Place* RESULT_KO;
+  short* RESULT_KO_Mobius_Mark;
+  Place* INSTRUCTION_READY;
+  short* INSTRUCTION_READY_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  Instantaneous_Activity3Activity_case1();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // Instantaneous_Activity3Activity_case1Activity
+
+class Instantaneous_Activity3Activity_case2:public Activity {
+public:
+
+  Place* ROUTE_ALU_FLOAT;
+  short* ROUTE_ALU_FLOAT_Mobius_Mark;
+  Place* RESULT_OK;
+  short* RESULT_OK_Mobius_Mark;
+  Place* INSTRUCTION_READY;
+  short* INSTRUCTION_READY_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  Instantaneous_Activity3Activity_case2();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // Instantaneous_Activity3Activity_case2Activity
+
+  //List of user-specified place names
+  Place* FLOAT_ALU_FAILURE;
+  Place* ROUTE_ALU_FLOAT;
+  Place* INSTRUCTION_READY;
+  Place* FLOAT_ALU;
   Place* RESULT_KO;
   Place* RESULT_OK;
   Place* MEM_OP_COMPLETE;
-  Place* ALU_INSTRUCTION_NO_DATA;
+  Place* INT_ALU;
   Place* REGISTERS_FILL;
   Place* OK_CONTENT;
   Place* KO_CONTENT;
+  Place* INT_ALU_FAILURE;
+  Place* ROUTE_ALU_INT;
+  Place* Place1;
   ExtendedPlace<short>* SCHEDULER;
   ExtendedPlace<short>* READ;
   ExtendedPlace<short>* WRITE;
 
   // Create instances of all actvities
+  handle_failure_floatActivity handle_failure_float;
   Instantaneous_Activity1Activity Instantaneous_Activity1;
   DISPATCHERActivity DISPATCHER;
-  COMPUTE_WITH_KO_DATAActivity COMPUTE_WITH_KO_DATA;
-  COMPUTE_WITH_OK_DATAActivity COMPUTE_WITH_OK_DATA;
   Instantaneous_Activity2Activity_case1 Instantaneous_Activity2_case1;
   Instantaneous_Activity2Activity_case2 Instantaneous_Activity2_case2;
+  handle_failureActivity handle_failure;
+  dhnActivity dhn;
+  Instantaneous_Activity3Activity_case1 Instantaneous_Activity3_case1;
+  Instantaneous_Activity3Activity_case2 Instantaneous_Activity3_case2;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
+  PostselectGroup handle_failure_floatGroup;
   PostselectGroup Instantaneous_Activity1Group;
   PostselectGroup DISPATCHERGroup;
-  PostselectGroup COMPUTE_WITH_KO_DATAGroup;
-  PostselectGroup COMPUTE_WITH_OK_DATAGroup;
   PostselectGroup Instantaneous_Activity2Group;
+  PostselectGroup handle_failureGroup;
+  PostselectGroup dhnGroup;
+  PostselectGroup Instantaneous_Activity3Group;
 
   EXEC_UNITSAN();
   ~EXEC_UNITSAN();

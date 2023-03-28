@@ -99,6 +99,8 @@ OBJECTS/win10-m64/GPU5PVModel.o: GPU5PVModel.cpp GPU5PVModel.h \
  ../../Atomic/L2_CACHE/L2_CACHESAN.h \
  c:/Mobius-2.5/Cpp/Performance_Variables/IntervalOfTime.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/IntervalOfTimeImpulse.hpp \
+ c:/Mobius-2.5/Cpp/Performance_Variables/InstantOfTime.hpp \
+ c:/Mobius-2.5/Cpp/Performance_Variables/InstantOfTimeImpulse.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/PVModel.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/../BaseClasses/BaseGroupClass.h \
  c:/Mobius-2.5/Cpp/Performance_Variables/../BaseClasses/BaseStateVariableClass.h \

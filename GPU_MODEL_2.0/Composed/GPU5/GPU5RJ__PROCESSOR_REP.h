@@ -21,6 +21,7 @@ class GPU5RJ__PROCESSOR_REP: public Rep {
   ~GPU5RJ__PROCESSOR_REP();
 
   // Declare new variables
+  Place * MEM_FAILURE;
   Place * MEM_OP_COMPLETE;
   Place * READ_DRAM;
   Place * READ_L1;

@@ -100,6 +100,8 @@ OBJECTS/win10-m64/GPU_STUDYSetStudy.o: GPU_STUDYSetStudy.cpp \
  ../../Atomic/L2_CACHE/L2_CACHESAN.h \
  c:/Mobius-2.5/Cpp/Performance_Variables/IntervalOfTime.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/IntervalOfTimeImpulse.hpp \
+ c:/Mobius-2.5/Cpp/Performance_Variables/InstantOfTime.hpp \
+ c:/Mobius-2.5/Cpp/Performance_Variables/InstantOfTimeImpulse.hpp \
  ../../Reward/GPU5/GPU5PVModel.h ../../Reward/GPU5/GPU5PVNodes.h \
  c:/Mobius-2.5/Cpp/Performance_Variables/PVModel.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/../BaseClasses/BaseGroupClass.h \
