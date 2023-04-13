@@ -4,7 +4,7 @@ GPU5PVModel::GPU5PVModel(bool expandTimeArrays) {
   TheModel=new GPU5RJ();
   DefineName("GPU5PVModel");
   StateMode = 1;
-  CreatePVList(10, expandTimeArrays);
+  CreatePVList(17, expandTimeArrays);
   Initialize();
 }
 
@@ -41,6 +41,27 @@ PerformanceVariableNode* GPU5PVModel::createPVNode(int pvindex, int timeindex) {
     break;
   case 9:
     return new GPU5PV9(timeindex);
+    break;
+  case 10:
+    return new GPU5PV10(timeindex);
+    break;
+  case 11:
+    return new GPU5PV11(timeindex);
+    break;
+  case 12:
+    return new GPU5PV12(timeindex);
+    break;
+  case 13:
+    return new GPU5PV13(timeindex);
+    break;
+  case 14:
+    return new GPU5PV14(timeindex);
+    break;
+  case 15:
+    return new GPU5PV15(timeindex);
+    break;
+  case 16:
+    return new GPU5PV16(timeindex);
     break;
   }
   return NULL;

@@ -9,8 +9,8 @@ Short end;
 Short failure_index;
 Short l1_size;
 Short l2_size;
-Short ngpu;
 Short nprocessors;
+Short nsm;
 Short nwarps;
 Short register_count_index;
 Short size;
@@ -36,9 +36,9 @@ GPU_STUDYSetStudy::GPU_STUDYSetStudy() {
   GVTypes[3]=strdup("short");
   GVNames[4]=strdup("l2_size");
   GVTypes[4]=strdup("short");
-  GVNames[5]=strdup("ngpu");
+  GVNames[5]=strdup("nprocessors");
   GVTypes[5]=strdup("short");
-  GVNames[6]=strdup("nprocessors");
+  GVNames[6]=strdup("nsm");
   GVTypes[6]=strdup("short");
   GVNames[7]=strdup("nwarps");
   GVTypes[7]=strdup("short");
@@ -53,8 +53,8 @@ GPU_STUDYSetStudy::GPU_STUDYSetStudy() {
   failure_indexValues = new short[NumExps];
   l1_sizeValues = new short[NumExps];
   l2_sizeValues = new short[NumExps];
-  ngpuValues = new short[NumExps];
   nprocessorsValues = new short[NumExps];
+  nsmValues = new short[NumExps];
   nwarpsValues = new short[NumExps];
   register_count_indexValues = new short[NumExps];
   sizeValues = new short[NumExps];
@@ -65,8 +65,8 @@ GPU_STUDYSetStudy::GPU_STUDYSetStudy() {
   SetValues_failure_index();
   SetValues_l1_size();
   SetValues_l2_size();
-  SetValues_ngpu();
   SetValues_nprocessors();
+  SetValues_nsm();
   SetValues_nwarps();
   SetValues_register_count_index();
   SetValues_size();
@@ -83,8 +83,8 @@ GPU_STUDYSetStudy::~GPU_STUDYSetStudy() {
   delete [] failure_indexValues;
   delete [] l1_sizeValues;
   delete [] l2_sizeValues;
-  delete [] ngpuValues;
   delete [] nprocessorsValues;
+  delete [] nsmValues;
   delete [] nwarpsValues;
   delete [] register_count_indexValues;
   delete [] sizeValues;
@@ -112,7 +112,7 @@ void GPU_STUDYSetStudy::SetValues_end() {
 // set values for failure_index
 //******************************************************
 void GPU_STUDYSetStudy::SetValues_failure_index() {
-  failure_indexValues[0] = 100;
+  failure_indexValues[0] = 10011;
 }
 
 
@@ -133,18 +133,18 @@ void GPU_STUDYSetStudy::SetValues_l2_size() {
 
 
 //******************************************************
-// set values for ngpu
+// set values for nprocessors
 //******************************************************
-void GPU_STUDYSetStudy::SetValues_ngpu() {
-  ngpuValues[0] = 1;
+void GPU_STUDYSetStudy::SetValues_nprocessors() {
+  nprocessorsValues[0] = 1;
 }
 
 
 //******************************************************
-// set values for nprocessors
+// set values for nsm
 //******************************************************
-void GPU_STUDYSetStudy::SetValues_nprocessors() {
-  nprocessorsValues[0] = 1.0;
+void GPU_STUDYSetStudy::SetValues_nsm() {
+  nsmValues[0] = 1;
 }
 
 
@@ -152,7 +152,7 @@ void GPU_STUDYSetStudy::SetValues_nprocessors() {
 // set values for nwarps
 //******************************************************
 void GPU_STUDYSetStudy::SetValues_nwarps() {
-  nwarpsValues[0] = 1.0;
+  nwarpsValues[0] = 2;
 }
 
 
@@ -168,7 +168,7 @@ void GPU_STUDYSetStudy::SetValues_register_count_index() {
 // set values for size
 //******************************************************
 void GPU_STUDYSetStudy::SetValues_size() {
-  sizeValues[0] = 3782;
+  sizeValues[0] = 5;
 }
 
 
@@ -191,8 +191,8 @@ void GPU_STUDYSetStudy::PrintGlobalValues(int expNum) {
   cout << "failure_index\tshort\t" << failure_index << endl;
   cout << "l1_size\tshort\t" << l1_size << endl;
   cout << "l2_size\tshort\t" << l2_size << endl;
-  cout << "ngpu\tshort\t" << ngpu << endl;
   cout << "nprocessors\tshort\t" << nprocessors << endl;
+  cout << "nsm\tshort\t" << nsm << endl;
   cout << "nwarps\tshort\t" << nwarps << endl;
   cout << "register_count_index\tshort\t" << register_count_index << endl;
   cout << "size\tshort\t" << size << endl;
@@ -213,10 +213,10 @@ void *GPU_STUDYSetStudy::GetGVValue(char *TheGVName) {
     return &l1_size;
   else if (strcmp("l2_size", TheGVName) == 0)
     return &l2_size;
-  else if (strcmp("ngpu", TheGVName) == 0)
-    return &ngpu;
   else if (strcmp("nprocessors", TheGVName) == 0)
     return &nprocessors;
+  else if (strcmp("nsm", TheGVName) == 0)
+    return &nsm;
   else if (strcmp("nwarps", TheGVName) == 0)
     return &nwarps;
   else if (strcmp("register_count_index", TheGVName) == 0)
@@ -243,10 +243,10 @@ void GPU_STUDYSetStudy::OverrideGVValue(char *TheGVName,void *TheGVValue) {
     SetGvValue(l1_size, *(short *)TheGVValue);
   else if (strcmp("l2_size", TheGVName) == 0)
     SetGvValue(l2_size, *(short *)TheGVValue);
-  else if (strcmp("ngpu", TheGVName) == 0)
-    SetGvValue(ngpu, *(short *)TheGVValue);
   else if (strcmp("nprocessors", TheGVName) == 0)
     SetGvValue(nprocessors, *(short *)TheGVValue);
+  else if (strcmp("nsm", TheGVName) == 0)
+    SetGvValue(nsm, *(short *)TheGVValue);
   else if (strcmp("nwarps", TheGVName) == 0)
     SetGvValue(nwarps, *(short *)TheGVValue);
   else if (strcmp("register_count_index", TheGVName) == 0)
@@ -267,8 +267,8 @@ void GPU_STUDYSetStudy::SetGVs(int expNum) {
   SetGvValue(failure_index, failure_indexValues[expNum]);
   SetGvValue(l1_size, l1_sizeValues[expNum]);
   SetGvValue(l2_size, l2_sizeValues[expNum]);
-  SetGvValue(ngpu, ngpuValues[expNum]);
   SetGvValue(nprocessors, nprocessorsValues[expNum]);
+  SetGvValue(nsm, nsmValues[expNum]);
   SetGvValue(nwarps, nwarpsValues[expNum]);
   SetGvValue(register_count_index, register_count_indexValues[expNum]);
   SetGvValue(size, sizeValues[expNum]);

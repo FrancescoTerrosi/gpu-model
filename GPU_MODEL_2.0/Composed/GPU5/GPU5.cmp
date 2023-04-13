@@ -37,7 +37,7 @@
 						</point>
 					</class>
 					<string id="RepCount">nwarps</string>
-					<int id="SharingInfoSize">7</int>
+					<int id="SharingInfoSize">10</int>
 					<string id="RepSharingInfoElement">FLOAT_ALU_FAILURE</string>
 					<string id="RepSharingInfoElement">INSTRUCTION_READY</string>
 					<string id="RepSharingInfoElement">INT_ALU_FAILURE</string>
@@ -45,6 +45,9 @@
 					<string id="RepSharingInfoElement">REGISTERS_FILL</string>
 					<string id="RepSharingInfoElement">REG_FAILURE</string>
 					<string id="RepSharingInfoElement">SCHEDULER</string>
+					<string id="RepSharingInfoElement">WARP_ACCESS_DRAM</string>
+					<string id="RepSharingInfoElement">WARP_ACCESS_L1</string>
+					<string id="RepSharingInfoElement">WARP_ACCESS_L2</string>
 				</class>
 				<class id="Mobius.ComposedModels.RepJoin.RepPanelObject">
 					<int id="ClassVersion">1</int>
@@ -78,17 +81,23 @@
 						<int id="ClassVersion">3</int>
 						<class id="Mobius.BaseClasses.BasePanelObjectClass">
 							<int id="ClassVersion">5</int>
-							<string id="Name">Rep</string>
+							<string id="Name">SM_REP</string>
 							<boolean id="ContainsLabel">true</boolean>
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">252</int>
-							<int id="y">204</int>
+							<int id="x">372</int>
+							<int id="y">252</int>
 						</point>
 					</class>
-					<string id="RepCount">ngpu</string>
-					<int id="SharingInfoSize">0</int>
+					<string id="RepCount">nsm</string>
+					<int id="SharingInfoSize">6</int>
+					<string id="RepSharingInfoElement">MEM_FAILURE</string>
+					<string id="RepSharingInfoElement">MEM_OP_COMPLETE</string>
+					<string id="RepSharingInfoElement">READ_DRAM</string>
+					<string id="RepSharingInfoElement">READ_L2</string>
+					<string id="RepSharingInfoElement">WRITE_DRAM</string>
+					<string id="RepSharingInfoElement">WRITE_L2</string>
 				</class>
 				<class id="Mobius.ComposedModels.Common.JoinPanelObject">
 					<int id="ClassVersion">3</int>
@@ -105,7 +114,7 @@
 							<int id="y">396</int>
 						</point>
 					</class>
-					<int id="SharingInfoSize">20</int>
+					<int id="SharingInfoSize">23</int>
 					<string id="NewSharedObjName">FLOAT_ALU_FAILURE</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -230,6 +239,30 @@
 						<string id="0">Rep1-&gt;SCHEDULER</string>
 						<string id="1">EXEC_UNIT-&gt;SCHEDULER</string>
 					</vector>
+					<string id="NewSharedObjName">WARP_ACCESS_DRAM</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">Rep1-&gt;WARP_ACCESS_DRAM</string>
+						<string id="1">MEMORY-&gt;WARP_ACCESS_DRAM</string>
+					</vector>
+					<string id="NewSharedObjName">WARP_ACCESS_L1</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">Rep1-&gt;WARP_ACCESS_L1</string>
+						<string id="1">MEMORY-&gt;WARP_ACCESS_L1</string>
+					</vector>
+					<string id="NewSharedObjName">WARP_ACCESS_L2</string>
+					<string id="Function"></string>
+					<int id="FunctionIndex">-1</int>
+					<boolean id="actionFlag">false</boolean>
+					<vector id="FullAccessPathStrings">
+						<string id="0">Rep1-&gt;WARP_ACCESS_L2</string>
+						<string id="1">MEMORY-&gt;WARP_ACCESS_L2</string>
+					</vector>
 					<string id="NewSharedObjName">WRITE</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
@@ -348,8 +381,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">510</int>
-							<int id="y">190</int>
+							<int id="x">348</int>
+							<int id="y">156</int>
 						</point>
 					</class>
 					<int id="SharingInfoSize">10</int>
@@ -382,16 +415,15 @@
 					<int id="FunctionIndex">-1</int>
 					<boolean id="actionFlag">false</boolean>
 					<vector id="FullAccessPathStrings">
-						<string id="0">STREAMING_MULTIPROCESSOR-&gt;MEM_FAILURE</string>
-						<string id="1">DRAM-&gt;MEM_FAILURE</string>
-						<string id="2">L2_CACHE-&gt;MEM_FAILURE</string>
+						<string id="0">DRAM-&gt;MEM_FAILURE</string>
+						<string id="1">L2_CACHE-&gt;MEM_FAILURE</string>
 					</vector>
 					<string id="NewSharedObjName">MEM_OP_COMPLETE</string>
 					<string id="Function"></string>
 					<int id="FunctionIndex">-1</int>
 					<boolean id="actionFlag">false</boolean>
 					<vector id="FullAccessPathStrings">
-						<string id="0">STREAMING_MULTIPROCESSOR-&gt;MEM_OP_COMPLETE</string>
+						<string id="0">SM_REP-&gt;MEM_OP_COMPLETE</string>
 						<string id="1">DRAM-&gt;MEM_OP_COMPLETE</string>
 						<string id="2">L2_CACHE-&gt;MEM_OP_COMPLETE</string>
 					</vector>
@@ -408,7 +440,7 @@
 					<int id="FunctionIndex">-1</int>
 					<boolean id="actionFlag">false</boolean>
 					<vector id="FullAccessPathStrings">
-						<string id="0">STREAMING_MULTIPROCESSOR-&gt;READ_DRAM</string>
+						<string id="0">SM_REP-&gt;READ_DRAM</string>
 						<string id="1">DRAM-&gt;READ_DRAM</string>
 					</vector>
 					<string id="NewSharedObjName">READ_L2</string>
@@ -416,7 +448,7 @@
 					<int id="FunctionIndex">-1</int>
 					<boolean id="actionFlag">false</boolean>
 					<vector id="FullAccessPathStrings">
-						<string id="0">STREAMING_MULTIPROCESSOR-&gt;READ_L2</string>
+						<string id="0">SM_REP-&gt;READ_L2</string>
 						<string id="1">L2_CACHE-&gt;READ_L2</string>
 					</vector>
 					<string id="NewSharedObjName">WRITE_DRAM</string>
@@ -424,7 +456,7 @@
 					<int id="FunctionIndex">-1</int>
 					<boolean id="actionFlag">false</boolean>
 					<vector id="FullAccessPathStrings">
-						<string id="0">STREAMING_MULTIPROCESSOR-&gt;WRITE_DRAM</string>
+						<string id="0">SM_REP-&gt;WRITE_DRAM</string>
 						<string id="1">DRAM-&gt;WRITE_DRAM</string>
 					</vector>
 					<string id="NewSharedObjName">WRITE_L2</string>
@@ -432,7 +464,7 @@
 					<int id="FunctionIndex">-1</int>
 					<boolean id="actionFlag">false</boolean>
 					<vector id="FullAccessPathStrings">
-						<string id="0">STREAMING_MULTIPROCESSOR-&gt;WRITE_L2</string>
+						<string id="0">SM_REP-&gt;WRITE_L2</string>
 						<string id="1">L2_CACHE-&gt;WRITE_L2</string>
 					</vector>
 				</class>
@@ -481,8 +513,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">390</int>
-							<int id="y">70</int>
+							<int id="x">228</int>
+							<int id="y">36</int>
 						</point>
 					</class>
 					<string id="Model Name">DRAM</string>
@@ -498,8 +530,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">670</int>
-							<int id="y">70</int>
+							<int id="x">516</int>
+							<int id="y">36</int>
 						</point>
 					</class>
 					<string id="Model Name">L2_CACHE</string>
@@ -592,6 +624,23 @@
 				<class id="Mobius.BaseClasses.BaseEdgeClass">
 					<int id="ClassVersion">3</int>
 					<int id="LineType">0</int>
+					<string id="StartVertex">DEVICE</string>
+					<string id="FinishVertex">SM_REP</string>
+					<boolean id="Arrows">false</boolean>
+					<vector id="PointList">
+						<point id="0">
+							<int id="x">327</int>
+							<int id="y">156</int>
+						</point>
+						<point id="1">
+							<int id="x">380</int>
+							<int id="y">256</int>
+						</point>
+					</vector>
+				</class>
+				<class id="Mobius.BaseClasses.BaseEdgeClass">
+					<int id="ClassVersion">3</int>
+					<int id="LineType">0</int>
 					<string id="StartVertex">PROCESSOR_REP</string>
 					<string id="FinishVertex">PROCESSOR</string>
 					<boolean id="Arrows">false</boolean>
@@ -609,34 +658,17 @@
 				<class id="Mobius.BaseClasses.BaseEdgeClass">
 					<int id="ClassVersion">3</int>
 					<int id="LineType">0</int>
-					<string id="StartVertex">DEVICE</string>
+					<string id="StartVertex">SM_REP</string>
 					<string id="FinishVertex">STREAMING_MULTIPROCESSOR</string>
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">472</int>
-							<int id="y">190</int>
+							<int id="x">362</int>
+							<int id="y">251</int>
 						</point>
 						<point id="1">
-							<int id="x">715</int>
-							<int id="y">387</int>
-						</point>
-					</vector>
-				</class>
-				<class id="Mobius.BaseClasses.BaseEdgeClass">
-					<int id="ClassVersion">3</int>
-					<int id="LineType">0</int>
-					<string id="StartVertex">Rep</string>
-					<string id="FinishVertex">DEVICE</string>
-					<boolean id="Arrows">false</boolean>
-					<vector id="PointList">
-						<point id="0">
-							<int id="x">276</int>
-							<int id="y">206</int>
-						</point>
-						<point id="1">
-							<int id="x">480</int>
-							<int id="y">191</int>
+							<int id="x">687</int>
+							<int id="y">252</int>
 						</point>
 					</vector>
 				</class>
@@ -682,8 +714,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">513</int>
-							<int id="y">191</int>
+							<int id="x">351</int>
+							<int id="y">157</int>
 						</point>
 						<point id="1">
 							<int id="x">747</int>
@@ -699,8 +731,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">514</int>
-							<int id="y">192</int>
+							<int id="x">352</int>
+							<int id="y">158</int>
 						</point>
 						<point id="1">
 							<int id="x">982</int>
@@ -763,7 +795,7 @@
 			<vector id="LocalGlobalNamesList">
 				<string id="0">nwarps</string>
 				<string id="1">nprocessors</string>
-				<string id="2">ngpu</string>
+				<string id="2">nsm</string>
 			</vector>
 			<vector id="LocalGlobalTypesList">
 				<string id="0">short</string>

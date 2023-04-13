@@ -1,7 +1,7 @@
 #include "Composed/GPU5/GPU5RJ__PROCESSOR.h"
-char * GPU5RJ__PROCESSOR__SharedNames[] = {"FLOAT_ALU_FAILURE", "INSTRUCTION_READY", "INT_ALU_FAILURE", "KO_CONTENT", "MEM_FAILURE", "MEM_OP_COMPLETE", "OK_CONTENT", "READ", "READ_DRAM", "READ_L1", "READ_L2", "REGISTERS_FILL", "REG_FAILURE", "RESULT_KO", "RESULT_OK", "SCHEDULER", "WRITE", "WRITE_DRAM", "WRITE_L1", "WRITE_L2"};
+char * GPU5RJ__PROCESSOR__SharedNames[] = {"FLOAT_ALU_FAILURE", "INSTRUCTION_READY", "INT_ALU_FAILURE", "KO_CONTENT", "MEM_FAILURE", "MEM_OP_COMPLETE", "OK_CONTENT", "READ", "READ_DRAM", "READ_L1", "READ_L2", "REGISTERS_FILL", "REG_FAILURE", "RESULT_KO", "RESULT_OK", "SCHEDULER", "WARP_ACCESS_DRAM", "WARP_ACCESS_L1", "WARP_ACCESS_L2", "WRITE", "WRITE_DRAM", "WRITE_L1", "WRITE_L2"};
 
-GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 20,GPU5RJ__PROCESSOR__SharedNames) {
+GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 23,GPU5RJ__PROCESSOR__SharedNames) {
   Rep1 = new GPU5RJ__Rep1();
   ModelArray[0] = (BaseModelClass*) Rep1;
   ModelArray[0]->DefineName("Rep1");
@@ -197,6 +197,42 @@ GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 20,GPU5RJ__PROCESSOR
     }
 
     //Shared variable 16
+    WARP_ACCESS_DRAM = new Place("WARP_ACCESS_DRAM");
+    addSharedPtr(WARP_ACCESS_DRAM, "WARP_ACCESS_DRAM" );
+    if (Rep1->NumStateVariables > 0) {
+      WARP_ACCESS_DRAM->ShareWith(getSharableSVPointer(Rep1->WARP_ACCESS_DRAM));
+      addSharingInfo(getSharableSVPointer(Rep1->WARP_ACCESS_DRAM), WARP_ACCESS_DRAM, Rep1);
+    }
+    if (MEMORY->NumStateVariables > 0) {
+      WARP_ACCESS_DRAM->ShareWith(getSharableSVPointer(MEMORY->WARP_ACCESS_DRAM));
+      addSharingInfo(getSharableSVPointer(MEMORY->WARP_ACCESS_DRAM), WARP_ACCESS_DRAM, MEMORY);
+    }
+
+    //Shared variable 17
+    WARP_ACCESS_L1 = new Place("WARP_ACCESS_L1");
+    addSharedPtr(WARP_ACCESS_L1, "WARP_ACCESS_L1" );
+    if (Rep1->NumStateVariables > 0) {
+      WARP_ACCESS_L1->ShareWith(getSharableSVPointer(Rep1->WARP_ACCESS_L1));
+      addSharingInfo(getSharableSVPointer(Rep1->WARP_ACCESS_L1), WARP_ACCESS_L1, Rep1);
+    }
+    if (MEMORY->NumStateVariables > 0) {
+      WARP_ACCESS_L1->ShareWith(getSharableSVPointer(MEMORY->WARP_ACCESS_L1));
+      addSharingInfo(getSharableSVPointer(MEMORY->WARP_ACCESS_L1), WARP_ACCESS_L1, MEMORY);
+    }
+
+    //Shared variable 18
+    WARP_ACCESS_L2 = new Place("WARP_ACCESS_L2");
+    addSharedPtr(WARP_ACCESS_L2, "WARP_ACCESS_L2" );
+    if (Rep1->NumStateVariables > 0) {
+      WARP_ACCESS_L2->ShareWith(getSharableSVPointer(Rep1->WARP_ACCESS_L2));
+      addSharingInfo(getSharableSVPointer(Rep1->WARP_ACCESS_L2), WARP_ACCESS_L2, Rep1);
+    }
+    if (MEMORY->NumStateVariables > 0) {
+      WARP_ACCESS_L2->ShareWith(getSharableSVPointer(MEMORY->WARP_ACCESS_L2));
+      addSharingInfo(getSharableSVPointer(MEMORY->WARP_ACCESS_L2), WARP_ACCESS_L2, MEMORY);
+    }
+
+    //Shared variable 19
     WRITE = new Place("WRITE");
     addSharedPtr(WRITE, "WRITE" );
     if (EXEC_UNIT->NumStateVariables > 0) {
@@ -208,7 +244,7 @@ GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 20,GPU5RJ__PROCESSOR
       addSharingInfo(getSharableSVPointer(MEMORY->WRITE), WRITE, MEMORY);
     }
 
-    //Shared variable 17
+    //Shared variable 20
     WRITE_DRAM = new Place("WRITE_DRAM");
     addSharedPtr(WRITE_DRAM, "WRITE_DRAM" );
     if (MEMORY->NumStateVariables > 0) {
@@ -216,7 +252,7 @@ GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 20,GPU5RJ__PROCESSOR
       addSharingInfo(getSharableSVPointer(MEMORY->WRITE_DRAM), WRITE_DRAM, MEMORY);
     }
 
-    //Shared variable 18
+    //Shared variable 21
     WRITE_L1 = new Place("WRITE_L1");
     addSharedPtr(WRITE_L1, "WRITE_L1" );
     if (MEMORY->NumStateVariables > 0) {
@@ -224,7 +260,7 @@ GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 4, 20,GPU5RJ__PROCESSOR
       addSharingInfo(getSharableSVPointer(MEMORY->WRITE_L1), WRITE_L1, MEMORY);
     }
 
-    //Shared variable 19
+    //Shared variable 22
     WRITE_L2 = new Place("WRITE_L2");
     addSharedPtr(WRITE_L2, "WRITE_L2" );
     if (MEMORY->NumStateVariables > 0) {
@@ -255,6 +291,9 @@ GPU5RJ__PROCESSOR::~GPU5RJ__PROCESSOR() {
     delete RESULT_KO;
     delete RESULT_OK;
     delete SCHEDULER;
+    delete WARP_ACCESS_DRAM;
+    delete WARP_ACCESS_L1;
+    delete WARP_ACCESS_L2;
     delete WRITE;
     delete WRITE_DRAM;
     delete WRITE_L1;

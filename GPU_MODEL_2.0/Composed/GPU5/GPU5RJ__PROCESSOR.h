@@ -12,7 +12,7 @@
 #include "Cpp/BaseClasses/SAN/Place.h"
 extern Short nwarps;
 extern Short nprocessors;
-extern Short ngpu;
+extern Short nsm;
 
 class GPU5RJ__PROCESSOR: public Join {
  public:
@@ -36,6 +36,9 @@ class GPU5RJ__PROCESSOR: public Join {
   Place * RESULT_KO;
   Place * RESULT_OK;
   Place * SCHEDULER;
+  Place * WARP_ACCESS_DRAM;
+  Place * WARP_ACCESS_L1;
+  Place * WARP_ACCESS_L2;
   Place * WRITE;
   Place * WRITE_DRAM;
   Place * WRITE_L1;

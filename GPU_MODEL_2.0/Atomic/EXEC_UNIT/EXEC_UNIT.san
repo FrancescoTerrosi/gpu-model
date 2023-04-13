@@ -406,10 +406,7 @@
 							SCHEDULER-&gt;Mark() &gt; -1 &amp;&amp; REGISTERS_FILL-&gt;M
 							ark() == 0
 						</string>
-						<string id="Function">
-							INSTRUCTION_READY-&gt;Mark()--;\nINSTRUCTION_READY-&gt;Mark(
-							)++;
-						</string>
+						<string id="Function">INSTRUCTION_READY-&gt;Mark() = 0;</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.OutputGatePanelObject">
 						<int id="ClassVersion">1</int>

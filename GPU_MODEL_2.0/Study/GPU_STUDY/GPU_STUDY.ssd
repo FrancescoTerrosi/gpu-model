@@ -42,8 +42,8 @@
 						<string id="2">failure_index</string>
 						<string id="3">l1_size</string>
 						<string id="4">l2_size</string>
-						<string id="5">ngpu</string>
-						<string id="6">nprocessors</string>
+						<string id="5">nprocessors</string>
+						<string id="6">nsm</string>
 						<string id="7">nwarps</string>
 						<string id="8">register_count_index</string>
 						<string id="9">size</string>
@@ -67,14 +67,14 @@
 				<vector id="GVValueVector">
 					<string id="0">100</string>
 					<string id="1">100</string>
-					<string id="2">100</string>
+					<string id="2">10011</string>
 					<string id="3">100</string>
 					<string id="4">100</string>
 					<string id="5">1</string>
-					<string id="6">1.0</string>
-					<string id="7">1.0</string>
+					<string id="6">1</string>
+					<string id="7">2</string>
 					<string id="8">0</string>
-					<string id="9">3782</string>
+					<string id="9">5</string>
 				</vector>
 			</class>
 			<boolean id="Valid">true</boolean>

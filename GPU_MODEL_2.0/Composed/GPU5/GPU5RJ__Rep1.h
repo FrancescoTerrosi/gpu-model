@@ -11,7 +11,7 @@
 #include "Cpp/BaseClasses/SAN/Place.h"
 extern Short nwarps;
 extern Short nprocessors;
-extern Short ngpu;
+extern Short nsm;
 
 class GPU5RJ__Rep1: public Rep {
  public:
@@ -28,6 +28,9 @@ class GPU5RJ__Rep1: public Rep {
   Place * REGISTERS_FILL;
   Place * REG_FAILURE;
   Place * SCHEDULER;
+  Place * WARP_ACCESS_DRAM;
+  Place * WARP_ACCESS_L1;
+  Place * WARP_ACCESS_L2;
 };
 
 #endif

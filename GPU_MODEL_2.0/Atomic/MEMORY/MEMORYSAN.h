@@ -56,6 +56,8 @@ public:
   short* READ_LOCAL_Mobius_Mark;
   Place* READ_L1;
   short* READ_L1_Mobius_Mark;
+  Place* WARP_ACCESS_L1;
+  short* WARP_ACCESS_L1_Mobius_Mark;
 
   double* TheDistributionParameters;
   LOCAL_READ_FROMActivity_case1();
@@ -78,6 +80,8 @@ public:
   short* READ_LOCAL_Mobius_Mark;
   Place* READ_L2;
   short* READ_L2_Mobius_Mark;
+  Place* WARP_ACCESS_L2;
+  short* WARP_ACCESS_L2_Mobius_Mark;
 
   double* TheDistributionParameters;
   LOCAL_READ_FROMActivity_case2();
@@ -100,6 +104,8 @@ public:
   short* READ_LOCAL_Mobius_Mark;
   Place* READ_DRAM;
   short* READ_DRAM_Mobius_Mark;
+  Place* WARP_ACCESS_DRAM;
+  short* WARP_ACCESS_DRAM_Mobius_Mark;
 
   double* TheDistributionParameters;
   LOCAL_READ_FROMActivity_case3();
@@ -122,6 +128,8 @@ public:
   short* READ_GLOBAL_Mobius_Mark;
   Place* READ_L1;
   short* READ_L1_Mobius_Mark;
+  Place* WARP_ACCESS_L1;
+  short* WARP_ACCESS_L1_Mobius_Mark;
 
   double* TheDistributionParameters;
   GLOBAL_READ_FROMActivity_case1();
@@ -144,6 +152,8 @@ public:
   short* READ_GLOBAL_Mobius_Mark;
   Place* READ_L2;
   short* READ_L2_Mobius_Mark;
+  Place* WARP_ACCESS_L2;
+  short* WARP_ACCESS_L2_Mobius_Mark;
 
   double* TheDistributionParameters;
   GLOBAL_READ_FROMActivity_case2();
@@ -166,6 +176,8 @@ public:
   short* READ_GLOBAL_Mobius_Mark;
   Place* READ_DRAM;
   short* READ_DRAM_Mobius_Mark;
+  Place* WARP_ACCESS_DRAM;
+  short* WARP_ACCESS_DRAM_Mobius_Mark;
 
   double* TheDistributionParameters;
   GLOBAL_READ_FROMActivity_case3();
@@ -213,6 +225,8 @@ public:
   short* WRITE_LOCAL_Mobius_Mark;
   Place* WRITE_L1;
   short* WRITE_L1_Mobius_Mark;
+  Place* WARP_ACCESS_L1;
+  short* WARP_ACCESS_L1_Mobius_Mark;
 
   double* TheDistributionParameters;
   LOCAL_WRITE_TOActivity_case1();
@@ -235,6 +249,8 @@ public:
   short* WRITE_LOCAL_Mobius_Mark;
   Place* WRITE_L2;
   short* WRITE_L2_Mobius_Mark;
+  Place* WARP_ACCESS_L2;
+  short* WARP_ACCESS_L2_Mobius_Mark;
 
   double* TheDistributionParameters;
   LOCAL_WRITE_TOActivity_case2();
@@ -257,6 +273,8 @@ public:
   short* WRITE_LOCAL_Mobius_Mark;
   Place* WRITE_DRAM;
   short* WRITE_DRAM_Mobius_Mark;
+  Place* WARP_ACCESS_DRAM;
+  short* WARP_ACCESS_DRAM_Mobius_Mark;
 
   double* TheDistributionParameters;
   LOCAL_WRITE_TOActivity_case3();
@@ -279,6 +297,8 @@ public:
   short* WRITE_GLOBAL_Mobius_Mark;
   Place* WRITE_L1;
   short* WRITE_L1_Mobius_Mark;
+  Place* WARP_ACCESS_L1;
+  short* WARP_ACCESS_L1_Mobius_Mark;
 
   double* TheDistributionParameters;
   GLOBAL_WRITE_TOActivity_case1();
@@ -301,6 +321,8 @@ public:
   short* WRITE_GLOBAL_Mobius_Mark;
   Place* WRITE_L2;
   short* WRITE_L2_Mobius_Mark;
+  Place* WARP_ACCESS_L2;
+  short* WARP_ACCESS_L2_Mobius_Mark;
 
   double* TheDistributionParameters;
   GLOBAL_WRITE_TOActivity_case2();
@@ -323,6 +345,8 @@ public:
   short* WRITE_GLOBAL_Mobius_Mark;
   Place* WRITE_DRAM;
   short* WRITE_DRAM_Mobius_Mark;
+  Place* WARP_ACCESS_DRAM;
+  short* WARP_ACCESS_DRAM_Mobius_Mark;
 
   double* TheDistributionParameters;
   GLOBAL_WRITE_TOActivity_case3();
@@ -351,6 +375,9 @@ public:
   Place* WRITE_DRAM;
   Place* READ_REGISTER_FILE;
   Place* WRITE_REGISTER_FILE;
+  Place* WARP_ACCESS_L1;
+  Place* WARP_ACCESS_L2;
+  Place* WARP_ACCESS_DRAM;
   ExtendedPlace<short>* READ;
   ExtendedPlace<short>* WRITE;
 

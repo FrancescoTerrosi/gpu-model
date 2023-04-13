@@ -101,7 +101,7 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
     {3,0}, {0,0}, {4,0}, {2,0}, {1,0}, {6,1}, {2,1}, {2,2}, {14,2}, 
     {15,2}, {16,2}, {7,2}, {12,3}, {2,3}, {4,3}, {12,4}, {2,4}, 
     {5,4}, {7,5}, {11,5}, {4,5}, {2,5}, {12,5}, {4,6}, {13,6}, 
-    {1,7}, {4,7}, {2,7}, {1,8}, {5,8}, {2,8}
+    {1,7}, {2,7}, {4,7}, {1,8}, {2,8}, {5,8}
   };
   for(int n=0;n<31;n++) {
     AddAffectArc(InitialPlaces[AffectArcs[n][0]],
@@ -163,11 +163,11 @@ void EXEC_UNITSAN::assignPlacesToActivitiesInst(){
   dhn.RESULT_KO = (Place*) LocalStateVariables[4];
   dhn.Place1 = (Place*) LocalStateVariables[13];
   Instantaneous_Activity3_case1.ROUTE_ALU_FLOAT = (Place*) LocalStateVariables[1];
-  Instantaneous_Activity3_case1.RESULT_KO = (Place*) LocalStateVariables[4];
   Instantaneous_Activity3_case1.INSTRUCTION_READY = (Place*) LocalStateVariables[2];
+  Instantaneous_Activity3_case1.RESULT_KO = (Place*) LocalStateVariables[4];
   Instantaneous_Activity3_case2.ROUTE_ALU_FLOAT = (Place*) LocalStateVariables[1];
-  Instantaneous_Activity3_case2.RESULT_OK = (Place*) LocalStateVariables[5];
   Instantaneous_Activity3_case2.INSTRUCTION_READY = (Place*) LocalStateVariables[2];
+  Instantaneous_Activity3_case2.RESULT_OK = (Place*) LocalStateVariables[5];
 }
 void EXEC_UNITSAN::assignPlacesToActivitiesTimed(){
 }
@@ -331,8 +331,7 @@ int EXEC_UNITSAN::DISPATCHERActivity::Rank(){
 }
 
 BaseActionClass* EXEC_UNITSAN::DISPATCHERActivity::Fire(){
-  INSTRUCTION_READY->Mark()--;
-INSTRUCTION_READY->Mark()++;
+  INSTRUCTION_READY->Mark() = 0;
   switch( SCHEDULER->Mark() ) {
 
     case 0:
@@ -597,8 +596,8 @@ EXEC_UNITSAN::Instantaneous_Activity3Activity_case1::Instantaneous_Activity3Acti
 
 void EXEC_UNITSAN::Instantaneous_Activity3Activity_case1::LinkVariables(){
   ROUTE_ALU_FLOAT->Register(&ROUTE_ALU_FLOAT_Mobius_Mark);
-  RESULT_KO->Register(&RESULT_KO_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
+  RESULT_KO->Register(&RESULT_KO_Mobius_Mark);
 }
 
 bool EXEC_UNITSAN::Instantaneous_Activity3Activity_case1::Enabled(){
@@ -633,8 +632,8 @@ int EXEC_UNITSAN::Instantaneous_Activity3Activity_case1::Rank(){
 
 BaseActionClass* EXEC_UNITSAN::Instantaneous_Activity3Activity_case1::Fire(){
   (*(ROUTE_ALU_FLOAT_Mobius_Mark))--;
-  (*(RESULT_KO_Mobius_Mark))++;
   (*(INSTRUCTION_READY_Mobius_Mark))++;
+  (*(RESULT_KO_Mobius_Mark))++;
   return this;
 }
 
@@ -647,8 +646,8 @@ EXEC_UNITSAN::Instantaneous_Activity3Activity_case2::Instantaneous_Activity3Acti
 
 void EXEC_UNITSAN::Instantaneous_Activity3Activity_case2::LinkVariables(){
   ROUTE_ALU_FLOAT->Register(&ROUTE_ALU_FLOAT_Mobius_Mark);
-  RESULT_OK->Register(&RESULT_OK_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
+  RESULT_OK->Register(&RESULT_OK_Mobius_Mark);
 }
 
 bool EXEC_UNITSAN::Instantaneous_Activity3Activity_case2::Enabled(){
@@ -683,8 +682,8 @@ int EXEC_UNITSAN::Instantaneous_Activity3Activity_case2::Rank(){
 
 BaseActionClass* EXEC_UNITSAN::Instantaneous_Activity3Activity_case2::Fire(){
   (*(ROUTE_ALU_FLOAT_Mobius_Mark))--;
-  (*(RESULT_OK_Mobius_Mark))++;
   (*(INSTRUCTION_READY_Mobius_Mark))++;
+  (*(RESULT_OK_Mobius_Mark))++;
   return this;
 }
 

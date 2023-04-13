@@ -94,14 +94,13 @@ OBJECTS/win10-m64/GPU_STUDYSetStudy.o: GPU_STUDYSetStudy.cpp \
  c:/Mobius-2.5/Cpp/Composer/Join.h \
  ../../Atomic/REGISTER_FILE/REGISTER_FILESAN.h \
  ../../Atomic/EXEC_UNIT/EXEC_UNITSAN.h ../../Atomic/MEMORY/MEMORYSAN.h \
- ../../Composed/GPU5/GPU5RJ.h ../../Composed/GPU5/GPU5RJ__DEVICE.h \
+ ../../Composed/GPU5/GPU5RJ__SM_REP.h \
  ../../Composed/GPU5/GPU5RJ__STREAMING_MULTIPROCESSOR.h \
- ../../Atomic/L1_CACHE/L1_CACHESAN.h ../../Atomic/DRAM/DRAMSAN.h \
- ../../Atomic/L2_CACHE/L2_CACHESAN.h \
+ ../../Atomic/L1_CACHE/L1_CACHESAN.h ../../Composed/GPU5/GPU5RJ.h \
+ ../../Atomic/DRAM/DRAMSAN.h ../../Atomic/L2_CACHE/L2_CACHESAN.h \
  c:/Mobius-2.5/Cpp/Performance_Variables/IntervalOfTime.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/IntervalOfTimeImpulse.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/InstantOfTime.hpp \
- c:/Mobius-2.5/Cpp/Performance_Variables/InstantOfTimeImpulse.hpp \
  ../../Reward/GPU5/GPU5PVModel.h ../../Reward/GPU5/GPU5PVNodes.h \
  c:/Mobius-2.5/Cpp/Performance_Variables/PVModel.hpp \
  c:/Mobius-2.5/Cpp/Performance_Variables/../BaseClasses/BaseGroupClass.h \

@@ -282,10 +282,10 @@ public:
 
   Place* ROUTE_ALU_FLOAT;
   short* ROUTE_ALU_FLOAT_Mobius_Mark;
-  Place* RESULT_KO;
-  short* RESULT_KO_Mobius_Mark;
   Place* INSTRUCTION_READY;
   short* INSTRUCTION_READY_Mobius_Mark;
+  Place* RESULT_KO;
+  short* RESULT_KO_Mobius_Mark;
 
   double* TheDistributionParameters;
   Instantaneous_Activity3Activity_case1();
@@ -306,10 +306,10 @@ public:
 
   Place* ROUTE_ALU_FLOAT;
   short* ROUTE_ALU_FLOAT_Mobius_Mark;
-  Place* RESULT_OK;
-  short* RESULT_OK_Mobius_Mark;
   Place* INSTRUCTION_READY;
   short* INSTRUCTION_READY_Mobius_Mark;
+  Place* RESULT_OK;
+  short* RESULT_OK_Mobius_Mark;
 
   double* TheDistributionParameters;
   Instantaneous_Activity3Activity_case2();

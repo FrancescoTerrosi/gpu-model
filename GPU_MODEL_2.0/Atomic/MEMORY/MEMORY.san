@@ -42,7 +42,7 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">970</int>
+								<int id="x">990</int>
 								<int id="y">50</int>
 							</point>
 						</class>
@@ -253,6 +253,63 @@
 							<point id="CenterPoint">
 								<int id="x">610</int>
 								<int id="y">630</int>
+							</point>
+						</class>
+						<boolean id="ReadOnly">false</boolean>
+						<boolean id="ConstantMarking">true</boolean>
+						<int id="InitialState">0</int>
+					</class>
+					<class id="Mobius.AtomicModels.San.PlacePanelObject">
+						<int id="ClassVersion">1</int>
+						<class id="Mobius.BaseClasses.BaseVertexClass">
+							<int id="ClassVersion">3</int>
+							<class id="Mobius.BaseClasses.BasePanelObjectClass">
+								<int id="ClassVersion">5</int>
+								<string id="Name">WARP_ACCESS_L1</string>
+								<boolean id="ContainsLabel">true</boolean>
+								<boolean id="IsLabelShown">true</boolean>
+							</class>
+							<point id="CenterPoint">
+								<int id="x">1190</int>
+								<int id="y">90</int>
+							</point>
+						</class>
+						<boolean id="ReadOnly">false</boolean>
+						<boolean id="ConstantMarking">true</boolean>
+						<int id="InitialState">0</int>
+					</class>
+					<class id="Mobius.AtomicModels.San.PlacePanelObject">
+						<int id="ClassVersion">1</int>
+						<class id="Mobius.BaseClasses.BaseVertexClass">
+							<int id="ClassVersion">3</int>
+							<class id="Mobius.BaseClasses.BasePanelObjectClass">
+								<int id="ClassVersion">5</int>
+								<string id="Name">WARP_ACCESS_L2</string>
+								<boolean id="ContainsLabel">true</boolean>
+								<boolean id="IsLabelShown">true</boolean>
+							</class>
+							<point id="CenterPoint">
+								<int id="x">1230</int>
+								<int id="y">270</int>
+							</point>
+						</class>
+						<boolean id="ReadOnly">false</boolean>
+						<boolean id="ConstantMarking">true</boolean>
+						<int id="InitialState">0</int>
+					</class>
+					<class id="Mobius.AtomicModels.San.PlacePanelObject">
+						<int id="ClassVersion">1</int>
+						<class id="Mobius.BaseClasses.BaseVertexClass">
+							<int id="ClassVersion">3</int>
+							<class id="Mobius.BaseClasses.BasePanelObjectClass">
+								<int id="ClassVersion">5</int>
+								<string id="Name">WARP_ACCESS_DRAM</string>
+								<boolean id="ContainsLabel">true</boolean>
+								<boolean id="IsLabelShown">true</boolean>
+							</class>
+							<point id="CenterPoint">
+								<int id="x">1250</int>
+								<int id="y">430</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -473,9 +530,9 @@
 							</class>
 							<int id="NumberOfCases">3</int>
 							<vector id="CaseDistributions">
-								<string id="0">0.3</string>
-								<string id="1">0.3</string>
-								<string id="2">0.3</string>
+								<string id="0">0.9</string>
+								<string id="1">0.1</string>
+								<string id="2">0</string>
 							</vector>
 						</class>
 					</class>
@@ -555,9 +612,9 @@
 							</class>
 							<int id="NumberOfCases">3</int>
 							<vector id="CaseDistributions">
-								<string id="0">1/3</string>
-								<string id="1">1/3</string>
-								<string id="2">1/3</string>
+								<string id="0">0</string>
+								<string id="1">1</string>
+								<string id="2">0</string>
 							</vector>
 						</class>
 					</class>
@@ -864,6 +921,210 @@
 							<point id="1">
 								<int id="x">609</int>
 								<int id="y">624</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">LOCAL_WRITE_TO</string>
+						<string id="FinishVertex">WARP_ACCESS_L1</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">851</int>
+								<int id="y">417</int>
+							</point>
+							<point id="1">
+								<int id="x">1184</int>
+								<int id="y">174</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">GLOBAL_WRITE_TO</string>
+						<string id="FinishVertex">WARP_ACCESS_L1</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">853</int>
+								<int id="y">519</int>
+							</point>
+							<point id="1">
+								<int id="x">1188</int>
+								<int id="y">170</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">LOCAL_READ_FROM</string>
+						<string id="FinishVertex">WARP_ACCESS_L1</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">874</int>
+								<int id="y">59</int>
+							</point>
+							<point id="1">
+								<int id="x">1183</int>
+								<int id="y">168</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">GLOBAL_READ_FROM</string>
+						<string id="FinishVertex">WARP_ACCESS_L1</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">851</int>
+								<int id="y">257</int>
+							</point>
+							<point id="1">
+								<int id="x">1189</int>
+								<int id="y">87</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">GLOBAL_WRITE_TO</string>
+						<string id="FinishVertex">WARP_ACCESS_L2</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">851</int>
+								<int id="y">529</int>
+							</point>
+							<point id="1">
+								<int id="x">1171</int>
+								<int id="y">286</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">LOCAL_WRITE_TO</string>
+						<string id="FinishVertex">WARP_ACCESS_L2</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">851</int>
+								<int id="y">432</int>
+							</point>
+							<point id="1">
+								<int id="x">1170</int>
+								<int id="y">288</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">GLOBAL_READ_FROM</string>
+						<string id="FinishVertex">WARP_ACCESS_L2</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">854</int>
+								<int id="y">272</int>
+							</point>
+							<point id="1">
+								<int id="x">1169</int>
+								<int id="y">293</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">LOCAL_READ_FROM</string>
+						<string id="FinishVertex">WARP_ACCESS_L2</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">873</int>
+								<int id="y">71</int>
+							</point>
+							<point id="1">
+								<int id="x">1168</int>
+								<int id="y">289</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">LOCAL_WRITE_TO</string>
+						<string id="FinishVertex">WARP_ACCESS_DRAM</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">852</int>
+								<int id="y">444</int>
+							</point>
+							<point id="1">
+								<int id="x">1164</int>
+								<int id="y">430</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">GLOBAL_WRITE_TO</string>
+						<string id="FinishVertex">WARP_ACCESS_DRAM</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">850</int>
+								<int id="y">542</int>
+							</point>
+							<point id="1">
+								<int id="x">1169</int>
+								<int id="y">428</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">GLOBAL_READ_FROM</string>
+						<string id="FinishVertex">WARP_ACCESS_DRAM</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">854</int>
+								<int id="y">282</int>
+							</point>
+							<point id="1">
+								<int id="x">1167</int>
+								<int id="y">428</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">LOCAL_READ_FROM</string>
+						<string id="FinishVertex">WARP_ACCESS_DRAM</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">876</int>
+								<int id="y">84</int>
+							</point>
+							<point id="1">
+								<int id="x">1169</int>
+								<int id="y">428</int>
 							</point>
 						</vector>
 					</class>

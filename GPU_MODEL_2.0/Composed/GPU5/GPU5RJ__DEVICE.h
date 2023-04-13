@@ -3,7 +3,7 @@
 #include <math.h>
 #include "Cpp/Composer/Join.h"
 #include "Cpp/Composer/AllStateVariableTypes.h"
-#include "Composed/GPU5/GPU5RJ__STREAMING_MULTIPROCESSOR.h"
+#include "Composed/GPU5/GPU5RJ__SM_REP.h"
 #include "Atomic/DRAM/DRAMSAN.h"
 #include "Atomic/L2_CACHE/L2_CACHESAN.h"
 
@@ -15,7 +15,7 @@ extern Short ngpu;
 
 class GPU5RJ__DEVICE: public Join {
  public:
-  GPU5RJ__STREAMING_MULTIPROCESSOR * STREAMING_MULTIPROCESSOR;
+  GPU5RJ__SM_REP * SM_REP;
   DRAMSAN * DRAM;
   L2_CACHESAN * L2_CACHE;
   Place * KO_CONTENT;

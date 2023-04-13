@@ -11,7 +11,7 @@
 #include "Cpp/BaseClasses/SAN/Place.h"
 extern Short nwarps;
 extern Short nprocessors;
-extern Short ngpu;
+extern Short nsm;
 
 class GPU5RJ__PROCESSOR_REP: public Rep {
  public:
