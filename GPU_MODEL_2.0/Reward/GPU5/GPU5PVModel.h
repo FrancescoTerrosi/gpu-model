@@ -8,6 +8,7 @@
 #include "Composed/GPU5/GPU5RJ__PROCESSOR.h"
 #include "Composed/GPU5/GPU5RJ__STREAMING_MULTIPROCESSOR.h"
 #include "Composed/GPU5/GPU5RJ.h"
+#include "Composed/GPU5/GPU5RJ__WARP_REG.h"
 class GPU5PVModel:public PVModel {
  protected:
   PerformanceVariableNode *createPVNode(int pvindex, int timeindex);

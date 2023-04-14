@@ -5,7 +5,7 @@
 #include "Cpp/Composer/AllStateVariableTypes.h"
 
 //Submodel header files
-#include "Atomic/WARP/WARPSAN.h"
+#include "Composed/GPU5/GPU5RJ__WARP_REG.h"
 
 //State variable headers
 #include "Cpp/BaseClasses/SAN/Place.h"
@@ -15,7 +15,7 @@ extern Short nsm;
 
 class GPU5RJ__Rep1: public Rep {
  public:
-  WARPSAN ** InstanceArray;
+  GPU5RJ__WARP_REG ** InstanceArray;
 
   GPU5RJ__Rep1();
   ~GPU5RJ__Rep1();
@@ -24,9 +24,14 @@ class GPU5RJ__Rep1: public Rep {
   Place * FLOAT_ALU_FAILURE;
   Place * INSTRUCTION_READY;
   Place * INT_ALU_FAILURE;
+  Place * KO_CONTENT;
   Place * MEM_FAILURE;
+  Place * MEM_OP_COMPLETE;
+  Place * OK_CONTENT;
   Place * REGISTERS_FILL;
   Place * REG_FAILURE;
+  Place * RESULT_KO;
+  Place * RESULT_OK;
   Place * SCHEDULER;
   Place * WARP_ACCESS_DRAM;
   Place * WARP_ACCESS_L1;

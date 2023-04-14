@@ -50,7 +50,9 @@ OBJECTS/win10-m64/GPU5RJ.o: GPU5RJ.cpp ../../Composed/GPU5/GPU5RJ.h \
  ../../Composed/GPU5/GPU5RJ__STREAMING_MULTIPROCESSOR.h \
  ../../Composed/GPU5/GPU5RJ__PROCESSOR_REP.h \
  ../../Composed/GPU5/GPU5RJ__PROCESSOR.h \
- ../../Composed/GPU5/GPU5RJ__Rep1.h ../../Atomic/WARP/WARPSAN.h \
+ ../../Composed/GPU5/GPU5RJ__Rep1.h \
+ ../../Composed/GPU5/GPU5RJ__WARP_REG.h \
+ ../../Atomic/REGISTER_FILE/REGISTER_FILESAN.h \
  c:/Mobius-2.5/Cpp/BaseClasses/EmptyGroup.h \
  c:/Mobius-2.5/Cpp/BaseClasses/SingleGroup.h \
  c:/Mobius-2.5/Cpp/BaseClasses/StandardErrors.h \
@@ -79,7 +81,6 @@ OBJECTS/win10-m64/GPU5RJ.o: GPU5RJ.cpp ../../Composed/GPU5/GPU5RJ.h \
  c:/Mobius-2.5/Cpp/BaseClasses/SAN/../primes.h \
  c:/Mobius-2.5/Cpp/BaseClasses/SAN/Place.h \
  c:/Mobius-2.5/Cpp/BaseClasses/SAN/ExtendedPlace.h \
- ../../Atomic/REGISTER_FILE/REGISTER_FILESAN.h \
- ../../Atomic/EXEC_UNIT/EXEC_UNITSAN.h ../../Atomic/MEMORY/MEMORYSAN.h \
- ../../Atomic/L1_CACHE/L1_CACHESAN.h ../../Atomic/DRAM/DRAMSAN.h \
- ../../Atomic/L2_CACHE/L2_CACHESAN.h
+ ../../Atomic/WARP/WARPSAN.h ../../Atomic/EXEC_UNIT/EXEC_UNITSAN.h \
+ ../../Atomic/MEMORY/MEMORYSAN.h ../../Atomic/L1_CACHE/L1_CACHESAN.h \
+ ../../Atomic/DRAM/DRAMSAN.h ../../Atomic/L2_CACHE/L2_CACHESAN.h

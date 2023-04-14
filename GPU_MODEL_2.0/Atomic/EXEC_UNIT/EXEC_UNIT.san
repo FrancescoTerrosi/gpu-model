@@ -584,16 +584,8 @@
 							</class>
 							<int id="NumberOfCases">2</int>
 							<vector id="CaseDistributions">
-								<string id="0">
-									return OK_CONTENT-&gt;Mark() + KO_CONTENT-&gt;Mark() == 0 ? 
-									0.5 : KO_CONTENT-&gt;Mark() == 0 ? 0,1 : KO_CONTENT-&gt;Mark
-									() / (OK_CONTENT-&gt;Mark() + KO_CONTENT-&gt;Mark());
-								</string>
-								<string id="1">
-									return OK_CONTENT-&gt;Mark() + KO_CONTENT-&gt;Mark() == 0 ? 
-									0.5 : OK_CONTENT-&gt;Mark() == 0 ? 0,1 : OK_CONTENT-&gt;Mark
-									() / (OK_CONTENT-&gt;Mark() + KO_CONTENT-&gt;Mark());\n
-								</string>
+								<string id="0">0</string>
+								<string id="1">1</string>
 							</vector>
 						</class>
 					</class>

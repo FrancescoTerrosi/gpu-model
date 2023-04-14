@@ -1,5 +1,5 @@
 Simulator Results
-Date:, Thu Apr 13 15:10:24 CEST 2023
+Date:, Thu Apr 13 17:26:33 CEST 2023
 
 Simulator Configuration
 Simulation Type:,Terminating
@@ -9,8 +9,8 @@ Random Number Generator:,Lagged Fibonacci
 Random Number Seed:,31415
 Maximum Batches:,1000
 Minimum Batches:,1000
-Data Reporting Frequency:,100
-Display Update Frequency:,100
+Data Reporting Frequency:,1
+Display Update Frequency:,1
 BuildType:,Optimize
 Execution Architecture:,64-bit
 Runname:,Results
@@ -23,10 +23,10 @@ Processors Selected for Simulation:
 DESKTOP-3AHUC0F,amd64
 
 Experiment 1
-Experiment 1,Start Time:,Thu Apr 13 15:10:22 CEST 2023
-Experiment 1,Finish Time:,Thu Apr 13 15:10:24 CEST 2023
-Experiment 1,Elapsed Running Time:,1.927
-Experiment 1,Total CPU Time:,0.032
+Experiment 1,Start Time:,Thu Apr 13 17:26:31 CEST 2023
+Experiment 1,Finish Time:,Thu Apr 13 17:26:33 CEST 2023
+Experiment 1,Elapsed Running Time:,1.545
+Experiment 1,Total CPU Time:,0.797
 Experiment 1,Batches Completed:,1000
 Experiment 1,Experiment Name:,Experiment 1
 Experiment 1,Global Variable Settings:
@@ -35,20 +35,20 @@ Experiment 1,short,end,100
 Experiment 1,short,failure_index,10011
 Experiment 1,short,l1_size,100
 Experiment 1,short,l2_size,100
-Experiment 1,short,nprocessors,1
+Experiment 1,short,nprocessors,2
 Experiment 1,short,nsm,1
-Experiment 1,short,nwarps,2
+Experiment 1,short,nwarps,1
 Experiment 1,short,register_count_index,0
 Experiment 1,short,size,5
 Experiment 1, Results
 Experiment 1,Result Type,Name,Start Time,End Time,Mean,,Confidence Interval,Failed To Converge
-Experiment 1,Mean,warp,0.0,100,6.0000000000E00 ,+/-,9.0492336256E-09
-Experiment 1,Mean,exec_dispatch,0.0,100,5.0000000000E00 ,+/-,5.2245774697E-09
+Experiment 1,Mean,warp,0.0,100,1.0000000000E01 ,+/-,1.0449154939E-08
+Experiment 1,Mean,exec_dispatch,0.0,100,1.0000000000E01 ,+/-,1.0449154939E-08
 Experiment 1,Mean,l1_read,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
 Experiment 1,Mean,l2_read,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
 Experiment 1,Mean,dram_read,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
-Experiment 1,Mean,alu_ok,0.0,100,2.4880000000E00 ,+/-,6.7869653745E-02
-Experiment 1,Mean,alu_ko,0.0,100,2.5120000000E00 ,+/-,6.7869653745E-02
+Experiment 1,Mean,alu_ok,0.0,100,1.0000000000E01 ,+/-,1.0449154939E-08
+Experiment 1,Mean,alu_ko,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
 Experiment 1,Mean,l1_read_ko,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
 Experiment 1,Mean,l2_read_ko,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
 Experiment 1,Mean,dram_read_ko,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
@@ -56,8 +56,8 @@ Experiment 1,Mean,failure,100,100,0.0000000000E00 ,+/-,0.0000000000E00
 Experiment 1,Mean,l1_access,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
 Experiment 1,Mean,l2_access,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
 Experiment 1,Mean,dram_access,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
-Experiment 1,Mean,clocks,0.0,100,1.0000000000E01 ,+/-,1.0449154939E-08
-Experiment 1,Mean,bohcounter,100,100,4.0000000000E00 ,+/-,0.0000000000E00 
-Experiment 1,Mean,inst_ready,100,100,4.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,clocks,0.0,100,7.5000000000E01 ,+/-,5.9109346523E-08
+Experiment 1,Mean,bohcounter,100,100,8.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,inst_ready,100,100,8.0000000000E00 ,+/-,0.0000000000E00 
 
 <END_MOBIUS_RESULTS>

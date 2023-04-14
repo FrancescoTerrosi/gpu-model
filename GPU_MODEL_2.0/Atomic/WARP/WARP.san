@@ -25,9 +25,9 @@
 				</class>
 			</class>
 			<string id="CustomInitialization">
-				WARP-&gt;Index(0)-&gt;Mark() = 7;WARP-&gt;Index(1)-&gt;Mark(
-				) = 7;WARP-&gt;Index(2)-&gt;Mark() = 7;WARP-&gt;Index(3)-&gt
-				;Mark() = 7;WARP-&gt;Index(4)-&gt;Mark() = 7;
+				WARP-&gt;Index(0)-&gt;Mark() = 5;WARP-&gt;Index(1)-&gt;Mark(
+				) = 5;WARP-&gt;Index(2)-&gt;Mark() = 5;WARP-&gt;Index(3)-&gt
+				;Mark() = 5;WARP-&gt;Index(4)-&gt;Mark() = 5;
 			</string>
 		</class>
 		<class id="Mobius.AtomicModels.San.SanEditor">
@@ -95,8 +95,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">190</int>
-								<int id="y">110</int>
+								<int id="x">230</int>
+								<int id="y">130</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -230,6 +230,25 @@
 							<point id="CenterPoint">
 								<int id="x">770</int>
 								<int id="y">250</int>
+							</point>
+						</class>
+						<boolean id="ReadOnly">false</boolean>
+						<boolean id="ConstantMarking">true</boolean>
+						<int id="InitialState">0</int>
+					</class>
+					<class id="Mobius.AtomicModels.San.PlacePanelObject">
+						<int id="ClassVersion">1</int>
+						<class id="Mobius.BaseClasses.BaseVertexClass">
+							<int id="ClassVersion">3</int>
+							<class id="Mobius.BaseClasses.BasePanelObjectClass">
+								<int id="ClassVersion">5</int>
+								<string id="Name">MEM_OP_COMPLETE</string>
+								<boolean id="ContainsLabel">true</boolean>
+								<boolean id="IsLabelShown">true</boolean>
+							</class>
+							<point id="CenterPoint">
+								<int id="x">90</int>
+								<int id="y">90</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -514,6 +533,49 @@
 							</vector>
 						</class>
 					</class>
+					<class id="Mobius.AtomicModels.San.InstantaneousActivityPanelObject">
+						<int id="ClassVersion">1</int>
+						<class id="Mobius.AtomicModels.San.ActivityPanelObject">
+							<int id="ClassVersion">1</int>
+							<class id="Mobius.BaseClasses.ExtendedBaseVertexClass">
+								<int id="ClassVersion">1</int>
+								<class id="Mobius.BaseClasses.BaseVertexClass">
+									<int id="ClassVersion">3</int>
+									<class id="Mobius.BaseClasses.BasePanelObjectClass">
+										<int id="ClassVersion">5</int>
+										<string id="Name">Instantaneous_Activity2</string>
+										<boolean id="ContainsLabel">true</boolean>
+										<boolean id="IsLabelShown">true</boolean>
+									</class>
+									<point id="CenterPoint">
+										<int id="x">50</int>
+										<int id="y">170</int>
+									</point>
+								</class>
+							</class>
+							<int id="NumberOfCases">1</int>
+							<vector id="CaseDistributions">
+								<string id="0"></string>
+							</vector>
+						</class>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">Instantaneous_Activity2</string>
+						<string id="FinishVertex">INSTRUCTION_READY</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">51</int>
+								<int id="y">178</int>
+							</point>
+							<point id="1">
+								<int id="x">125</int>
+								<int id="y">230</int>
+							</point>
+						</vector>
+					</class>
 					<class id="Mobius.BaseClasses.BaseEdgeClass">
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
@@ -658,8 +720,8 @@
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">198</int>
-								<int id="y">110</int>
+								<int id="x">238</int>
+								<int id="y">130</int>
 							</point>
 							<point id="1">
 								<int id="x">317</int>
@@ -800,6 +862,23 @@
 							<point id="1">
 								<int id="x">911</int>
 								<int id="y">192</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">MEM_OP_COMPLETE</string>
+						<string id="FinishVertex">Instantaneous_Activity2</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">94</int>
+								<int id="y">89</int>
+							</point>
+							<point id="1">
+								<int id="x">51</int>
+								<int id="y">178</int>
 							</point>
 						</vector>
 					</class>

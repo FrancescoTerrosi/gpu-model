@@ -20,6 +20,7 @@
 				<string id="3">Composed\\GPU5\\GPU5RJ__PROCESSOR.h</string>
 				<string id="4">Composed\\GPU5\\GPU5RJ__STREAMING_MULTIPROCESSOR.h</string>
 				<string id="5">Composed\\GPU5\\GPU5RJ.h</string>
+				<string id="6">Composed\\GPU5\\GPU5RJ__WARP_REG.h</string>
 			</vector>
 			<vector id="HeaderFileList">
 				<string id="0">Reward\\GPU5\\GPU5PVNodes.h</string>
@@ -753,20 +754,36 @@
 					<string id="2">MEMORY</string>
 				</vector>
 				<vector id="AffectingActionsList">
-					<string id="0">WARP-&gt;L1_CLOCK</string>
-					<string id="1">WARP-&gt;L2_CLOCK</string>
-					<string id="2">WARP-&gt;DRAM_CLOCK</string>
-					<string id="3">EXEC_UNIT-&gt;handle_failure</string>
-					<string id="4">MEMORY-&gt;PERFORM_READ</string>
-					<string id="5">MEMORY-&gt;PERFORM_WRITE</string>
+					<string id="0">EXEC_UNIT-&gt;handle_failure</string>
+					<string id="1">MEMORY-&gt;PERFORM_READ</string>
+					<string id="2">EXEC_UNIT-&gt;DISPATCHER</string>
+					<string id="3">WARP-&gt;DRAM_CLOCK</string>
+					<string id="4">MEMORY-&gt;PERFORM_WRITE</string>
+					<string id="5">WARP-&gt;L2_CLOCK</string>
+					<string id="6">WARP-&gt;DISPATCHER_Copy</string>
+					<string id="7">WARP-&gt;L1_CLOCK</string>
+					<string id="8">EXEC_UNIT-&gt;Instantaneous_Activity1</string>
+					<string id="9">EXEC_UNIT-&gt;handle_failure_float</string>
+					<string id="10">EXEC_UNIT-&gt;Instantaneous_Activity2_case1</string>
+					<string id="11">EXEC_UNIT-&gt;dhn</string>
+					<string id="12">MEMORY-&gt;LOCAL_READ_FROM_case1</string>
+					<string id="13">MEMORY-&gt;GLOBAL_READ_FROM_case3</string>
 				</vector>
 				<vector id="ImpulseFunctionsList">
-					<string id="0">return 100;</string>
-					<string id="1">return 175;</string>
-					<string id="2">return 300;</string>
-					<string id="3">return 2;</string>
-					<string id="4">return 2;</string>
-					<string id="5">return 2;</string>
+					<string id="0">return 2.0/(nsm * nprocessors);</string>
+					<string id="1">return 2.0/(nsm * nprocessors);</string>
+					<string id="2">return 2.0/(nsm * nprocessors);</string>
+					<string id="3">return 300.0/(nsm * nprocessors);</string>
+					<string id="4">return 2.0/(nsm * nprocessors);</string>
+					<string id="5">return 175.0/(nsm * nprocessors);</string>
+					<string id="6">return 2.0/(nsm * nprocessors);</string>
+					<string id="7">return 100.0/(nsm * nprocessors);</string>
+					<string id="8"></string>
+					<string id="9"></string>
+					<string id="10"></string>
+					<string id="11"></string>
+					<string id="12"></string>
+					<string id="13"></string>
 				</vector>
 				<string id="RewardFunction"></string>
 				<int id="Type">1</int>
@@ -810,6 +827,20 @@
 					<boolean id="4">true</boolean>
 					<boolean id="5">true</boolean>
 					<boolean id="6">true</boolean>
+					<boolean id="7">true</boolean>
+					<boolean id="8">true</boolean>
+					<boolean id="9">true</boolean>
+					<boolean id="10">true</boolean>
+					<boolean id="11">true</boolean>
+					<boolean id="12">true</boolean>
+					<boolean id="13">true</boolean>
+					<boolean id="14">true</boolean>
+					<boolean id="15">true</boolean>
+					<boolean id="16">true</boolean>
+					<boolean id="17">true</boolean>
+					<boolean id="18">true</boolean>
+					<boolean id="19">true</boolean>
+					<boolean id="20">true</boolean>
 				</vector>
 			</class>
 			<class id="Mobius.RewardModels.pvs.VariableInfo">

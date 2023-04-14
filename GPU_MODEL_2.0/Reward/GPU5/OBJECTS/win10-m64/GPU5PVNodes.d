@@ -59,7 +59,9 @@ OBJECTS/win10-m64/GPU5PVNodes.o: GPU5PVNodes.cpp GPU5PVNodes.h \
  c:/Mobius-2.5/Cpp/Composer/../BaseClasses/primes.h \
  c:/Mobius-2.5/Cpp/Composer/AllStateVariableTypes.h \
  c:/Mobius-2.5/Cpp/Composer/../BaseClasses/state/SharableSV.h \
- ../../Atomic/WARP/WARPSAN.h c:/Mobius-2.5/Cpp/BaseClasses/EmptyGroup.h \
+ ../../Composed/GPU5/GPU5RJ__WARP_REG.h c:/Mobius-2.5/Cpp/Composer/Join.h \
+ ../../Atomic/REGISTER_FILE/REGISTER_FILESAN.h \
+ c:/Mobius-2.5/Cpp/BaseClasses/EmptyGroup.h \
  c:/Mobius-2.5/Cpp/BaseClasses/SingleGroup.h \
  c:/Mobius-2.5/Cpp/BaseClasses/StandardErrors.h \
  c:/Mobius-2.5/Cpp/BaseClasses/BaseGroupClass.h \
@@ -87,10 +89,8 @@ OBJECTS/win10-m64/GPU5PVNodes.o: GPU5PVNodes.cpp GPU5PVNodes.h \
  c:/Mobius-2.5/Cpp/BaseClasses/SAN/../primes.h \
  c:/Mobius-2.5/Cpp/BaseClasses/SAN/Place.h \
  c:/Mobius-2.5/Cpp/BaseClasses/SAN/ExtendedPlace.h \
- ../../Composed/GPU5/GPU5RJ__PROCESSOR_REP.h \
+ ../../Atomic/WARP/WARPSAN.h ../../Composed/GPU5/GPU5RJ__PROCESSOR_REP.h \
  ../../Composed/GPU5/GPU5RJ__PROCESSOR.h \
- c:/Mobius-2.5/Cpp/Composer/Join.h \
- ../../Atomic/REGISTER_FILE/REGISTER_FILESAN.h \
  ../../Atomic/EXEC_UNIT/EXEC_UNITSAN.h ../../Atomic/MEMORY/MEMORYSAN.h \
  ../../Composed/GPU5/GPU5RJ__SM_REP.h \
  ../../Composed/GPU5/GPU5RJ__STREAMING_MULTIPROCESSOR.h \

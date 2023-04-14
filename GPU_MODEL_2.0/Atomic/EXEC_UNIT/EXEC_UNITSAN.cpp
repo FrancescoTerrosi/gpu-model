@@ -148,13 +148,9 @@ void EXEC_UNITSAN::assignPlacesToActivitiesInst(){
   Instantaneous_Activity2_case1.ROUTE_ALU_INT = (Place*) LocalStateVariables[12];
   Instantaneous_Activity2_case1.INSTRUCTION_READY = (Place*) LocalStateVariables[2];
   Instantaneous_Activity2_case1.RESULT_KO = (Place*) LocalStateVariables[4];
-  Instantaneous_Activity2_case1.OK_CONTENT = (Place*) LocalStateVariables[9];
-  Instantaneous_Activity2_case1.KO_CONTENT = (Place*) LocalStateVariables[10];
   Instantaneous_Activity2_case2.ROUTE_ALU_INT = (Place*) LocalStateVariables[12];
   Instantaneous_Activity2_case2.INSTRUCTION_READY = (Place*) LocalStateVariables[2];
   Instantaneous_Activity2_case2.RESULT_OK = (Place*) LocalStateVariables[5];
-  Instantaneous_Activity2_case2.OK_CONTENT = (Place*) LocalStateVariables[9];
-  Instantaneous_Activity2_case2.KO_CONTENT = (Place*) LocalStateVariables[10];
   handle_failure.INT_ALU = (Place*) LocalStateVariables[7];
   handle_failure.INT_ALU_FAILURE = (Place*) LocalStateVariables[11];
   handle_failure.RESULT_KO = (Place*) LocalStateVariables[4];
@@ -384,8 +380,6 @@ void EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::LinkVariables(){
   ROUTE_ALU_INT->Register(&ROUTE_ALU_INT_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
   RESULT_KO->Register(&RESULT_KO_Mobius_Mark);
-  OK_CONTENT->Register(&OK_CONTENT_Mobius_Mark);
-  KO_CONTENT->Register(&KO_CONTENT_Mobius_Mark);
 }
 
 bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Enabled(){
@@ -395,7 +389,7 @@ bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Enabled(){
 }
 
 double EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Weight(){ 
-  return OK_CONTENT->Mark() + KO_CONTENT->Mark() == 0 ? 0.5 : KO_CONTENT->Mark() == 0 ? 0,1 : KO_CONTENT->Mark() / (OK_CONTENT->Mark() + KO_CONTENT->Mark());
+  return 0;
 }
 
 bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::ReactivationPredicate(){ 
@@ -436,8 +430,6 @@ void EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::LinkVariables(){
   ROUTE_ALU_INT->Register(&ROUTE_ALU_INT_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
   RESULT_OK->Register(&RESULT_OK_Mobius_Mark);
-  OK_CONTENT->Register(&OK_CONTENT_Mobius_Mark);
-  KO_CONTENT->Register(&KO_CONTENT_Mobius_Mark);
 }
 
 bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Enabled(){
@@ -447,8 +439,7 @@ bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Enabled(){
 }
 
 double EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Weight(){ 
-  return OK_CONTENT->Mark() + KO_CONTENT->Mark() == 0 ? 0.5 : OK_CONTENT->Mark() == 0 ? 0,1 : OK_CONTENT->Mark() / (OK_CONTENT->Mark() + KO_CONTENT->Mark());
-
+  return 1;
 }
 
 bool EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::ReactivationPredicate(){ 

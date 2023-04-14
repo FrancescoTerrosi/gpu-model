@@ -136,7 +136,7 @@ void GPU_STUDYSetStudy::SetValues_l2_size() {
 // set values for nprocessors
 //******************************************************
 void GPU_STUDYSetStudy::SetValues_nprocessors() {
-  nprocessorsValues[0] = 1;
+  nprocessorsValues[0] = 2;
 }
 
 
@@ -152,7 +152,7 @@ void GPU_STUDYSetStudy::SetValues_nsm() {
 // set values for nwarps
 //******************************************************
 void GPU_STUDYSetStudy::SetValues_nwarps() {
-  nwarpsValues[0] = 2;
+  nwarpsValues[0] = 1;
 }
 
 

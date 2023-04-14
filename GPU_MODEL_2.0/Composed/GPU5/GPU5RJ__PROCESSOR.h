@@ -4,7 +4,6 @@
 #include "Cpp/Composer/Join.h"
 #include "Cpp/Composer/AllStateVariableTypes.h"
 #include "Composed/GPU5/GPU5RJ__Rep1.h"
-#include "Atomic/REGISTER_FILE/REGISTER_FILESAN.h"
 #include "Atomic/EXEC_UNIT/EXEC_UNITSAN.h"
 #include "Atomic/MEMORY/MEMORYSAN.h"
 
@@ -17,7 +16,6 @@ extern Short nsm;
 class GPU5RJ__PROCESSOR: public Join {
  public:
   GPU5RJ__Rep1 * Rep1;
-  REGISTER_FILESAN * REGISTER_FILE;
   EXEC_UNITSAN * EXEC_UNIT;
   MEMORYSAN * MEMORY;
   Place * FLOAT_ALU_FAILURE;
@@ -32,7 +30,6 @@ class GPU5RJ__PROCESSOR: public Join {
   Place * READ_L1;
   Place * READ_L2;
   Place * REGISTERS_FILL;
-  Place * REG_FAILURE;
   Place * RESULT_KO;
   Place * RESULT_OK;
   Place * SCHEDULER;

@@ -918,8 +918,8 @@ GPU5PV14Impulse0::GPU5PV14Impulse0()
 {
   NumberOfModelDependencies = 3;
   TheModelPtr = new BaseModelClass**[NumberOfModelDependencies];
-  TheModelPtr[0] = (BaseModelClass**)(&WARP);
-  TheModelPtr[1] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[0] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[1] = (BaseModelClass**)(&WARP);
   TheModelPtr[2] = (BaseModelClass**)(&MEMORY);
   ImpulseWorkerListLength = 0;
 }
@@ -935,7 +935,7 @@ GPU5PV14Impulse0::~GPU5PV14Impulse0() {
 
 double GPU5PV14Impulse0::Impulse_Function(double FiringTime)
 {
-return 100;
+return 2.0/(nsm * nprocessors);
 
 return(0);
 }
@@ -956,9 +956,9 @@ GPU5PV14Impulse1::GPU5PV14Impulse1()
 {
   NumberOfModelDependencies = 3;
   TheModelPtr = new BaseModelClass**[NumberOfModelDependencies];
-  TheModelPtr[0] = (BaseModelClass**)(&WARP);
-  TheModelPtr[1] = (BaseModelClass**)(&EXEC_UNIT);
-  TheModelPtr[2] = (BaseModelClass**)(&MEMORY);
+  TheModelPtr[0] = (BaseModelClass**)(&MEMORY);
+  TheModelPtr[1] = (BaseModelClass**)(&WARP);
+  TheModelPtr[2] = (BaseModelClass**)(&EXEC_UNIT);
   ImpulseWorkerListLength = 0;
 }
 
@@ -973,7 +973,7 @@ GPU5PV14Impulse1::~GPU5PV14Impulse1() {
 
 double GPU5PV14Impulse1::Impulse_Function(double FiringTime)
 {
-return 175;
+return 2.0/(nsm * nprocessors);
 
 return(0);
 }
@@ -994,8 +994,8 @@ GPU5PV14Impulse2::GPU5PV14Impulse2()
 {
   NumberOfModelDependencies = 3;
   TheModelPtr = new BaseModelClass**[NumberOfModelDependencies];
-  TheModelPtr[0] = (BaseModelClass**)(&WARP);
-  TheModelPtr[1] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[0] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[1] = (BaseModelClass**)(&WARP);
   TheModelPtr[2] = (BaseModelClass**)(&MEMORY);
   ImpulseWorkerListLength = 0;
 }
@@ -1011,7 +1011,7 @@ GPU5PV14Impulse2::~GPU5PV14Impulse2() {
 
 double GPU5PV14Impulse2::Impulse_Function(double FiringTime)
 {
-return 300;
+return 2.0/(nsm * nprocessors);
 
 return(0);
 }
@@ -1032,8 +1032,8 @@ GPU5PV14Impulse3::GPU5PV14Impulse3()
 {
   NumberOfModelDependencies = 3;
   TheModelPtr = new BaseModelClass**[NumberOfModelDependencies];
-  TheModelPtr[0] = (BaseModelClass**)(&EXEC_UNIT);
-  TheModelPtr[1] = (BaseModelClass**)(&WARP);
+  TheModelPtr[0] = (BaseModelClass**)(&WARP);
+  TheModelPtr[1] = (BaseModelClass**)(&EXEC_UNIT);
   TheModelPtr[2] = (BaseModelClass**)(&MEMORY);
   ImpulseWorkerListLength = 0;
 }
@@ -1049,7 +1049,7 @@ GPU5PV14Impulse3::~GPU5PV14Impulse3() {
 
 double GPU5PV14Impulse3::Impulse_Function(double FiringTime)
 {
-return 2;
+return 300.0/(nsm * nprocessors);
 
 return(0);
 }
@@ -1087,7 +1087,7 @@ GPU5PV14Impulse4::~GPU5PV14Impulse4() {
 
 double GPU5PV14Impulse4::Impulse_Function(double FiringTime)
 {
-return 2;
+return 2.0/(nsm * nprocessors);
 
 return(0);
 }
@@ -1108,9 +1108,9 @@ GPU5PV14Impulse5::GPU5PV14Impulse5()
 {
   NumberOfModelDependencies = 3;
   TheModelPtr = new BaseModelClass**[NumberOfModelDependencies];
-  TheModelPtr[0] = (BaseModelClass**)(&MEMORY);
-  TheModelPtr[1] = (BaseModelClass**)(&WARP);
-  TheModelPtr[2] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[0] = (BaseModelClass**)(&WARP);
+  TheModelPtr[1] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[2] = (BaseModelClass**)(&MEMORY);
   ImpulseWorkerListLength = 0;
 }
 
@@ -1125,7 +1125,7 @@ GPU5PV14Impulse5::~GPU5PV14Impulse5() {
 
 double GPU5PV14Impulse5::Impulse_Function(double FiringTime)
 {
-return 2;
+return 175.0/(nsm * nprocessors);
 
 return(0);
 }
@@ -1142,29 +1142,111 @@ ImpulseNodeClass** GPU5PV14Impulse5::CreateImpulseWorkerList(int NumberOfWorkers
   return ImpulseWorkerList;
 }
 
+GPU5PV14Impulse6::GPU5PV14Impulse6()
+{
+  NumberOfModelDependencies = 3;
+  TheModelPtr = new BaseModelClass**[NumberOfModelDependencies];
+  TheModelPtr[0] = (BaseModelClass**)(&WARP);
+  TheModelPtr[1] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[2] = (BaseModelClass**)(&MEMORY);
+  ImpulseWorkerListLength = 0;
+}
+
+GPU5PV14Impulse6::~GPU5PV14Impulse6() {
+  delete [] TheModelPtr;
+  if (ImpulseWorkerListLength > 0) {
+    for (int ImpulseWorkerCounter = 0; ImpulseWorkerCounter < ImpulseWorkerListLength; ImpulseWorkerCounter++)
+      delete ImpulseWorkerList[ImpulseWorkerCounter];
+    delete[] ImpulseWorkerList;
+  }
+}
+
+double GPU5PV14Impulse6::Impulse_Function(double FiringTime)
+{
+return 2.0/(nsm * nprocessors);
+
+return(0);
+}
+
+ImpulseNodeClass** GPU5PV14Impulse6::CreateImpulseWorkerList(int NumberOfWorkers) {
+  ImpulseWorkerListLength = NumberOfWorkers;
+  ImpulseWorkerList = new ImpulseNodeClass*[NumberOfWorkers];
+
+  for (int ImpulseWorkerCounter = 0; ImpulseWorkerCounter < NumberOfWorkers; ImpulseWorkerCounter++)
+  {
+    ImpulseWorkerList[ImpulseWorkerCounter] = new GPU5PV14Impulse6;
+  }
+
+  return ImpulseWorkerList;
+}
+
+GPU5PV14Impulse7::GPU5PV14Impulse7()
+{
+  NumberOfModelDependencies = 3;
+  TheModelPtr = new BaseModelClass**[NumberOfModelDependencies];
+  TheModelPtr[0] = (BaseModelClass**)(&WARP);
+  TheModelPtr[1] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[2] = (BaseModelClass**)(&MEMORY);
+  ImpulseWorkerListLength = 0;
+}
+
+GPU5PV14Impulse7::~GPU5PV14Impulse7() {
+  delete [] TheModelPtr;
+  if (ImpulseWorkerListLength > 0) {
+    for (int ImpulseWorkerCounter = 0; ImpulseWorkerCounter < ImpulseWorkerListLength; ImpulseWorkerCounter++)
+      delete ImpulseWorkerList[ImpulseWorkerCounter];
+    delete[] ImpulseWorkerList;
+  }
+}
+
+double GPU5PV14Impulse7::Impulse_Function(double FiringTime)
+{
+return 100.0/(nsm * nprocessors);
+
+return(0);
+}
+
+ImpulseNodeClass** GPU5PV14Impulse7::CreateImpulseWorkerList(int NumberOfWorkers) {
+  ImpulseWorkerListLength = NumberOfWorkers;
+  ImpulseWorkerList = new ImpulseNodeClass*[NumberOfWorkers];
+
+  for (int ImpulseWorkerCounter = 0; ImpulseWorkerCounter < NumberOfWorkers; ImpulseWorkerCounter++)
+  {
+    ImpulseWorkerList[ImpulseWorkerCounter] = new GPU5PV14Impulse7;
+  }
+
+  return ImpulseWorkerList;
+}
+
 GPU5PV14::GPU5PV14(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
   double stoppts[1]={end};
-  Initialize("clocks",(RewardType)1,1, startpts, stoppts, timeindex, 6,0, 0);
-  AddImpulse("L1_CLOCK","WARP",&Impulse0);
-  AddImpulseModelDependency("EXEC_UNIT",&Impulse0);
+  Initialize("clocks",(RewardType)1,1, startpts, stoppts, timeindex, 8,0, 0);
+  AddImpulse("handle_failure","EXEC_UNIT",&Impulse0);
+  AddImpulseModelDependency("WARP",&Impulse0);
   AddImpulseModelDependency("MEMORY",&Impulse0);
-  AddImpulse("L2_CLOCK","WARP",&Impulse1);
+  AddImpulse("PERFORM_READ","MEMORY",&Impulse1);
+  AddImpulseModelDependency("WARP",&Impulse1);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse1);
-  AddImpulseModelDependency("MEMORY",&Impulse1);
-  AddImpulse("DRAM_CLOCK","WARP",&Impulse2);
-  AddImpulseModelDependency("EXEC_UNIT",&Impulse2);
+  AddImpulse("DISPATCHER","EXEC_UNIT",&Impulse2);
+  AddImpulseModelDependency("WARP",&Impulse2);
   AddImpulseModelDependency("MEMORY",&Impulse2);
-  AddImpulse("handle_failure","EXEC_UNIT",&Impulse3);
-  AddImpulseModelDependency("WARP",&Impulse3);
+  AddImpulse("DRAM_CLOCK","WARP",&Impulse3);
+  AddImpulseModelDependency("EXEC_UNIT",&Impulse3);
   AddImpulseModelDependency("MEMORY",&Impulse3);
-  AddImpulse("PERFORM_READ","MEMORY",&Impulse4);
+  AddImpulse("PERFORM_WRITE","MEMORY",&Impulse4);
   AddImpulseModelDependency("WARP",&Impulse4);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse4);
-  AddImpulse("PERFORM_WRITE","MEMORY",&Impulse5);
-  AddImpulseModelDependency("WARP",&Impulse5);
+  AddImpulse("L2_CLOCK","WARP",&Impulse5);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse5);
+  AddImpulseModelDependency("MEMORY",&Impulse5);
+  AddImpulse("DISPATCHER_Copy","WARP",&Impulse6);
+  AddImpulseModelDependency("EXEC_UNIT",&Impulse6);
+  AddImpulseModelDependency("MEMORY",&Impulse6);
+  AddImpulse("L1_CLOCK","WARP",&Impulse7);
+  AddImpulseModelDependency("EXEC_UNIT",&Impulse7);
+  AddImpulseModelDependency("MEMORY",&Impulse7);
 }
 
 GPU5PV14::~GPU5PV14() {

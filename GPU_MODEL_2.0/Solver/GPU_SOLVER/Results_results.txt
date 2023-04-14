@@ -1,5 +1,5 @@
 _______________________________Simulator Results______________________________
-Date:                        Thu Apr 13 15:10:24 CEST 2023
+Date:                        Thu Apr 13 17:26:33 CEST 2023
 
 ____________________________Simulator Configuration___________________________
 Simulation Type:             Terminating
@@ -9,8 +9,8 @@ Random Number Generator:     Lagged Fibonacci
 Random Number Seed:          31415
 Maximum Batches:             1000
 Minimum Batches:             1000
-Data Reporting Frequency:    100
-Display Update Frequency:    100
+Data Reporting Frequency:    1
+Display Update Frequency:    1
 BuildType:                   Optimize
 Execution Architecture:      64-bit
 Runname:                     Results
@@ -23,10 +23,10 @@ Processors Selected for Simulation:
         DESKTOP-3AHUC0F      amd64
 
 _________________________________Experiment 1_________________________________
-Start Time:                  Thu Apr 13 15:10:22 CEST 2023
-Finish Time:                 Thu Apr 13 15:10:24 CEST 2023
-Elapsed Running Time:        1.927
-Total CPU Time:              0.032
+Start Time:                  Thu Apr 13 17:26:31 CEST 2023
+Finish Time:                 Thu Apr 13 17:26:33 CEST 2023
+Elapsed Running Time:        1.545
+Total CPU Time:              0.797
 Batches Completed:           1000
 Experiment Name:             Experiment 1
 Global Variable Settings:    
@@ -35,22 +35,22 @@ Global Variable Settings:
         short                failure_index            10011                  
         short                l1_size                  100                    
         short                l2_size                  100                    
-        short                nprocessors              1                      
+        short                nprocessors              2                      
         short                nsm                      1                      
-        short                nwarps                   2                      
+        short                nwarps                   1                      
         short                register_count_index     0                      
         short                size                     5                      
 
 
 _________________________________Mean Results_________________________________
 Name                  Time               Mean                     Confidence Interval
-warp                  0.0 - 100         6.0000000000E00   +/-   9.0492336256E-09
-exec_dispatch         0.0 - 100         5.0000000000E00   +/-   5.2245774697E-09
+warp                  0.0 - 100         1.0000000000E01   +/-   1.0449154939E-08
+exec_dispatch         0.0 - 100         1.0000000000E01   +/-   1.0449154939E-08
 l1_read               0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 l2_read               0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 dram_read             0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
-alu_ok                0.0 - 100         2.4880000000E00   +/-   6.7869653745E-02
-alu_ko                0.0 - 100         2.5120000000E00   +/-   6.7869653745E-02
+alu_ok                0.0 - 100         1.0000000000E01   +/-   1.0449154939E-08
+alu_ko                0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 l1_read_ko            0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 l2_read_ko            0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 dram_read_ko          0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
@@ -58,9 +58,9 @@ failure               100               0.0000000000E00   +/-   0.0000000000E00
 l1_access             0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 l2_access             0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 dram_access           0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
-clocks                0.0 - 100         1.0000000000E01   +/-   1.0449154939E-08
-bohcounter            100               4.0000000000E00   +/-   0.0000000000E00 
-inst_ready            100               4.0000000000E00   +/-   0.0000000000E00 
+clocks                0.0 - 100         7.5000000000E01   +/-   5.9109346523E-08
+bohcounter            100               8.0000000000E00   +/-   0.0000000000E00 
+inst_ready            100               8.0000000000E00   +/-   0.0000000000E00 
 
 
 _______________________________Variance Results_______________________________

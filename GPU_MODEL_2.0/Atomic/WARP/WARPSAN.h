@@ -217,6 +217,28 @@ public:
   BaseActionClass* Fire();
 }; // DRAM_CLOCKActivityActivity
 
+class Instantaneous_Activity2Activity:public Activity {
+public:
+
+  Place* MEM_OP_COMPLETE;
+  short* MEM_OP_COMPLETE_Mobius_Mark;
+  Place* INSTRUCTION_READY;
+  short* INSTRUCTION_READY_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  Instantaneous_Activity2Activity();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // Instantaneous_Activity2ActivityActivity
+
   //List of user-specified place names
   Place* INST_COUNTER;
   Place* INSTRUCTION_READY;
@@ -228,6 +250,7 @@ public:
   Place* WARP_ACCESS_DRAM;
   Place* WARP_ACCESS_L2;
   Place* WARP_ACCESS_L1;
+  Place* MEM_OP_COMPLETE;
   instructions* WARP;
   ExtendedPlace<short>* SCHEDULER;
   ExtendedPlace<short>* FAILURE_INST;
@@ -238,6 +261,7 @@ public:
   L1_CLOCKActivity L1_CLOCK;
   L2_CLOCKActivity L2_CLOCK;
   DRAM_CLOCKActivity DRAM_CLOCK;
+  Instantaneous_Activity2Activity Instantaneous_Activity2;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
   PostselectGroup DISPATCHER_CopyGroup;
@@ -245,6 +269,7 @@ public:
   PostselectGroup L1_CLOCKGroup;
   PostselectGroup L2_CLOCKGroup;
   PostselectGroup DRAM_CLOCKGroup;
+  PostselectGroup Instantaneous_Activity2Group;
 
   WARPSAN();
   ~WARPSAN();

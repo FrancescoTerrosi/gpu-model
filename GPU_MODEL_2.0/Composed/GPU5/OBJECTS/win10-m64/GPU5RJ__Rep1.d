@@ -46,7 +46,9 @@ OBJECTS/win10-m64/GPU5RJ__Rep1.o: GPU5RJ__Rep1.cpp \
  c:/Mobius-2.5/Cpp/Composer/../BaseClasses/state/ArrayStateVariable.h \
  c:/Mobius-2.5/Cpp/Composer/../BaseClasses/primes.h \
  c:/Mobius-2.5/Cpp/Composer/AllStateVariableTypes.h \
- ../../Atomic/WARP/WARPSAN.h c:/Mobius-2.5/Cpp/BaseClasses/EmptyGroup.h \
+ ../../Composed/GPU5/GPU5RJ__WARP_REG.h c:/Mobius-2.5/Cpp/Composer/Join.h \
+ ../../Atomic/REGISTER_FILE/REGISTER_FILESAN.h \
+ c:/Mobius-2.5/Cpp/BaseClasses/EmptyGroup.h \
  c:/Mobius-2.5/Cpp/BaseClasses/SingleGroup.h \
  c:/Mobius-2.5/Cpp/BaseClasses/StandardErrors.h \
  c:/Mobius-2.5/Cpp/BaseClasses/BaseGroupClass.h \
@@ -73,4 +75,5 @@ OBJECTS/win10-m64/GPU5RJ__Rep1.o: GPU5RJ__Rep1.cpp \
  c:/Mobius-2.5/Cpp/BaseClasses/SAN/../BaseStateVariableClass.h \
  c:/Mobius-2.5/Cpp/BaseClasses/SAN/../primes.h \
  c:/Mobius-2.5/Cpp/BaseClasses/SAN/Place.h \
- c:/Mobius-2.5/Cpp/BaseClasses/SAN/ExtendedPlace.h
+ c:/Mobius-2.5/Cpp/BaseClasses/SAN/ExtendedPlace.h \
+ ../../Atomic/WARP/WARPSAN.h
