@@ -36,8 +36,14 @@
   <reward key="GPU5">
     <value name="GPU5" category="Reward" type="Performance Variables Model"/>
   </reward>
-  <study key="GPU_STUDY">
-    <value name="GPU_STUDY" category="Study" type="Set Study"/>
+  <study key="GPU_STUDY_GEMM128">
+    <value name="GPU_STUDY_GEMM128" category="Study" type="Set Study"/>
+  </study>
+  <study key="GPU_STUDY_GEMM_64">
+    <value name="GPU_STUDY_GEMM_64" category="Study" type="Set Study"/>
+  </study>
+  <study key="GPU_STUDY_GEMM_32">
+    <value name="GPU_STUDY_GEMM_32" category="Study" type="Set Study"/>
   </study>
   <solver key="GPU_SOLVER">
     <value name="GPU_SOLVER" category="Solver" type="Simulator"/>

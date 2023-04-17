@@ -839,18 +839,16 @@
 					<string id="0">WARP</string>
 				</vector>
 				<vector id="AffectingActionsList">
-					<string id="0">WARP-&gt;DRAM_CLOCK</string>
-					<string id="1">WARP-&gt;DISPATCHER_Copy</string>
+					<string id="0">WARP-&gt;DISPATCHER_Copy</string>
+					<string id="1">WARP-&gt;DRAM_CLOCK</string>
 					<string id="2">WARP-&gt;L2_CLOCK</string>
 					<string id="3">WARP-&gt;L1_CLOCK</string>
-					<string id="4">WARP-&gt;Instantaneous_Activity1</string>
 				</vector>
 				<vector id="ImpulseFunctionsList">
-					<string id="0">return 300;</string>
-					<string id="1">return 2;</string>
-					<string id="2">return 175;</string>
-					<string id="3">return 100;</string>
-					<string id="4"></string>
+					<string id="0">return 2;</string>
+					<string id="1">return 600;</string>
+					<string id="2">return 400;</string>
+					<string id="3">return 30;</string>
 				</vector>
 				<string id="RewardFunction"></string>
 				<int id="Type">1</int>

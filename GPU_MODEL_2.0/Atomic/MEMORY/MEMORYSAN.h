@@ -11,6 +11,18 @@
 #include "Cpp/BaseClasses/SAN/Place.h"
 #include "Cpp/BaseClasses/SAN/ExtendedPlace.h"
 extern Short nwarps;
+extern Float local_read_l1;
+extern Float local_read_l2;
+extern Float local_read_dram;
+extern Float local_write_l1;
+extern Float local_write_l2;
+extern Float local_write_dram;
+extern Float global_read_l1;
+extern Float global_read_l2;
+extern Float global_read_dram;
+extern Float global_write_l1;
+extern Float global_write_l2;
+extern Float global_write_dram;
 extern UserDistributions* TheDistribution;
 
 void MemoryError();

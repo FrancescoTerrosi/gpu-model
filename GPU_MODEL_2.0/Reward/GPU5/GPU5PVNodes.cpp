@@ -1277,7 +1277,7 @@ GPU5PV15Impulse0::~GPU5PV15Impulse0() {
 
 double GPU5PV15Impulse0::Impulse_Function(double FiringTime)
 {
-return 300;
+return 2;
 
 return(0);
 }
@@ -1313,7 +1313,7 @@ GPU5PV15Impulse1::~GPU5PV15Impulse1() {
 
 double GPU5PV15Impulse1::Impulse_Function(double FiringTime)
 {
-return 2;
+return 600;
 
 return(0);
 }
@@ -1349,7 +1349,7 @@ GPU5PV15Impulse2::~GPU5PV15Impulse2() {
 
 double GPU5PV15Impulse2::Impulse_Function(double FiringTime)
 {
-return 175;
+return 400;
 
 return(0);
 }
@@ -1385,7 +1385,7 @@ GPU5PV15Impulse3::~GPU5PV15Impulse3() {
 
 double GPU5PV15Impulse3::Impulse_Function(double FiringTime)
 {
-return 100;
+return 30;
 
 return(0);
 }
@@ -1407,8 +1407,8 @@ GPU5PV15::GPU5PV15(int timeindex) {
   double startpts[1]={0.0};
   double stoppts[1]={end};
   Initialize("clocks2",(RewardType)1,1, startpts, stoppts, timeindex, 4,0, 0);
-  AddImpulse("DRAM_CLOCK","WARP",&Impulse0);
-  AddImpulse("DISPATCHER_Copy","WARP",&Impulse1);
+  AddImpulse("DISPATCHER_Copy","WARP",&Impulse0);
+  AddImpulse("DRAM_CLOCK","WARP",&Impulse1);
   AddImpulse("L2_CLOCK","WARP",&Impulse2);
   AddImpulse("L1_CLOCK","WARP",&Impulse3);
 }

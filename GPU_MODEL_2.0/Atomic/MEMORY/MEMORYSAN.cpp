@@ -292,7 +292,7 @@ bool MEMORYSAN::LOCAL_READ_FROMActivity_case1::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_READ_FROMActivity_case1::Weight(){ 
-  return 0;
+  return local_read_l1;
 }
 
 bool MEMORYSAN::LOCAL_READ_FROMActivity_case1::ReactivationPredicate(){ 
@@ -342,7 +342,7 @@ bool MEMORYSAN::LOCAL_READ_FROMActivity_case2::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_READ_FROMActivity_case2::Weight(){ 
-  return 1;
+  return local_read_l2;
 }
 
 bool MEMORYSAN::LOCAL_READ_FROMActivity_case2::ReactivationPredicate(){ 
@@ -392,7 +392,7 @@ bool MEMORYSAN::LOCAL_READ_FROMActivity_case3::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_READ_FROMActivity_case3::Weight(){ 
-  return 0;
+  return local_read_dram;
 }
 
 bool MEMORYSAN::LOCAL_READ_FROMActivity_case3::ReactivationPredicate(){ 
@@ -442,7 +442,7 @@ bool MEMORYSAN::GLOBAL_READ_FROMActivity_case1::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_READ_FROMActivity_case1::Weight(){ 
-  return 0.9;
+  return global_read_l1;
 }
 
 bool MEMORYSAN::GLOBAL_READ_FROMActivity_case1::ReactivationPredicate(){ 
@@ -492,7 +492,7 @@ bool MEMORYSAN::GLOBAL_READ_FROMActivity_case2::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_READ_FROMActivity_case2::Weight(){ 
-  return 0.1;
+  return global_read_l2;
 }
 
 bool MEMORYSAN::GLOBAL_READ_FROMActivity_case2::ReactivationPredicate(){ 
@@ -542,7 +542,7 @@ bool MEMORYSAN::GLOBAL_READ_FROMActivity_case3::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_READ_FROMActivity_case3::Weight(){ 
-  return 0;
+  return global_read_dram;
 }
 
 bool MEMORYSAN::GLOBAL_READ_FROMActivity_case3::ReactivationPredicate(){ 
@@ -661,7 +661,7 @@ bool MEMORYSAN::LOCAL_WRITE_TOActivity_case1::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_WRITE_TOActivity_case1::Weight(){ 
-  return 1/3;
+  return local_write_l1;
 }
 
 bool MEMORYSAN::LOCAL_WRITE_TOActivity_case1::ReactivationPredicate(){ 
@@ -711,7 +711,7 @@ bool MEMORYSAN::LOCAL_WRITE_TOActivity_case2::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_WRITE_TOActivity_case2::Weight(){ 
-  return 1/3;
+  return local_write_l2;
 }
 
 bool MEMORYSAN::LOCAL_WRITE_TOActivity_case2::ReactivationPredicate(){ 
@@ -761,7 +761,7 @@ bool MEMORYSAN::LOCAL_WRITE_TOActivity_case3::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_WRITE_TOActivity_case3::Weight(){ 
-  return 1/3;
+  return local_write_dram;
 }
 
 bool MEMORYSAN::LOCAL_WRITE_TOActivity_case3::ReactivationPredicate(){ 
@@ -811,7 +811,7 @@ bool MEMORYSAN::GLOBAL_WRITE_TOActivity_case1::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_WRITE_TOActivity_case1::Weight(){ 
-  return 0;
+  return global_write_l1;
 }
 
 bool MEMORYSAN::GLOBAL_WRITE_TOActivity_case1::ReactivationPredicate(){ 
@@ -861,7 +861,7 @@ bool MEMORYSAN::GLOBAL_WRITE_TOActivity_case2::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_WRITE_TOActivity_case2::Weight(){ 
-  return 1;
+  return global_write_l2;
 }
 
 bool MEMORYSAN::GLOBAL_WRITE_TOActivity_case2::ReactivationPredicate(){ 
@@ -911,7 +911,7 @@ bool MEMORYSAN::GLOBAL_WRITE_TOActivity_case3::Enabled(){
 }
 
 double MEMORYSAN::GLOBAL_WRITE_TOActivity_case3::Weight(){ 
-  return 0;
+  return global_write_dram;
 }
 
 bool MEMORYSAN::GLOBAL_WRITE_TOActivity_case3::ReactivationPredicate(){ 
