@@ -22,7 +22,6 @@ class GPU5RJ__WARP_REG: public Join {
   Place * INT_ALU_FAILURE;
   Place * KO_CONTENT;
   Place * MEM_FAILURE;
-  Place * MEM_OP_COMPLETE;
   Place * OK_CONTENT;
   Place * REGISTERS_FILL;
   Place * REG_FAILURE;

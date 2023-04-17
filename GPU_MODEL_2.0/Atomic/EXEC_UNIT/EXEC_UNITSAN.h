@@ -122,28 +122,6 @@ public:
   BaseActionClass* Fire();
 }; // handle_failure_floatActivityActivity
 
-class Instantaneous_Activity1Activity:public Activity {
-public:
-
-  Place* MEM_OP_COMPLETE;
-  short* MEM_OP_COMPLETE_Mobius_Mark;
-  Place* INSTRUCTION_READY;
-  short* INSTRUCTION_READY_Mobius_Mark;
-
-  double* TheDistributionParameters;
-  Instantaneous_Activity1Activity();
-  double Rate(){return 0;}
-  bool Enabled();
-  void LinkVariables();
-  double Weight();
-  bool ReactivationPredicate();
-  bool ReactivationFunction();
-  double SampleDistribution();
-  double* ReturnDistributionParameters();
-  int Rank();
-  BaseActionClass* Fire();
-}; // Instantaneous_Activity1ActivityActivity
-
 class DISPATCHERActivity:public Activity {
 public:
 
@@ -338,7 +316,6 @@ public:
 
   // Create instances of all actvities
   handle_failure_floatActivity handle_failure_float;
-  Instantaneous_Activity1Activity Instantaneous_Activity1;
   DISPATCHERActivity DISPATCHER;
   Instantaneous_Activity2Activity_case1 Instantaneous_Activity2_case1;
   Instantaneous_Activity2Activity_case2 Instantaneous_Activity2_case2;
@@ -349,7 +326,6 @@ public:
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
   PostselectGroup handle_failure_floatGroup;
-  PostselectGroup Instantaneous_Activity1Group;
   PostselectGroup DISPATCHERGroup;
   PostselectGroup Instantaneous_Activity2Group;
   PostselectGroup handle_failureGroup;

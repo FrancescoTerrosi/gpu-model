@@ -10,6 +10,7 @@
 #include "Cpp/BaseClasses/SAN/SANModel.h" 
 #include "Cpp/BaseClasses/SAN/Place.h"
 #include "Cpp/BaseClasses/SAN/ExtendedPlace.h"
+extern Short nwarps;
 extern UserDistributions* TheDistribution;
 
 void MemoryError();

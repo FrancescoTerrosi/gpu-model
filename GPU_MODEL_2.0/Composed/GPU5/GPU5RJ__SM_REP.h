@@ -21,8 +21,8 @@ class GPU5RJ__SM_REP: public Rep {
   ~GPU5RJ__SM_REP();
 
   // Declare new variables
+  Place * INSTRUCTION_READY;
   Place * MEM_FAILURE;
-  Place * MEM_OP_COMPLETE;
   Place * READ_DRAM;
   Place * READ_L2;
   Place * WRITE_DRAM;

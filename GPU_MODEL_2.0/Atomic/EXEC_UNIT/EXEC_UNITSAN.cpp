@@ -26,21 +26,19 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
   Instantaneous_Activity3Group.appendGroup((BaseGroupClass*) &Instantaneous_Activity3_case1);
   Instantaneous_Activity3Group.appendGroup((BaseGroupClass*) &Instantaneous_Activity3_case2);
 
-  Activity* InitialActionList[9]={
+  Activity* InitialActionList[8]={
     &handle_failure_float, //0
-    &Instantaneous_Activity1, //1
-    &DISPATCHER, //2
-    &Instantaneous_Activity2_case1, //3
-    &Instantaneous_Activity2_case2, //4
-    &handle_failure, //5
-    &dhn, //6
-    &Instantaneous_Activity3_case1, //7
-    &Instantaneous_Activity3_case2  // 8
+    &DISPATCHER, //1
+    &Instantaneous_Activity2_case1, //2
+    &Instantaneous_Activity2_case2, //3
+    &handle_failure, //4
+    &dhn, //5
+    &Instantaneous_Activity3_case1, //6
+    &Instantaneous_Activity3_case2  // 7
   };
 
-  BaseGroupClass* InitialGroupList[7]={
+  BaseGroupClass* InitialGroupList[6]={
     (BaseGroupClass*) &(handle_failure_float), 
-    (BaseGroupClass*) &(Instantaneous_Activity1), 
     (BaseGroupClass*) &(DISPATCHER), 
     (BaseGroupClass*) &(Instantaneous_Activity2Group), 
     (BaseGroupClass*) &(handle_failure), 
@@ -91,32 +89,32 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
   };
   initializeSANModelNow("EXEC_UNIT", 17, InitialPlaces, 
                         0, InitialROPlaces, 
-                        9, InitialActionList, 7, InitialGroupList);
+                        8, InitialActionList, 6, InitialGroupList);
 
 
   assignPlacesToActivitiesInst();
   assignPlacesToActivitiesTimed();
 
-  int AffectArcs[31][2]={ 
-    {3,0}, {0,0}, {4,0}, {2,0}, {1,0}, {6,1}, {2,1}, {2,2}, {14,2}, 
-    {15,2}, {16,2}, {7,2}, {12,3}, {2,3}, {4,3}, {12,4}, {2,4}, 
-    {5,4}, {7,5}, {11,5}, {4,5}, {2,5}, {12,5}, {4,6}, {13,6}, 
-    {1,7}, {2,7}, {4,7}, {1,8}, {2,8}, {5,8}
+  int AffectArcs[29][2]={ 
+    {3,0}, {0,0}, {4,0}, {2,0}, {1,0}, {2,1}, {14,1}, {15,1}, 
+    {16,1}, {7,1}, {12,2}, {2,2}, {4,2}, {12,3}, {2,3}, {5,3}, 
+    {7,4}, {11,4}, {4,4}, {2,4}, {12,4}, {4,5}, {13,5}, {1,6}, 
+    {2,6}, {4,6}, {1,7}, {2,7}, {5,7}
   };
-  for(int n=0;n<31;n++) {
+  for(int n=0;n<29;n++) {
     AddAffectArc(InitialPlaces[AffectArcs[n][0]],
                  InitialActionList[AffectArcs[n][1]]);
   }
-  int EnableArcs[10][2]={ 
-    {3,0}, {6,1}, {14,2}, {8,2}, {12,3}, {12,4}, {7,5}, {4,6}, 
-    {1,7}, {1,8}
+  int EnableArcs[9][2]={ 
+    {3,0}, {14,1}, {8,1}, {12,2}, {12,3}, {7,4}, {4,5}, {1,6}, 
+    {1,7}
   };
-  for(int n=0;n<10;n++) {
+  for(int n=0;n<9;n++) {
     AddEnableArc(InitialPlaces[EnableArcs[n][0]],
                  InitialActionList[EnableArcs[n][1]]);
   }
 
-  for(int n=0;n<9;n++) {
+  for(int n=0;n<8;n++) {
     InitialActionList[n]->LinkVariables();
   }
   CustomInitialization();
@@ -137,8 +135,6 @@ void EXEC_UNITSAN::assignPlacesToActivitiesInst(){
   handle_failure_float.RESULT_KO = (Place*) LocalStateVariables[4];
   handle_failure_float.INSTRUCTION_READY = (Place*) LocalStateVariables[2];
   handle_failure_float.ROUTE_ALU_FLOAT = (Place*) LocalStateVariables[1];
-  Instantaneous_Activity1.MEM_OP_COMPLETE = (Place*) LocalStateVariables[6];
-  Instantaneous_Activity1.INSTRUCTION_READY = (Place*) LocalStateVariables[2];
   DISPATCHER.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[14];
   DISPATCHER.REGISTERS_FILL = (Place*) LocalStateVariables[8];
   DISPATCHER.INSTRUCTION_READY = (Place*) LocalStateVariables[2];
@@ -232,59 +228,11 @@ BaseActionClass* EXEC_UNITSAN::handle_failure_floatActivity::Fire(){
   return this;
 }
 
-/*======================Instantaneous_Activity1Activity========================*/
-
-
-EXEC_UNITSAN::Instantaneous_Activity1Activity::Instantaneous_Activity1Activity(){
-  ActivityInitialize("Instantaneous_Activity1",1,Instantaneous , RaceEnabled, 2,1, false);
-}
-
-void EXEC_UNITSAN::Instantaneous_Activity1Activity::LinkVariables(){
-  MEM_OP_COMPLETE->Register(&MEM_OP_COMPLETE_Mobius_Mark);
-  INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
-}
-
-bool EXEC_UNITSAN::Instantaneous_Activity1Activity::Enabled(){
-  OldEnabled=NewEnabled;
-  NewEnabled=(((*(MEM_OP_COMPLETE_Mobius_Mark)) >=1));
-  return NewEnabled;
-}
-
-double EXEC_UNITSAN::Instantaneous_Activity1Activity::Weight(){ 
-  return 1;
-}
-
-bool EXEC_UNITSAN::Instantaneous_Activity1Activity::ReactivationPredicate(){ 
-  return false;
-}
-
-bool EXEC_UNITSAN::Instantaneous_Activity1Activity::ReactivationFunction(){ 
-  return false;
-}
-
-double EXEC_UNITSAN::Instantaneous_Activity1Activity::SampleDistribution(){
-  return 0;
-}
-
-double* EXEC_UNITSAN::Instantaneous_Activity1Activity::ReturnDistributionParameters(){
-    return NULL;
-}
-
-int EXEC_UNITSAN::Instantaneous_Activity1Activity::Rank(){
-  return 1;
-}
-
-BaseActionClass* EXEC_UNITSAN::Instantaneous_Activity1Activity::Fire(){
-  (*(MEM_OP_COMPLETE_Mobius_Mark))--;
-  (*(INSTRUCTION_READY_Mobius_Mark))++;
-  return this;
-}
-
 /*======================DISPATCHERActivity========================*/
 
 
 EXEC_UNITSAN::DISPATCHERActivity::DISPATCHERActivity(){
-  ActivityInitialize("DISPATCHER",2,Instantaneous , RaceEnabled, 5,2, false);
+  ActivityInitialize("DISPATCHER",1,Instantaneous , RaceEnabled, 5,2, false);
 }
 
 void EXEC_UNITSAN::DISPATCHERActivity::LinkVariables(){
@@ -373,7 +321,7 @@ SCHEDULER->Mark() = -1;
 
 
 EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Instantaneous_Activity2Activity_case1(){
-  ActivityInitialize("Instantaneous_Activity2_case1",3,Instantaneous , RaceEnabled, 3,1, false);
+  ActivityInitialize("Instantaneous_Activity2_case1",2,Instantaneous , RaceEnabled, 3,1, false);
 }
 
 void EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::LinkVariables(){
@@ -423,7 +371,7 @@ BaseActionClass* EXEC_UNITSAN::Instantaneous_Activity2Activity_case1::Fire(){
 
 
 EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Instantaneous_Activity2Activity_case2(){
-  ActivityInitialize("Instantaneous_Activity2_case2",3,Instantaneous , RaceEnabled, 3,1, false);
+  ActivityInitialize("Instantaneous_Activity2_case2",2,Instantaneous , RaceEnabled, 3,1, false);
 }
 
 void EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::LinkVariables(){
@@ -473,7 +421,7 @@ BaseActionClass* EXEC_UNITSAN::Instantaneous_Activity2Activity_case2::Fire(){
 
 
 EXEC_UNITSAN::handle_failureActivity::handle_failureActivity(){
-  ActivityInitialize("handle_failure",4,Instantaneous , RaceEnabled, 5,1, false);
+  ActivityInitialize("handle_failure",3,Instantaneous , RaceEnabled, 5,1, false);
 }
 
 void EXEC_UNITSAN::handle_failureActivity::LinkVariables(){
@@ -534,7 +482,7 @@ BaseActionClass* EXEC_UNITSAN::handle_failureActivity::Fire(){
 
 
 EXEC_UNITSAN::dhnActivity::dhnActivity(){
-  ActivityInitialize("dhn",5,Instantaneous , RaceEnabled, 2,1, false);
+  ActivityInitialize("dhn",4,Instantaneous , RaceEnabled, 2,1, false);
 }
 
 void EXEC_UNITSAN::dhnActivity::LinkVariables(){
@@ -582,7 +530,7 @@ BaseActionClass* EXEC_UNITSAN::dhnActivity::Fire(){
 
 
 EXEC_UNITSAN::Instantaneous_Activity3Activity_case1::Instantaneous_Activity3Activity_case1(){
-  ActivityInitialize("Instantaneous_Activity3_case1",6,Instantaneous , RaceEnabled, 3,1, false);
+  ActivityInitialize("Instantaneous_Activity3_case1",5,Instantaneous , RaceEnabled, 3,1, false);
 }
 
 void EXEC_UNITSAN::Instantaneous_Activity3Activity_case1::LinkVariables(){
@@ -632,7 +580,7 @@ BaseActionClass* EXEC_UNITSAN::Instantaneous_Activity3Activity_case1::Fire(){
 
 
 EXEC_UNITSAN::Instantaneous_Activity3Activity_case2::Instantaneous_Activity3Activity_case2(){
-  ActivityInitialize("Instantaneous_Activity3_case2",6,Instantaneous , RaceEnabled, 3,1, false);
+  ActivityInitialize("Instantaneous_Activity3_case2",5,Instantaneous , RaceEnabled, 3,1, false);
 }
 
 void EXEC_UNITSAN::Instantaneous_Activity3Activity_case2::LinkVariables(){

@@ -292,7 +292,7 @@ bool MEMORYSAN::LOCAL_READ_FROMActivity_case1::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_READ_FROMActivity_case1::Weight(){ 
-  return 0.3;
+  return 0;
 }
 
 bool MEMORYSAN::LOCAL_READ_FROMActivity_case1::ReactivationPredicate(){ 
@@ -317,8 +317,8 @@ int MEMORYSAN::LOCAL_READ_FROMActivity_case1::Rank(){
 
 BaseActionClass* MEMORYSAN::LOCAL_READ_FROMActivity_case1::Fire(){
   (*(READ_LOCAL_Mobius_Mark))--;
+  WARP_ACCESS_L1->Mark() += nwarps;
   (*(READ_L1_Mobius_Mark))++;
-  (*(WARP_ACCESS_L1_Mobius_Mark))++;
   return this;
 }
 
@@ -342,7 +342,7 @@ bool MEMORYSAN::LOCAL_READ_FROMActivity_case2::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_READ_FROMActivity_case2::Weight(){ 
-  return 0.3;
+  return 1;
 }
 
 bool MEMORYSAN::LOCAL_READ_FROMActivity_case2::ReactivationPredicate(){ 
@@ -367,8 +367,8 @@ int MEMORYSAN::LOCAL_READ_FROMActivity_case2::Rank(){
 
 BaseActionClass* MEMORYSAN::LOCAL_READ_FROMActivity_case2::Fire(){
   (*(READ_LOCAL_Mobius_Mark))--;
+  WARP_ACCESS_L2->Mark() += nwarps;
   (*(READ_L2_Mobius_Mark))++;
-  (*(WARP_ACCESS_L2_Mobius_Mark))++;
   return this;
 }
 
@@ -392,7 +392,7 @@ bool MEMORYSAN::LOCAL_READ_FROMActivity_case3::Enabled(){
 }
 
 double MEMORYSAN::LOCAL_READ_FROMActivity_case3::Weight(){ 
-  return 0.3;
+  return 0;
 }
 
 bool MEMORYSAN::LOCAL_READ_FROMActivity_case3::ReactivationPredicate(){ 
@@ -417,8 +417,8 @@ int MEMORYSAN::LOCAL_READ_FROMActivity_case3::Rank(){
 
 BaseActionClass* MEMORYSAN::LOCAL_READ_FROMActivity_case3::Fire(){
   (*(READ_LOCAL_Mobius_Mark))--;
+  WARP_ACCESS_DRAM->Mark() += nwarps;
   (*(READ_DRAM_Mobius_Mark))++;
-  (*(WARP_ACCESS_DRAM_Mobius_Mark))++;
   return this;
 }
 
@@ -467,8 +467,8 @@ int MEMORYSAN::GLOBAL_READ_FROMActivity_case1::Rank(){
 
 BaseActionClass* MEMORYSAN::GLOBAL_READ_FROMActivity_case1::Fire(){
   (*(READ_GLOBAL_Mobius_Mark))--;
+  WARP_ACCESS_L1->Mark() += nwarps;
   (*(READ_L1_Mobius_Mark))++;
-  (*(WARP_ACCESS_L1_Mobius_Mark))++;
   return this;
 }
 
@@ -517,8 +517,8 @@ int MEMORYSAN::GLOBAL_READ_FROMActivity_case2::Rank(){
 
 BaseActionClass* MEMORYSAN::GLOBAL_READ_FROMActivity_case2::Fire(){
   (*(READ_GLOBAL_Mobius_Mark))--;
+  WARP_ACCESS_L2->Mark() += nwarps;
   (*(READ_L2_Mobius_Mark))++;
-  (*(WARP_ACCESS_L2_Mobius_Mark))++;
   return this;
 }
 
@@ -567,8 +567,8 @@ int MEMORYSAN::GLOBAL_READ_FROMActivity_case3::Rank(){
 
 BaseActionClass* MEMORYSAN::GLOBAL_READ_FROMActivity_case3::Fire(){
   (*(READ_GLOBAL_Mobius_Mark))--;
+  WARP_ACCESS_DRAM->Mark() += nwarps;
   (*(READ_DRAM_Mobius_Mark))++;
-  (*(WARP_ACCESS_DRAM_Mobius_Mark))++;
   return this;
 }
 
@@ -686,8 +686,8 @@ int MEMORYSAN::LOCAL_WRITE_TOActivity_case1::Rank(){
 
 BaseActionClass* MEMORYSAN::LOCAL_WRITE_TOActivity_case1::Fire(){
   (*(WRITE_LOCAL_Mobius_Mark))--;
+  WARP_ACCESS_L1->Mark() += nwarps;
   (*(WRITE_L1_Mobius_Mark))++;
-  (*(WARP_ACCESS_L1_Mobius_Mark))++;
   return this;
 }
 
@@ -736,8 +736,8 @@ int MEMORYSAN::LOCAL_WRITE_TOActivity_case2::Rank(){
 
 BaseActionClass* MEMORYSAN::LOCAL_WRITE_TOActivity_case2::Fire(){
   (*(WRITE_LOCAL_Mobius_Mark))--;
+  WARP_ACCESS_L2->Mark() += nwarps;
   (*(WRITE_L2_Mobius_Mark))++;
-  (*(WARP_ACCESS_L2_Mobius_Mark))++;
   return this;
 }
 
@@ -786,8 +786,8 @@ int MEMORYSAN::LOCAL_WRITE_TOActivity_case3::Rank(){
 
 BaseActionClass* MEMORYSAN::LOCAL_WRITE_TOActivity_case3::Fire(){
   (*(WRITE_LOCAL_Mobius_Mark))--;
+  WARP_ACCESS_DRAM->Mark() += nwarps;
   (*(WRITE_DRAM_Mobius_Mark))++;
-  (*(WARP_ACCESS_DRAM_Mobius_Mark))++;
   return this;
 }
 
@@ -836,8 +836,8 @@ int MEMORYSAN::GLOBAL_WRITE_TOActivity_case1::Rank(){
 
 BaseActionClass* MEMORYSAN::GLOBAL_WRITE_TOActivity_case1::Fire(){
   (*(WRITE_GLOBAL_Mobius_Mark))--;
+  WARP_ACCESS_L1->Mark() += nwarps;
   (*(WRITE_L1_Mobius_Mark))++;
-  (*(WARP_ACCESS_L1_Mobius_Mark))++;
   return this;
 }
 
@@ -886,8 +886,8 @@ int MEMORYSAN::GLOBAL_WRITE_TOActivity_case2::Rank(){
 
 BaseActionClass* MEMORYSAN::GLOBAL_WRITE_TOActivity_case2::Fire(){
   (*(WRITE_GLOBAL_Mobius_Mark))--;
+  WARP_ACCESS_L2->Mark() += nwarps;
   (*(WRITE_L2_Mobius_Mark))++;
-  (*(WARP_ACCESS_L2_Mobius_Mark))++;
   return this;
 }
 
@@ -936,8 +936,8 @@ int MEMORYSAN::GLOBAL_WRITE_TOActivity_case3::Rank(){
 
 BaseActionClass* MEMORYSAN::GLOBAL_WRITE_TOActivity_case3::Fire(){
   (*(WRITE_GLOBAL_Mobius_Mark))--;
+  WARP_ACCESS_DRAM->Mark() += nwarps;
   (*(WRITE_DRAM_Mobius_Mark))++;
-  (*(WARP_ACCESS_DRAM_Mobius_Mark))++;
   return this;
 }
 

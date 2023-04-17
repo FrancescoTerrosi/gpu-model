@@ -756,34 +756,22 @@
 				<vector id="AffectingActionsList">
 					<string id="0">EXEC_UNIT-&gt;handle_failure</string>
 					<string id="1">MEMORY-&gt;PERFORM_READ</string>
-					<string id="2">EXEC_UNIT-&gt;DISPATCHER</string>
-					<string id="3">WARP-&gt;DRAM_CLOCK</string>
+					<string id="2">WARP-&gt;DISPATCHER_Copy</string>
+					<string id="3">EXEC_UNIT-&gt;DISPATCHER</string>
 					<string id="4">MEMORY-&gt;PERFORM_WRITE</string>
-					<string id="5">WARP-&gt;L2_CLOCK</string>
-					<string id="6">WARP-&gt;DISPATCHER_Copy</string>
+					<string id="5">WARP-&gt;DRAM_CLOCK</string>
+					<string id="6">WARP-&gt;L2_CLOCK</string>
 					<string id="7">WARP-&gt;L1_CLOCK</string>
-					<string id="8">EXEC_UNIT-&gt;Instantaneous_Activity1</string>
-					<string id="9">EXEC_UNIT-&gt;handle_failure_float</string>
-					<string id="10">EXEC_UNIT-&gt;Instantaneous_Activity2_case1</string>
-					<string id="11">EXEC_UNIT-&gt;dhn</string>
-					<string id="12">MEMORY-&gt;LOCAL_READ_FROM_case1</string>
-					<string id="13">MEMORY-&gt;GLOBAL_READ_FROM_case3</string>
 				</vector>
 				<vector id="ImpulseFunctionsList">
 					<string id="0">return 2.0/(nsm * nprocessors);</string>
 					<string id="1">return 2.0/(nsm * nprocessors);</string>
 					<string id="2">return 2.0/(nsm * nprocessors);</string>
-					<string id="3">return 300.0/(nsm * nprocessors);</string>
+					<string id="3">return 2.0/(nsm * nprocessors);</string>
 					<string id="4">return 2.0/(nsm * nprocessors);</string>
-					<string id="5">return 175.0/(nsm * nprocessors);</string>
-					<string id="6">return 2.0/(nsm * nprocessors);</string>
+					<string id="5">return 300.0/(nsm * nprocessors);</string>
+					<string id="6">return 175.0/(nsm * nprocessors);</string>
 					<string id="7">return 100.0/(nsm * nprocessors);</string>
-					<string id="8"></string>
-					<string id="9"></string>
-					<string id="10"></string>
-					<string id="11"></string>
-					<string id="12"></string>
-					<string id="13"></string>
 				</vector>
 				<string id="RewardFunction"></string>
 				<int id="Type">1</int>
@@ -841,20 +829,31 @@
 					<boolean id="18">true</boolean>
 					<boolean id="19">true</boolean>
 					<boolean id="20">true</boolean>
+					<boolean id="21">true</boolean>
 				</vector>
 			</class>
 			<class id="Mobius.RewardModels.pvs.VariableInfo">
 				<int id="ClassVersion">7</int>
-				<string id="Name">bohcounter</string>
+				<string id="Name">clocks2</string>
 				<vector id="AffectingModelList">
 					<string id="0">WARP</string>
 				</vector>
 				<vector id="AffectingActionsList">
+					<string id="0">WARP-&gt;DRAM_CLOCK</string>
+					<string id="1">WARP-&gt;DISPATCHER_Copy</string>
+					<string id="2">WARP-&gt;L2_CLOCK</string>
+					<string id="3">WARP-&gt;L1_CLOCK</string>
+					<string id="4">WARP-&gt;Instantaneous_Activity1</string>
 				</vector>
 				<vector id="ImpulseFunctionsList">
+					<string id="0">return 300;</string>
+					<string id="1">return 2;</string>
+					<string id="2">return 175;</string>
+					<string id="3">return 100;</string>
+					<string id="4"></string>
 				</vector>
-				<string id="RewardFunction">return WARP-&gt;INST_COUNTER-&gt;Mark();</string>
-				<int id="Type">0</int>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
 				<int id="TimeSeriesType">1</int>
 				<double id="TimeSeriesFirst">0.0</double>
 				<double id="TimeSeriesLast">0.0</double>
@@ -862,7 +861,7 @@
 				<double id="TimeSeriesInterval">0.0</double>
 				<int id="NumTimePoints">1</int>
 				<vector id="StartTimes">
-					<string id="0">end</string>
+					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
 					<string id="0">end</string>
@@ -888,6 +887,11 @@
 				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
 				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
 				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+					<boolean id="1">true</boolean>
+					<boolean id="2">true</boolean>
+					<boolean id="3">true</boolean>
+					<boolean id="4">true</boolean>
 				</vector>
 			</class>
 			<class id="Mobius.RewardModels.pvs.VariableInfo">

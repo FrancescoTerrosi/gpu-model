@@ -37,7 +37,7 @@
 							<int id="ClassVersion">3</int>
 							<class id="Mobius.BaseClasses.BasePanelObjectClass">
 								<int id="ClassVersion">5</int>
-								<string id="Name">MEM_OP_COMPLETE</string>
+								<string id="Name">INSTRUCTION_READY</string>
 								<boolean id="ContainsLabel">true</boolean>
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
@@ -48,7 +48,7 @@
 						</class>
 						<boolean id="ReadOnly">false</boolean>
 						<boolean id="ConstantMarking">true</boolean>
-						<int id="InitialState">0</int>
+						<int id="InitialState">1</int>
 					</class>
 					<class id="Mobius.AtomicModels.San.PlacePanelObject">
 						<int id="ClassVersion">1</int>
@@ -840,7 +840,7 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">Instantaneous_Activity2</string>
-						<string id="FinishVertex">MEM_OP_COMPLETE</string>
+						<string id="FinishVertex">INSTRUCTION_READY</string>
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
@@ -857,7 +857,7 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">Instantaneous_Activity1</string>
-						<string id="FinishVertex">MEM_OP_COMPLETE</string>
+						<string id="FinishVertex">INSTRUCTION_READY</string>
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
@@ -874,7 +874,7 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">Instantaneous_Activity12</string>
-						<string id="FinishVertex">MEM_OP_COMPLETE</string>
+						<string id="FinishVertex">INSTRUCTION_READY</string>
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
@@ -891,7 +891,7 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">Instantaneous_Activity23</string>
-						<string id="FinishVertex">MEM_OP_COMPLETE</string>
+						<string id="FinishVertex">INSTRUCTION_READY</string>
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">

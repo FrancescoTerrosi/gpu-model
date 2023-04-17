@@ -70,7 +70,7 @@ L1_CACHESAN::L1_CACHESAN(){
   ROUTE_READ = new Place("ROUTE_READ" ,0);
   KO_CONTENT_TEMP = new Place("KO_CONTENT_TEMP" ,0);
   WRITE_L1 = new Place("WRITE_L1" ,0);
-  MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE" ,0);
+  INSTRUCTION_READY = new Place("INSTRUCTION_READY" ,1);
   OK_CONTENT_TEMP = new Place("OK_CONTENT_TEMP" ,0);
   KO_READ = new Place("KO_READ" ,0);
   MEMORY_KO = new Place("MEMORY_KO" ,0);
@@ -89,7 +89,7 @@ L1_CACHESAN::L1_CACHESAN(){
     ROUTE_READ,  // 1
     KO_CONTENT_TEMP,  // 2
     WRITE_L1,  // 3
-    MEM_OP_COMPLETE,  // 4
+    INSTRUCTION_READY,  // 4
     OK_CONTENT_TEMP,  // 5
     KO_READ,  // 6
     MEMORY_KO,  // 7
@@ -153,18 +153,18 @@ L1_CACHESAN::~L1_CACHESAN(){
 
 void L1_CACHESAN::assignPlacesToActivitiesInst(){
   Instantaneous_Activity23.KO_CONTENT_TEMP = (Place*) LocalStateVariables[2];
-  Instantaneous_Activity23.MEM_OP_COMPLETE = (Place*) LocalStateVariables[4];
+  Instantaneous_Activity23.INSTRUCTION_READY = (Place*) LocalStateVariables[4];
   Instantaneous_Activity12.OK_CONTENT_TEMP = (Place*) LocalStateVariables[5];
-  Instantaneous_Activity12.MEM_OP_COMPLETE = (Place*) LocalStateVariables[4];
+  Instantaneous_Activity12.INSTRUCTION_READY = (Place*) LocalStateVariables[4];
   Instantaneous_Activity2.MEMORY_KO = (Place*) LocalStateVariables[7];
-  Instantaneous_Activity2.MEM_OP_COMPLETE = (Place*) LocalStateVariables[4];
+  Instantaneous_Activity2.INSTRUCTION_READY = (Place*) LocalStateVariables[4];
   Instantaneous_Activity2.KO_READ = (Place*) LocalStateVariables[6];
   READ_FROM_case1.ROUTE_READ = (Place*) LocalStateVariables[1];
   READ_FROM_case1.MEMORY_OK = (Place*) LocalStateVariables[9];
   READ_FROM_case2.ROUTE_READ = (Place*) LocalStateVariables[1];
   READ_FROM_case2.MEMORY_KO = (Place*) LocalStateVariables[7];
   Instantaneous_Activity1.MEMORY_OK = (Place*) LocalStateVariables[9];
-  Instantaneous_Activity1.MEM_OP_COMPLETE = (Place*) LocalStateVariables[4];
+  Instantaneous_Activity1.INSTRUCTION_READY = (Place*) LocalStateVariables[4];
   Instantaneous_Activity1.OK_READ = (Place*) LocalStateVariables[10];
   REPLACE_case1.REPLACE_CONTENT_OK = (Place*) LocalStateVariables[13];
   REPLACE_case1.OK_CONTENT_TEMP = (Place*) LocalStateVariables[5];
@@ -220,7 +220,7 @@ L1_CACHESAN::Instantaneous_Activity23Activity::Instantaneous_Activity23Activity(
 
 void L1_CACHESAN::Instantaneous_Activity23Activity::LinkVariables(){
   KO_CONTENT_TEMP->Register(&KO_CONTENT_TEMP_Mobius_Mark);
-  MEM_OP_COMPLETE->Register(&MEM_OP_COMPLETE_Mobius_Mark);
+  INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 }
 
 bool L1_CACHESAN::Instantaneous_Activity23Activity::Enabled(){
@@ -255,7 +255,7 @@ int L1_CACHESAN::Instantaneous_Activity23Activity::Rank(){
 
 BaseActionClass* L1_CACHESAN::Instantaneous_Activity23Activity::Fire(){
   (*(KO_CONTENT_TEMP_Mobius_Mark))--;
-  (*(MEM_OP_COMPLETE_Mobius_Mark))++;
+  (*(INSTRUCTION_READY_Mobius_Mark))++;
   return this;
 }
 
@@ -268,7 +268,7 @@ L1_CACHESAN::Instantaneous_Activity12Activity::Instantaneous_Activity12Activity(
 
 void L1_CACHESAN::Instantaneous_Activity12Activity::LinkVariables(){
   OK_CONTENT_TEMP->Register(&OK_CONTENT_TEMP_Mobius_Mark);
-  MEM_OP_COMPLETE->Register(&MEM_OP_COMPLETE_Mobius_Mark);
+  INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 }
 
 bool L1_CACHESAN::Instantaneous_Activity12Activity::Enabled(){
@@ -303,7 +303,7 @@ int L1_CACHESAN::Instantaneous_Activity12Activity::Rank(){
 
 BaseActionClass* L1_CACHESAN::Instantaneous_Activity12Activity::Fire(){
   (*(OK_CONTENT_TEMP_Mobius_Mark))--;
-  (*(MEM_OP_COMPLETE_Mobius_Mark))++;
+  (*(INSTRUCTION_READY_Mobius_Mark))++;
   return this;
 }
 
@@ -316,7 +316,7 @@ L1_CACHESAN::Instantaneous_Activity2Activity::Instantaneous_Activity2Activity(){
 
 void L1_CACHESAN::Instantaneous_Activity2Activity::LinkVariables(){
   MEMORY_KO->Register(&MEMORY_KO_Mobius_Mark);
-  MEM_OP_COMPLETE->Register(&MEM_OP_COMPLETE_Mobius_Mark);
+  INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
   KO_READ->Register(&KO_READ_Mobius_Mark);
 }
 
@@ -352,7 +352,7 @@ int L1_CACHESAN::Instantaneous_Activity2Activity::Rank(){
 
 BaseActionClass* L1_CACHESAN::Instantaneous_Activity2Activity::Fire(){
   (*(MEMORY_KO_Mobius_Mark))--;
-  (*(MEM_OP_COMPLETE_Mobius_Mark))++;
+  (*(INSTRUCTION_READY_Mobius_Mark))++;
   (*(KO_READ_Mobius_Mark))++;
   return this;
 }
@@ -462,7 +462,7 @@ L1_CACHESAN::Instantaneous_Activity1Activity::Instantaneous_Activity1Activity(){
 
 void L1_CACHESAN::Instantaneous_Activity1Activity::LinkVariables(){
   MEMORY_OK->Register(&MEMORY_OK_Mobius_Mark);
-  MEM_OP_COMPLETE->Register(&MEM_OP_COMPLETE_Mobius_Mark);
+  INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
   OK_READ->Register(&OK_READ_Mobius_Mark);
 }
 
@@ -498,7 +498,7 @@ int L1_CACHESAN::Instantaneous_Activity1Activity::Rank(){
 
 BaseActionClass* L1_CACHESAN::Instantaneous_Activity1Activity::Fire(){
   (*(MEMORY_OK_Mobius_Mark))--;
-  (*(MEM_OP_COMPLETE_Mobius_Mark))++;
+  (*(INSTRUCTION_READY_Mobius_Mark))++;
   (*(OK_READ_Mobius_Mark))++;
   return this;
 }

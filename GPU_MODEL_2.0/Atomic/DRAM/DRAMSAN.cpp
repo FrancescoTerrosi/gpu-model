@@ -66,7 +66,7 @@ DRAMSAN::DRAMSAN(){
     (BaseGroupClass*) &(Instantaneous_Activity12)
   };
 
-  MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE" ,0);
+  INSTRUCTION_READY = new Place("INSTRUCTION_READY" ,1);
   KO_READ = new Place("KO_READ" ,0);
   MEMORY_KO = new Place("MEMORY_KO" ,0);
   READ_DRAM = new Place("READ_DRAM" ,0);
@@ -85,7 +85,7 @@ DRAMSAN::DRAMSAN(){
   OK_CONTENT = new Place("OK_CONTENT" ,0);
   KO_CONTENT = new Place("KO_CONTENT" ,0);
   BaseStateVariableClass* InitialPlaces[18]={
-    MEM_OP_COMPLETE,  // 0
+    INSTRUCTION_READY,  // 0
     KO_READ,  // 1
     MEMORY_KO,  // 2
     READ_DRAM,  // 3
@@ -153,14 +153,14 @@ DRAMSAN::~DRAMSAN(){
 
 void DRAMSAN::assignPlacesToActivitiesInst(){
   Instantaneous_Activity2.MEMORY_KO = (Place*) LocalStateVariables[2];
-  Instantaneous_Activity2.MEM_OP_COMPLETE = (Place*) LocalStateVariables[0];
+  Instantaneous_Activity2.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
   Instantaneous_Activity2.KO_READ = (Place*) LocalStateVariables[1];
   READ_FROM_case1.ROUTE_READ = (Place*) LocalStateVariables[7];
   READ_FROM_case1.MEMORY_OK = (Place*) LocalStateVariables[5];
   READ_FROM_case2.ROUTE_READ = (Place*) LocalStateVariables[7];
   READ_FROM_case2.MEMORY_KO = (Place*) LocalStateVariables[2];
   Instantaneous_Activity1.MEMORY_OK = (Place*) LocalStateVariables[5];
-  Instantaneous_Activity1.MEM_OP_COMPLETE = (Place*) LocalStateVariables[0];
+  Instantaneous_Activity1.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
   Instantaneous_Activity1.OK_READ = (Place*) LocalStateVariables[4];
   Instantaneous_Activity4.READ_DRAM = (Place*) LocalStateVariables[3];
   Instantaneous_Activity4.MEM_FAILURE = (Place*) LocalStateVariables[6];
@@ -201,9 +201,9 @@ void DRAMSAN::assignPlacesToActivitiesInst(){
   REPLACE_KO_case2.KO_CONTENT = (Place*) LocalStateVariables[17];
   REPLACE_KO_case2.OK_CONTENT = (Place*) LocalStateVariables[16];
   Instantaneous_Activity23.KO_CONTENT_TEMP = (Place*) LocalStateVariables[14];
-  Instantaneous_Activity23.MEM_OP_COMPLETE = (Place*) LocalStateVariables[0];
+  Instantaneous_Activity23.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
   Instantaneous_Activity12.OK_CONTENT_TEMP = (Place*) LocalStateVariables[15];
-  Instantaneous_Activity12.MEM_OP_COMPLETE = (Place*) LocalStateVariables[0];
+  Instantaneous_Activity12.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
 }
 void DRAMSAN::assignPlacesToActivitiesTimed(){
 }
@@ -220,7 +220,7 @@ DRAMSAN::Instantaneous_Activity2Activity::Instantaneous_Activity2Activity(){
 
 void DRAMSAN::Instantaneous_Activity2Activity::LinkVariables(){
   MEMORY_KO->Register(&MEMORY_KO_Mobius_Mark);
-  MEM_OP_COMPLETE->Register(&MEM_OP_COMPLETE_Mobius_Mark);
+  INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
   KO_READ->Register(&KO_READ_Mobius_Mark);
 }
 
@@ -256,7 +256,7 @@ int DRAMSAN::Instantaneous_Activity2Activity::Rank(){
 
 BaseActionClass* DRAMSAN::Instantaneous_Activity2Activity::Fire(){
   (*(MEMORY_KO_Mobius_Mark))--;
-  (*(MEM_OP_COMPLETE_Mobius_Mark))++;
+  (*(INSTRUCTION_READY_Mobius_Mark))++;
   (*(KO_READ_Mobius_Mark))++;
   return this;
 }
@@ -366,7 +366,7 @@ DRAMSAN::Instantaneous_Activity1Activity::Instantaneous_Activity1Activity(){
 
 void DRAMSAN::Instantaneous_Activity1Activity::LinkVariables(){
   MEMORY_OK->Register(&MEMORY_OK_Mobius_Mark);
-  MEM_OP_COMPLETE->Register(&MEM_OP_COMPLETE_Mobius_Mark);
+  INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
   OK_READ->Register(&OK_READ_Mobius_Mark);
 }
 
@@ -402,7 +402,7 @@ int DRAMSAN::Instantaneous_Activity1Activity::Rank(){
 
 BaseActionClass* DRAMSAN::Instantaneous_Activity1Activity::Fire(){
   (*(MEMORY_OK_Mobius_Mark))--;
-  (*(MEM_OP_COMPLETE_Mobius_Mark))++;
+  (*(INSTRUCTION_READY_Mobius_Mark))++;
   (*(OK_READ_Mobius_Mark))++;
   return this;
 }
@@ -922,7 +922,7 @@ DRAMSAN::Instantaneous_Activity23Activity::Instantaneous_Activity23Activity(){
 
 void DRAMSAN::Instantaneous_Activity23Activity::LinkVariables(){
   KO_CONTENT_TEMP->Register(&KO_CONTENT_TEMP_Mobius_Mark);
-  MEM_OP_COMPLETE->Register(&MEM_OP_COMPLETE_Mobius_Mark);
+  INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 }
 
 bool DRAMSAN::Instantaneous_Activity23Activity::Enabled(){
@@ -957,7 +957,7 @@ int DRAMSAN::Instantaneous_Activity23Activity::Rank(){
 
 BaseActionClass* DRAMSAN::Instantaneous_Activity23Activity::Fire(){
   (*(KO_CONTENT_TEMP_Mobius_Mark))--;
-  (*(MEM_OP_COMPLETE_Mobius_Mark))++;
+  (*(INSTRUCTION_READY_Mobius_Mark))++;
   return this;
 }
 
@@ -970,7 +970,7 @@ DRAMSAN::Instantaneous_Activity12Activity::Instantaneous_Activity12Activity(){
 
 void DRAMSAN::Instantaneous_Activity12Activity::LinkVariables(){
   OK_CONTENT_TEMP->Register(&OK_CONTENT_TEMP_Mobius_Mark);
-  MEM_OP_COMPLETE->Register(&MEM_OP_COMPLETE_Mobius_Mark);
+  INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 }
 
 bool DRAMSAN::Instantaneous_Activity12Activity::Enabled(){
@@ -1005,7 +1005,7 @@ int DRAMSAN::Instantaneous_Activity12Activity::Rank(){
 
 BaseActionClass* DRAMSAN::Instantaneous_Activity12Activity::Fire(){
   (*(OK_CONTENT_TEMP_Mobius_Mark))--;
-  (*(MEM_OP_COMPLETE_Mobius_Mark))++;
+  (*(INSTRUCTION_READY_Mobius_Mark))++;
   return this;
 }
 

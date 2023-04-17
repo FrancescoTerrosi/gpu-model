@@ -16,9 +16,9 @@
 			<boolean id="UsingJackknife">true</boolean>
 			<string id="ArchiveFile"></string>
 			<byte id="RandomNumberGenerator">0</byte>
-			<long id="RandomNumberSeed">31415</long>
-			<long id="MaximumBatches">1000</long>
-			<long id="MinimumBatches">1000</long>
+			<long id="RandomNumberSeed">42</long>
+			<long id="MaximumBatches">1000000</long>
+			<long id="MinimumBatches">1000000</long>
 			<long id="ReportFrequency">1</long>
 			<byte id="BuildType">0</byte>
 			<string id="BuildArch">64-bit</string>
@@ -28,7 +28,7 @@
 			<boolean id="MaximizeProcessorUsage">false</boolean>
 			<int id="ProcessorsPerExperiment">1</int>
 			<int id="NumMachines">1</int>
-			<string id="MachineName">DESKTOP-3AHUC0F</string>
+			<string id="MachineName">DESKTOP-EO6DAJ9</string>
 			<int id="NumGroups">0</int>
 			<string id="StudyName">GPU_STUDY</string>
 			<boolean id="TerminatingSimulation">true</boolean>

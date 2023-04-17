@@ -28,8 +28,8 @@ public:
 
   Place* KO_CONTENT_TEMP;
   short* KO_CONTENT_TEMP_Mobius_Mark;
-  Place* MEM_OP_COMPLETE;
-  short* MEM_OP_COMPLETE_Mobius_Mark;
+  Place* INSTRUCTION_READY;
+  short* INSTRUCTION_READY_Mobius_Mark;
 
   double* TheDistributionParameters;
   Instantaneous_Activity23Activity();
@@ -50,8 +50,8 @@ public:
 
   Place* OK_CONTENT_TEMP;
   short* OK_CONTENT_TEMP_Mobius_Mark;
-  Place* MEM_OP_COMPLETE;
-  short* MEM_OP_COMPLETE_Mobius_Mark;
+  Place* INSTRUCTION_READY;
+  short* INSTRUCTION_READY_Mobius_Mark;
 
   double* TheDistributionParameters;
   Instantaneous_Activity12Activity();
@@ -72,8 +72,8 @@ public:
 
   Place* MEMORY_KO;
   short* MEMORY_KO_Mobius_Mark;
-  Place* MEM_OP_COMPLETE;
-  short* MEM_OP_COMPLETE_Mobius_Mark;
+  Place* INSTRUCTION_READY;
+  short* INSTRUCTION_READY_Mobius_Mark;
   Place* KO_READ;
   short* KO_READ_Mobius_Mark;
 
@@ -140,8 +140,8 @@ public:
 
   Place* MEMORY_OK;
   short* MEMORY_OK_Mobius_Mark;
-  Place* MEM_OP_COMPLETE;
-  short* MEM_OP_COMPLETE_Mobius_Mark;
+  Place* INSTRUCTION_READY;
+  short* INSTRUCTION_READY_Mobius_Mark;
   Place* OK_READ;
   short* OK_READ_Mobius_Mark;
 
@@ -402,7 +402,7 @@ public:
   Place* ROUTE_READ;
   Place* KO_CONTENT_TEMP;
   Place* WRITE_L1;
-  Place* MEM_OP_COMPLETE;
+  Place* INSTRUCTION_READY;
   Place* OK_CONTENT_TEMP;
   Place* KO_READ;
   Place* MEMORY_KO;

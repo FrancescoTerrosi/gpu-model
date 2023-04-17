@@ -1,7 +1,7 @@
 #include "Composed/GPU5/GPU5RJ__PROCESSOR_REP.h"
-char * GPU5RJ__PROCESSOR_REP__SharedNames[] = {"MEM_FAILURE", "MEM_OP_COMPLETE", "READ_DRAM", "READ_L1", "READ_L2", "WRITE_DRAM", "WRITE_L1", "WRITE_L2"};
+char * GPU5RJ__PROCESSOR_REP__SharedNames[] = {"INSTRUCTION_READY", "MEM_FAILURE", "READ_DRAM", "READ_L1", "READ_L2", "WARP_ACCESS_DRAM", "WARP_ACCESS_L1", "WARP_ACCESS_L2", "WRITE_DRAM", "WRITE_L1", "WRITE_L2"};
 
-GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors, 8, GPU5RJ__PROCESSOR_REP__SharedNames)
+GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors, 11, GPU5RJ__PROCESSOR_REP__SharedNames)
 {
   InstanceArray = new GPU5RJ__PROCESSOR * [NumModels];
   delete[] ModelArray;
@@ -16,13 +16,13 @@ GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors,
     NumSharedStateVariables = 0;
   else {
     //**************** Initialize local variables ****************
+    INSTRUCTION_READY = new Place("INSTRUCTION_READY");
+    addSharedPtr(INSTRUCTION_READY, "INSTRUCTION_READY");
+    INSTRUCTION_READY->ShareWith(InstanceArray[0]->INSTRUCTION_READY);
+
     MEM_FAILURE = new Place("MEM_FAILURE");
     addSharedPtr(MEM_FAILURE, "MEM_FAILURE");
     MEM_FAILURE->ShareWith(InstanceArray[0]->MEM_FAILURE);
-
-    MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE");
-    addSharedPtr(MEM_OP_COMPLETE, "MEM_OP_COMPLETE");
-    MEM_OP_COMPLETE->ShareWith(InstanceArray[0]->MEM_OP_COMPLETE);
 
     READ_DRAM = new Place("READ_DRAM");
     addSharedPtr(READ_DRAM, "READ_DRAM");
@@ -35,6 +35,18 @@ GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors,
     READ_L2 = new Place("READ_L2");
     addSharedPtr(READ_L2, "READ_L2");
     READ_L2->ShareWith(InstanceArray[0]->READ_L2);
+
+    WARP_ACCESS_DRAM = new Place("WARP_ACCESS_DRAM");
+    addSharedPtr(WARP_ACCESS_DRAM, "WARP_ACCESS_DRAM");
+    WARP_ACCESS_DRAM->ShareWith(InstanceArray[0]->WARP_ACCESS_DRAM);
+
+    WARP_ACCESS_L1 = new Place("WARP_ACCESS_L1");
+    addSharedPtr(WARP_ACCESS_L1, "WARP_ACCESS_L1");
+    WARP_ACCESS_L1->ShareWith(InstanceArray[0]->WARP_ACCESS_L1);
+
+    WARP_ACCESS_L2 = new Place("WARP_ACCESS_L2");
+    addSharedPtr(WARP_ACCESS_L2, "WARP_ACCESS_L2");
+    WARP_ACCESS_L2->ShareWith(InstanceArray[0]->WARP_ACCESS_L2);
 
     WRITE_DRAM = new Place("WRITE_DRAM");
     addSharedPtr(WRITE_DRAM, "WRITE_DRAM");
@@ -51,10 +63,10 @@ GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors,
 
     //Share state in submodels
     for (counter = 0; counter < NumModels; counter++) {
-      addSharingInfo(InstanceArray[counter]->MEM_FAILURE, MEM_FAILURE);
+      addSharingInfo(InstanceArray[counter]->INSTRUCTION_READY, INSTRUCTION_READY);
     }
     for (counter = 0; counter < NumModels; counter++) {
-      addSharingInfo(InstanceArray[counter]->MEM_OP_COMPLETE, MEM_OP_COMPLETE);
+      addSharingInfo(InstanceArray[counter]->MEM_FAILURE, MEM_FAILURE);
     }
     for (counter = 0; counter < NumModels; counter++) {
       addSharingInfo(InstanceArray[counter]->READ_DRAM, READ_DRAM);
@@ -66,6 +78,15 @@ GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors,
       addSharingInfo(InstanceArray[counter]->READ_L2, READ_L2);
     }
     for (counter = 0; counter < NumModels; counter++) {
+      addSharingInfo(InstanceArray[counter]->WARP_ACCESS_DRAM, WARP_ACCESS_DRAM);
+    }
+    for (counter = 0; counter < NumModels; counter++) {
+      addSharingInfo(InstanceArray[counter]->WARP_ACCESS_L1, WARP_ACCESS_L1);
+    }
+    for (counter = 0; counter < NumModels; counter++) {
+      addSharingInfo(InstanceArray[counter]->WARP_ACCESS_L2, WARP_ACCESS_L2);
+    }
+    for (counter = 0; counter < NumModels; counter++) {
       addSharingInfo(InstanceArray[counter]->WRITE_DRAM, WRITE_DRAM);
     }
     for (counter = 0; counter < NumModels; counter++) {
@@ -75,11 +96,14 @@ GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors,
       addSharingInfo(InstanceArray[counter]->WRITE_L2, WRITE_L2);
     }
     for (counter = 1; counter < NumModels; counter++) {
+      InstanceArray[0]->INSTRUCTION_READY->ShareWith(InstanceArray[counter]->INSTRUCTION_READY);
       InstanceArray[0]->MEM_FAILURE->ShareWith(InstanceArray[counter]->MEM_FAILURE);
-      InstanceArray[0]->MEM_OP_COMPLETE->ShareWith(InstanceArray[counter]->MEM_OP_COMPLETE);
       InstanceArray[0]->READ_DRAM->ShareWith(InstanceArray[counter]->READ_DRAM);
       InstanceArray[0]->READ_L1->ShareWith(InstanceArray[counter]->READ_L1);
       InstanceArray[0]->READ_L2->ShareWith(InstanceArray[counter]->READ_L2);
+      InstanceArray[0]->WARP_ACCESS_DRAM->ShareWith(InstanceArray[counter]->WARP_ACCESS_DRAM);
+      InstanceArray[0]->WARP_ACCESS_L1->ShareWith(InstanceArray[counter]->WARP_ACCESS_L1);
+      InstanceArray[0]->WARP_ACCESS_L2->ShareWith(InstanceArray[counter]->WARP_ACCESS_L2);
       InstanceArray[0]->WRITE_DRAM->ShareWith(InstanceArray[counter]->WRITE_DRAM);
       InstanceArray[0]->WRITE_L1->ShareWith(InstanceArray[counter]->WRITE_L1);
       InstanceArray[0]->WRITE_L2->ShareWith(InstanceArray[counter]->WRITE_L2);
@@ -90,11 +114,14 @@ GPU5RJ__PROCESSOR_REP::GPU5RJ__PROCESSOR_REP():Rep("PROCESSOR_REP", nprocessors,
 
 GPU5RJ__PROCESSOR_REP::~GPU5RJ__PROCESSOR_REP() {
   if (NumModels == 0) return;
+  delete INSTRUCTION_READY;
   delete MEM_FAILURE;
-  delete MEM_OP_COMPLETE;
   delete READ_DRAM;
   delete READ_L1;
   delete READ_L2;
+  delete WARP_ACCESS_DRAM;
+  delete WARP_ACCESS_L1;
+  delete WARP_ACCESS_L2;
   delete WRITE_DRAM;
   delete WRITE_L1;
   delete WRITE_L2;

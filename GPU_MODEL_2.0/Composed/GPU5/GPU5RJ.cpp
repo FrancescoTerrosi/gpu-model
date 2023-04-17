@@ -1,5 +1,5 @@
 #include "Composed/GPU5/GPU5RJ.h"
-char * GPU5RJ__SharedNames[] = {"KO_CONTENT", "MEMORY_KO", "MEMORY_OK", "MEM_FAILURE", "MEM_OP_COMPLETE", "OK_CONTENT", "READ_DRAM", "READ_L2", "WRITE_DRAM", "WRITE_L2"};
+char * GPU5RJ__SharedNames[] = {"INSTRUCTION_READY", "KO_CONTENT", "MEMORY_KO", "MEMORY_OK", "MEM_FAILURE", "OK_CONTENT", "READ_DRAM", "READ_L2", "WRITE_DRAM", "WRITE_L2"};
 
 GPU5RJ::GPU5RJ():Join("DEVICE", 3, 10,GPU5RJ__SharedNames) {
   SM_REP = new GPU5RJ__SM_REP();
@@ -18,6 +18,22 @@ GPU5RJ::GPU5RJ():Join("DEVICE", 3, 10,GPU5RJ__SharedNames) {
   else {
     //**************  State sharing info  **************
     //Shared variable 0
+    INSTRUCTION_READY = new Place("INSTRUCTION_READY");
+    addSharedPtr(INSTRUCTION_READY, "INSTRUCTION_READY" );
+    if (SM_REP->NumStateVariables > 0) {
+      INSTRUCTION_READY->ShareWith(getSharableSVPointer(SM_REP->INSTRUCTION_READY));
+      addSharingInfo(getSharableSVPointer(SM_REP->INSTRUCTION_READY), INSTRUCTION_READY, SM_REP);
+    }
+    if (DRAM->NumStateVariables > 0) {
+      INSTRUCTION_READY->ShareWith(getSharableSVPointer(DRAM->INSTRUCTION_READY));
+      addSharingInfo(getSharableSVPointer(DRAM->INSTRUCTION_READY), INSTRUCTION_READY, DRAM);
+    }
+    if (L2_CACHE->NumStateVariables > 0) {
+      INSTRUCTION_READY->ShareWith(getSharableSVPointer(L2_CACHE->INSTRUCTION_READY));
+      addSharingInfo(getSharableSVPointer(L2_CACHE->INSTRUCTION_READY), INSTRUCTION_READY, L2_CACHE);
+    }
+
+    //Shared variable 1
     KO_CONTENT = new Place("KO_CONTENT");
     addSharedPtr(KO_CONTENT, "KO_CONTENT" );
     if (DRAM->NumStateVariables > 0) {
@@ -29,7 +45,7 @@ GPU5RJ::GPU5RJ():Join("DEVICE", 3, 10,GPU5RJ__SharedNames) {
       addSharingInfo(getSharableSVPointer(L2_CACHE->KO_CONTENT), KO_CONTENT, L2_CACHE);
     }
 
-    //Shared variable 1
+    //Shared variable 2
     MEMORY_KO = new Place("MEMORY_KO");
     addSharedPtr(MEMORY_KO, "MEMORY_KO" );
     if (DRAM->NumStateVariables > 0) {
@@ -41,7 +57,7 @@ GPU5RJ::GPU5RJ():Join("DEVICE", 3, 10,GPU5RJ__SharedNames) {
       addSharingInfo(getSharableSVPointer(L2_CACHE->MEMORY_KO), MEMORY_KO, L2_CACHE);
     }
 
-    //Shared variable 2
+    //Shared variable 3
     MEMORY_OK = new Place("MEMORY_OK");
     addSharedPtr(MEMORY_OK, "MEMORY_OK" );
     if (DRAM->NumStateVariables > 0) {
@@ -53,7 +69,7 @@ GPU5RJ::GPU5RJ():Join("DEVICE", 3, 10,GPU5RJ__SharedNames) {
       addSharingInfo(getSharableSVPointer(L2_CACHE->MEMORY_OK), MEMORY_OK, L2_CACHE);
     }
 
-    //Shared variable 3
+    //Shared variable 4
     MEM_FAILURE = new Place("MEM_FAILURE");
     addSharedPtr(MEM_FAILURE, "MEM_FAILURE" );
     if (DRAM->NumStateVariables > 0) {
@@ -63,22 +79,6 @@ GPU5RJ::GPU5RJ():Join("DEVICE", 3, 10,GPU5RJ__SharedNames) {
     if (L2_CACHE->NumStateVariables > 0) {
       MEM_FAILURE->ShareWith(getSharableSVPointer(L2_CACHE->MEM_FAILURE));
       addSharingInfo(getSharableSVPointer(L2_CACHE->MEM_FAILURE), MEM_FAILURE, L2_CACHE);
-    }
-
-    //Shared variable 4
-    MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE");
-    addSharedPtr(MEM_OP_COMPLETE, "MEM_OP_COMPLETE" );
-    if (SM_REP->NumStateVariables > 0) {
-      MEM_OP_COMPLETE->ShareWith(getSharableSVPointer(SM_REP->MEM_OP_COMPLETE));
-      addSharingInfo(getSharableSVPointer(SM_REP->MEM_OP_COMPLETE), MEM_OP_COMPLETE, SM_REP);
-    }
-    if (DRAM->NumStateVariables > 0) {
-      MEM_OP_COMPLETE->ShareWith(getSharableSVPointer(DRAM->MEM_OP_COMPLETE));
-      addSharingInfo(getSharableSVPointer(DRAM->MEM_OP_COMPLETE), MEM_OP_COMPLETE, DRAM);
-    }
-    if (L2_CACHE->NumStateVariables > 0) {
-      MEM_OP_COMPLETE->ShareWith(getSharableSVPointer(L2_CACHE->MEM_OP_COMPLETE));
-      addSharingInfo(getSharableSVPointer(L2_CACHE->MEM_OP_COMPLETE), MEM_OP_COMPLETE, L2_CACHE);
     }
 
     //Shared variable 5
@@ -148,11 +148,11 @@ GPU5RJ::GPU5RJ():Join("DEVICE", 3, 10,GPU5RJ__SharedNames) {
 
 GPU5RJ::~GPU5RJ() {
   if (!AllChildrenEmpty()) {
+    delete INSTRUCTION_READY;
     delete KO_CONTENT;
     delete MEMORY_KO;
     delete MEMORY_OK;
     delete MEM_FAILURE;
-    delete MEM_OP_COMPLETE;
     delete OK_CONTENT;
     delete READ_DRAM;
     delete READ_L2;

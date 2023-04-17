@@ -76,9 +76,9 @@ GPU5RJ__PROCESSOR::GPU5RJ__PROCESSOR():Join("PROCESSOR", 3, 22,GPU5RJ__PROCESSOR
     //Shared variable 5
     MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE");
     addSharedPtr(MEM_OP_COMPLETE, "MEM_OP_COMPLETE" );
-    if (Rep1->NumStateVariables > 0) {
-      MEM_OP_COMPLETE->ShareWith(getSharableSVPointer(Rep1->MEM_OP_COMPLETE));
-      addSharingInfo(getSharableSVPointer(Rep1->MEM_OP_COMPLETE), MEM_OP_COMPLETE, Rep1);
+    if (EXEC_UNIT->NumStateVariables > 0) {
+      MEM_OP_COMPLETE->ShareWith(getSharableSVPointer(EXEC_UNIT->MEM_OP_COMPLETE));
+      addSharingInfo(getSharableSVPointer(EXEC_UNIT->MEM_OP_COMPLETE), MEM_OP_COMPLETE, EXEC_UNIT);
     }
 
     //Shared variable 6

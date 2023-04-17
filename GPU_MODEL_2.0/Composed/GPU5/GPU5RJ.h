@@ -18,11 +18,11 @@ class GPU5RJ: public Join {
   GPU5RJ__SM_REP * SM_REP;
   DRAMSAN * DRAM;
   L2_CACHESAN * L2_CACHE;
+  Place * INSTRUCTION_READY;
   Place * KO_CONTENT;
   Place * MEMORY_KO;
   Place * MEMORY_OK;
   Place * MEM_FAILURE;
-  Place * MEM_OP_COMPLETE;
   Place * OK_CONTENT;
   Place * READ_DRAM;
   Place * READ_L2;

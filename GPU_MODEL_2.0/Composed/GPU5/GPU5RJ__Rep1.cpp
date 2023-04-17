@@ -1,7 +1,7 @@
 #include "Composed/GPU5/GPU5RJ__Rep1.h"
-char * GPU5RJ__Rep1__SharedNames[] = {"FLOAT_ALU_FAILURE", "INSTRUCTION_READY", "INT_ALU_FAILURE", "KO_CONTENT", "MEM_FAILURE", "MEM_OP_COMPLETE", "OK_CONTENT", "REGISTERS_FILL", "REG_FAILURE", "RESULT_KO", "RESULT_OK", "SCHEDULER", "WARP_ACCESS_DRAM", "WARP_ACCESS_L1", "WARP_ACCESS_L2"};
+char * GPU5RJ__Rep1__SharedNames[] = {"FLOAT_ALU_FAILURE", "INSTRUCTION_READY", "INT_ALU_FAILURE", "KO_CONTENT", "MEM_FAILURE", "OK_CONTENT", "REGISTERS_FILL", "REG_FAILURE", "RESULT_KO", "RESULT_OK", "SCHEDULER", "WARP_ACCESS_DRAM", "WARP_ACCESS_L1", "WARP_ACCESS_L2"};
 
-GPU5RJ__Rep1::GPU5RJ__Rep1():Rep("Rep1", nwarps, 15, GPU5RJ__Rep1__SharedNames)
+GPU5RJ__Rep1::GPU5RJ__Rep1():Rep("Rep1", nwarps, 14, GPU5RJ__Rep1__SharedNames)
 {
   InstanceArray = new GPU5RJ__WARP_REG * [NumModels];
   delete[] ModelArray;
@@ -35,10 +35,6 @@ GPU5RJ__Rep1::GPU5RJ__Rep1():Rep("Rep1", nwarps, 15, GPU5RJ__Rep1__SharedNames)
     MEM_FAILURE = new Place("MEM_FAILURE");
     addSharedPtr(MEM_FAILURE, "MEM_FAILURE");
     MEM_FAILURE->ShareWith(InstanceArray[0]->MEM_FAILURE);
-
-    MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE");
-    addSharedPtr(MEM_OP_COMPLETE, "MEM_OP_COMPLETE");
-    MEM_OP_COMPLETE->ShareWith(InstanceArray[0]->MEM_OP_COMPLETE);
 
     OK_CONTENT = new Place("OK_CONTENT");
     addSharedPtr(OK_CONTENT, "OK_CONTENT");
@@ -94,9 +90,6 @@ GPU5RJ__Rep1::GPU5RJ__Rep1():Rep("Rep1", nwarps, 15, GPU5RJ__Rep1__SharedNames)
       addSharingInfo(InstanceArray[counter]->MEM_FAILURE, MEM_FAILURE);
     }
     for (counter = 0; counter < NumModels; counter++) {
-      addSharingInfo(InstanceArray[counter]->MEM_OP_COMPLETE, MEM_OP_COMPLETE);
-    }
-    for (counter = 0; counter < NumModels; counter++) {
       addSharingInfo(InstanceArray[counter]->OK_CONTENT, OK_CONTENT);
     }
     for (counter = 0; counter < NumModels; counter++) {
@@ -129,7 +122,6 @@ GPU5RJ__Rep1::GPU5RJ__Rep1():Rep("Rep1", nwarps, 15, GPU5RJ__Rep1__SharedNames)
       InstanceArray[0]->INT_ALU_FAILURE->ShareWith(InstanceArray[counter]->INT_ALU_FAILURE);
       InstanceArray[0]->KO_CONTENT->ShareWith(InstanceArray[counter]->KO_CONTENT);
       InstanceArray[0]->MEM_FAILURE->ShareWith(InstanceArray[counter]->MEM_FAILURE);
-      InstanceArray[0]->MEM_OP_COMPLETE->ShareWith(InstanceArray[counter]->MEM_OP_COMPLETE);
       InstanceArray[0]->OK_CONTENT->ShareWith(InstanceArray[counter]->OK_CONTENT);
       InstanceArray[0]->REGISTERS_FILL->ShareWith(InstanceArray[counter]->REGISTERS_FILL);
       InstanceArray[0]->REG_FAILURE->ShareWith(InstanceArray[counter]->REG_FAILURE);
@@ -151,7 +143,6 @@ GPU5RJ__Rep1::~GPU5RJ__Rep1() {
   delete INT_ALU_FAILURE;
   delete KO_CONTENT;
   delete MEM_FAILURE;
-  delete MEM_OP_COMPLETE;
   delete OK_CONTENT;
   delete REGISTERS_FILL;
   delete REG_FAILURE;

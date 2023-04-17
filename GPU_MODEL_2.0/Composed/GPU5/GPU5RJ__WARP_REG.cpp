@@ -1,7 +1,7 @@
 #include "Composed/GPU5/GPU5RJ__WARP_REG.h"
-char * GPU5RJ__WARP_REG__SharedNames[] = {"FLOAT_ALU_FAILURE", "INSTRUCTION_READY", "INST_COUNTER", "INT_ALU_FAILURE", "KO_CONTENT", "MEM_FAILURE", "MEM_OP_COMPLETE", "OK_CONTENT", "REGISTERS_FILL", "REG_FAILURE", "RESULT_KO", "RESULT_OK", "SCHEDULER", "WARP_ACCESS_DRAM", "WARP_ACCESS_L1", "WARP_ACCESS_L2"};
+char * GPU5RJ__WARP_REG__SharedNames[] = {"FLOAT_ALU_FAILURE", "INSTRUCTION_READY", "INST_COUNTER", "INT_ALU_FAILURE", "KO_CONTENT", "MEM_FAILURE", "OK_CONTENT", "REGISTERS_FILL", "REG_FAILURE", "RESULT_KO", "RESULT_OK", "SCHEDULER", "WARP_ACCESS_DRAM", "WARP_ACCESS_L1", "WARP_ACCESS_L2"};
 
-GPU5RJ__WARP_REG::GPU5RJ__WARP_REG():Join("WARP_REG", 2, 16,GPU5RJ__WARP_REG__SharedNames) {
+GPU5RJ__WARP_REG::GPU5RJ__WARP_REG():Join("WARP_REG", 2, 15,GPU5RJ__WARP_REG__SharedNames) {
   REGISTER_FILE = new REGISTER_FILESAN();
   ModelArray[0] = (BaseModelClass*) REGISTER_FILE;
   ModelArray[0]->DefineName("REGISTER_FILE");
@@ -63,14 +63,6 @@ GPU5RJ__WARP_REG::GPU5RJ__WARP_REG():Join("WARP_REG", 2, 16,GPU5RJ__WARP_REG__Sh
     }
 
     //Shared variable 6
-    MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE");
-    addSharedPtr(MEM_OP_COMPLETE, "MEM_OP_COMPLETE" );
-    if (WARP->NumStateVariables > 0) {
-      MEM_OP_COMPLETE->ShareWith(getSharableSVPointer(WARP->MEM_OP_COMPLETE));
-      addSharingInfo(getSharableSVPointer(WARP->MEM_OP_COMPLETE), MEM_OP_COMPLETE, WARP);
-    }
-
-    //Shared variable 7
     OK_CONTENT = new Place("OK_CONTENT");
     addSharedPtr(OK_CONTENT, "OK_CONTENT" );
     if (REGISTER_FILE->NumStateVariables > 0) {
@@ -78,7 +70,7 @@ GPU5RJ__WARP_REG::GPU5RJ__WARP_REG():Join("WARP_REG", 2, 16,GPU5RJ__WARP_REG__Sh
       addSharingInfo(getSharableSVPointer(REGISTER_FILE->OK_CONTENT), OK_CONTENT, REGISTER_FILE);
     }
 
-    //Shared variable 8
+    //Shared variable 7
     REGISTERS_FILL = new Place("REGISTERS_FILL");
     addSharedPtr(REGISTERS_FILL, "REGISTERS_FILL" );
     if (REGISTER_FILE->NumStateVariables > 0) {
@@ -90,7 +82,7 @@ GPU5RJ__WARP_REG::GPU5RJ__WARP_REG():Join("WARP_REG", 2, 16,GPU5RJ__WARP_REG__Sh
       addSharingInfo(getSharableSVPointer(WARP->REGISTERS_FILL), REGISTERS_FILL, WARP);
     }
 
-    //Shared variable 9
+    //Shared variable 8
     REG_FAILURE = new Place("REG_FAILURE");
     addSharedPtr(REG_FAILURE, "REG_FAILURE" );
     if (WARP->NumStateVariables > 0) {
@@ -98,7 +90,7 @@ GPU5RJ__WARP_REG::GPU5RJ__WARP_REG():Join("WARP_REG", 2, 16,GPU5RJ__WARP_REG__Sh
       addSharingInfo(getSharableSVPointer(WARP->REG_FAILURE), REG_FAILURE, WARP);
     }
 
-    //Shared variable 10
+    //Shared variable 9
     RESULT_KO = new Place("RESULT_KO");
     addSharedPtr(RESULT_KO, "RESULT_KO" );
     if (REGISTER_FILE->NumStateVariables > 0) {
@@ -106,7 +98,7 @@ GPU5RJ__WARP_REG::GPU5RJ__WARP_REG():Join("WARP_REG", 2, 16,GPU5RJ__WARP_REG__Sh
       addSharingInfo(getSharableSVPointer(REGISTER_FILE->RESULT_KO), RESULT_KO, REGISTER_FILE);
     }
 
-    //Shared variable 11
+    //Shared variable 10
     RESULT_OK = new Place("RESULT_OK");
     addSharedPtr(RESULT_OK, "RESULT_OK" );
     if (REGISTER_FILE->NumStateVariables > 0) {
@@ -114,7 +106,7 @@ GPU5RJ__WARP_REG::GPU5RJ__WARP_REG():Join("WARP_REG", 2, 16,GPU5RJ__WARP_REG__Sh
       addSharingInfo(getSharableSVPointer(REGISTER_FILE->RESULT_OK), RESULT_OK, REGISTER_FILE);
     }
 
-    //Shared variable 12
+    //Shared variable 11
     SCHEDULER = new Place("SCHEDULER");
     addSharedPtr(SCHEDULER, "SCHEDULER" );
     if (WARP->NumStateVariables > 0) {
@@ -122,7 +114,7 @@ GPU5RJ__WARP_REG::GPU5RJ__WARP_REG():Join("WARP_REG", 2, 16,GPU5RJ__WARP_REG__Sh
       addSharingInfo(getSharableSVPointer(WARP->SCHEDULER), SCHEDULER, WARP);
     }
 
-    //Shared variable 13
+    //Shared variable 12
     WARP_ACCESS_DRAM = new Place("WARP_ACCESS_DRAM");
     addSharedPtr(WARP_ACCESS_DRAM, "WARP_ACCESS_DRAM" );
     if (WARP->NumStateVariables > 0) {
@@ -130,7 +122,7 @@ GPU5RJ__WARP_REG::GPU5RJ__WARP_REG():Join("WARP_REG", 2, 16,GPU5RJ__WARP_REG__Sh
       addSharingInfo(getSharableSVPointer(WARP->WARP_ACCESS_DRAM), WARP_ACCESS_DRAM, WARP);
     }
 
-    //Shared variable 14
+    //Shared variable 13
     WARP_ACCESS_L1 = new Place("WARP_ACCESS_L1");
     addSharedPtr(WARP_ACCESS_L1, "WARP_ACCESS_L1" );
     if (WARP->NumStateVariables > 0) {
@@ -138,7 +130,7 @@ GPU5RJ__WARP_REG::GPU5RJ__WARP_REG():Join("WARP_REG", 2, 16,GPU5RJ__WARP_REG__Sh
       addSharingInfo(getSharableSVPointer(WARP->WARP_ACCESS_L1), WARP_ACCESS_L1, WARP);
     }
 
-    //Shared variable 15
+    //Shared variable 14
     WARP_ACCESS_L2 = new Place("WARP_ACCESS_L2");
     addSharedPtr(WARP_ACCESS_L2, "WARP_ACCESS_L2" );
     if (WARP->NumStateVariables > 0) {
@@ -159,7 +151,6 @@ GPU5RJ__WARP_REG::~GPU5RJ__WARP_REG() {
     delete INT_ALU_FAILURE;
     delete KO_CONTENT;
     delete MEM_FAILURE;
-    delete MEM_OP_COMPLETE;
     delete OK_CONTENT;
     delete REGISTERS_FILL;
     delete REG_FAILURE;

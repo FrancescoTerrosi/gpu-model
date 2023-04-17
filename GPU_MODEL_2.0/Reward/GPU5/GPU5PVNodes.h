@@ -506,8 +506,8 @@ class GPU5PV14Impulse1:public IntervalOfTimeImpulse
 class GPU5PV14Impulse2:public IntervalOfTimeImpulse
 {
  public:
-  EXEC_UNITSAN *EXEC_UNIT;
   WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
   MEMORYSAN *MEMORY;
 
   GPU5PV14Impulse2();
@@ -523,8 +523,8 @@ class GPU5PV14Impulse2:public IntervalOfTimeImpulse
 class GPU5PV14Impulse3:public IntervalOfTimeImpulse
 {
  public:
-  WARPSAN *WARP;
   EXEC_UNITSAN *EXEC_UNIT;
+  WARPSAN *WARP;
   MEMORYSAN *MEMORY;
 
   GPU5PV14Impulse3();
@@ -623,14 +623,64 @@ class GPU5PV14:public PerformanceVariableNode
   void CreateWorkerList(void);
 };
 
-class GPU5PV15Worker:public InstantOfTime
+
+class GPU5PV15Impulse0:public IntervalOfTimeImpulse
 {
  public:
   WARPSAN *WARP;
-  
-  GPU5PV15Worker();
-  ~GPU5PV15Worker();
-  double Reward_Function();
+
+  GPU5PV15Impulse0();
+  ~GPU5PV15Impulse0();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV15Impulse1:public IntervalOfTimeImpulse
+{
+ public:
+  WARPSAN *WARP;
+
+  GPU5PV15Impulse1();
+  ~GPU5PV15Impulse1();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV15Impulse2:public IntervalOfTimeImpulse
+{
+ public:
+  WARPSAN *WARP;
+
+  GPU5PV15Impulse2();
+  ~GPU5PV15Impulse2();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV15Impulse3:public IntervalOfTimeImpulse
+{
+ public:
+  WARPSAN *WARP;
+
+  GPU5PV15Impulse3();
+  ~GPU5PV15Impulse3();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
 };
 
 class GPU5PV15:public PerformanceVariableNode
@@ -638,7 +688,10 @@ class GPU5PV15:public PerformanceVariableNode
  public:
   GPU5RJ *TheGPU5RJ;
 
-  GPU5PV15Worker *GPU5PV15WorkerList;
+  GPU5PV15Impulse0 Impulse0;
+  GPU5PV15Impulse1 Impulse1;
+  GPU5PV15Impulse2 Impulse2;
+  GPU5PV15Impulse3 Impulse3;
 
   GPU5PV15(int timeindex=0);
   ~GPU5PV15();

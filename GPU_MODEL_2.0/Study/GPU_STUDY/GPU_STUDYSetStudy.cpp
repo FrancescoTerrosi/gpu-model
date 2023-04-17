@@ -136,7 +136,7 @@ void GPU_STUDYSetStudy::SetValues_l2_size() {
 // set values for nprocessors
 //******************************************************
 void GPU_STUDYSetStudy::SetValues_nprocessors() {
-  nprocessorsValues[0] = 2;
+  nprocessorsValues[0] = 4;
 }
 
 
@@ -144,7 +144,7 @@ void GPU_STUDYSetStudy::SetValues_nprocessors() {
 // set values for nsm
 //******************************************************
 void GPU_STUDYSetStudy::SetValues_nsm() {
-  nsmValues[0] = 1;
+  nsmValues[0] = 8;
 }
 
 
@@ -168,7 +168,7 @@ void GPU_STUDYSetStudy::SetValues_register_count_index() {
 // set values for size
 //******************************************************
 void GPU_STUDYSetStudy::SetValues_size() {
-  sizeValues[0] = 5;
+  sizeValues[0] = 448;
 }
 
 
