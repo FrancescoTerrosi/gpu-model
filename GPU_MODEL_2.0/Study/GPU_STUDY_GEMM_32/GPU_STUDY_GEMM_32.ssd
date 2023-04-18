@@ -105,12 +105,12 @@
 					<string id="13">0</string>
 					<string id="14">0</string>
 					<string id="15">0</string>
-					<string id="16">0</string>
-					<string id="17">4</string>
-					<string id="18">8</string>
+					<string id="16">0.0</string>
+					<string id="17">1</string>
+					<string id="18">1</string>
 					<string id="19">1</string>
 					<string id="20">0</string>
-					<string id="21">448</string>
+					<string id="21">224</string>
 				</vector>
 			</class>
 			<boolean id="Valid">true</boolean>

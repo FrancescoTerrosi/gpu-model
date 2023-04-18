@@ -14,6 +14,9 @@
 #include "Cpp/Performance_Variables/InstantOfTime.hpp"
 
 extern Short end;
+extern Short nwarps;
+extern Short nsm;
+extern Short nprocessors;
 
 
 class GPU5PV0Impulse0:public IntervalOfTimeImpulse
@@ -468,140 +471,14 @@ class GPU5PV13:public PerformanceVariableNode
   void CreateWorkerList(void);
 };
 
-
-class GPU5PV14Impulse0:public IntervalOfTimeImpulse
-{
- public:
-  EXEC_UNITSAN *EXEC_UNIT;
-  WARPSAN *WARP;
-  MEMORYSAN *MEMORY;
-
-  GPU5PV14Impulse0();
-  ~GPU5PV14Impulse0();
-  double Impulse_Function(double);
-  ImpulseNodeClass** CreateImpulseWorkerList(int);
- private:
-  ImpulseNodeClass** ImpulseWorkerList;
-  int ImpulseWorkerListLength;
-};
-
-
-class GPU5PV14Impulse1:public IntervalOfTimeImpulse
-{
- public:
-  MEMORYSAN *MEMORY;
-  WARPSAN *WARP;
-  EXEC_UNITSAN *EXEC_UNIT;
-
-  GPU5PV14Impulse1();
-  ~GPU5PV14Impulse1();
-  double Impulse_Function(double);
-  ImpulseNodeClass** CreateImpulseWorkerList(int);
- private:
-  ImpulseNodeClass** ImpulseWorkerList;
-  int ImpulseWorkerListLength;
-};
-
-
-class GPU5PV14Impulse2:public IntervalOfTimeImpulse
+class GPU5PV14Worker:public InstantOfTime
 {
  public:
   WARPSAN *WARP;
-  EXEC_UNITSAN *EXEC_UNIT;
-  MEMORYSAN *MEMORY;
-
-  GPU5PV14Impulse2();
-  ~GPU5PV14Impulse2();
-  double Impulse_Function(double);
-  ImpulseNodeClass** CreateImpulseWorkerList(int);
- private:
-  ImpulseNodeClass** ImpulseWorkerList;
-  int ImpulseWorkerListLength;
-};
-
-
-class GPU5PV14Impulse3:public IntervalOfTimeImpulse
-{
- public:
-  EXEC_UNITSAN *EXEC_UNIT;
-  WARPSAN *WARP;
-  MEMORYSAN *MEMORY;
-
-  GPU5PV14Impulse3();
-  ~GPU5PV14Impulse3();
-  double Impulse_Function(double);
-  ImpulseNodeClass** CreateImpulseWorkerList(int);
- private:
-  ImpulseNodeClass** ImpulseWorkerList;
-  int ImpulseWorkerListLength;
-};
-
-
-class GPU5PV14Impulse4:public IntervalOfTimeImpulse
-{
- public:
-  MEMORYSAN *MEMORY;
-  WARPSAN *WARP;
-  EXEC_UNITSAN *EXEC_UNIT;
-
-  GPU5PV14Impulse4();
-  ~GPU5PV14Impulse4();
-  double Impulse_Function(double);
-  ImpulseNodeClass** CreateImpulseWorkerList(int);
- private:
-  ImpulseNodeClass** ImpulseWorkerList;
-  int ImpulseWorkerListLength;
-};
-
-
-class GPU5PV14Impulse5:public IntervalOfTimeImpulse
-{
- public:
-  WARPSAN *WARP;
-  EXEC_UNITSAN *EXEC_UNIT;
-  MEMORYSAN *MEMORY;
-
-  GPU5PV14Impulse5();
-  ~GPU5PV14Impulse5();
-  double Impulse_Function(double);
-  ImpulseNodeClass** CreateImpulseWorkerList(int);
- private:
-  ImpulseNodeClass** ImpulseWorkerList;
-  int ImpulseWorkerListLength;
-};
-
-
-class GPU5PV14Impulse6:public IntervalOfTimeImpulse
-{
- public:
-  WARPSAN *WARP;
-  EXEC_UNITSAN *EXEC_UNIT;
-  MEMORYSAN *MEMORY;
-
-  GPU5PV14Impulse6();
-  ~GPU5PV14Impulse6();
-  double Impulse_Function(double);
-  ImpulseNodeClass** CreateImpulseWorkerList(int);
- private:
-  ImpulseNodeClass** ImpulseWorkerList;
-  int ImpulseWorkerListLength;
-};
-
-
-class GPU5PV14Impulse7:public IntervalOfTimeImpulse
-{
- public:
-  WARPSAN *WARP;
-  EXEC_UNITSAN *EXEC_UNIT;
-  MEMORYSAN *MEMORY;
-
-  GPU5PV14Impulse7();
-  ~GPU5PV14Impulse7();
-  double Impulse_Function(double);
-  ImpulseNodeClass** CreateImpulseWorkerList(int);
- private:
-  ImpulseNodeClass** ImpulseWorkerList;
-  int ImpulseWorkerListLength;
+  
+  GPU5PV14Worker();
+  ~GPU5PV14Worker();
+  double Reward_Function();
 };
 
 class GPU5PV14:public PerformanceVariableNode
@@ -609,14 +486,7 @@ class GPU5PV14:public PerformanceVariableNode
  public:
   GPU5RJ *TheGPU5RJ;
 
-  GPU5PV14Impulse0 Impulse0;
-  GPU5PV14Impulse1 Impulse1;
-  GPU5PV14Impulse2 Impulse2;
-  GPU5PV14Impulse3 Impulse3;
-  GPU5PV14Impulse4 Impulse4;
-  GPU5PV14Impulse5 Impulse5;
-  GPU5PV14Impulse6 Impulse6;
-  GPU5PV14Impulse7 Impulse7;
+  GPU5PV14Worker *GPU5PV14WorkerList;
 
   GPU5PV14(int timeindex=0);
   ~GPU5PV14();
@@ -627,7 +497,9 @@ class GPU5PV14:public PerformanceVariableNode
 class GPU5PV15Impulse0:public IntervalOfTimeImpulse
 {
  public:
+  EXEC_UNITSAN *EXEC_UNIT;
   WARPSAN *WARP;
+  MEMORYSAN *MEMORY;
 
   GPU5PV15Impulse0();
   ~GPU5PV15Impulse0();
@@ -642,7 +514,9 @@ class GPU5PV15Impulse0:public IntervalOfTimeImpulse
 class GPU5PV15Impulse1:public IntervalOfTimeImpulse
 {
  public:
+  MEMORYSAN *MEMORY;
   WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
 
   GPU5PV15Impulse1();
   ~GPU5PV15Impulse1();
@@ -658,6 +532,8 @@ class GPU5PV15Impulse2:public IntervalOfTimeImpulse
 {
  public:
   WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+  MEMORYSAN *MEMORY;
 
   GPU5PV15Impulse2();
   ~GPU5PV15Impulse2();
@@ -672,10 +548,80 @@ class GPU5PV15Impulse2:public IntervalOfTimeImpulse
 class GPU5PV15Impulse3:public IntervalOfTimeImpulse
 {
  public:
+  EXEC_UNITSAN *EXEC_UNIT;
   WARPSAN *WARP;
+  MEMORYSAN *MEMORY;
 
   GPU5PV15Impulse3();
   ~GPU5PV15Impulse3();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV15Impulse4:public IntervalOfTimeImpulse
+{
+ public:
+  MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+
+  GPU5PV15Impulse4();
+  ~GPU5PV15Impulse4();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV15Impulse5:public IntervalOfTimeImpulse
+{
+ public:
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+  MEMORYSAN *MEMORY;
+
+  GPU5PV15Impulse5();
+  ~GPU5PV15Impulse5();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV15Impulse6:public IntervalOfTimeImpulse
+{
+ public:
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+  MEMORYSAN *MEMORY;
+
+  GPU5PV15Impulse6();
+  ~GPU5PV15Impulse6();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV15Impulse7:public IntervalOfTimeImpulse
+{
+ public:
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+  MEMORYSAN *MEMORY;
+
+  GPU5PV15Impulse7();
+  ~GPU5PV15Impulse7();
   double Impulse_Function(double);
   ImpulseNodeClass** CreateImpulseWorkerList(int);
  private:
@@ -692,20 +638,74 @@ class GPU5PV15:public PerformanceVariableNode
   GPU5PV15Impulse1 Impulse1;
   GPU5PV15Impulse2 Impulse2;
   GPU5PV15Impulse3 Impulse3;
+  GPU5PV15Impulse4 Impulse4;
+  GPU5PV15Impulse5 Impulse5;
+  GPU5PV15Impulse6 Impulse6;
+  GPU5PV15Impulse7 Impulse7;
 
   GPU5PV15(int timeindex=0);
   ~GPU5PV15();
   void CreateWorkerList(void);
 };
 
-class GPU5PV16Worker:public InstantOfTime
+
+class GPU5PV16Impulse0:public IntervalOfTimeImpulse
 {
  public:
   WARPSAN *WARP;
-  
-  GPU5PV16Worker();
-  ~GPU5PV16Worker();
-  double Reward_Function();
+
+  GPU5PV16Impulse0();
+  ~GPU5PV16Impulse0();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV16Impulse1:public IntervalOfTimeImpulse
+{
+ public:
+  WARPSAN *WARP;
+
+  GPU5PV16Impulse1();
+  ~GPU5PV16Impulse1();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV16Impulse2:public IntervalOfTimeImpulse
+{
+ public:
+  WARPSAN *WARP;
+
+  GPU5PV16Impulse2();
+  ~GPU5PV16Impulse2();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV16Impulse3:public IntervalOfTimeImpulse
+{
+ public:
+  WARPSAN *WARP;
+
+  GPU5PV16Impulse3();
+  ~GPU5PV16Impulse3();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
 };
 
 class GPU5PV16:public PerformanceVariableNode
@@ -713,10 +713,294 @@ class GPU5PV16:public PerformanceVariableNode
  public:
   GPU5RJ *TheGPU5RJ;
 
-  GPU5PV16Worker *GPU5PV16WorkerList;
+  GPU5PV16Impulse0 Impulse0;
+  GPU5PV16Impulse1 Impulse1;
+  GPU5PV16Impulse2 Impulse2;
+  GPU5PV16Impulse3 Impulse3;
 
   GPU5PV16(int timeindex=0);
   ~GPU5PV16();
+  void CreateWorkerList(void);
+};
+
+
+class GPU5PV17Impulse0:public IntervalOfTimeImpulse
+{
+ public:
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+  MEMORYSAN *MEMORY;
+
+  GPU5PV17Impulse0();
+  ~GPU5PV17Impulse0();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse1:public IntervalOfTimeImpulse
+{
+ public:
+  EXEC_UNITSAN *EXEC_UNIT;
+  WARPSAN *WARP;
+  MEMORYSAN *MEMORY;
+
+  GPU5PV17Impulse1();
+  ~GPU5PV17Impulse1();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse2:public IntervalOfTimeImpulse
+{
+ public:
+  EXEC_UNITSAN *EXEC_UNIT;
+  WARPSAN *WARP;
+  MEMORYSAN *MEMORY;
+
+  GPU5PV17Impulse2();
+  ~GPU5PV17Impulse2();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse3:public IntervalOfTimeImpulse
+{
+ public:
+  MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+
+  GPU5PV17Impulse3();
+  ~GPU5PV17Impulse3();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse4:public IntervalOfTimeImpulse
+{
+ public:
+  MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+
+  GPU5PV17Impulse4();
+  ~GPU5PV17Impulse4();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse5:public IntervalOfTimeImpulse
+{
+ public:
+  MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+
+  GPU5PV17Impulse5();
+  ~GPU5PV17Impulse5();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse6:public IntervalOfTimeImpulse
+{
+ public:
+  MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+
+  GPU5PV17Impulse6();
+  ~GPU5PV17Impulse6();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse7:public IntervalOfTimeImpulse
+{
+ public:
+  MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+
+  GPU5PV17Impulse7();
+  ~GPU5PV17Impulse7();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse8:public IntervalOfTimeImpulse
+{
+ public:
+  MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+
+  GPU5PV17Impulse8();
+  ~GPU5PV17Impulse8();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse9:public IntervalOfTimeImpulse
+{
+ public:
+  MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+
+  GPU5PV17Impulse9();
+  ~GPU5PV17Impulse9();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse10:public IntervalOfTimeImpulse
+{
+ public:
+  MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+
+  GPU5PV17Impulse10();
+  ~GPU5PV17Impulse10();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse11:public IntervalOfTimeImpulse
+{
+ public:
+  MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+
+  GPU5PV17Impulse11();
+  ~GPU5PV17Impulse11();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse12:public IntervalOfTimeImpulse
+{
+ public:
+  MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+
+  GPU5PV17Impulse12();
+  ~GPU5PV17Impulse12();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse13:public IntervalOfTimeImpulse
+{
+ public:
+  MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+
+  GPU5PV17Impulse13();
+  ~GPU5PV17Impulse13();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+
+class GPU5PV17Impulse14:public IntervalOfTimeImpulse
+{
+ public:
+  MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
+
+  GPU5PV17Impulse14();
+  ~GPU5PV17Impulse14();
+  double Impulse_Function(double);
+  ImpulseNodeClass** CreateImpulseWorkerList(int);
+ private:
+  ImpulseNodeClass** ImpulseWorkerList;
+  int ImpulseWorkerListLength;
+};
+
+class GPU5PV17:public PerformanceVariableNode
+{
+ public:
+  GPU5RJ *TheGPU5RJ;
+
+  GPU5PV17Impulse0 Impulse0;
+  GPU5PV17Impulse1 Impulse1;
+  GPU5PV17Impulse2 Impulse2;
+  GPU5PV17Impulse3 Impulse3;
+  GPU5PV17Impulse4 Impulse4;
+  GPU5PV17Impulse5 Impulse5;
+  GPU5PV17Impulse6 Impulse6;
+  GPU5PV17Impulse7 Impulse7;
+  GPU5PV17Impulse8 Impulse8;
+  GPU5PV17Impulse9 Impulse9;
+  GPU5PV17Impulse10 Impulse10;
+  GPU5PV17Impulse11 Impulse11;
+  GPU5PV17Impulse12 Impulse12;
+  GPU5PV17Impulse13 Impulse13;
+  GPU5PV17Impulse14 Impulse14;
+
+  GPU5PV17(int timeindex=0);
+  ~GPU5PV17();
   void CreateWorkerList(void);
 };
 

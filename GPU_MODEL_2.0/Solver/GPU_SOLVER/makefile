@@ -11,8 +11,8 @@ MAINLIB_debug=-lsimMain_debug
 SIMLIB=sim
 SIMLIB_debug=sim_debug
 SIMLIB_trace=sim_trace
-PROJECTLIBS=-lGPU_STUDY_GEMM128SetStudy -lGPU5PV -lGPU5RJ -lREGISTER_FILESAN -lL1_CACHESAN -lDRAMSAN -lL2_CACHESAN -lWARPSAN -lEXEC_UNITSAN -lMEMORYSAN 
-PROJECTLIBS_debug=-lGPU_STUDY_GEMM128SetStudy_debug -lGPU5PV_debug -lGPU5RJ_debug -lREGISTER_FILESAN_debug -lL1_CACHESAN_debug -lDRAMSAN_debug -lL2_CACHESAN_debug -lWARPSAN_debug -lEXEC_UNITSAN_debug -lMEMORYSAN_debug 
+PROJECTLIBS=-lGPU_STUDY_GEMM_256SetStudy -lGPU5PV -lGPU5RJ -lREGISTER_FILESAN -lL1_CACHESAN -lDRAMSAN -lL2_CACHESAN -lWARPSAN -lEXEC_UNITSAN -lMEMORYSAN 
+PROJECTLIBS_debug=-lGPU_STUDY_GEMM_256SetStudy_debug -lGPU5PV_debug -lGPU5RJ_debug -lREGISTER_FILESAN_debug -lL1_CACHESAN_debug -lDRAMSAN_debug -lL2_CACHESAN_debug -lWARPSAN_debug -lEXEC_UNITSAN_debug -lMEMORYSAN_debug 
 MOBIUSLIBS=-lTRex -lStudy -lPV -lComposer_RepJoin -lSAN -lbase -lstate -lmobutil -ldist 
 MOBIUSLIBS_debug=-lTRex_debug -lStudy_debug -lPV_debug -lComposer_RepJoin_debug -lSAN_debug -lbase_debug -lstate_debug -lmobutil_debug -ldist_debug 
 USERDEFLIBNAME=
@@ -42,7 +42,7 @@ clean_sub_dirs:
 	cd ../../Atomic/REGISTER_FILE/ && $(MAKE) clean
 	cd ../../Composed/GPU5/ && $(MAKE) clean
 	cd ../../Reward/GPU5/ && $(MAKE) clean
-	cd ../../Study/GPU_STUDY_GEMM128/ && $(MAKE) clean
+	cd ../../Study/GPU_STUDY_GEMM_256/ && $(MAKE) clean
 
 SUBMODELS/opt SUBMODELS/debug:
 	@echo "NEW_SUBMODEL_LIB:[MEMORY]"
@@ -63,7 +63,7 @@ SUBMODELS/opt SUBMODELS/debug:
 	cd ../../Composed/GPU5/ && $(MAKE) $(@F)
 	@echo "NEW_SUBMODEL_LIB:[GPU5]"
 	cd ../../Reward/GPU5/ && $(MAKE) $(@F)
-	@echo "NEW_SUBMODEL_LIB:[GPU_STUDY_GEMM128]"
-	cd ../../Study/GPU_STUDY_GEMM128/ && $(MAKE) $(@F)
+	@echo "NEW_SUBMODEL_LIB:[GPU_STUDY_GEMM_256]"
+	cd ../../Study/GPU_STUDY_GEMM_256/ && $(MAKE) $(@F)
 
 

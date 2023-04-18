@@ -30,7 +30,7 @@
 				<string id="0">Reward\\GPU5\\GPU5PVNodes.cpp</string>
 				<string id="1">Reward\\GPU5\\GPU5PVModel.cpp</string>
 			</vector>
-			<int id="NumVars">17</int>
+			<int id="NumVars">18</int>
 			<class id="Mobius.RewardModels.pvs.VariableInfo">
 				<int id="ClassVersion">7</int>
 				<string id="Name">warp</string>
@@ -747,6 +747,53 @@
 			</class>
 			<class id="Mobius.RewardModels.pvs.VariableInfo">
 				<int id="ClassVersion">7</int>
+				<string id="Name">inst_ready</string>
+				<vector id="AffectingModelList">
+					<string id="0">WARP</string>
+				</vector>
+				<vector id="AffectingActionsList">
+				</vector>
+				<vector id="ImpulseFunctionsList">
+				</vector>
+				<string id="RewardFunction">return WARP-&gt;INST_COUNTER-&gt;Mark();</string>
+				<int id="Type">0</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">end</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+				</vector>
+			</class>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
 				<string id="Name">clocks</string>
 				<vector id="AffectingModelList">
 					<string id="0">WARP</string>
@@ -840,15 +887,15 @@
 				</vector>
 				<vector id="AffectingActionsList">
 					<string id="0">WARP-&gt;DISPATCHER_Copy</string>
-					<string id="1">WARP-&gt;DRAM_CLOCK</string>
+					<string id="1">WARP-&gt;L1_CLOCK</string>
 					<string id="2">WARP-&gt;L2_CLOCK</string>
-					<string id="3">WARP-&gt;L1_CLOCK</string>
+					<string id="3">WARP-&gt;DRAM_CLOCK</string>
 				</vector>
 				<vector id="ImpulseFunctionsList">
 					<string id="0">return 2;</string>
-					<string id="1">return 600;</string>
+					<string id="1">return 30;</string>
 					<string id="2">return 400;</string>
-					<string id="3">return 30;</string>
+					<string id="3">return 600;</string>
 				</vector>
 				<string id="RewardFunction"></string>
 				<int id="Type">1</int>
@@ -894,16 +941,48 @@
 			</class>
 			<class id="Mobius.RewardModels.pvs.VariableInfo">
 				<int id="ClassVersion">7</int>
-				<string id="Name">inst_ready</string>
+				<string id="Name">clocks3</string>
 				<vector id="AffectingModelList">
 					<string id="0">WARP</string>
+					<string id="1">EXEC_UNIT</string>
+					<string id="2">MEMORY</string>
 				</vector>
 				<vector id="AffectingActionsList">
+					<string id="0">WARP-&gt;DISPATCHER_Copy</string>
+					<string id="1">EXEC_UNIT-&gt;handle_failure</string>
+					<string id="2">EXEC_UNIT-&gt;DISPATCHER</string>
+					<string id="3">MEMORY-&gt;LOCAL_READ_FROM_case3</string>
+					<string id="4">MEMORY-&gt;LOCAL_READ_FROM_case1</string>
+					<string id="5">MEMORY-&gt;LOCAL_READ_FROM_case2</string>
+					<string id="6">MEMORY-&gt;GLOBAL_READ_FROM_case1</string>
+					<string id="7">MEMORY-&gt;GLOBAL_READ_FROM_case2</string>
+					<string id="8">MEMORY-&gt;GLOBAL_READ_FROM_case3</string>
+					<string id="9">MEMORY-&gt;LOCAL_WRITE_TO_case1</string>
+					<string id="10">MEMORY-&gt;LOCAL_WRITE_TO_case2</string>
+					<string id="11">MEMORY-&gt;LOCAL_WRITE_TO_case3</string>
+					<string id="12">MEMORY-&gt;GLOBAL_WRITE_TO_case1</string>
+					<string id="13">MEMORY-&gt;GLOBAL_WRITE_TO_case2</string>
+					<string id="14">MEMORY-&gt;GLOBAL_WRITE_TO_case3</string>
 				</vector>
 				<vector id="ImpulseFunctionsList">
+					<string id="0">return 2;</string>
+					<string id="1">return 2;</string>
+					<string id="2">return 2;</string>
+					<string id="3">return 600;</string>
+					<string id="4">return 30;</string>
+					<string id="5">return 400;</string>
+					<string id="6">return 30;</string>
+					<string id="7">return 400;</string>
+					<string id="8">return 600;</string>
+					<string id="9">return 30;</string>
+					<string id="10">return 400;</string>
+					<string id="11">return 600;</string>
+					<string id="12">return 30;</string>
+					<string id="13">return 400;</string>
+					<string id="14">return 600;</string>
 				</vector>
-				<string id="RewardFunction">return WARP-&gt;INST_COUNTER-&gt;Mark();</string>
-				<int id="Type">0</int>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
 				<int id="TimeSeriesType">1</int>
 				<double id="TimeSeriesFirst">0.0</double>
 				<double id="TimeSeriesLast">0.0</double>
@@ -911,7 +990,7 @@
 				<double id="TimeSeriesInterval">0.0</double>
 				<int id="NumTimePoints">1</int>
 				<vector id="StartTimes">
-					<string id="0">end</string>
+					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
 					<string id="0">end</string>
@@ -937,6 +1016,22 @@
 				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
 				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
 				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+					<boolean id="1">true</boolean>
+					<boolean id="2">true</boolean>
+					<boolean id="3">true</boolean>
+					<boolean id="4">true</boolean>
+					<boolean id="5">true</boolean>
+					<boolean id="6">true</boolean>
+					<boolean id="7">true</boolean>
+					<boolean id="8">true</boolean>
+					<boolean id="9">true</boolean>
+					<boolean id="10">true</boolean>
+					<boolean id="11">true</boolean>
+					<boolean id="12">true</boolean>
+					<boolean id="13">true</boolean>
+					<boolean id="14">true</boolean>
+					<boolean id="15">true</boolean>
 				</vector>
 			</class>
 			<string id="TopModelName">GPU5</string>
@@ -951,9 +1046,15 @@
 				<boolean id="HasPanel">false</boolean>
 				<vector id="LocalGlobalNamesList">
 					<string id="0">end</string>
+					<string id="1">nwarps</string>
+					<string id="2">nsm</string>
+					<string id="3">nprocessors</string>
 				</vector>
 				<vector id="LocalGlobalTypesList">
 					<string id="0">short</string>
+					<string id="1">short</string>
+					<string id="2">short</string>
+					<string id="3">short</string>
 				</vector>
 				<boolean id="DisplayToolTips">true</boolean>
 			</class>

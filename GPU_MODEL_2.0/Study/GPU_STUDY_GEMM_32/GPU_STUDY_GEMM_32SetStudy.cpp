@@ -296,7 +296,7 @@ void GPU_STUDY_GEMM_32SetStudy::SetValues_local_write_l1() {
 // set values for local_write_l2
 //******************************************************
 void GPU_STUDY_GEMM_32SetStudy::SetValues_local_write_l2() {
-  local_write_l2Values[0] = 0;
+  local_write_l2Values[0] = 0.0;
 }
 
 
@@ -304,7 +304,7 @@ void GPU_STUDY_GEMM_32SetStudy::SetValues_local_write_l2() {
 // set values for nprocessors
 //******************************************************
 void GPU_STUDY_GEMM_32SetStudy::SetValues_nprocessors() {
-  nprocessorsValues[0] = 4;
+  nprocessorsValues[0] = 1;
 }
 
 
@@ -312,7 +312,7 @@ void GPU_STUDY_GEMM_32SetStudy::SetValues_nprocessors() {
 // set values for nsm
 //******************************************************
 void GPU_STUDY_GEMM_32SetStudy::SetValues_nsm() {
-  nsmValues[0] = 8;
+  nsmValues[0] = 1;
 }
 
 
@@ -336,7 +336,7 @@ void GPU_STUDY_GEMM_32SetStudy::SetValues_register_count_index() {
 // set values for size
 //******************************************************
 void GPU_STUDY_GEMM_32SetStudy::SetValues_size() {
-  sizeValues[0] = 448;
+  sizeValues[0] = 224;
 }
 
 
