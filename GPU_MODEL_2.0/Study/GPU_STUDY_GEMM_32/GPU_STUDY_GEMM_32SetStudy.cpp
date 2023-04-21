@@ -21,6 +21,9 @@ Float local_read_l2;
 Float local_write_dram;
 Float local_write_l1;
 Float local_write_l2;
+Short nfailedprocessors;
+Short nfailedsm;
+Short nfailedwarps;
 Short nprocessors;
 Short nsm;
 Short nwarps;
@@ -33,7 +36,7 @@ Short size;
 GPU_STUDY_GEMM_32SetStudy::GPU_STUDY_GEMM_32SetStudy() {
 
   // define arrays of global variable names and types
-  NumGVs = 22;
+  NumGVs = 25;
   NumExps = 1;
 
   GVNames = new char*[NumGVs];
@@ -72,16 +75,22 @@ GPU_STUDY_GEMM_32SetStudy::GPU_STUDY_GEMM_32SetStudy() {
   GVTypes[15]=strdup("float");
   GVNames[16]=strdup("local_write_l2");
   GVTypes[16]=strdup("float");
-  GVNames[17]=strdup("nprocessors");
+  GVNames[17]=strdup("nfailedprocessors");
   GVTypes[17]=strdup("short");
-  GVNames[18]=strdup("nsm");
+  GVNames[18]=strdup("nfailedsm");
   GVTypes[18]=strdup("short");
-  GVNames[19]=strdup("nwarps");
+  GVNames[19]=strdup("nfailedwarps");
   GVTypes[19]=strdup("short");
-  GVNames[20]=strdup("register_count_index");
+  GVNames[20]=strdup("nprocessors");
   GVTypes[20]=strdup("short");
-  GVNames[21]=strdup("size");
+  GVNames[21]=strdup("nsm");
   GVTypes[21]=strdup("short");
+  GVNames[22]=strdup("nwarps");
+  GVTypes[22]=strdup("short");
+  GVNames[23]=strdup("register_count_index");
+  GVTypes[23]=strdup("short");
+  GVNames[24]=strdup("size");
+  GVTypes[24]=strdup("short");
 
   // create the arrays to store the values of each gv
   dram_sizeValues = new short[NumExps];
@@ -101,6 +110,9 @@ GPU_STUDY_GEMM_32SetStudy::GPU_STUDY_GEMM_32SetStudy() {
   local_write_dramValues = new float[NumExps];
   local_write_l1Values = new float[NumExps];
   local_write_l2Values = new float[NumExps];
+  nfailedprocessorsValues = new short[NumExps];
+  nfailedsmValues = new short[NumExps];
+  nfailedwarpsValues = new short[NumExps];
   nprocessorsValues = new short[NumExps];
   nsmValues = new short[NumExps];
   nwarpsValues = new short[NumExps];
@@ -125,6 +137,9 @@ GPU_STUDY_GEMM_32SetStudy::GPU_STUDY_GEMM_32SetStudy() {
   SetValues_local_write_dram();
   SetValues_local_write_l1();
   SetValues_local_write_l2();
+  SetValues_nfailedprocessors();
+  SetValues_nfailedsm();
+  SetValues_nfailedwarps();
   SetValues_nprocessors();
   SetValues_nsm();
   SetValues_nwarps();
@@ -155,6 +170,9 @@ GPU_STUDY_GEMM_32SetStudy::~GPU_STUDY_GEMM_32SetStudy() {
   delete [] local_write_dramValues;
   delete [] local_write_l1Values;
   delete [] local_write_l2Values;
+  delete [] nfailedprocessorsValues;
+  delete [] nfailedsmValues;
+  delete [] nfailedwarpsValues;
   delete [] nprocessorsValues;
   delete [] nsmValues;
   delete [] nwarpsValues;
@@ -301,10 +319,34 @@ void GPU_STUDY_GEMM_32SetStudy::SetValues_local_write_l2() {
 
 
 //******************************************************
+// set values for nfailedprocessors
+//******************************************************
+void GPU_STUDY_GEMM_32SetStudy::SetValues_nfailedprocessors() {
+  nfailedprocessorsValues[0] = 1;
+}
+
+
+//******************************************************
+// set values for nfailedsm
+//******************************************************
+void GPU_STUDY_GEMM_32SetStudy::SetValues_nfailedsm() {
+  nfailedsmValues[0] = 1;
+}
+
+
+//******************************************************
+// set values for nfailedwarps
+//******************************************************
+void GPU_STUDY_GEMM_32SetStudy::SetValues_nfailedwarps() {
+  nfailedwarpsValues[0] = 1;
+}
+
+
+//******************************************************
 // set values for nprocessors
 //******************************************************
 void GPU_STUDY_GEMM_32SetStudy::SetValues_nprocessors() {
-  nprocessorsValues[0] = 1;
+  nprocessorsValues[0] = 0;
 }
 
 
@@ -312,7 +354,7 @@ void GPU_STUDY_GEMM_32SetStudy::SetValues_nprocessors() {
 // set values for nsm
 //******************************************************
 void GPU_STUDY_GEMM_32SetStudy::SetValues_nsm() {
-  nsmValues[0] = 1;
+  nsmValues[0] = 0;
 }
 
 
@@ -371,6 +413,9 @@ void GPU_STUDY_GEMM_32SetStudy::PrintGlobalValues(int expNum) {
   cout << "local_write_dram\tfloat\t" << local_write_dram << endl;
   cout << "local_write_l1\tfloat\t" << local_write_l1 << endl;
   cout << "local_write_l2\tfloat\t" << local_write_l2 << endl;
+  cout << "nfailedprocessors\tshort\t" << nfailedprocessors << endl;
+  cout << "nfailedsm\tshort\t" << nfailedsm << endl;
+  cout << "nfailedwarps\tshort\t" << nfailedwarps << endl;
   cout << "nprocessors\tshort\t" << nprocessors << endl;
   cout << "nsm\tshort\t" << nsm << endl;
   cout << "nwarps\tshort\t" << nwarps << endl;
@@ -417,6 +462,12 @@ void *GPU_STUDY_GEMM_32SetStudy::GetGVValue(char *TheGVName) {
     return &local_write_l1;
   else if (strcmp("local_write_l2", TheGVName) == 0)
     return &local_write_l2;
+  else if (strcmp("nfailedprocessors", TheGVName) == 0)
+    return &nfailedprocessors;
+  else if (strcmp("nfailedsm", TheGVName) == 0)
+    return &nfailedsm;
+  else if (strcmp("nfailedwarps", TheGVName) == 0)
+    return &nfailedwarps;
   else if (strcmp("nprocessors", TheGVName) == 0)
     return &nprocessors;
   else if (strcmp("nsm", TheGVName) == 0)
@@ -471,6 +522,12 @@ void GPU_STUDY_GEMM_32SetStudy::OverrideGVValue(char *TheGVName,void *TheGVValue
     SetGvValue(local_write_l1, *(float *)TheGVValue);
   else if (strcmp("local_write_l2", TheGVName) == 0)
     SetGvValue(local_write_l2, *(float *)TheGVValue);
+  else if (strcmp("nfailedprocessors", TheGVName) == 0)
+    SetGvValue(nfailedprocessors, *(short *)TheGVValue);
+  else if (strcmp("nfailedsm", TheGVName) == 0)
+    SetGvValue(nfailedsm, *(short *)TheGVValue);
+  else if (strcmp("nfailedwarps", TheGVName) == 0)
+    SetGvValue(nfailedwarps, *(short *)TheGVValue);
   else if (strcmp("nprocessors", TheGVName) == 0)
     SetGvValue(nprocessors, *(short *)TheGVValue);
   else if (strcmp("nsm", TheGVName) == 0)
@@ -507,6 +564,9 @@ void GPU_STUDY_GEMM_32SetStudy::SetGVs(int expNum) {
   SetGvValue(local_write_dram, local_write_dramValues[expNum]);
   SetGvValue(local_write_l1, local_write_l1Values[expNum]);
   SetGvValue(local_write_l2, local_write_l2Values[expNum]);
+  SetGvValue(nfailedprocessors, nfailedprocessorsValues[expNum]);
+  SetGvValue(nfailedsm, nfailedsmValues[expNum]);
+  SetGvValue(nfailedwarps, nfailedwarpsValues[expNum]);
   SetGvValue(nprocessors, nprocessorsValues[expNum]);
   SetGvValue(nsm, nsmValues[expNum]);
   SetGvValue(nwarps, nwarpsValues[expNum]);

@@ -11,6 +11,9 @@
 extern Short nwarps;
 extern Short nprocessors;
 extern Short nsm;
+extern Short nfailedprocessors;
+extern Short nfailedsm;
+extern Short nfailedwarps;
 
 class GPU5RJ__WARP_REG: public Join {
  public:

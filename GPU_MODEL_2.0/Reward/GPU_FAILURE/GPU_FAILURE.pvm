@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<class id="Mobius.RewardModels.pvs.PVInterface">
+	<int id="ClassVersion">1</int>
+	<class id="Mobius.BaseClasses.BaseInterfaceClass">
+		<int id="ClassVersion">3</int>
+		<string id="ModelName">GPU_FAILURE</string>
+		<class id="Mobius.RewardModels.pvs.PVInfo">
+			<int id="ClassVersion">3</int>
+			<class id="Mobius.BaseClasses.BaseInfoClass">
+				<int id="ClassVersion">2</int>
+			</class>
+			<string id="OutputDirectory">Reward\\GPU_FAILURE\\</string>
+			<string id="PVModelFileName">GPU_FAILUREPVModel</string>
+			<string id="PVNodeFileName">GPU_FAILUREPVNodes</string>
+			<string id="PVArchiveName">GPU_FAILUREPV</string>
+			<vector id="IncludePath">
+				<string id="0">Composed\\GPU_FAILURE\\GPU_FAILURERJ__Rep1.h</string>
+				<string id="1">Composed\\GPU_FAILURE\\GPU_FAILURERJ__PROCESSOR_REP.h</string>
+				<string id="2">Composed\\GPU_FAILURE\\GPU_FAILURERJ__SM_REP.h</string>
+				<string id="3">Composed\\GPU_FAILURE\\GPU_FAILURERJ__Rep2.h</string>
+				<string id="4">
+					Composed\\GPU_FAILURE\\GPU_FAILURERJ__PROCESSOR_REP_FAILURE.
+					h
+				</string>
+				<string id="5">Composed\\GPU_FAILURE\\GPU_FAILURERJ__PROCESSOR.h</string>
+				<string id="6">
+					Composed\\GPU_FAILURE\\GPU_FAILURERJ__STREAMING_MULTIPROCESS
+					OR.h
+				</string>
+				<string id="7">Composed\\GPU_FAILURE\\GPU_FAILURERJ.h</string>
+				<string id="8">Composed\\GPU_FAILURE\\GPU_FAILURERJ__WARP_REG.h</string>
+				<string id="9">Composed\\GPU_FAILURE\\GPU_FAILURERJ__WARP_REG_FAILURE.h</string>
+				<string id="10">Composed\\GPU_FAILURE\\GPU_FAILURERJ__PROCESSOR_FAILURE.h</string>
+				<string id="11">
+					Composed\\GPU_FAILURE\\GPU_FAILURERJ__STREAMING_MULTIPROCESS
+					OR_FAILURE.h
+				</string>
+			</vector>
+			<vector id="HeaderFileList">
+				<string id="0">Reward\\GPU_FAILURE\\GPU_FAILUREPVNodes.h</string>
+				<string id="1">Reward\\GPU_FAILURE\\GPU_FAILUREPVModel.h</string>
+			</vector>
+			<vector id="CodeFileList">
+				<string id="0">Reward\\GPU_FAILURE\\GPU_FAILUREPVNodes.cpp</string>
+				<string id="1">Reward\\GPU_FAILURE\\GPU_FAILUREPVModel.cpp</string>
+			</vector>
+			<int id="NumVars">3</int>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
+				<string id="Name">warp</string>
+				<vector id="AffectingModelList">
+					<string id="0">WARP</string>
+					<string id="1">WARP_FAILURE</string>
+				</vector>
+				<vector id="AffectingActionsList">
+					<string id="0">WARP-&gt;DISPATCHER_Copy</string>
+					<string id="1">WARP_FAILURE-&gt;DISPATCHER_Copy</string>
+				</vector>
+				<vector id="ImpulseFunctionsList">
+					<string id="0">return 1;</string>
+					<string id="1">return 1;</string>
+				</vector>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">0.0</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+					<boolean id="1">true</boolean>
+				</vector>
+			</class>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
+				<string id="Name">exec</string>
+				<vector id="AffectingModelList">
+					<string id="0">EXEC_UNIT</string>
+				</vector>
+				<vector id="AffectingActionsList">
+					<string id="0">EXEC_UNIT-&gt;DISPATCHER</string>
+				</vector>
+				<vector id="ImpulseFunctionsList">
+					<string id="0">return 1;</string>
+				</vector>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">0.0</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+				</vector>
+			</class>
+			<class id="Mobius.RewardModels.pvs.VariableInfo">
+				<int id="ClassVersion">7</int>
+				<string id="Name">clock</string>
+				<vector id="AffectingModelList">
+					<string id="0">WARP</string>
+					<string id="1">EXEC_UNIT</string>
+					<string id="2">MEMORY</string>
+					<string id="3">WARP_FAILURE</string>
+					<string id="4">EXEC_UNIT_FAILURE</string>
+					<string id="5">MEMORY_FAILURE</string>
+				</vector>
+				<vector id="AffectingActionsList">
+					<string id="0">WARP-&gt;DISPATCHER_Copy</string>
+					<string id="1">EXEC_UNIT-&gt;DISPATCHER</string>
+					<string id="2">EXEC_UNIT-&gt;handle_failure</string>
+					<string id="3">WARP_FAILURE-&gt;DISPATCHER_Copy</string>
+					<string id="4">MEMORY-&gt;LOCAL_READ_FROM_case1</string>
+					<string id="5">MEMORY-&gt;LOCAL_READ_FROM_case2</string>
+					<string id="6">MEMORY-&gt;LOCAL_READ_FROM_case3</string>
+					<string id="7">MEMORY-&gt;GLOBAL_READ_FROM_case1</string>
+					<string id="8">MEMORY-&gt;GLOBAL_READ_FROM_case2</string>
+					<string id="9">MEMORY-&gt;GLOBAL_READ_FROM_case3</string>
+					<string id="10">MEMORY-&gt;LOCAL_WRITE_TO_case1</string>
+					<string id="11">MEMORY-&gt;LOCAL_WRITE_TO_case2</string>
+					<string id="12">MEMORY-&gt;LOCAL_WRITE_TO_case3</string>
+					<string id="13">MEMORY-&gt;GLOBAL_WRITE_TO_case1</string>
+					<string id="14">MEMORY-&gt;GLOBAL_WRITE_TO_case2</string>
+					<string id="15">MEMORY-&gt;GLOBAL_WRITE_TO_case3</string>
+					<string id="16">MEMORY_FAILURE-&gt;LOCAL_WRITE_TO_case3</string>
+					<string id="17">MEMORY_FAILURE-&gt;GLOBAL_WRITE_TO_case3</string>
+					<string id="18">MEMORY_FAILURE-&gt;GLOBAL_WRITE_TO_case1</string>
+					<string id="19">MEMORY_FAILURE-&gt;GLOBAL_WRITE_TO_case2</string>
+					<string id="20">MEMORY_FAILURE-&gt;LOCAL_WRITE_TO_case2</string>
+					<string id="21">MEMORY_FAILURE-&gt;LOCAL_WRITE_TO_case1</string>
+					<string id="22">MEMORY_FAILURE-&gt;GLOBAL_READ_FROM_case3</string>
+					<string id="23">MEMORY_FAILURE-&gt;GLOBAL_READ_FROM_case1</string>
+					<string id="24">MEMORY_FAILURE-&gt;GLOBAL_READ_FROM_case2</string>
+					<string id="25">MEMORY_FAILURE-&gt;LOCAL_READ_FROM_case3</string>
+					<string id="26">MEMORY_FAILURE-&gt;LOCAL_READ_FROM_case2</string>
+					<string id="27">MEMORY_FAILURE-&gt;LOCAL_READ_FROM_case1</string>
+					<string id="28">EXEC_UNIT_FAILURE-&gt;handle_failure</string>
+					<string id="29">EXEC_UNIT_FAILURE-&gt;DISPATCHER</string>
+				</vector>
+				<vector id="ImpulseFunctionsList">
+					<string id="0">return 2;</string>
+					<string id="1">return 2;</string>
+					<string id="2">return 2;</string>
+					<string id="3">return 2;</string>
+					<string id="4">return 30;</string>
+					<string id="5">return 400;</string>
+					<string id="6">return 600;</string>
+					<string id="7">return 30;</string>
+					<string id="8">return 400;</string>
+					<string id="9">return 600;</string>
+					<string id="10">return 30;</string>
+					<string id="11">return 400;</string>
+					<string id="12">return 600;</string>
+					<string id="13">return 30;</string>
+					<string id="14">return 400;</string>
+					<string id="15">return 600;</string>
+					<string id="16">return 600;</string>
+					<string id="17">return 600;</string>
+					<string id="18">return 30;</string>
+					<string id="19">return 400;</string>
+					<string id="20">return 400;</string>
+					<string id="21">return 30;</string>
+					<string id="22">return 600;</string>
+					<string id="23">return 30;</string>
+					<string id="24">return 400;</string>
+					<string id="25">return 600;</string>
+					<string id="26">return 400;</string>
+					<string id="27">return 30;</string>
+					<string id="28">return 2;</string>
+					<string id="29">return 2;</string>
+				</vector>
+				<string id="RewardFunction"></string>
+				<int id="Type">1</int>
+				<int id="TimeSeriesType">1</int>
+				<double id="TimeSeriesFirst">0.0</double>
+				<double id="TimeSeriesLast">0.0</double>
+				<double id="TimeSeriesStep">0.0</double>
+				<double id="TimeSeriesInterval">0.0</double>
+				<int id="NumTimePoints">1</int>
+				<vector id="StartTimes">
+					<string id="0">0.0</string>
+				</vector>
+				<vector id="StopTimes">
+					<string id="0">end</string>
+				</vector>
+				<double id="InitialTransient">0.0</double>
+				<double id="BatchSize">1.0</double>
+				<null id="InitialTransientVar"></null>
+				<null id="BatchSizeVar"></null>
+				<boolean id="EstimateMean">true</boolean>
+				<boolean id="EstimateVariance">false</boolean>
+				<boolean id="EstimateInterval">false</boolean>
+				<boolean id="IncludeLowerBoundOnIntervalEstimate">true</boolean>
+				<boolean id="IncludeUpperBoundOnIntervalEstimate">true</boolean>
+				<double id="LowerBoundOnIntervalEstimate">0.0</double>
+				<double id="UpperBoundOnIntervalEstimate">1.0</double>
+				<boolean id="EstimateDistribution">false</boolean>
+				<boolean id="EstimateOutOfRangeProbabilities">true</boolean>
+				<double id="LowerBoundOnDistributionEstimate">0.0</double>
+				<double id="UpperBoundOnDistributionEstimate">1.0</double>
+				<double id="StepSizeOnDistributionEstimate">0.1</double>
+				<int id="ConfidenceLevel">2</int>
+				<double id="ConfidenceInterval">0.1</double>
+				<boolean id="ConfidenceIntervalIsRelative">true</boolean>
+				<boolean id="RewardIsOverAllAvailableModels">true</boolean>
+				<vector id="ImpulseIsOverAllAvailableModels">
+					<boolean id="0">true</boolean>
+					<boolean id="1">true</boolean>
+					<boolean id="2">true</boolean>
+					<boolean id="3">true</boolean>
+					<boolean id="4">true</boolean>
+					<boolean id="5">true</boolean>
+					<boolean id="6">true</boolean>
+					<boolean id="7">true</boolean>
+					<boolean id="8">true</boolean>
+					<boolean id="9">true</boolean>
+					<boolean id="10">true</boolean>
+					<boolean id="11">true</boolean>
+					<boolean id="12">true</boolean>
+					<boolean id="13">true</boolean>
+					<boolean id="14">true</boolean>
+					<boolean id="15">true</boolean>
+					<boolean id="16">true</boolean>
+					<boolean id="17">true</boolean>
+					<boolean id="18">true</boolean>
+					<boolean id="19">true</boolean>
+					<boolean id="20">true</boolean>
+					<boolean id="21">true</boolean>
+					<boolean id="22">true</boolean>
+					<boolean id="23">true</boolean>
+					<boolean id="24">true</boolean>
+					<boolean id="25">true</boolean>
+					<boolean id="26">true</boolean>
+					<boolean id="27">true</boolean>
+					<boolean id="28">true</boolean>
+					<boolean id="29">true</boolean>
+					<boolean id="30">true</boolean>
+					<boolean id="31">true</boolean>
+					<boolean id="32">true</boolean>
+					<boolean id="33">true</boolean>
+					<boolean id="34">true</boolean>
+					<boolean id="35">true</boolean>
+				</vector>
+			</class>
+			<string id="TopModelName">GPU_FAILURE</string>
+			<string id="ModelName">GPU_FAILURE</string>
+		</class>
+		<class id="PVEditor">
+			<int id="ClassVersion">2</int>
+			<string id="TheInterfaceName">GPU_FAILURE</string>
+			<boolean id="SkipAcceptPopup">true</boolean>
+			<class id="Mobius.BaseClasses.BaseEditorClass">
+				<int id="ClassVersion">3</int>
+				<boolean id="HasPanel">false</boolean>
+				<vector id="LocalGlobalNamesList">
+					<string id="0">end</string>
+					<string id="1">nwarps</string>
+					<string id="2">nsm</string>
+					<string id="3">nprocessors</string>
+				</vector>
+				<vector id="LocalGlobalTypesList">
+					<string id="0">short</string>
+					<string id="1">short</string>
+					<string id="2">short</string>
+					<string id="3">short</string>
+				</vector>
+				<boolean id="DisplayToolTips">true</boolean>
+			</class>
+		</class>
+		<boolean id="Valid">true</boolean>
+	</class>
+</class>

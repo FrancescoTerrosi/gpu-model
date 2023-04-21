@@ -26,7 +26,7 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
   Instantaneous_Activity3Group.appendGroup((BaseGroupClass*) &Instantaneous_Activity3_case1);
   Instantaneous_Activity3Group.appendGroup((BaseGroupClass*) &Instantaneous_Activity3_case2);
 
-  Activity* InitialActionList[8]={
+  Activity* InitialActionList[9]={
     &handle_failure_float, //0
     &DISPATCHER, //1
     &Instantaneous_Activity2_case1, //2
@@ -34,16 +34,18 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
     &handle_failure, //4
     &dhn, //5
     &Instantaneous_Activity3_case1, //6
-    &Instantaneous_Activity3_case2  // 7
+    &Instantaneous_Activity3_case2, //7
+    &BARRIER_SYNC  // 8
   };
 
-  BaseGroupClass* InitialGroupList[6]={
+  BaseGroupClass* InitialGroupList[7]={
     (BaseGroupClass*) &(handle_failure_float), 
     (BaseGroupClass*) &(DISPATCHER), 
     (BaseGroupClass*) &(Instantaneous_Activity2Group), 
     (BaseGroupClass*) &(handle_failure), 
     (BaseGroupClass*) &(dhn), 
-    (BaseGroupClass*) &(Instantaneous_Activity3Group)
+    (BaseGroupClass*) &(Instantaneous_Activity3Group), 
+    (BaseGroupClass*) &(BARRIER_SYNC)
   };
 
   FLOAT_ALU_FAILURE = new Place("FLOAT_ALU_FAILURE" ,0);
@@ -60,13 +62,14 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
   INT_ALU_FAILURE = new Place("INT_ALU_FAILURE" ,0);
   ROUTE_ALU_INT = new Place("ROUTE_ALU_INT" ,0);
   Place1 = new Place("Place1" ,0);
+  BARRIER = new Place("BARRIER" ,0);
   short temp_SCHEDULERshort = -1;
   SCHEDULER = new ExtendedPlace<short>("SCHEDULER",temp_SCHEDULERshort);
   short temp_READshort = -1;
   READ = new ExtendedPlace<short>("READ",temp_READshort);
   short temp_WRITEshort = -1;
   WRITE = new ExtendedPlace<short>("WRITE",temp_WRITEshort);
-  BaseStateVariableClass* InitialPlaces[17]={
+  BaseStateVariableClass* InitialPlaces[18]={
     FLOAT_ALU_FAILURE,  // 0
     ROUTE_ALU_FLOAT,  // 1
     INSTRUCTION_READY,  // 2
@@ -81,40 +84,41 @@ EXEC_UNITSAN::EXEC_UNITSAN(){
     INT_ALU_FAILURE,  // 11
     ROUTE_ALU_INT,  // 12
     Place1,  // 13
-    SCHEDULER,  // 14
-    READ,  // 15
-    WRITE   // 16
+    BARRIER,  // 14
+    SCHEDULER,  // 15
+    READ,  // 16
+    WRITE   // 17
   };
   BaseStateVariableClass* InitialROPlaces[0]={
   };
-  initializeSANModelNow("EXEC_UNIT", 17, InitialPlaces, 
+  initializeSANModelNow("EXEC_UNIT", 18, InitialPlaces, 
                         0, InitialROPlaces, 
-                        8, InitialActionList, 6, InitialGroupList);
+                        9, InitialActionList, 7, InitialGroupList);
 
 
   assignPlacesToActivitiesInst();
   assignPlacesToActivitiesTimed();
 
-  int AffectArcs[29][2]={ 
-    {3,0}, {0,0}, {4,0}, {2,0}, {1,0}, {2,1}, {14,1}, {15,1}, 
-    {16,1}, {7,1}, {12,2}, {2,2}, {4,2}, {12,3}, {2,3}, {5,3}, 
-    {7,4}, {11,4}, {4,4}, {2,4}, {12,4}, {4,5}, {13,5}, {1,6}, 
-    {2,6}, {4,6}, {1,7}, {2,7}, {5,7}
+  int AffectArcs[32][2]={ 
+    {3,0}, {0,0}, {4,0}, {2,0}, {1,0}, {2,1}, {15,1}, {16,1}, 
+    {17,1}, {7,1}, {14,1}, {12,2}, {2,2}, {4,2}, {12,3}, {2,3}, 
+    {5,3}, {7,4}, {11,4}, {4,4}, {2,4}, {12,4}, {4,5}, {13,5}, 
+    {1,6}, {2,6}, {4,6}, {1,7}, {2,7}, {5,7}, {14,8}, {2,8}
   };
-  for(int n=0;n<29;n++) {
+  for(int n=0;n<32;n++) {
     AddAffectArc(InitialPlaces[AffectArcs[n][0]],
                  InitialActionList[AffectArcs[n][1]]);
   }
-  int EnableArcs[9][2]={ 
-    {3,0}, {14,1}, {8,1}, {12,2}, {12,3}, {7,4}, {4,5}, {1,6}, 
-    {1,7}
+  int EnableArcs[10][2]={ 
+    {3,0}, {15,1}, {8,1}, {12,2}, {12,3}, {7,4}, {4,5}, {1,6}, 
+    {1,7}, {14,8}
   };
-  for(int n=0;n<9;n++) {
+  for(int n=0;n<10;n++) {
     AddEnableArc(InitialPlaces[EnableArcs[n][0]],
                  InitialActionList[EnableArcs[n][1]]);
   }
 
-  for(int n=0;n<8;n++) {
+  for(int n=0;n<9;n++) {
     InitialActionList[n]->LinkVariables();
   }
   CustomInitialization();
@@ -135,12 +139,13 @@ void EXEC_UNITSAN::assignPlacesToActivitiesInst(){
   handle_failure_float.RESULT_KO = (Place*) LocalStateVariables[4];
   handle_failure_float.INSTRUCTION_READY = (Place*) LocalStateVariables[2];
   handle_failure_float.ROUTE_ALU_FLOAT = (Place*) LocalStateVariables[1];
-  DISPATCHER.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[14];
+  DISPATCHER.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[15];
   DISPATCHER.REGISTERS_FILL = (Place*) LocalStateVariables[8];
   DISPATCHER.INSTRUCTION_READY = (Place*) LocalStateVariables[2];
-  DISPATCHER.READ = (ExtendedPlace<short>*) LocalStateVariables[15];
-  DISPATCHER.WRITE = (ExtendedPlace<short>*) LocalStateVariables[16];
+  DISPATCHER.READ = (ExtendedPlace<short>*) LocalStateVariables[16];
+  DISPATCHER.WRITE = (ExtendedPlace<short>*) LocalStateVariables[17];
   DISPATCHER.INT_ALU = (Place*) LocalStateVariables[7];
+  DISPATCHER.BARRIER = (Place*) LocalStateVariables[14];
   Instantaneous_Activity2_case1.ROUTE_ALU_INT = (Place*) LocalStateVariables[12];
   Instantaneous_Activity2_case1.INSTRUCTION_READY = (Place*) LocalStateVariables[2];
   Instantaneous_Activity2_case1.RESULT_KO = (Place*) LocalStateVariables[4];
@@ -160,6 +165,8 @@ void EXEC_UNITSAN::assignPlacesToActivitiesInst(){
   Instantaneous_Activity3_case2.ROUTE_ALU_FLOAT = (Place*) LocalStateVariables[1];
   Instantaneous_Activity3_case2.INSTRUCTION_READY = (Place*) LocalStateVariables[2];
   Instantaneous_Activity3_case2.RESULT_OK = (Place*) LocalStateVariables[5];
+  BARRIER_SYNC.BARRIER = (Place*) LocalStateVariables[14];
+  BARRIER_SYNC.INSTRUCTION_READY = (Place*) LocalStateVariables[2];
 }
 void EXEC_UNITSAN::assignPlacesToActivitiesTimed(){
 }
@@ -232,7 +239,7 @@ BaseActionClass* EXEC_UNITSAN::handle_failure_floatActivity::Fire(){
 
 
 EXEC_UNITSAN::DISPATCHERActivity::DISPATCHERActivity(){
-  ActivityInitialize("DISPATCHER",1,Instantaneous , RaceEnabled, 5,2, false);
+  ActivityInitialize("DISPATCHER",1,Instantaneous , RaceEnabled, 6,2, false);
 }
 
 void EXEC_UNITSAN::DISPATCHERActivity::LinkVariables(){
@@ -242,6 +249,7 @@ void EXEC_UNITSAN::DISPATCHERActivity::LinkVariables(){
 
 
   INT_ALU->Register(&INT_ALU_Mobius_Mark);
+  BARRIER->Register(&BARRIER_Mobius_Mark);
 }
 
 bool EXEC_UNITSAN::DISPATCHERActivity::Enabled(){
@@ -308,6 +316,10 @@ BaseActionClass* EXEC_UNITSAN::DISPATCHERActivity::Fire(){
 
     case 7:
         INT_ALU->Mark()++;
+    break;
+
+    case 8:
+        BARRIER->Mark()++;
     break;
 
     default:
@@ -623,6 +635,54 @@ BaseActionClass* EXEC_UNITSAN::Instantaneous_Activity3Activity_case2::Fire(){
   (*(ROUTE_ALU_FLOAT_Mobius_Mark))--;
   (*(INSTRUCTION_READY_Mobius_Mark))++;
   (*(RESULT_OK_Mobius_Mark))++;
+  return this;
+}
+
+/*======================BARRIER_SYNCActivity========================*/
+
+
+EXEC_UNITSAN::BARRIER_SYNCActivity::BARRIER_SYNCActivity(){
+  ActivityInitialize("BARRIER_SYNC",6,Instantaneous , RaceEnabled, 2,1, false);
+}
+
+void EXEC_UNITSAN::BARRIER_SYNCActivity::LinkVariables(){
+  BARRIER->Register(&BARRIER_Mobius_Mark);
+  INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
+}
+
+bool EXEC_UNITSAN::BARRIER_SYNCActivity::Enabled(){
+  OldEnabled=NewEnabled;
+  NewEnabled=(((*(BARRIER_Mobius_Mark)) >=1));
+  return NewEnabled;
+}
+
+double EXEC_UNITSAN::BARRIER_SYNCActivity::Weight(){ 
+  return 1;
+}
+
+bool EXEC_UNITSAN::BARRIER_SYNCActivity::ReactivationPredicate(){ 
+  return false;
+}
+
+bool EXEC_UNITSAN::BARRIER_SYNCActivity::ReactivationFunction(){ 
+  return false;
+}
+
+double EXEC_UNITSAN::BARRIER_SYNCActivity::SampleDistribution(){
+  return 0;
+}
+
+double* EXEC_UNITSAN::BARRIER_SYNCActivity::ReturnDistributionParameters(){
+    return NULL;
+}
+
+int EXEC_UNITSAN::BARRIER_SYNCActivity::Rank(){
+  return 1;
+}
+
+BaseActionClass* EXEC_UNITSAN::BARRIER_SYNCActivity::Fire(){
+  (*(BARRIER_Mobius_Mark))--;
+  (*(INSTRUCTION_READY_Mobius_Mark))++;
   return this;
 }
 

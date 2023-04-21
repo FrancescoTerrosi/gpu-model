@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<class id="Mobius.Studies.SetStudy.SetStudyInterface">
+	<int id="ClassVersion">1</int>
+	<class id="Mobius.Studies.Common.BaseStudyInterface">
+		<int id="ClassVersion">1</int>
+		<class id="Mobius.BaseClasses.BaseInterfaceClass">
+			<int id="ClassVersion">3</int>
+			<string id="ModelName">GPU_STUDY_GEMM_FAILURE_32</string>
+			<class id="Mobius.Studies.SetStudy.SetStudyInfoClass">
+				<int id="ClassVersion">1</int>
+				<class id="Mobius.Studies.BaseStudyInfoClass">
+					<int id="ClassVersion">1</int>
+					<class id="Mobius.BaseClasses.BaseInfoClass">
+						<int id="ClassVersion">2</int>
+					</class>
+				</class>
+			</class>
+			<class id="Mobius.Studies.SetStudy.SetStudyEditor">
+				<int id="ClassVersion">2</int>
+				<class id="Mobius.Studies.Common.BaseStudyEditor">
+					<int id="ClassVersion">4</int>
+					<class id="Mobius.BaseClasses.BaseEditorClass">
+						<int id="ClassVersion">3</int>
+						<boolean id="HasPanel">false</boolean>
+						<vector id="LocalGlobalNamesList">
+						</vector>
+						<vector id="LocalGlobalTypesList">
+						</vector>
+						<boolean id="DisplayToolTips">true</boolean>
+					</class>
+					<string id="FullPath">
+						C:\\Users\\The_A\\gpu-model\\GPU_MODEL_2.0\\Study\\GPU_STUDY
+						_GEMM_FAILURE_32\\
+					</string>
+					<string id="PVModelName">GPU_FAILURE</string>
+					<vector id="ActiveExpVector">
+						<boolean id="0">true</boolean>
+					</vector>
+					<vector id="GVNameVector">
+						<string id="0">dram_size</string>
+						<string id="1">end</string>
+						<string id="2">failure_index</string>
+						<string id="3">global_read_dram</string>
+						<string id="4">global_read_l1</string>
+						<string id="5">global_read_l2</string>
+						<string id="6">global_write_dram</string>
+						<string id="7">global_write_l1</string>
+						<string id="8">global_write_l2</string>
+						<string id="9">l1_size</string>
+						<string id="10">l2_size</string>
+						<string id="11">local_read_dram</string>
+						<string id="12">local_read_l1</string>
+						<string id="13">local_read_l2</string>
+						<string id="14">local_write_dram</string>
+						<string id="15">local_write_l1</string>
+						<string id="16">local_write_l2</string>
+						<string id="17">nfailedprocessors</string>
+						<string id="18">nfailedsm</string>
+						<string id="19">nfailedwarps</string>
+						<string id="20">nprocessors</string>
+						<string id="21">nsm</string>
+						<string id="22">nwarps</string>
+						<string id="23">register_count_index</string>
+						<string id="24">size</string>
+					</vector>
+					<vector id="GVTypeStringVector">
+						<string id="0">short</string>
+						<string id="1">short</string>
+						<string id="2">short</string>
+						<string id="3">float</string>
+						<string id="4">float</string>
+						<string id="5">float</string>
+						<string id="6">float</string>
+						<string id="7">float</string>
+						<string id="8">float</string>
+						<string id="9">short</string>
+						<string id="10">short</string>
+						<string id="11">float</string>
+						<string id="12">float</string>
+						<string id="13">float</string>
+						<string id="14">float</string>
+						<string id="15">float</string>
+						<string id="16">float</string>
+						<string id="17">short</string>
+						<string id="18">short</string>
+						<string id="19">short</string>
+						<string id="20">short</string>
+						<string id="21">short</string>
+						<string id="22">short</string>
+						<string id="23">short</string>
+						<string id="24">short</string>
+					</vector>
+				</class>
+				<int id="VectorLength">1</int>
+				<int id="NumOfGVs">25</int>
+				<string id="Name">Experiment 1</string>
+				<vector id="GVValueVector">
+					<string id="0">100</string>
+					<string id="1">100</string>
+					<string id="2">10011</string>
+					<string id="3">0.05</string>
+					<string id="4">0.92</string>
+					<string id="5">0.03</string>
+					<string id="6">0.0</string>
+					<string id="7">0</string>
+					<string id="8">1.0</string>
+					<string id="9">100</string>
+					<string id="10">100</string>
+					<string id="11">0</string>
+					<string id="12">0</string>
+					<string id="13">0</string>
+					<string id="14">0</string>
+					<string id="15">0</string>
+					<string id="16">0.0</string>
+					<string id="17">1</string>
+					<string id="18">1</string>
+					<string id="19">1</string>
+					<string id="20">1</string>
+					<string id="21">1</string>
+					<string id="22">1</string>
+					<string id="23">0</string>
+					<string id="24">224</string>
+				</vector>
+			</class>
+			<boolean id="Valid">true</boolean>
+		</class>
+	</class>
+</class>

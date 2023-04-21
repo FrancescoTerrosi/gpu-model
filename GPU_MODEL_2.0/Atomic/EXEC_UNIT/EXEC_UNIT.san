@@ -308,6 +308,25 @@
 						<boolean id="ConstantMarking">true</boolean>
 						<int id="InitialState">0</int>
 					</class>
+					<class id="Mobius.AtomicModels.San.PlacePanelObject">
+						<int id="ClassVersion">1</int>
+						<class id="Mobius.BaseClasses.BaseVertexClass">
+							<int id="ClassVersion">3</int>
+							<class id="Mobius.BaseClasses.BasePanelObjectClass">
+								<int id="ClassVersion">5</int>
+								<string id="Name">BARRIER</string>
+								<boolean id="ContainsLabel">true</boolean>
+								<boolean id="IsLabelShown">true</boolean>
+							</class>
+							<point id="CenterPoint">
+								<int id="x">612</int>
+								<int id="y">132</int>
+							</point>
+						</class>
+						<boolean id="ReadOnly">false</boolean>
+						<boolean id="ConstantMarking">true</boolean>
+						<int id="InitialState">0</int>
+					</class>
 					<class id="Mobius.AtomicModels.San.ExtendedPlacePanelObject">
 						<int id="ClassVersion">3</int>
 						<class id="Mobius.AtomicModels.San.PlacePanelObject">
@@ -457,8 +476,9 @@
 							_ALU-&gt;Mark()++;\n    break;\n\n    case 5:\n        INT_A
 							LU-&gt;Mark()++;\n    break;\n\n    case 6:\n        INT_ALU
 							-&gt;Mark()++;\n    break;\n\n    case 7:\n        INT_ALU-&
-							gt;Mark()++;\n    break;\n\n    default:\n    break;\n}\nSCH
-							EDULER-&gt;Mark() = -1;
+							gt;Mark()++;\n    break;\n\n    case 8:\n        BARRIER-&gt
+							;Mark()++;\n    break;\n\n    default:\n    break;\n}\nSCHED
+							ULER-&gt;Mark() = -1;
 						</string>
 					</class>
 					<class id="Mobius.AtomicModels.San.OutputGatePanelObject">
@@ -642,6 +662,32 @@
 							</vector>
 						</class>
 					</class>
+					<class id="Mobius.AtomicModels.San.InstantaneousActivityPanelObject">
+						<int id="ClassVersion">1</int>
+						<class id="Mobius.AtomicModels.San.ActivityPanelObject">
+							<int id="ClassVersion">1</int>
+							<class id="Mobius.BaseClasses.ExtendedBaseVertexClass">
+								<int id="ClassVersion">1</int>
+								<class id="Mobius.BaseClasses.BaseVertexClass">
+									<int id="ClassVersion">3</int>
+									<class id="Mobius.BaseClasses.BasePanelObjectClass">
+										<int id="ClassVersion">5</int>
+										<string id="Name">BARRIER_SYNC</string>
+										<boolean id="ContainsLabel">true</boolean>
+										<boolean id="IsLabelShown">true</boolean>
+									</class>
+									<point id="CenterPoint">
+										<int id="x">468</int>
+										<int id="y">84</int>
+									</point>
+								</class>
+							</class>
+							<int id="NumberOfCases">1</int>
+							<vector id="CaseDistributions">
+								<string id="0"></string>
+							</vector>
+						</class>
+					</class>
 					<class id="Mobius.BaseClasses.BaseEdgeClass">
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
@@ -761,6 +807,23 @@
 							<point id="1">
 								<int id="x">227</int>
 								<int id="y">215</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">BARRIER_SYNC</string>
+						<string id="FinishVertex">INSTRUCTION_READY</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">469</int>
+								<int id="y">79</int>
+							</point>
+							<point id="1">
+								<int id="x">226</int>
+								<int id="y">209</int>
 							</point>
 						</vector>
 					</class>
@@ -914,6 +977,23 @@
 							<point id="1">
 								<int id="x">1017</int>
 								<int id="y">684</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">Output_Gate</string>
+						<string id="FinishVertex">BARRIER</string>
+						<boolean id="Arrows">false</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">438</int>
+								<int id="y">278</int>
+							</point>
+							<point id="1">
+								<int id="x">606</int>
+								<int id="y">131</int>
 							</point>
 						</vector>
 					</class>
@@ -1135,6 +1215,23 @@
 							<point id="1">
 								<int id="x">636</int>
 								<int id="y">753</int>
+							</point>
+						</vector>
+					</class>
+					<class id="Mobius.BaseClasses.BaseEdgeClass">
+						<int id="ClassVersion">3</int>
+						<int id="LineType">0</int>
+						<string id="StartVertex">BARRIER</string>
+						<string id="FinishVertex">BARRIER_SYNC</string>
+						<boolean id="Arrows">true</boolean>
+						<vector id="PointList">
+							<point id="0">
+								<int id="x">620</int>
+								<int id="y">136</int>
+							</point>
+							<point id="1">
+								<int id="x">469</int>
+								<int id="y">79</int>
 							</point>
 						</vector>
 					</class>

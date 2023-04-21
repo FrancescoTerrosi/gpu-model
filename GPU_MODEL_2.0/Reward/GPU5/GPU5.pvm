@@ -954,15 +954,16 @@
 					<string id="3">MEMORY-&gt;LOCAL_READ_FROM_case3</string>
 					<string id="4">MEMORY-&gt;LOCAL_READ_FROM_case1</string>
 					<string id="5">MEMORY-&gt;LOCAL_READ_FROM_case2</string>
-					<string id="6">MEMORY-&gt;GLOBAL_READ_FROM_case1</string>
-					<string id="7">MEMORY-&gt;GLOBAL_READ_FROM_case2</string>
-					<string id="8">MEMORY-&gt;GLOBAL_READ_FROM_case3</string>
-					<string id="9">MEMORY-&gt;LOCAL_WRITE_TO_case1</string>
-					<string id="10">MEMORY-&gt;LOCAL_WRITE_TO_case2</string>
-					<string id="11">MEMORY-&gt;LOCAL_WRITE_TO_case3</string>
-					<string id="12">MEMORY-&gt;GLOBAL_WRITE_TO_case1</string>
+					<string id="6">MEMORY-&gt;GLOBAL_READ_FROM_case2</string>
+					<string id="7">MEMORY-&gt;LOCAL_WRITE_TO_case1</string>
+					<string id="8">MEMORY-&gt;LOCAL_WRITE_TO_case2</string>
+					<string id="9">MEMORY-&gt;GLOBAL_WRITE_TO_case1</string>
+					<string id="10">MEMORY-&gt;LOCAL_WRITE_TO_case3</string>
+					<string id="11">MEMORY-&gt;GLOBAL_WRITE_TO_case3</string>
+					<string id="12">MEMORY-&gt;GLOBAL_READ_FROM_case1</string>
 					<string id="13">MEMORY-&gt;GLOBAL_WRITE_TO_case2</string>
-					<string id="14">MEMORY-&gt;GLOBAL_WRITE_TO_case3</string>
+					<string id="14">MEMORY-&gt;GLOBAL_READ_FROM_case3</string>
+					<string id="15">EXEC_UNIT-&gt;BARRIER_SYNC</string>
 				</vector>
 				<vector id="ImpulseFunctionsList">
 					<string id="0">return 2;</string>
@@ -971,15 +972,16 @@
 					<string id="3">return 600;</string>
 					<string id="4">return 30;</string>
 					<string id="5">return 400;</string>
-					<string id="6">return 30;</string>
-					<string id="7">return 400;</string>
-					<string id="8">return 600;</string>
+					<string id="6">return 400;</string>
+					<string id="7">return 30;</string>
+					<string id="8">return 400;</string>
 					<string id="9">return 30;</string>
-					<string id="10">return 400;</string>
+					<string id="10">return 600;</string>
 					<string id="11">return 600;</string>
 					<string id="12">return 30;</string>
 					<string id="13">return 400;</string>
 					<string id="14">return 600;</string>
+					<string id="15">return 800;</string>
 				</vector>
 				<string id="RewardFunction"></string>
 				<int id="Type">1</int>
@@ -1032,6 +1034,7 @@
 					<boolean id="13">true</boolean>
 					<boolean id="14">true</boolean>
 					<boolean id="15">true</boolean>
+					<boolean id="16">true</boolean>
 				</vector>
 			</class>
 			<string id="TopModelName">GPU5</string>

@@ -12,6 +12,9 @@
 extern Short nwarps;
 extern Short nprocessors;
 extern Short nsm;
+extern Short nfailedprocessors;
+extern Short nfailedsm;
+extern Short nfailedwarps;
 
 class GPU5RJ__SM_REP: public Rep {
  public:

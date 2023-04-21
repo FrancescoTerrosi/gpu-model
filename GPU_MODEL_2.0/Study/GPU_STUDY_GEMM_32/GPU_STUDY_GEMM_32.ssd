@@ -30,7 +30,7 @@
 					</class>
 					<string id="FullPath">
 						C:\\Users\\The_A\\gpu-model\\GPU_MODEL_2.0\\Study\\GPU_STUDY
-						\\
+						_GEMM_32\\
 					</string>
 					<string id="PVModelName">GPU5</string>
 					<vector id="ActiveExpVector">
@@ -54,11 +54,14 @@
 						<string id="14">local_write_dram</string>
 						<string id="15">local_write_l1</string>
 						<string id="16">local_write_l2</string>
-						<string id="17">nprocessors</string>
-						<string id="18">nsm</string>
-						<string id="19">nwarps</string>
-						<string id="20">register_count_index</string>
-						<string id="21">size</string>
+						<string id="17">nfailedprocessors</string>
+						<string id="18">nfailedsm</string>
+						<string id="19">nfailedwarps</string>
+						<string id="20">nprocessors</string>
+						<string id="21">nsm</string>
+						<string id="22">nwarps</string>
+						<string id="23">register_count_index</string>
+						<string id="24">size</string>
 					</vector>
 					<vector id="GVTypeStringVector">
 						<string id="0">short</string>
@@ -83,10 +86,13 @@
 						<string id="19">short</string>
 						<string id="20">short</string>
 						<string id="21">short</string>
+						<string id="22">short</string>
+						<string id="23">short</string>
+						<string id="24">short</string>
 					</vector>
 				</class>
 				<int id="VectorLength">1</int>
-				<int id="NumOfGVs">22</int>
+				<int id="NumOfGVs">25</int>
 				<string id="Name">Experiment 1</string>
 				<vector id="GVValueVector">
 					<string id="0">100</string>
@@ -110,7 +116,10 @@
 					<string id="18">1</string>
 					<string id="19">1</string>
 					<string id="20">0</string>
-					<string id="21">224</string>
+					<string id="21">0</string>
+					<string id="22">1</string>
+					<string id="23">0</string>
+					<string id="24">224</string>
 				</vector>
 			</class>
 			<boolean id="Valid">true</boolean>

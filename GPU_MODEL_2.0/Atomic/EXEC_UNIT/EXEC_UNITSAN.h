@@ -134,6 +134,8 @@ public:
   ExtendedPlace<short>* WRITE;
   Place* INT_ALU;
   short* INT_ALU_Mobius_Mark;
+  Place* BARRIER;
+  short* BARRIER_Mobius_Mark;
 
   double* TheDistributionParameters;
   DISPATCHERActivity();
@@ -295,6 +297,28 @@ public:
   BaseActionClass* Fire();
 }; // Instantaneous_Activity3Activity_case2Activity
 
+class BARRIER_SYNCActivity:public Activity {
+public:
+
+  Place* BARRIER;
+  short* BARRIER_Mobius_Mark;
+  Place* INSTRUCTION_READY;
+  short* INSTRUCTION_READY_Mobius_Mark;
+
+  double* TheDistributionParameters;
+  BARRIER_SYNCActivity();
+  double Rate(){return 0;}
+  bool Enabled();
+  void LinkVariables();
+  double Weight();
+  bool ReactivationPredicate();
+  bool ReactivationFunction();
+  double SampleDistribution();
+  double* ReturnDistributionParameters();
+  int Rank();
+  BaseActionClass* Fire();
+}; // BARRIER_SYNCActivityActivity
+
   //List of user-specified place names
   Place* FLOAT_ALU_FAILURE;
   Place* ROUTE_ALU_FLOAT;
@@ -310,6 +334,7 @@ public:
   Place* INT_ALU_FAILURE;
   Place* ROUTE_ALU_INT;
   Place* Place1;
+  Place* BARRIER;
   ExtendedPlace<short>* SCHEDULER;
   ExtendedPlace<short>* READ;
   ExtendedPlace<short>* WRITE;
@@ -323,6 +348,7 @@ public:
   dhnActivity dhn;
   Instantaneous_Activity3Activity_case1 Instantaneous_Activity3_case1;
   Instantaneous_Activity3Activity_case2 Instantaneous_Activity3_case2;
+  BARRIER_SYNCActivity BARRIER_SYNC;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
   PostselectGroup handle_failure_floatGroup;
@@ -331,6 +357,7 @@ public:
   PostselectGroup handle_failureGroup;
   PostselectGroup dhnGroup;
   PostselectGroup Instantaneous_Activity3Group;
+  PostselectGroup BARRIER_SYNCGroup;
 
   EXEC_UNITSAN();
   ~EXEC_UNITSAN();

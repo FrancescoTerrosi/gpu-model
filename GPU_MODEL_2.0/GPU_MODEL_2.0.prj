@@ -30,26 +30,44 @@
   <composed key="GPU5">
     <value name="GPU5" category="Composed" type="Rep/Join Model"/>
   </composed>
+  <composed key="GPU_FAILURE">
+    <value name="GPU_FAILURE" category="Composed" type="Rep/Join Model"/>
+  </composed>
   <reward key="GPU_AVERAGE">
     <value name="GPU_AVERAGE" category="Reward" type="Performance Variables Model"/>
   </reward>
   <reward key="GPU5">
     <value name="GPU5" category="Reward" type="Performance Variables Model"/>
   </reward>
-  <study key="GPU_STUDY_GEMM_64">
-    <value name="GPU_STUDY_GEMM_64" category="Study" type="Set Study"/>
+  <reward key="GPU_FAILURE">
+    <value name="GPU_FAILURE" category="Reward" type="Performance Variables Model"/>
+  </reward>
+  <study key="GPU_STUDY_KMEANS_1">
+    <value name="GPU_STUDY_KMEANS_1" category="Study" type="Set Study"/>
+  </study>
+  <study key="GPU_STUDY_KMEANS_2">
+    <value name="GPU_STUDY_KMEANS_2" category="Study" type="Set Study"/>
+  </study>
+  <study key="GPU_STUDY_GEMM_512">
+    <value name="GPU_STUDY_GEMM_512" category="Study" type="Set Study"/>
   </study>
   <study key="GPU_STUDY_GEMM_256">
     <value name="GPU_STUDY_GEMM_256" category="Study" type="Set Study"/>
   </study>
+  <study key="GPU_STUDY_REDUCE_32">
+    <value name="GPU_STUDY_REDUCE_32" category="Study" type="Set Study"/>
+  </study>
   <study key="GPU_STUDY_GEMM_32">
     <value name="GPU_STUDY_GEMM_32" category="Study" type="Set Study"/>
   </study>
+  <study key="GPU_STUDY_GEMM_64">
+    <value name="GPU_STUDY_GEMM_64" category="Study" type="Set Study"/>
+  </study>
+  <study key="GPU_STUDY_GEMM_FAILURE_32">
+    <value name="GPU_STUDY_GEMM_FAILURE_32" category="Study" type="Set Study"/>
+  </study>
   <study key="GPU_STUDY_GEMM_128">
     <value name="GPU_STUDY_GEMM_128" category="Study" type="Set Study"/>
-  </study>
-  <study key="GPU_STUDY_GEMM_512">
-    <value name="GPU_STUDY_GEMM_512" category="Study" type="Set Study"/>
   </study>
   <solver key="GPU_SOLVER">
     <value name="GPU_SOLVER" category="Solver" type="Simulator"/>
