@@ -362,7 +362,7 @@ void GPU_STUDY_KMEANS_2SetStudy::SetValues_nsm() {
 // set values for nwarps
 //******************************************************
 void GPU_STUDY_KMEANS_2SetStudy::SetValues_nwarps() {
-  nwarpsValues[0] = 64;
+  nwarpsValues[0] = 130;
 }
 
 
@@ -378,7 +378,7 @@ void GPU_STUDY_KMEANS_2SetStudy::SetValues_register_count_index() {
 // set values for size
 //******************************************************
 void GPU_STUDY_KMEANS_2SetStudy::SetValues_size() {
-  sizeValues[0] = 416;
+  sizeValues[0] = 104;
 }
 
 

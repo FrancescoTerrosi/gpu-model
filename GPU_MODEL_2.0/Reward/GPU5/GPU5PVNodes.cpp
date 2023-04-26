@@ -2053,7 +2053,7 @@ GPU5PV17Impulse15::~GPU5PV17Impulse15() {
 
 double GPU5PV17Impulse15::Impulse_Function(double FiringTime)
 {
-return 800;
+return 2000;
 
 return(0);
 }

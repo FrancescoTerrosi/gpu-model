@@ -30,7 +30,7 @@
 			<int id="NumMachines">1</int>
 			<string id="MachineName">DESKTOP-3AHUC0F</string>
 			<int id="NumGroups">0</int>
-			<string id="StudyName">GPU_STUDY_KMEANS_1</string>
+			<string id="StudyName">GPU_STUDY_KMEANS_2</string>
 			<boolean id="TerminatingSimulation">true</boolean>
 			<boolean id="StoreOutput">false</boolean>
 			<boolean id="OutputASCII">false</boolean>

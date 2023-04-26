@@ -981,7 +981,7 @@
 					<string id="12">return 30;</string>
 					<string id="13">return 400;</string>
 					<string id="14">return 600;</string>
-					<string id="15">return 800;</string>
+					<string id="15">return 2000;</string>
 				</vector>
 				<string id="RewardFunction"></string>
 				<int id="Type">1</int>
