@@ -8,7 +8,6 @@
 #include "Cpp/Study/BaseStudyClass.hpp"
 
 extern Short dram_size;
-extern Short end;
 extern Short failure_index;
 extern Float global_read_dram;
 extern Float global_read_l1;
@@ -31,6 +30,7 @@ extern Short nprocessors;
 extern Short nsm;
 extern Short nwarps;
 extern Short register_count_index;
+extern Short sim_end;
 extern Short size;
 
 class GPU_STUDY_KMEANS_1SetStudy : public BaseStudyClass {
@@ -42,7 +42,6 @@ GPU_STUDY_KMEANS_1SetStudy();
 private:
 
 short *dram_sizeValues;
-short *endValues;
 short *failure_indexValues;
 float *global_read_dramValues;
 float *global_read_l1Values;
@@ -65,10 +64,10 @@ short *nprocessorsValues;
 short *nsmValues;
 short *nwarpsValues;
 short *register_count_indexValues;
+short *sim_endValues;
 short *sizeValues;
 
 void SetValues_dram_size();
-void SetValues_end();
 void SetValues_failure_index();
 void SetValues_global_read_dram();
 void SetValues_global_read_l1();
@@ -91,6 +90,7 @@ void SetValues_nprocessors();
 void SetValues_nsm();
 void SetValues_nwarps();
 void SetValues_register_count_index();
+void SetValues_sim_end();
 void SetValues_size();
 
 void PrintGlobalValues(int);

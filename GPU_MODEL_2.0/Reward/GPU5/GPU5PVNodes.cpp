@@ -39,7 +39,7 @@ ImpulseNodeClass** GPU5PV0Impulse0::CreateImpulseWorkerList(int NumberOfWorkers)
 GPU5PV0::GPU5PV0(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("warp",(RewardType)1,1, startpts, stoppts, timeindex, 1,0, 0);
   AddImpulse("DISPATCHER_Copy","WARP",&Impulse0);
 }
@@ -92,7 +92,7 @@ ImpulseNodeClass** GPU5PV1Impulse0::CreateImpulseWorkerList(int NumberOfWorkers)
 GPU5PV1::GPU5PV1(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("exec_dispatch",(RewardType)1,1, startpts, stoppts, timeindex, 1,0, 0);
   AddImpulse("DISPATCHER","EXEC_UNIT",&Impulse0);
 }
@@ -181,7 +181,7 @@ ImpulseNodeClass** GPU5PV2Impulse1::CreateImpulseWorkerList(int NumberOfWorkers)
 GPU5PV2::GPU5PV2(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("l1_read",(RewardType)1,1, startpts, stoppts, timeindex, 2,0, 0);
   AddImpulse("READ_FROM_case1","L1_CACHE",&Impulse0);
   AddImpulse("READ_FROM_case2","L1_CACHE",&Impulse1);
@@ -271,7 +271,7 @@ ImpulseNodeClass** GPU5PV3Impulse1::CreateImpulseWorkerList(int NumberOfWorkers)
 GPU5PV3::GPU5PV3(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("l2_read",(RewardType)1,1, startpts, stoppts, timeindex, 2,0, 0);
   AddImpulse("READ_FROM_case2","L2_CACHE",&Impulse0);
   AddImpulse("READ_FROM_case1","L2_CACHE",&Impulse1);
@@ -361,7 +361,7 @@ ImpulseNodeClass** GPU5PV4Impulse1::CreateImpulseWorkerList(int NumberOfWorkers)
 GPU5PV4::GPU5PV4(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("dram_read",(RewardType)1,1, startpts, stoppts, timeindex, 2,0, 0);
   AddImpulse("READ_FROM_case1","DRAM",&Impulse0);
   AddImpulse("READ_FROM_case2","DRAM",&Impulse1);
@@ -415,7 +415,7 @@ ImpulseNodeClass** GPU5PV5Impulse0::CreateImpulseWorkerList(int NumberOfWorkers)
 GPU5PV5::GPU5PV5(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("alu_ok",(RewardType)1,1, startpts, stoppts, timeindex, 1,0, 0);
   AddImpulse("Instantaneous_Activity2_case2","EXEC_UNIT",&Impulse0);
 }
@@ -468,7 +468,7 @@ ImpulseNodeClass** GPU5PV6Impulse0::CreateImpulseWorkerList(int NumberOfWorkers)
 GPU5PV6::GPU5PV6(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("alu_ko",(RewardType)1,1, startpts, stoppts, timeindex, 1,0, 0);
   AddImpulse("Instantaneous_Activity2_case1","EXEC_UNIT",&Impulse0);
 }
@@ -521,7 +521,7 @@ ImpulseNodeClass** GPU5PV7Impulse0::CreateImpulseWorkerList(int NumberOfWorkers)
 GPU5PV7::GPU5PV7(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("l1_read_ko",(RewardType)1,1, startpts, stoppts, timeindex, 1,0, 0);
   AddImpulse("dhn","L1_CACHE",&Impulse0);
 }
@@ -610,7 +610,7 @@ ImpulseNodeClass** GPU5PV8Impulse1::CreateImpulseWorkerList(int NumberOfWorkers)
 GPU5PV8::GPU5PV8(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("l2_read_ko",(RewardType)1,1, startpts, stoppts, timeindex, 2,0, 0);
   AddImpulse("READ_FROM_case2","L2_CACHE",&Impulse0);
   AddImpulse("dhn","L2_CACHE",&Impulse1);
@@ -700,7 +700,7 @@ ImpulseNodeClass** GPU5PV9Impulse1::CreateImpulseWorkerList(int NumberOfWorkers)
 GPU5PV9::GPU5PV9(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("dram_read_ko",(RewardType)1,1, startpts, stoppts, timeindex, 2,0, 0);
   AddImpulse("READ_FROM_case2","DRAM",&Impulse0);
   AddImpulse("dhn","DRAM",&Impulse1);
@@ -738,8 +738,8 @@ return (0);
 
 GPU5PV10::GPU5PV10(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
-  double startpts[1]={end};
-  double stoppts[1]={end};
+  double startpts[1]={sim_end};
+  double stoppts[1]={sim_end};
   Initialize("failure",(RewardType)0,1, startpts, stoppts, timeindex, 0,1, 1);
   AddVariableDependency("Place1","DRAM");
 }
@@ -794,7 +794,7 @@ ImpulseNodeClass** GPU5PV11Impulse0::CreateImpulseWorkerList(int NumberOfWorkers
 GPU5PV11::GPU5PV11(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("l1_access",(RewardType)1,1, startpts, stoppts, timeindex, 1,0, 0);
   AddImpulse("L1_CLOCK","WARP",&Impulse0);
 }
@@ -847,7 +847,7 @@ ImpulseNodeClass** GPU5PV12Impulse0::CreateImpulseWorkerList(int NumberOfWorkers
 GPU5PV12::GPU5PV12(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("l2_access",(RewardType)1,1, startpts, stoppts, timeindex, 1,0, 0);
   AddImpulse("L2_CLOCK","WARP",&Impulse0);
 }
@@ -900,7 +900,7 @@ ImpulseNodeClass** GPU5PV13Impulse0::CreateImpulseWorkerList(int NumberOfWorkers
 GPU5PV13::GPU5PV13(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("dram_access",(RewardType)1,1, startpts, stoppts, timeindex, 1,0, 0);
   AddImpulse("DRAM_CLOCK","WARP",&Impulse0);
 }
@@ -937,8 +937,8 @@ return (0);
 
 GPU5PV14::GPU5PV14(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
-  double startpts[1]={end};
-  double stoppts[1]={end};
+  double startpts[1]={sim_end};
+  double stoppts[1]={sim_end};
   Initialize("inst_ready",(RewardType)0,1, startpts, stoppts, timeindex, 0,1, 1);
   AddVariableDependency("INST_COUNTER","WARP");
 }
@@ -1261,7 +1261,7 @@ ImpulseNodeClass** GPU5PV15Impulse7::CreateImpulseWorkerList(int NumberOfWorkers
 GPU5PV15::GPU5PV15(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("clocks",(RewardType)1,1, startpts, stoppts, timeindex, 8,0, 0);
   AddImpulse("handle_failure","EXEC_UNIT",&Impulse0);
   AddImpulseModelDependency("WARP",&Impulse0);
@@ -1445,7 +1445,7 @@ ImpulseNodeClass** GPU5PV16Impulse3::CreateImpulseWorkerList(int NumberOfWorkers
 GPU5PV16::GPU5PV16(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("clocks2",(RewardType)1,1, startpts, stoppts, timeindex, 4,0, 0);
   AddImpulse("DISPATCHER_Copy","WARP",&Impulse0);
   AddImpulse("L1_CLOCK","WARP",&Impulse1);
@@ -2073,7 +2073,7 @@ ImpulseNodeClass** GPU5PV17Impulse15::CreateImpulseWorkerList(int NumberOfWorker
 GPU5PV17::GPU5PV17(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&TheGPU5RJ);
   double startpts[1]={0.0};
-  double stoppts[1]={end};
+  double stoppts[1]={sim_end};
   Initialize("clocks3",(RewardType)1,1, startpts, stoppts, timeindex, 16,0, 0);
   AddImpulse("DISPATCHER_Copy","WARP",&Impulse0);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse0);

@@ -28,62 +28,109 @@
 				WARP-&gt;Index(0)-&gt;Mark() = 5;WARP-&gt;Index(1)-&gt;Mark(
 				) = 5;WARP-&gt;Index(2)-&gt;Mark() = 5;WARP-&gt;Index(3)-&gt
 				;Mark() = 5;WARP-&gt;Index(4)-&gt;Mark() = 5;WARP-&gt;Index(
-				5)-&gt;Mark() = 5;WARP-&gt;Index(6)-&gt;Mark() = 5;WARP-&gt;
-				Index(7)-&gt;Mark() = 5;WARP-&gt;Index(8)-&gt;Mark() = 7;WAR
-				P-&gt;Index(9)-&gt;Mark() = 7;WARP-&gt;Index(10)-&gt;Mark() 
-				= 7;WARP-&gt;Index(11)-&gt;Mark() = 5;WARP-&gt;Index(12)-&gt
+				5)-&gt;Mark() = 7;WARP-&gt;Index(6)-&gt;Mark() = 5;WARP-&gt;
+				Index(7)-&gt;Mark() = 7;WARP-&gt;Index(8)-&gt;Mark() = 7;WAR
+				P-&gt;Index(9)-&gt;Mark() = 5;WARP-&gt;Index(10)-&gt;Mark() 
+				= 5;WARP-&gt;Index(11)-&gt;Mark() = 7;WARP-&gt;Index(12)-&gt
 				;Mark() = 5;WARP-&gt;Index(13)-&gt;Mark() = 5;WARP-&gt;Index
-				(14)-&gt;Mark() = 5;WARP-&gt;Index(15)-&gt;Mark() = 0;WARP-&
+				(14)-&gt;Mark() = 7;WARP-&gt;Index(15)-&gt;Mark() = 7;WARP-&
 				gt;Index(16)-&gt;Mark() = 5;WARP-&gt;Index(17)-&gt;Mark() = 
-				5;WARP-&gt;Index(18)-&gt;Mark() = 5;WARP-&gt;Index(19)-&gt;M
-				ark() = 5;WARP-&gt;Index(20)-&gt;Mark() = 7;WARP-&gt;Index(2
-				1)-&gt;Mark() = 5;WARP-&gt;Index(22)-&gt;Mark() = 5;WARP-&gt
-				;Index(23)-&gt;Mark() = 5;WARP-&gt;Index(24)-&gt;Mark() = 7;
-				WARP-&gt;Index(25)-&gt;Mark() = 5;WARP-&gt;Index(26)-&gt;Mar
-				k() = 5;WARP-&gt;Index(27)-&gt;Mark() = 7;WARP-&gt;Index(28)
-				-&gt;Mark() = 5;WARP-&gt;Index(29)-&gt;Mark() = 7;WARP-&gt;I
-				ndex(30)-&gt;Mark() = 7;WARP-&gt;Index(31)-&gt;Mark() = 5;WA
-				RP-&gt;Index(32)-&gt;Mark() = 5;WARP-&gt;Index(33)-&gt;Mark(
+				5;WARP-&gt;Index(18)-&gt;Mark() = 7;WARP-&gt;Index(19)-&gt;M
+				ark() = 2;WARP-&gt;Index(20)-&gt;Mark() = 5;WARP-&gt;Index(2
+				1)-&gt;Mark() = 5;WARP-&gt;Index(22)-&gt;Mark() = 7;WARP-&gt
+				;Index(23)-&gt;Mark() = 7;WARP-&gt;Index(24)-&gt;Mark() = 7;
+				WARP-&gt;Index(25)-&gt;Mark() = 7;WARP-&gt;Index(26)-&gt;Mar
+				k() = 3;WARP-&gt;Index(27)-&gt;Mark() = 2;WARP-&gt;Index(28)
+				-&gt;Mark() = 7;WARP-&gt;Index(29)-&gt;Mark() = 7;WARP-&gt;I
+				ndex(30)-&gt;Mark() = 7;WARP-&gt;Index(31)-&gt;Mark() = 7;WA
+				RP-&gt;Index(32)-&gt;Mark() = 3;WARP-&gt;Index(33)-&gt;Mark(
 				) = 7;WARP-&gt;Index(34)-&gt;Mark() = 7;WARP-&gt;Index(35)-&
-				gt;Mark() = 7;WARP-&gt;Index(36)-&gt;Mark() = 0;WARP-&gt;Ind
+				gt;Mark() = 2;WARP-&gt;Index(36)-&gt;Mark() = 7;WARP-&gt;Ind
 				ex(37)-&gt;Mark() = 7;WARP-&gt;Index(38)-&gt;Mark() = 7;WARP
-				-&gt;Index(39)-&gt;Mark() = 7;WARP-&gt;Index(40)-&gt;Mark() 
-				= 7;WARP-&gt;Index(41)-&gt;Mark() = 0;WARP-&gt;Index(42)-&gt
-				;Mark() = 0;WARP-&gt;Index(43)-&gt;Mark() = 8;WARP-&gt;Index
-				(44)-&gt;Mark() = 5;WARP-&gt;Index(45)-&gt;Mark() = 5;WARP-&
-				gt;Index(46)-&gt;Mark() = 5;WARP-&gt;Index(47)-&gt;Mark() = 
-				5;WARP-&gt;Index(48)-&gt;Mark() = 7;WARP-&gt;Index(49)-&gt;M
-				ark() = 0;WARP-&gt;Index(50)-&gt;Mark() = 7;WARP-&gt;Index(5
+				-&gt;Index(39)-&gt;Mark() = 3;WARP-&gt;Index(40)-&gt;Mark() 
+				= 5;WARP-&gt;Index(41)-&gt;Mark() = 7;WARP-&gt;Index(42)-&gt
+				;Mark() = 7;WARP-&gt;Index(43)-&gt;Mark() = 0;WARP-&gt;Index
+				(44)-&gt;Mark() = 5;WARP-&gt;Index(45)-&gt;Mark() = 7;WARP-&
+				gt;Index(46)-&gt;Mark() = 7;WARP-&gt;Index(47)-&gt;Mark() = 
+				7;WARP-&gt;Index(48)-&gt;Mark() = 7;WARP-&gt;Index(49)-&gt;M
+				ark() = 7;WARP-&gt;Index(50)-&gt;Mark() = 7;WARP-&gt;Index(5
 				1)-&gt;Mark() = 7;WARP-&gt;Index(52)-&gt;Mark() = 7;WARP-&gt
-				;Index(53)-&gt;Mark() = 0;WARP-&gt;Index(54)-&gt;Mark() = 5;
-				WARP-&gt;Index(55)-&gt;Mark() = 5;WARP-&gt;Index(56)-&gt;Mar
-				k() = 5;WARP-&gt;Index(57)-&gt;Mark() = 7;WARP-&gt;Index(58)
-				-&gt;Mark() = 7;WARP-&gt;Index(59)-&gt;Mark() = 7;WARP-&gt;I
+				;Index(53)-&gt;Mark() = 5;WARP-&gt;Index(54)-&gt;Mark() = 7;
+				WARP-&gt;Index(55)-&gt;Mark() = 2;WARP-&gt;Index(56)-&gt;Mar
+				k() = 7;WARP-&gt;Index(57)-&gt;Mark() = 7;WARP-&gt;Index(58)
+				-&gt;Mark() = 3;WARP-&gt;Index(59)-&gt;Mark() = 2;WARP-&gt;I
 				ndex(60)-&gt;Mark() = 5;WARP-&gt;Index(61)-&gt;Mark() = 7;WA
-				RP-&gt;Index(62)-&gt;Mark() = 0;WARP-&gt;Index(63)-&gt;Mark(
-				) = 7;WARP-&gt;Index(64)-&gt;Mark() = 0;WARP-&gt;Index(65)-&
-				gt;Mark() = 7;WARP-&gt;Index(66)-&gt;Mark() = 0;WARP-&gt;Ind
-				ex(67)-&gt;Mark() = 0;WARP-&gt;Index(68)-&gt;Mark() = 0;WARP
+				RP-&gt;Index(62)-&gt;Mark() = 5;WARP-&gt;Index(63)-&gt;Mark(
+				) = 3;WARP-&gt;Index(64)-&gt;Mark() = 2;WARP-&gt;Index(65)-&
+				gt;Mark() = 5;WARP-&gt;Index(66)-&gt;Mark() = 5;WARP-&gt;Ind
+				ex(67)-&gt;Mark() = 3;WARP-&gt;Index(68)-&gt;Mark() = 2;WARP
 				-&gt;Index(69)-&gt;Mark() = 7;WARP-&gt;Index(70)-&gt;Mark() 
-				= 5;WARP-&gt;Index(71)-&gt;Mark() = 0;WARP-&gt;Index(72)-&gt
-				;Mark() = 0;WARP-&gt;Index(73)-&gt;Mark() = 0;WARP-&gt;Index
-				(74)-&gt;Mark() = 7;WARP-&gt;Index(75)-&gt;Mark() = 8;WARP-&
-				gt;Index(76)-&gt;Mark() = 5;WARP-&gt;Index(77)-&gt;Mark() = 
+				= 7;WARP-&gt;Index(71)-&gt;Mark() = 3;WARP-&gt;Index(72)-&gt
+				;Mark() = 2;WARP-&gt;Index(73)-&gt;Mark() = 7;WARP-&gt;Index
+				(74)-&gt;Mark() = 5;WARP-&gt;Index(75)-&gt;Mark() = 3;WARP-&
+				gt;Index(76)-&gt;Mark() = 2;WARP-&gt;Index(77)-&gt;Mark() = 
 				7;WARP-&gt;Index(78)-&gt;Mark() = 5;WARP-&gt;Index(79)-&gt;M
-				ark() = 5;WARP-&gt;Index(80)-&gt;Mark() = 5;WARP-&gt;Index(8
+				ark() = 3;WARP-&gt;Index(80)-&gt;Mark() = 2;WARP-&gt;Index(8
 				1)-&gt;Mark() = 5;WARP-&gt;Index(82)-&gt;Mark() = 5;WARP-&gt
-				;Index(83)-&gt;Mark() = 5;WARP-&gt;Index(84)-&gt;Mark() = 5;
+				;Index(83)-&gt;Mark() = 3;WARP-&gt;Index(84)-&gt;Mark() = 2;
 				WARP-&gt;Index(85)-&gt;Mark() = 7;WARP-&gt;Index(86)-&gt;Mar
-				k() = 5;WARP-&gt;Index(87)-&gt;Mark() = 6;WARP-&gt;Index(88)
-				-&gt;Mark() = 7;WARP-&gt;Index(89)-&gt;Mark() = 5;WARP-&gt;I
-				ndex(90)-&gt;Mark() = 5;WARP-&gt;Index(91)-&gt;Mark() = 7;WA
-				RP-&gt;Index(92)-&gt;Mark() = 8;WARP-&gt;Index(93)-&gt;Mark(
+				k() = 7;WARP-&gt;Index(87)-&gt;Mark() = 3;WARP-&gt;Index(88)
+				-&gt;Mark() = 2;WARP-&gt;Index(89)-&gt;Mark() = 7;WARP-&gt;I
+				ndex(90)-&gt;Mark() = 5;WARP-&gt;Index(91)-&gt;Mark() = 3;WA
+				RP-&gt;Index(92)-&gt;Mark() = 2;WARP-&gt;Index(93)-&gt;Mark(
 				) = 7;WARP-&gt;Index(94)-&gt;Mark() = 5;WARP-&gt;Index(95)-&
-				gt;Mark() = 7;WARP-&gt;Index(96)-&gt;Mark() = 3;WARP-&gt;Ind
-				ex(97)-&gt;Mark() = 7;WARP-&gt;Index(98)-&gt;Mark() = 7;WARP
-				-&gt;Index(99)-&gt;Mark() = 7;WARP-&gt;Index(100)-&gt;Mark()
-				 = 7;WARP-&gt;Index(101)-&gt;Mark() = 7;WARP-&gt;Index(102)-
-				&gt;Mark() = 7;WARP-&gt;Index(103)-&gt;Mark() = 7;
+				gt;Mark() = 3;WARP-&gt;Index(96)-&gt;Mark() = 2;WARP-&gt;Ind
+				ex(97)-&gt;Mark() = 5;WARP-&gt;Index(98)-&gt;Mark() = 5;WARP
+				-&gt;Index(99)-&gt;Mark() = 3;WARP-&gt;Index(100)-&gt;Mark()
+				 = 2;WARP-&gt;Index(101)-&gt;Mark() = 7;WARP-&gt;Index(102)-
+				&gt;Mark() = 7;WARP-&gt;Index(103)-&gt;Mark() = 3;WARP-&gt;I
+				ndex(104)-&gt;Mark() = 2;WARP-&gt;Index(105)-&gt;Mark() = 7;
+				WARP-&gt;Index(106)-&gt;Mark() = 5;WARP-&gt;Index(107)-&gt;M
+				ark() = 3;WARP-&gt;Index(108)-&gt;Mark() = 2;WARP-&gt;Index(
+				109)-&gt;Mark() = 7;WARP-&gt;Index(110)-&gt;Mark() = 5;WARP-
+				&gt;Index(111)-&gt;Mark() = 3;WARP-&gt;Index(112)-&gt;Mark()
+				 = 2;WARP-&gt;Index(113)-&gt;Mark() = 7;WARP-&gt;Index(114)-
+				&gt;Mark() = 5;WARP-&gt;Index(115)-&gt;Mark() = 3;WARP-&gt;I
+				ndex(116)-&gt;Mark() = 2;WARP-&gt;Index(117)-&gt;Mark() = 7;
+				WARP-&gt;Index(118)-&gt;Mark() = 7;WARP-&gt;Index(119)-&gt;M
+				ark() = 5;WARP-&gt;Index(120)-&gt;Mark() = 5;WARP-&gt;Index(
+				121)-&gt;Mark() = 5;WARP-&gt;Index(122)-&gt;Mark() = 3;WARP-
+				&gt;Index(123)-&gt;Mark() = 7;WARP-&gt;Index(124)-&gt;Mark()
+				 = 7;WARP-&gt;Index(125)-&gt;Mark() = 7;WARP-&gt;Index(126)-
+				&gt;Mark() = 7;WARP-&gt;Index(127)-&gt;Mark() = 2;WARP-&gt;I
+				ndex(128)-&gt;Mark() = 7;WARP-&gt;Index(129)-&gt;Mark() = 5;
+				WARP-&gt;Index(130)-&gt;Mark() = 7;WARP-&gt;Index(131)-&gt;M
+				ark() = 3;WARP-&gt;Index(132)-&gt;Mark() = 2;WARP-&gt;Index(
+				133)-&gt;Mark() = 5;WARP-&gt;Index(134)-&gt;Mark() = 7;WARP-
+				&gt;Index(135)-&gt;Mark() = 5;WARP-&gt;Index(136)-&gt;Mark()
+				 = 3;WARP-&gt;Index(137)-&gt;Mark() = 2;WARP-&gt;Index(138)-
+				&gt;Mark() = 5;WARP-&gt;Index(139)-&gt;Mark() = 5;WARP-&gt;I
+				ndex(140)-&gt;Mark() = 3;WARP-&gt;Index(141)-&gt;Mark() = 2;
+				WARP-&gt;Index(142)-&gt;Mark() = 7;WARP-&gt;Index(143)-&gt;M
+				ark() = 7;WARP-&gt;Index(144)-&gt;Mark() = 3;WARP-&gt;Index(
+				145)-&gt;Mark() = 2;WARP-&gt;Index(146)-&gt;Mark() = 7;WARP-
+				&gt;Index(147)-&gt;Mark() = 5;WARP-&gt;Index(148)-&gt;Mark()
+				 = 3;WARP-&gt;Index(149)-&gt;Mark() = 2;WARP-&gt;Index(150)-
+				&gt;Mark() = 7;WARP-&gt;Index(151)-&gt;Mark() = 5;WARP-&gt;I
+				ndex(152)-&gt;Mark() = 3;WARP-&gt;Index(153)-&gt;Mark() = 2;
+				WARP-&gt;Index(154)-&gt;Mark() = 3;WARP-&gt;Index(155)-&gt;M
+				ark() = 2;WARP-&gt;Index(156)-&gt;Mark() = 7;WARP-&gt;Index(
+				157)-&gt;Mark() = 7;WARP-&gt;Index(158)-&gt;Mark() = 7;WARP-
+				&gt;Index(159)-&gt;Mark() = 5;WARP-&gt;Index(160)-&gt;Mark()
+				 = 7;WARP-&gt;Index(161)-&gt;Mark() = 5;WARP-&gt;Index(162)-
+				&gt;Mark() = 5;WARP-&gt;Index(163)-&gt;Mark() = 3;WARP-&gt;I
+				ndex(164)-&gt;Mark() = 5;WARP-&gt;Index(165)-&gt;Mark() = 7;
+				WARP-&gt;Index(166)-&gt;Mark() = 2;WARP-&gt;Index(167)-&gt;M
+				ark() = 7;WARP-&gt;Index(168)-&gt;Mark() = 5;WARP-&gt;Index(
+				169)-&gt;Mark() = 7;WARP-&gt;Index(170)-&gt;Mark() = 3;WARP-
+				&gt;Index(171)-&gt;Mark() = 2;WARP-&gt;Index(172)-&gt;Mark()
+				 = 5;WARP-&gt;Index(173)-&gt;Mark() = 7;WARP-&gt;Index(174)-
+				&gt;Mark() = 5;WARP-&gt;Index(175)-&gt;Mark() = 3;WARP-&gt;I
+				ndex(176)-&gt;Mark() = 2;WARP-&gt;Index(177)-&gt;Mark() = 3;
+				WARP-&gt;Index(178)-&gt;Mark() = 2;WARP-&gt;Index(179)-&gt;M
+				ark() = 3;WARP-&gt;Index(180)-&gt;Mark() = 7;WARP-&gt;Index(
+				181)-&gt;Mark() = 7;WARP-&gt;Index(182)-&gt;Mark() = 7;WARP-
+				&gt;Index(183)-&gt;Mark() = 7;
 			</string>
 		</class>
 		<class id="Mobius.AtomicModels.San.SanEditor">

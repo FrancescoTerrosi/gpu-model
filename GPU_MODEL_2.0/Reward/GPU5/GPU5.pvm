@@ -55,7 +55,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -105,7 +105,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -157,7 +157,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -210,7 +210,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -263,7 +263,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -314,7 +314,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -364,7 +364,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -414,7 +414,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -467,7 +467,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -520,7 +520,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -566,10 +566,10 @@
 				<double id="TimeSeriesInterval">0.0</double>
 				<int id="NumTimePoints">1</int>
 				<vector id="StartTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -619,7 +619,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -669,7 +669,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -719,7 +719,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -764,10 +764,10 @@
 				<double id="TimeSeriesInterval">0.0</double>
 				<int id="NumTimePoints">1</int>
 				<vector id="StartTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -832,7 +832,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -909,7 +909,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -995,7 +995,7 @@
 					<string id="0">0.0</string>
 				</vector>
 				<vector id="StopTimes">
-					<string id="0">end</string>
+					<string id="0">sim_end</string>
 				</vector>
 				<double id="InitialTransient">0.0</double>
 				<double id="BatchSize">1.0</double>
@@ -1048,10 +1048,10 @@
 				<int id="ClassVersion">3</int>
 				<boolean id="HasPanel">false</boolean>
 				<vector id="LocalGlobalNamesList">
-					<string id="0">end</string>
-					<string id="1">nwarps</string>
-					<string id="2">nsm</string>
-					<string id="3">nprocessors</string>
+					<string id="0">nwarps</string>
+					<string id="1">nsm</string>
+					<string id="2">nprocessors</string>
+					<string id="3">sim_end</string>
 				</vector>
 				<vector id="LocalGlobalTypesList">
 					<string id="0">short</string>

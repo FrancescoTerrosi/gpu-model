@@ -13,10 +13,10 @@
 #include "Cpp/Performance_Variables/IntervalOfTimeImpulse.hpp"
 #include "Cpp/Performance_Variables/InstantOfTime.hpp"
 
-extern Short end;
 extern Short nwarps;
 extern Short nsm;
 extern Short nprocessors;
+extern Short sim_end;
 
 
 class GPU5PV0Impulse0:public IntervalOfTimeImpulse

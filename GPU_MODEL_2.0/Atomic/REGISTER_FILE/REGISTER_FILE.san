@@ -32,76 +32,136 @@
 				5)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(6)-&gt;Mark() = 1
 				;LIVE_REGISTERS-&gt;Index(7)-&gt;Mark() = 1;LIVE_REGISTERS-&
 				gt;Index(8)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(9)-&gt;M
-				ark() = 1;LIVE_REGISTERS-&gt;Index(10)-&gt;Mark() = 1;LIVE_R
+				ark() = 0;LIVE_REGISTERS-&gt;Index(10)-&gt;Mark() = 0;LIVE_R
 				EGISTERS-&gt;Index(11)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Ind
-				ex(12)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(13)-&gt;Mark(
+				ex(12)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(13)-&gt;Mark(
 				) = 0;LIVE_REGISTERS-&gt;Index(14)-&gt;Mark() = 0;LIVE_REGIS
 				TERS-&gt;Index(15)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(1
-				6)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(17)-&gt;Mark() = 
-				0;LIVE_REGISTERS-&gt;Index(18)-&gt;Mark() = 0;LIVE_REGISTERS
+				6)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(17)-&gt;Mark() = 
+				1;LIVE_REGISTERS-&gt;Index(18)-&gt;Mark() = 1;LIVE_REGISTERS
 				-&gt;Index(19)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(20)-&
-				gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(21)-&gt;Mark() = 1;LI
+				gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(21)-&gt;Mark() = 0;LI
 				VE_REGISTERS-&gt;Index(22)-&gt;Mark() = 0;LIVE_REGISTERS-&gt
 				;Index(23)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(24)-&gt;M
-				ark() = 1;LIVE_REGISTERS-&gt;Index(25)-&gt;Mark() = 1;LIVE_R
-				EGISTERS-&gt;Index(26)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Ind
+				ark() = 0;LIVE_REGISTERS-&gt;Index(25)-&gt;Mark() = 1;LIVE_R
+				EGISTERS-&gt;Index(26)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Ind
 				ex(27)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(28)-&gt;Mark(
-				) = 0;LIVE_REGISTERS-&gt;Index(29)-&gt;Mark() = 0;LIVE_REGIS
+				) = 0;LIVE_REGISTERS-&gt;Index(29)-&gt;Mark() = 1;LIVE_REGIS
 				TERS-&gt;Index(30)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(3
-				1)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(32)-&gt;Mark() = 
-				1;LIVE_REGISTERS-&gt;Index(33)-&gt;Mark() = 0;LIVE_REGISTERS
+				1)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(32)-&gt;Mark() = 
+				0;LIVE_REGISTERS-&gt;Index(33)-&gt;Mark() = 0;LIVE_REGISTERS
 				-&gt;Index(34)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(35)-&
-				gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(36)-&gt;Mark() = 1;L
-				IVE_REGISTERS-&gt;Index(37)-&gt;Mark() = 0;LIVE_REGISTERS-&g
-				t;Index(38)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(39)-&gt;
-				Mark() = 0;LIVE_REGISTERS-&gt;Index(40)-&gt;Mark() = 1;LIVE_
-				REGISTERS-&gt;Index(41)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;In
-				dex(42)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(43)-&gt;Mark
-				() = 1;LIVE_REGISTERS-&gt;Index(44)-&gt;Mark() = 0;LIVE_REGI
-				STERS-&gt;Index(45)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(
-				46)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(47)-&gt;Mark() =
-				 0;LIVE_REGISTERS-&gt;Index(48)-&gt;Mark() = 1;LIVE_REGISTER
-				S-&gt;Index(49)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(50)-
-				&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(51)-&gt;Mark() = 0;L
-				IVE_REGISTERS-&gt;Index(52)-&gt;Mark() = 0;LIVE_REGISTERS-&g
-				t;Index(53)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(54)-&gt;
-				Mark() = 0;LIVE_REGISTERS-&gt;Index(55)-&gt;Mark() = 0;LIVE_
-				REGISTERS-&gt;Index(56)-&gt;Mark() = -3;LIVE_REGISTERS-&gt;I
-				ndex(57)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(58)-&gt;Mar
-				k() = 0;LIVE_REGISTERS-&gt;Index(59)-&gt;Mark() = 0;LIVE_REG
-				ISTERS-&gt;Index(60)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index
-				(61)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(62)-&gt;Mark() 
-				= 1;LIVE_REGISTERS-&gt;Index(63)-&gt;Mark() = 0;LIVE_REGISTE
-				RS-&gt;Index(64)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(65)
-				-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(66)-&gt;Mark() = 0;
-				LIVE_REGISTERS-&gt;Index(67)-&gt;Mark() = 0;LIVE_REGISTERS-&
-				gt;Index(68)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(69)-&gt
-				;Mark() = 0;LIVE_REGISTERS-&gt;Index(70)-&gt;Mark() = 0;LIVE
-				_REGISTERS-&gt;Index(71)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;I
-				ndex(72)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(73)-&gt;Mar
-				k() = 0;LIVE_REGISTERS-&gt;Index(74)-&gt;Mark() = -5;LIVE_RE
-				GISTERS-&gt;Index(75)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Inde
-				x(76)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(77)-&gt;Mark()
-				 = 0;LIVE_REGISTERS-&gt;Index(78)-&gt;Mark() = -1;LIVE_REGIS
-				TERS-&gt;Index(79)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(8
-				0)-&gt;Mark() = -2;LIVE_REGISTERS-&gt;Index(81)-&gt;Mark() =
-				 -1;LIVE_REGISTERS-&gt;Index(82)-&gt;Mark() = 0;LIVE_REGISTE
-				RS-&gt;Index(83)-&gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(84
-				)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(85)-&gt;Mark() = -
-				1;LIVE_REGISTERS-&gt;Index(86)-&gt;Mark() = 0;LIVE_REGISTERS
-				-&gt;Index(87)-&gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(88)-
-				&gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(89)-&gt;Mark() = 0;
-				LIVE_REGISTERS-&gt;Index(90)-&gt;Mark() = 0;LIVE_REGISTERS-&
-				gt;Index(91)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(92)-&gt
-				;Mark() = 0;LIVE_REGISTERS-&gt;Index(93)-&gt;Mark() = -3;LIV
-				E_REGISTERS-&gt;Index(94)-&gt;Mark() = -1;LIVE_REGISTERS-&gt
-				;Index(95)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(96)-&gt;M
-				ark() = 1;LIVE_REGISTERS-&gt;Index(97)-&gt;Mark() = 0;LIVE_R
-				EGISTERS-&gt;Index(98)-&gt;Mark() = -1;LIVE_REGISTERS-&gt;In
-				dex(99)-&gt;Mark() = -7;LIVE_REGISTERS-&gt;Index(100)-&gt;Ma
-				rk() = -4;LIVE_REGISTERS-&gt;Index(101)-&gt;Mark() = 0;LIVE_
-				REGISTERS-&gt;Index(102)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;I
-				ndex(103)-&gt;Mark() = 0;
+				gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(36)-&gt;Mark() = 1;LI
+				VE_REGISTERS-&gt;Index(37)-&gt;Mark() = 1;LIVE_REGISTERS-&gt
+				;Index(38)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(39)-&gt;M
+				ark() = 1;LIVE_REGISTERS-&gt;Index(40)-&gt;Mark() = 0;LIVE_R
+				EGISTERS-&gt;Index(41)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Ind
+				ex(42)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(43)-&gt;Mark(
+				) = 0;LIVE_REGISTERS-&gt;Index(44)-&gt;Mark() = 0;LIVE_REGIS
+				TERS-&gt;Index(45)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(4
+				6)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(47)-&gt;Mark() = 
+				1;LIVE_REGISTERS-&gt;Index(48)-&gt;Mark() = 0;LIVE_REGISTERS
+				-&gt;Index(49)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(50)-&
+				gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(51)-&gt;Mark() = 1;LI
+				VE_REGISTERS-&gt;Index(52)-&gt;Mark() = 0;LIVE_REGISTERS-&gt
+				;Index(53)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(54)-&gt;M
+				ark() = 0;LIVE_REGISTERS-&gt;Index(55)-&gt;Mark() = 0;LIVE_R
+				EGISTERS-&gt;Index(56)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Ind
+				ex(57)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(58)-&gt;Mark(
+				) = 0;LIVE_REGISTERS-&gt;Index(59)-&gt;Mark() = 1;LIVE_REGIS
+				TERS-&gt;Index(60)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(6
+				1)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(62)-&gt;Mark() = 
+				1;LIVE_REGISTERS-&gt;Index(63)-&gt;Mark() = 0;LIVE_REGISTERS
+				-&gt;Index(64)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(65)-&
+				gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(66)-&gt;Mark() = 0;LI
+				VE_REGISTERS-&gt;Index(67)-&gt;Mark() = 1;LIVE_REGISTERS-&gt
+				;Index(68)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(69)-&gt;M
+				ark() = 1;LIVE_REGISTERS-&gt;Index(70)-&gt;Mark() = 0;LIVE_R
+				EGISTERS-&gt;Index(71)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Ind
+				ex(72)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(73)-&gt;Mark(
+				) = 0;LIVE_REGISTERS-&gt;Index(74)-&gt;Mark() = 0;LIVE_REGIS
+				TERS-&gt;Index(75)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(7
+				6)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(77)-&gt;Mark() = 
+				0;LIVE_REGISTERS-&gt;Index(78)-&gt;Mark() = 0;LIVE_REGISTERS
+				-&gt;Index(79)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(80)-&
+				gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(81)-&gt;Mark() = 0;LI
+				VE_REGISTERS-&gt;Index(82)-&gt;Mark() = 0;LIVE_REGISTERS-&gt
+				;Index(83)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(84)-&gt;M
+				ark() = 0;LIVE_REGISTERS-&gt;Index(85)-&gt;Mark() = 0;LIVE_R
+				EGISTERS-&gt;Index(86)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Ind
+				ex(87)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(88)-&gt;Mark(
+				) = 0;LIVE_REGISTERS-&gt;Index(89)-&gt;Mark() = 0;LIVE_REGIS
+				TERS-&gt;Index(90)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(9
+				1)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(92)-&gt;Mark() = 
+				0;LIVE_REGISTERS-&gt;Index(93)-&gt;Mark() = 0;LIVE_REGISTERS
+				-&gt;Index(94)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(95)-&
+				gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(96)-&gt;Mark() = 0;LI
+				VE_REGISTERS-&gt;Index(97)-&gt;Mark() = 0;LIVE_REGISTERS-&gt
+				;Index(98)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(99)-&gt;M
+				ark() = 0;LIVE_REGISTERS-&gt;Index(100)-&gt;Mark() = 0;LIVE_
+				REGISTERS-&gt;Index(101)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;I
+				ndex(102)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(103)-&gt;M
+				ark() = 0;LIVE_REGISTERS-&gt;Index(104)-&gt;Mark() = 0;LIVE_
+				REGISTERS-&gt;Index(105)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;I
+				ndex(106)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(107)-&gt;M
+				ark() = 0;LIVE_REGISTERS-&gt;Index(108)-&gt;Mark() = 0;LIVE_
+				REGISTERS-&gt;Index(109)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;I
+				ndex(110)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(111)-&gt;M
+				ark() = 0;LIVE_REGISTERS-&gt;Index(112)-&gt;Mark() = 0;LIVE_
+				REGISTERS-&gt;Index(113)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;I
+				ndex(114)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(115)-&gt;M
+				ark() = 0;LIVE_REGISTERS-&gt;Index(116)-&gt;Mark() = 0;LIVE_
+				REGISTERS-&gt;Index(117)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;I
+				ndex(118)-&gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(119)-&gt;
+				Mark() = 0;LIVE_REGISTERS-&gt;Index(120)-&gt;Mark() = 0;LIVE
+				_REGISTERS-&gt;Index(121)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;
+				Index(122)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(123)-&gt;
+				Mark() = 0;LIVE_REGISTERS-&gt;Index(124)-&gt;Mark() = 0;LIVE
+				_REGISTERS-&gt;Index(125)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;
+				Index(126)-&gt;Mark() = 1;LIVE_REGISTERS-&gt;Index(127)-&gt;
+				Mark() = 0;LIVE_REGISTERS-&gt;Index(128)-&gt;Mark() = 0;LIVE
+				_REGISTERS-&gt;Index(129)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;
+				Index(130)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(131)-&gt;
+				Mark() = 0;LIVE_REGISTERS-&gt;Index(132)-&gt;Mark() = 0;LIVE
+				_REGISTERS-&gt;Index(133)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;
+				Index(134)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(135)-&gt;
+				Mark() = 0;LIVE_REGISTERS-&gt;Index(136)-&gt;Mark() = 0;LIVE
+				_REGISTERS-&gt;Index(137)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;
+				Index(138)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(139)-&gt;
+				Mark() = 0;LIVE_REGISTERS-&gt;Index(140)-&gt;Mark() = 0;LIVE
+				_REGISTERS-&gt;Index(141)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;
+				Index(142)-&gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(143)-&gt
+				;Mark() = 0;LIVE_REGISTERS-&gt;Index(144)-&gt;Mark() = 0;LIV
+				E_REGISTERS-&gt;Index(145)-&gt;Mark() = 0;LIVE_REGISTERS-&gt
+				;Index(146)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(147)-&gt
+				;Mark() = 0;LIVE_REGISTERS-&gt;Index(148)-&gt;Mark() = -1;LI
+				VE_REGISTERS-&gt;Index(149)-&gt;Mark() = 0;LIVE_REGISTERS-&g
+				t;Index(150)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(151)-&g
+				t;Mark() = 0;LIVE_REGISTERS-&gt;Index(152)-&gt;Mark() = -1;L
+				IVE_REGISTERS-&gt;Index(153)-&gt;Mark() = 0;LIVE_REGISTERS-&
+				gt;Index(154)-&gt;Mark() = -3;LIVE_REGISTERS-&gt;Index(155)-
+				&gt;Mark() = -2;LIVE_REGISTERS-&gt;Index(156)-&gt;Mark() = 0
+				;LIVE_REGISTERS-&gt;Index(157)-&gt;Mark() = 0;LIVE_REGISTERS
+				-&gt;Index(158)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(159)
+				-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(160)-&gt;Mark() = -
+				2;LIVE_REGISTERS-&gt;Index(161)-&gt;Mark() = 0;LIVE_REGISTER
+				S-&gt;Index(162)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(163
+				)-&gt;Mark() = -5;LIVE_REGISTERS-&gt;Index(164)-&gt;Mark() =
+				 0;LIVE_REGISTERS-&gt;Index(165)-&gt;Mark() = 0;LIVE_REGISTE
+				RS-&gt;Index(166)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(16
+				7)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(168)-&gt;Mark() =
+				 -1;LIVE_REGISTERS-&gt;Index(169)-&gt;Mark() = 0;LIVE_REGIST
+				ERS-&gt;Index(170)-&gt;Mark() = -1;LIVE_REGISTERS-&gt;Index(
+				171)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(172)-&gt;Mark()
+				 = 0;LIVE_REGISTERS-&gt;Index(173)-&gt;Mark() = -1;LIVE_REGI
+				STERS-&gt;Index(174)-&gt;Mark() = -2;LIVE_REGISTERS-&gt;Inde
+				x(175)-&gt;Mark() = 0;LIVE_REGISTERS-&gt;Index(176)-&gt;Mark
+				() = -4;LIVE_REGISTERS-&gt;Index(177)-&gt;Mark() = -5;LIVE_R
+				EGISTERS-&gt;Index(178)-&gt;Mark() = -7;LIVE_REGISTERS-&gt;I
+				ndex(179)-&gt;Mark() = -2;LIVE_REGISTERS-&gt;Index(180)-&gt;
+				Mark() = 0;LIVE_REGISTERS-&gt;Index(181)-&gt;Mark() = -3;LIV
+				E_REGISTERS-&gt;Index(182)-&gt;Mark() = 0;LIVE_REGISTERS-&gt
+				;Index(183)-&gt;Mark() = -4;
 			</string>
 		</class>
 		<class id="Mobius.AtomicModels.San.SanEditor">

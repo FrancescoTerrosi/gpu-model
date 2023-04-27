@@ -5,7 +5,6 @@
 //Global Variables
 //******************************************************
 Short dram_size;
-Short end;
 Short failure_index;
 Float global_read_dram;
 Float global_read_l1;
@@ -28,6 +27,7 @@ Short nprocessors;
 Short nsm;
 Short nwarps;
 Short register_count_index;
+Short sim_end;
 Short size;
 
 //********************************************************
@@ -43,58 +43,57 @@ GPU_STUDY_KMEANS_2SetStudy::GPU_STUDY_KMEANS_2SetStudy() {
   GVTypes = new char*[NumGVs];
   GVNames[0]=strdup("dram_size");
   GVTypes[0]=strdup("short");
-  GVNames[1]=strdup("end");
+  GVNames[1]=strdup("failure_index");
   GVTypes[1]=strdup("short");
-  GVNames[2]=strdup("failure_index");
-  GVTypes[2]=strdup("short");
-  GVNames[3]=strdup("global_read_dram");
+  GVNames[2]=strdup("global_read_dram");
+  GVTypes[2]=strdup("float");
+  GVNames[3]=strdup("global_read_l1");
   GVTypes[3]=strdup("float");
-  GVNames[4]=strdup("global_read_l1");
+  GVNames[4]=strdup("global_read_l2");
   GVTypes[4]=strdup("float");
-  GVNames[5]=strdup("global_read_l2");
+  GVNames[5]=strdup("global_write_dram");
   GVTypes[5]=strdup("float");
-  GVNames[6]=strdup("global_write_dram");
+  GVNames[6]=strdup("global_write_l1");
   GVTypes[6]=strdup("float");
-  GVNames[7]=strdup("global_write_l1");
+  GVNames[7]=strdup("global_write_l2");
   GVTypes[7]=strdup("float");
-  GVNames[8]=strdup("global_write_l2");
-  GVTypes[8]=strdup("float");
-  GVNames[9]=strdup("l1_size");
+  GVNames[8]=strdup("l1_size");
+  GVTypes[8]=strdup("short");
+  GVNames[9]=strdup("l2_size");
   GVTypes[9]=strdup("short");
-  GVNames[10]=strdup("l2_size");
-  GVTypes[10]=strdup("short");
-  GVNames[11]=strdup("local_read_dram");
+  GVNames[10]=strdup("local_read_dram");
+  GVTypes[10]=strdup("float");
+  GVNames[11]=strdup("local_read_l1");
   GVTypes[11]=strdup("float");
-  GVNames[12]=strdup("local_read_l1");
+  GVNames[12]=strdup("local_read_l2");
   GVTypes[12]=strdup("float");
-  GVNames[13]=strdup("local_read_l2");
+  GVNames[13]=strdup("local_write_dram");
   GVTypes[13]=strdup("float");
-  GVNames[14]=strdup("local_write_dram");
+  GVNames[14]=strdup("local_write_l1");
   GVTypes[14]=strdup("float");
-  GVNames[15]=strdup("local_write_l1");
+  GVNames[15]=strdup("local_write_l2");
   GVTypes[15]=strdup("float");
-  GVNames[16]=strdup("local_write_l2");
-  GVTypes[16]=strdup("float");
-  GVNames[17]=strdup("nfailedprocessors");
+  GVNames[16]=strdup("nfailedprocessors");
+  GVTypes[16]=strdup("short");
+  GVNames[17]=strdup("nfailedsm");
   GVTypes[17]=strdup("short");
-  GVNames[18]=strdup("nfailedsm");
+  GVNames[18]=strdup("nfailedwarps");
   GVTypes[18]=strdup("short");
-  GVNames[19]=strdup("nfailedwarps");
+  GVNames[19]=strdup("nprocessors");
   GVTypes[19]=strdup("short");
-  GVNames[20]=strdup("nprocessors");
+  GVNames[20]=strdup("nsm");
   GVTypes[20]=strdup("short");
-  GVNames[21]=strdup("nsm");
+  GVNames[21]=strdup("nwarps");
   GVTypes[21]=strdup("short");
-  GVNames[22]=strdup("nwarps");
+  GVNames[22]=strdup("register_count_index");
   GVTypes[22]=strdup("short");
-  GVNames[23]=strdup("register_count_index");
+  GVNames[23]=strdup("sim_end");
   GVTypes[23]=strdup("short");
   GVNames[24]=strdup("size");
   GVTypes[24]=strdup("short");
 
   // create the arrays to store the values of each gv
   dram_sizeValues = new short[NumExps];
-  endValues = new short[NumExps];
   failure_indexValues = new short[NumExps];
   global_read_dramValues = new float[NumExps];
   global_read_l1Values = new float[NumExps];
@@ -117,11 +116,11 @@ GPU_STUDY_KMEANS_2SetStudy::GPU_STUDY_KMEANS_2SetStudy() {
   nsmValues = new short[NumExps];
   nwarpsValues = new short[NumExps];
   register_count_indexValues = new short[NumExps];
+  sim_endValues = new short[NumExps];
   sizeValues = new short[NumExps];
 
   // call methods to assign values to each gv
   SetValues_dram_size();
-  SetValues_end();
   SetValues_failure_index();
   SetValues_global_read_dram();
   SetValues_global_read_l1();
@@ -144,6 +143,7 @@ GPU_STUDY_KMEANS_2SetStudy::GPU_STUDY_KMEANS_2SetStudy() {
   SetValues_nsm();
   SetValues_nwarps();
   SetValues_register_count_index();
+  SetValues_sim_end();
   SetValues_size();
   SetDefaultMobiusRoot(MOBIUSROOT);
 }
@@ -154,7 +154,6 @@ GPU_STUDY_KMEANS_2SetStudy::GPU_STUDY_KMEANS_2SetStudy() {
 //******************************************************
 GPU_STUDY_KMEANS_2SetStudy::~GPU_STUDY_KMEANS_2SetStudy() {
   delete [] dram_sizeValues;
-  delete [] endValues;
   delete [] failure_indexValues;
   delete [] global_read_dramValues;
   delete [] global_read_l1Values;
@@ -177,6 +176,7 @@ GPU_STUDY_KMEANS_2SetStudy::~GPU_STUDY_KMEANS_2SetStudy() {
   delete [] nsmValues;
   delete [] nwarpsValues;
   delete [] register_count_indexValues;
+  delete [] sim_endValues;
   delete [] sizeValues;
   delete ThePVModel;
 }
@@ -187,14 +187,6 @@ GPU_STUDY_KMEANS_2SetStudy::~GPU_STUDY_KMEANS_2SetStudy() {
 //******************************************************
 void GPU_STUDY_KMEANS_2SetStudy::SetValues_dram_size() {
   dram_sizeValues[0] = 100;
-}
-
-
-//******************************************************
-// set values for end
-//******************************************************
-void GPU_STUDY_KMEANS_2SetStudy::SetValues_end() {
-  endValues[0] = 100;
 }
 
 
@@ -375,6 +367,14 @@ void GPU_STUDY_KMEANS_2SetStudy::SetValues_register_count_index() {
 
 
 //******************************************************
+// set values for sim_end
+//******************************************************
+void GPU_STUDY_KMEANS_2SetStudy::SetValues_sim_end() {
+  sim_endValues[0] = 100;
+}
+
+
+//******************************************************
 // set values for size
 //******************************************************
 void GPU_STUDY_KMEANS_2SetStudy::SetValues_size() {
@@ -397,7 +397,6 @@ void GPU_STUDY_KMEANS_2SetStudy::PrintGlobalValues(int expNum) {
   cout<<"The Global Variable values for experiment "<<
     GetExpName(expNum)<<" are:"<<endl;
   cout << "dram_size\tshort\t" << dram_size << endl;
-  cout << "end\tshort\t" << end << endl;
   cout << "failure_index\tshort\t" << failure_index << endl;
   cout << "global_read_dram\tfloat\t" << global_read_dram << endl;
   cout << "global_read_l1\tfloat\t" << global_read_l1 << endl;
@@ -420,6 +419,7 @@ void GPU_STUDY_KMEANS_2SetStudy::PrintGlobalValues(int expNum) {
   cout << "nsm\tshort\t" << nsm << endl;
   cout << "nwarps\tshort\t" << nwarps << endl;
   cout << "register_count_index\tshort\t" << register_count_index << endl;
+  cout << "sim_end\tshort\t" << sim_end << endl;
   cout << "size\tshort\t" << size << endl;
 }
 
@@ -430,8 +430,6 @@ void GPU_STUDY_KMEANS_2SetStudy::PrintGlobalValues(int expNum) {
 void *GPU_STUDY_KMEANS_2SetStudy::GetGVValue(char *TheGVName) {
   if (strcmp("dram_size", TheGVName) == 0)
     return &dram_size;
-  else if (strcmp("end", TheGVName) == 0)
-    return &end;
   else if (strcmp("failure_index", TheGVName) == 0)
     return &failure_index;
   else if (strcmp("global_read_dram", TheGVName) == 0)
@@ -476,6 +474,8 @@ void *GPU_STUDY_KMEANS_2SetStudy::GetGVValue(char *TheGVName) {
     return &nwarps;
   else if (strcmp("register_count_index", TheGVName) == 0)
     return &register_count_index;
+  else if (strcmp("sim_end", TheGVName) == 0)
+    return &sim_end;
   else if (strcmp("size", TheGVName) == 0)
     return &size;
   else 
@@ -490,8 +490,6 @@ void *GPU_STUDY_KMEANS_2SetStudy::GetGVValue(char *TheGVName) {
 void GPU_STUDY_KMEANS_2SetStudy::OverrideGVValue(char *TheGVName,void *TheGVValue) {
   if (strcmp("dram_size", TheGVName) == 0)
     SetGvValue(dram_size, *(short *)TheGVValue);
-  else if (strcmp("end", TheGVName) == 0)
-    SetGvValue(end, *(short *)TheGVValue);
   else if (strcmp("failure_index", TheGVName) == 0)
     SetGvValue(failure_index, *(short *)TheGVValue);
   else if (strcmp("global_read_dram", TheGVName) == 0)
@@ -536,6 +534,8 @@ void GPU_STUDY_KMEANS_2SetStudy::OverrideGVValue(char *TheGVName,void *TheGVValu
     SetGvValue(nwarps, *(short *)TheGVValue);
   else if (strcmp("register_count_index", TheGVName) == 0)
     SetGvValue(register_count_index, *(short *)TheGVValue);
+  else if (strcmp("sim_end", TheGVName) == 0)
+    SetGvValue(sim_end, *(short *)TheGVValue);
   else if (strcmp("size", TheGVName) == 0)
     SetGvValue(size, *(short *)TheGVValue);
   else 
@@ -548,7 +548,6 @@ void GPU_STUDY_KMEANS_2SetStudy::OverrideGVValue(char *TheGVName,void *TheGVValu
 //******************************************************
 void GPU_STUDY_KMEANS_2SetStudy::SetGVs(int expNum) {
   SetGvValue(dram_size, dram_sizeValues[expNum]);
-  SetGvValue(end, endValues[expNum]);
   SetGvValue(failure_index, failure_indexValues[expNum]);
   SetGvValue(global_read_dram, global_read_dramValues[expNum]);
   SetGvValue(global_read_l1, global_read_l1Values[expNum]);
@@ -571,6 +570,7 @@ void GPU_STUDY_KMEANS_2SetStudy::SetGVs(int expNum) {
   SetGvValue(nsm, nsmValues[expNum]);
   SetGvValue(nwarps, nwarpsValues[expNum]);
   SetGvValue(register_count_index, register_count_indexValues[expNum]);
+  SetGvValue(sim_end, sim_endValues[expNum]);
   SetGvValue(size, sizeValues[expNum]);
 }
 
