@@ -1,0 +1,90 @@
+_______________________________Simulator Results______________________________
+Date:                        Fri Apr 28 14:14:10 CEST 2023
+
+____________________________Simulator Configuration___________________________
+Simulation Type:             Terminating
+Project Name:                GPU_MODEL_2.0
+Study Name:                  GPU_STUDY_KMEANS_2
+Random Number Generator:     Lagged Fibonacci
+Random Number Seed:          42
+Maximum Batches:             10000
+Minimum Batches:             1000
+Data Reporting Frequency:    1
+Display Update Frequency:    1
+BuildType:                   Optimize
+Execution Architecture:      64-bit
+Runname:                     Results
+Output File:                 Results_output.txt
+Results File:                Results_results
+Jackknife Variance:          On
+Processors Per Experiment:   1
+Maximize Processor Usage:    false
+Processors Selected for Simulation: 
+        mobius-VirtualBox    amd64
+
+_________________________________Experiment 1_________________________________
+Start Time:                  Fri Apr 28 14:10:47 CEST 2023
+Finish Time:                 Fri Apr 28 14:14:10 CEST 2023
+Elapsed Running Time:        203.369
+Total CPU Time:              167.85744
+Batches Completed:           1000
+Experiment Name:             Experiment 1
+Global Variable Settings:    
+        short                dram_size                100                    
+        short                failure_index            10000                  
+        float                global_read_dram         0.0                    
+        float                global_read_l1           0.0                    
+        float                global_read_l2           0.0                    
+        float                global_write_dram        1.0                    
+        float                global_write_l1          0                      
+        float                global_write_l2          0.0                    
+        short                l1_size                  100                    
+        short                l2_size                  100                    
+        float                local_read_dram          0.47                   
+        float                local_read_l1            0.5                    
+        float                local_read_l2            0.03                   
+        float                local_write_dram         0                      
+        float                local_write_l1           0                      
+        float                local_write_l2           0                      
+        short                nfailedprocessors        0                      
+        short                nfailedsm                0                      
+        short                nfailedwarps             0                      
+        short                nprocessors              1                      
+        short                nsm                      1                      
+        short                nwarps                   37                     
+        short                register_count_index     0                      
+        short                sim_end                  100                    
+        short                size                     104                    
+
+
+_________________________________Mean Results_________________________________
+Name                  Time               Mean                     Confidence Interval
+warp                  0.0 - 100         3.8480000000E03   +/-   0.0000000000E00 
+exec_dispatch         0.0 - 100         3.8480000000E03   +/-   0.0000000000E00 
+l1_read               0.0 - 100         2.5958900000E02   +/-   6.9861044140E-01
+l2_read               0.0 - 100         1.5537000000E01   +/-   2.3414332522E-01
+dram_read             0.0 - 100         2.4287400000E02   +/-   7.0632915701E-01
+alu_ok                0.0 - 100         3.1820000000E03   +/-   4.6332076163E-06
+alu_ko                0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
+l1_read_ko            0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
+l2_read_ko            0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
+dram_read_ko          0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
+failure               100               0.0000000000E00   +/-   0.0000000000E00 
+l1_access             0.0 - 100         9.6047930000E03   +/-   2.5848586332E01 
+l2_access             0.0 - 100         5.7486900000E02   +/-   8.6633030332E00 
+dram_access           0.0 - 100         1.0355338000E04   +/-   2.6134178809E01 
+inst_ready            100               3.8110000000E03   +/-   0.0000000000E00 
+clocks                0.0 - 100         4.3177585250E06   +/-   4.9990343208E03 
+clocks2               0.0 - 100         6.7389901900E06   +/-   1.4602063809E04 
+clocks3               0.0 - 100         4.8118287000E05   +/-   3.9465037322E02 
+
+
+_______________________________Variance Results_______________________________
+
+
+_______________________________Interval Results_______________________________
+
+
+_____________________________Distribution Results_____________________________
+
+<END_MOBIUS_RESULTS>
