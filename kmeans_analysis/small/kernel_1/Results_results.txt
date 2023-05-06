@@ -1,5 +1,5 @@
 _______________________________Simulator Results______________________________
-Date:                        Fri Apr 28 14:57:36 CEST 2023
+Date:                        Mon May 01 07:05:55 CEST 2023
 
 ____________________________Simulator Configuration___________________________
 Simulation Type:             Terminating
@@ -7,10 +7,10 @@ Project Name:                GPU_MODEL_2.0
 Study Name:                  GPU_STUDY_KMEANS_1
 Random Number Generator:     Lagged Fibonacci
 Random Number Seed:          42
-Maximum Batches:             10000
-Minimum Batches:             1000
-Data Reporting Frequency:    1
-Display Update Frequency:    1
+Maximum Batches:             100000
+Minimum Batches:             100000
+Data Reporting Frequency:    100
+Display Update Frequency:    100
 BuildType:                   Optimize
 Execution Architecture:      64-bit
 Runname:                     Results
@@ -23,11 +23,11 @@ Processors Selected for Simulation:
         mobius-VirtualBox    amd64
 
 _________________________________Experiment 1_________________________________
-Start Time:                  Fri Apr 28 14:50:51 CEST 2023
-Finish Time:                 Fri Apr 28 14:57:36 CEST 2023
-Elapsed Running Time:        405.1
-Total CPU Time:              362.043887
-Batches Completed:           1000
+Start Time:                  Sun Apr 30 18:02:44 CEST 2023
+Finish Time:                 Mon May 01 07:05:55 CEST 2023
+Elapsed Running Time:        46990.906
+Total CPU Time:              37325.319975
+Batches Completed:           100000
 Experiment Name:             Experiment 1
 Global Variable Settings:    
         short                dram_size                100                    
@@ -59,24 +59,24 @@ Global Variable Settings:
 
 _________________________________Mean Results_________________________________
 Name                  Time               Mean                     Confidence Interval
-warp                  0.0 - 100         6.8080000000E03   +/-   7.5659963549E-06
-exec_dispatch         0.0 - 100         6.8080000000E03   +/-   7.5659963549E-06
-l1_read               0.0 - 100         1.1631000000E01   +/-   2.0927292960E-01
-l2_read               0.0 - 100         1.1090000000E00   +/-   6.3334486716E-02
-dram_read             0.0 - 100         1.1712600000E03   +/-   2.1861549390E-01
-alu_ok                0.0 - 100         4.4770000000E03   +/-   9.2664152326E-06
+warp                  0.0 - 100         6.8080000000E03   +/-   0.0000000000E00 
+exec_dispatch         0.0 - 100         6.8080000000E03   +/-   0.0000000000E00 
+l1_read               0.0 - 100         1.1474760000E01   +/-   2.0837552640E-02
+l2_read               0.0 - 100         1.1450300000E00   +/-   6.5927932772E-03
+dram_read             0.0 - 100         1.1713802100E03   +/-   2.1840886522E-02
+alu_ok                0.0 - 100         4.4770000000E03   +/-   2.6749836645E-06
 alu_ko                0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 l1_read_ko            0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 l2_read_ko            0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 dram_read_ko          0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 failure               100               0.0000000000E00   +/-   0.0000000000E00 
-l1_access             0.0 - 100         4.3034700000E02   +/-   7.7430983950E00 
-l2_access             0.0 - 100         4.1033000000E01   +/-   2.3433760085E00 
-dram_access           0.0 - 100         8.5775620000E04   +/-   8.0887732746E00 
+l1_access             0.0 - 100         4.2456612000E02   +/-   7.7098944769E-01
+l2_access             0.0 - 100         4.2366110000E01   +/-   2.4393335126E-01
+dram_access           0.0 - 100         8.5780067770E04   +/-   8.0811280072E-01
 inst_ready            100               6.7710000000E03   +/-   0.0000000000E00 
-clocks                0.0 - 100         2.5477609675E07   +/-   1.7836686953E03 
-clocks2               0.0 - 100         5.1508311610E07   +/-   4.4381400093E03 
-clocks3               0.0 - 100         1.4279345300E06   +/-   1.1994972992E02 
+clocks                0.0 - 100         2.5478838393E07   +/-   1.7690367137E02 
+clocks2               0.0 - 100         5.1511340090E07   +/-   4.4205000544E02 
+clocks3               0.0 - 100         1.4280163808E06   +/-   1.1947293819E01 
 
 
 _______________________________Variance Results_______________________________
