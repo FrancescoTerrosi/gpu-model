@@ -1,0 +1,79 @@
+Simulator Results
+Date:, Sat May 06 20:49:01 CEST 2023
+
+Simulator Configuration
+Simulation Type:,Terminating
+Project Name:,GPU_MODEL_2.0
+Study Name:,GPU_STUDY_GEMM_512
+Random Number Generator:,Lagged Fibonacci
+Random Number Seed:,42
+Maximum Batches:,100000
+Minimum Batches:,100000
+Data Reporting Frequency:,100
+Display Update Frequency:,100
+BuildType:,Optimize
+Execution Architecture:,64-bit
+Runname:,Results
+Output File:,Results_output.txt
+Results File:,Results_results
+Jackknife Variance:,On
+Processors Per Experiment:,1
+Maximize Processor Usage:,false
+Processors Selected for Simulation:
+mobius-VirtualBox,amd64
+
+Experiment 1
+Experiment 1,Start Time:,Sat May 06 17:09:26 CEST 2023
+Experiment 1,Finish Time:,Sat May 06 20:49:01 CEST 2023
+Experiment 1,Elapsed Running Time:,13175.222
+Experiment 1,Total CPU Time:,11724.761422
+Experiment 1,Batches Completed:,100000
+Experiment 1,Experiment Name:,Experiment 1
+Experiment 1,Global Variable Settings:
+Experiment 1,short,dram_size,100
+Experiment 1,short,failure_index,1000
+Experiment 1,float,global_read_dram,0.01
+Experiment 1,float,global_read_l1,0.95
+Experiment 1,float,global_read_l2,0.04
+Experiment 1,float,global_write_dram,0.01
+Experiment 1,float,global_write_l1,0.0
+Experiment 1,float,global_write_l2,0.99
+Experiment 1,short,l1_size,100
+Experiment 1,short,l2_size,100
+Experiment 1,float,local_read_dram,0
+Experiment 1,float,local_read_l1,0.0
+Experiment 1,float,local_read_l2,0
+Experiment 1,float,local_write_dram,0
+Experiment 1,float,local_write_l1,0
+Experiment 1,float,local_write_l2,0
+Experiment 1,short,nfailedprocessors,0
+Experiment 1,short,nfailedsm,0
+Experiment 1,short,nfailedwarps,0
+Experiment 1,short,nprocessors,1
+Experiment 1,short,nsm,1
+Experiment 1,short,nwarps,4
+Experiment 1,short,register_count_index,0
+Experiment 1,short,sim_end,100
+Experiment 1,short,size,3584
+Experiment 1, Results
+Experiment 1,Result Type,Name,Start Time,End Time,Mean,,Confidence Interval,Failed To Converge
+Experiment 1,Mean,warp,0.0,100,1.4332000000E04 ,+/-,0.0000000000E00 
+Experiment 1,Mean,exec_dispatch,0.0,100,1.4336000000E04 ,+/-,0.0000000000E00 
+Experiment 1,Mean,l1_read,0.0,100,3.9480264600E03 ,+/-,8.6989421576E-02
+Experiment 1,Mean,l2_read,0.0,100,1.6641563000E02 ,+/-,7.8235971188E-02
+Experiment 1,Mean,dram_read,0.0,100,1.6955791000E02 ,+/-,3.9866236254E-02
+Experiment 1,Mean,alu_ok,0.0,100,7.9960000000E03 ,+/-,1.7743834271E-06
+Experiment 1,Mean,alu_ko,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,l1_read_ko,0.0,100,4.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,l2_read_ko,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,dram_read_ko,0.0,100,0.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,failure,100,100,0.0000000000E00 ,+/-,0.0000000000E00 
+Experiment 1,Mean,l1_access,0.0,100,1.5808105840E04 ,+/-,3.4795768626E-01
+Experiment 1,Mean,l2_access,0.0,100,8.7757186800E03 ,+/-,3.3198638696E-01
+Experiment 1,Mean,dram_access,0.0,100,7.6017548000E02 ,+/-,1.9486790098E-01
+Experiment 1,Mean,inst_ready,100,100,1.4332000000E04 ,+/-,0.0000000000E00 
+Experiment 1,Mean,clocks,0.0,100,2.6151489293E06 ,+/-,6.7470825952E01 
+Experiment 1,Mean,clocks2,0.0,100,4.4692999352E06 ,+/-,1.4733531131E02 
+Experiment 1,Mean,clocks3,0.0,100,1.2215037578E06 ,+/-,4.3213251904E01 
+
+<END_MOBIUS_RESULTS>
