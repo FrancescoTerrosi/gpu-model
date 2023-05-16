@@ -29,8 +29,8 @@
 						<boolean id="DisplayToolTips">true</boolean>
 					</class>
 					<string id="FullPath">
-						C:\\Users\\The_A\\gpu-model\\GPU_MODEL_2.0\\Study\\GPU_STUDY
-						_KMEANS_2\\
+						/home/mobius/gpu-model/GPU_MODEL_2.0/Study/GPU_STUDY_KMEANS_
+						2/
 					</string>
 					<string id="PVModelName">GPU5</string>
 					<vector id="ActiveExpVector">
@@ -116,7 +116,7 @@
 					<string id="18">0</string>
 					<string id="19">1</string>
 					<string id="20">1</string>
-					<string id="21">130</string>
+					<string id="21">91</string>
 					<string id="22">0</string>
 					<string id="23">100</string>
 					<string id="24">104</string>

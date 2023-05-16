@@ -338,7 +338,7 @@ void GPU_STUDY_GEMM_64SetStudy::SetValues_nfailedwarps() {
 // set values for nprocessors
 //******************************************************
 void GPU_STUDY_GEMM_64SetStudy::SetValues_nprocessors() {
-  nprocessorsValues[0] = 4;
+  nprocessorsValues[0] = 1;
 }
 
 
@@ -346,7 +346,7 @@ void GPU_STUDY_GEMM_64SetStudy::SetValues_nprocessors() {
 // set values for nsm
 //******************************************************
 void GPU_STUDY_GEMM_64SetStudy::SetValues_nsm() {
-  nsmValues[0] = 8;
+  nsmValues[0] = 1;
 }
 
 
@@ -378,7 +378,7 @@ void GPU_STUDY_GEMM_64SetStudy::SetValues_sim_end() {
 // set values for size
 //******************************************************
 void GPU_STUDY_GEMM_64SetStudy::SetValues_size() {
-  sizeValues[0] = 224;
+  sizeValues[0] = 448;
 }
 
 

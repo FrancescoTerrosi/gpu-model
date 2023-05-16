@@ -1466,8 +1466,8 @@ GPU5PV17Impulse0::GPU5PV17Impulse0()
 {
   NumberOfModelDependencies = 3;
   TheModelPtr = new BaseModelClass**[NumberOfModelDependencies];
-  TheModelPtr[0] = (BaseModelClass**)(&WARP);
-  TheModelPtr[1] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[0] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[1] = (BaseModelClass**)(&WARP);
   TheModelPtr[2] = (BaseModelClass**)(&MEMORY);
   ImpulseWorkerListLength = 0;
 }
@@ -1504,9 +1504,9 @@ GPU5PV17Impulse1::GPU5PV17Impulse1()
 {
   NumberOfModelDependencies = 3;
   TheModelPtr = new BaseModelClass**[NumberOfModelDependencies];
-  TheModelPtr[0] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[0] = (BaseModelClass**)(&MEMORY);
   TheModelPtr[1] = (BaseModelClass**)(&WARP);
-  TheModelPtr[2] = (BaseModelClass**)(&MEMORY);
+  TheModelPtr[2] = (BaseModelClass**)(&EXEC_UNIT);
   ImpulseWorkerListLength = 0;
 }
 
@@ -1521,7 +1521,7 @@ GPU5PV17Impulse1::~GPU5PV17Impulse1() {
 
 double GPU5PV17Impulse1::Impulse_Function(double FiringTime)
 {
-return 2;
+return 10;
 
 return(0);
 }
@@ -1559,7 +1559,7 @@ GPU5PV17Impulse2::~GPU5PV17Impulse2() {
 
 double GPU5PV17Impulse2::Impulse_Function(double FiringTime)
 {
-return 2;
+return 3000;
 
 return(0);
 }
@@ -1597,7 +1597,7 @@ GPU5PV17Impulse3::~GPU5PV17Impulse3() {
 
 double GPU5PV17Impulse3::Impulse_Function(double FiringTime)
 {
-return 600;
+return 10;
 
 return(0);
 }
@@ -1618,9 +1618,9 @@ GPU5PV17Impulse4::GPU5PV17Impulse4()
 {
   NumberOfModelDependencies = 3;
   TheModelPtr = new BaseModelClass**[NumberOfModelDependencies];
-  TheModelPtr[0] = (BaseModelClass**)(&MEMORY);
+  TheModelPtr[0] = (BaseModelClass**)(&EXEC_UNIT);
   TheModelPtr[1] = (BaseModelClass**)(&WARP);
-  TheModelPtr[2] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[2] = (BaseModelClass**)(&MEMORY);
   ImpulseWorkerListLength = 0;
 }
 
@@ -1635,7 +1635,7 @@ GPU5PV17Impulse4::~GPU5PV17Impulse4() {
 
 double GPU5PV17Impulse4::Impulse_Function(double FiringTime)
 {
-return 30;
+return 2;
 
 return(0);
 }
@@ -1656,9 +1656,9 @@ GPU5PV17Impulse5::GPU5PV17Impulse5()
 {
   NumberOfModelDependencies = 3;
   TheModelPtr = new BaseModelClass**[NumberOfModelDependencies];
-  TheModelPtr[0] = (BaseModelClass**)(&MEMORY);
-  TheModelPtr[1] = (BaseModelClass**)(&WARP);
-  TheModelPtr[2] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[0] = (BaseModelClass**)(&WARP);
+  TheModelPtr[1] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[2] = (BaseModelClass**)(&MEMORY);
   ImpulseWorkerListLength = 0;
 }
 
@@ -1673,7 +1673,7 @@ GPU5PV17Impulse5::~GPU5PV17Impulse5() {
 
 double GPU5PV17Impulse5::Impulse_Function(double FiringTime)
 {
-return 400;
+return 2;
 
 return(0);
 }
@@ -1711,7 +1711,7 @@ GPU5PV17Impulse6::~GPU5PV17Impulse6() {
 
 double GPU5PV17Impulse6::Impulse_Function(double FiringTime)
 {
-return 400;
+return 10;
 
 return(0);
 }
@@ -1749,7 +1749,7 @@ GPU5PV17Impulse7::~GPU5PV17Impulse7() {
 
 double GPU5PV17Impulse7::Impulse_Function(double FiringTime)
 {
-return 30;
+return 10;
 
 return(0);
 }
@@ -1787,7 +1787,7 @@ GPU5PV17Impulse8::~GPU5PV17Impulse8() {
 
 double GPU5PV17Impulse8::Impulse_Function(double FiringTime)
 {
-return 400;
+return 600;
 
 return(0);
 }
@@ -1825,7 +1825,7 @@ GPU5PV17Impulse9::~GPU5PV17Impulse9() {
 
 double GPU5PV17Impulse9::Impulse_Function(double FiringTime)
 {
-return 30;
+return 400;
 
 return(0);
 }
@@ -1901,7 +1901,7 @@ GPU5PV17Impulse11::~GPU5PV17Impulse11() {
 
 double GPU5PV17Impulse11::Impulse_Function(double FiringTime)
 {
-return 600;
+return 400;
 
 return(0);
 }
@@ -1939,7 +1939,7 @@ GPU5PV17Impulse12::~GPU5PV17Impulse12() {
 
 double GPU5PV17Impulse12::Impulse_Function(double FiringTime)
 {
-return 30;
+return 600;
 
 return(0);
 }
@@ -2036,9 +2036,9 @@ GPU5PV17Impulse15::GPU5PV17Impulse15()
 {
   NumberOfModelDependencies = 3;
   TheModelPtr = new BaseModelClass**[NumberOfModelDependencies];
-  TheModelPtr[0] = (BaseModelClass**)(&EXEC_UNIT);
+  TheModelPtr[0] = (BaseModelClass**)(&MEMORY);
   TheModelPtr[1] = (BaseModelClass**)(&WARP);
-  TheModelPtr[2] = (BaseModelClass**)(&MEMORY);
+  TheModelPtr[2] = (BaseModelClass**)(&EXEC_UNIT);
   ImpulseWorkerListLength = 0;
 }
 
@@ -2053,7 +2053,7 @@ GPU5PV17Impulse15::~GPU5PV17Impulse15() {
 
 double GPU5PV17Impulse15::Impulse_Function(double FiringTime)
 {
-return 2000;
+return 400;
 
 return(0);
 }
@@ -2075,54 +2075,54 @@ GPU5PV17::GPU5PV17(int timeindex) {
   double startpts[1]={0.0};
   double stoppts[1]={sim_end};
   Initialize("clocks3",(RewardType)1,1, startpts, stoppts, timeindex, 16,0, 0);
-  AddImpulse("DISPATCHER_Copy","WARP",&Impulse0);
-  AddImpulseModelDependency("EXEC_UNIT",&Impulse0);
+  AddImpulse("handle_failure","EXEC_UNIT",&Impulse0);
+  AddImpulseModelDependency("WARP",&Impulse0);
   AddImpulseModelDependency("MEMORY",&Impulse0);
-  AddImpulse("handle_failure","EXEC_UNIT",&Impulse1);
+  AddImpulse("LOCAL_WRITE_TO_case1","MEMORY",&Impulse1);
   AddImpulseModelDependency("WARP",&Impulse1);
-  AddImpulseModelDependency("MEMORY",&Impulse1);
-  AddImpulse("DISPATCHER","EXEC_UNIT",&Impulse2);
+  AddImpulseModelDependency("EXEC_UNIT",&Impulse1);
+  AddImpulse("BARRIER_SYNC","EXEC_UNIT",&Impulse2);
   AddImpulseModelDependency("WARP",&Impulse2);
   AddImpulseModelDependency("MEMORY",&Impulse2);
-  AddImpulse("LOCAL_READ_FROM_case3","MEMORY",&Impulse3);
+  AddImpulse("LOCAL_READ_FROM_case1","MEMORY",&Impulse3);
   AddImpulseModelDependency("WARP",&Impulse3);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse3);
-  AddImpulse("LOCAL_READ_FROM_case1","MEMORY",&Impulse4);
+  AddImpulse("DISPATCHER","EXEC_UNIT",&Impulse4);
   AddImpulseModelDependency("WARP",&Impulse4);
-  AddImpulseModelDependency("EXEC_UNIT",&Impulse4);
-  AddImpulse("LOCAL_READ_FROM_case2","MEMORY",&Impulse5);
-  AddImpulseModelDependency("WARP",&Impulse5);
+  AddImpulseModelDependency("MEMORY",&Impulse4);
+  AddImpulse("DISPATCHER_Copy","WARP",&Impulse5);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse5);
-  AddImpulse("GLOBAL_READ_FROM_case2","MEMORY",&Impulse6);
+  AddImpulseModelDependency("MEMORY",&Impulse5);
+  AddImpulse("GLOBAL_READ_FROM_case1","MEMORY",&Impulse6);
   AddImpulseModelDependency("WARP",&Impulse6);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse6);
-  AddImpulse("LOCAL_WRITE_TO_case1","MEMORY",&Impulse7);
+  AddImpulse("GLOBAL_WRITE_TO_case1","MEMORY",&Impulse7);
   AddImpulseModelDependency("WARP",&Impulse7);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse7);
-  AddImpulse("LOCAL_WRITE_TO_case2","MEMORY",&Impulse8);
+  AddImpulse("GLOBAL_WRITE_TO_case3","MEMORY",&Impulse8);
   AddImpulseModelDependency("WARP",&Impulse8);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse8);
-  AddImpulse("GLOBAL_WRITE_TO_case1","MEMORY",&Impulse9);
+  AddImpulse("GLOBAL_WRITE_TO_case2","MEMORY",&Impulse9);
   AddImpulseModelDependency("WARP",&Impulse9);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse9);
   AddImpulse("LOCAL_WRITE_TO_case3","MEMORY",&Impulse10);
   AddImpulseModelDependency("WARP",&Impulse10);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse10);
-  AddImpulse("GLOBAL_WRITE_TO_case3","MEMORY",&Impulse11);
+  AddImpulse("LOCAL_WRITE_TO_case2","MEMORY",&Impulse11);
   AddImpulseModelDependency("WARP",&Impulse11);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse11);
-  AddImpulse("GLOBAL_READ_FROM_case1","MEMORY",&Impulse12);
+  AddImpulse("GLOBAL_READ_FROM_case3","MEMORY",&Impulse12);
   AddImpulseModelDependency("WARP",&Impulse12);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse12);
-  AddImpulse("GLOBAL_WRITE_TO_case2","MEMORY",&Impulse13);
+  AddImpulse("GLOBAL_READ_FROM_case2","MEMORY",&Impulse13);
   AddImpulseModelDependency("WARP",&Impulse13);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse13);
-  AddImpulse("GLOBAL_READ_FROM_case3","MEMORY",&Impulse14);
+  AddImpulse("LOCAL_READ_FROM_case3","MEMORY",&Impulse14);
   AddImpulseModelDependency("WARP",&Impulse14);
   AddImpulseModelDependency("EXEC_UNIT",&Impulse14);
-  AddImpulse("BARRIER_SYNC","EXEC_UNIT",&Impulse15);
+  AddImpulse("LOCAL_READ_FROM_case2","MEMORY",&Impulse15);
   AddImpulseModelDependency("WARP",&Impulse15);
-  AddImpulseModelDependency("MEMORY",&Impulse15);
+  AddImpulseModelDependency("EXEC_UNIT",&Impulse15);
 }
 
 GPU5PV17::~GPU5PV17() {

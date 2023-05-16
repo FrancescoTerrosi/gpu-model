@@ -114,12 +114,12 @@
 					<string id="16">0</string>
 					<string id="17">0</string>
 					<string id="18">0</string>
-					<string id="19">4</string>
-					<string id="20">8</string>
+					<string id="19">1</string>
+					<string id="20">1</string>
 					<string id="21">1</string>
 					<string id="22">0</string>
 					<string id="23">100</string>
-					<string id="24">224</string>
+					<string id="24">448</string>
 				</vector>
 			</class>
 			<boolean id="Valid">true</boolean>

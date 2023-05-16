@@ -727,8 +727,8 @@ class GPU5PV16:public PerformanceVariableNode
 class GPU5PV17Impulse0:public IntervalOfTimeImpulse
 {
  public:
-  WARPSAN *WARP;
   EXEC_UNITSAN *EXEC_UNIT;
+  WARPSAN *WARP;
   MEMORYSAN *MEMORY;
 
   GPU5PV17Impulse0();
@@ -744,9 +744,9 @@ class GPU5PV17Impulse0:public IntervalOfTimeImpulse
 class GPU5PV17Impulse1:public IntervalOfTimeImpulse
 {
  public:
-  EXEC_UNITSAN *EXEC_UNIT;
-  WARPSAN *WARP;
   MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
 
   GPU5PV17Impulse1();
   ~GPU5PV17Impulse1();
@@ -795,9 +795,9 @@ class GPU5PV17Impulse3:public IntervalOfTimeImpulse
 class GPU5PV17Impulse4:public IntervalOfTimeImpulse
 {
  public:
-  MEMORYSAN *MEMORY;
-  WARPSAN *WARP;
   EXEC_UNITSAN *EXEC_UNIT;
+  WARPSAN *WARP;
+  MEMORYSAN *MEMORY;
 
   GPU5PV17Impulse4();
   ~GPU5PV17Impulse4();
@@ -812,9 +812,9 @@ class GPU5PV17Impulse4:public IntervalOfTimeImpulse
 class GPU5PV17Impulse5:public IntervalOfTimeImpulse
 {
  public:
-  MEMORYSAN *MEMORY;
   WARPSAN *WARP;
   EXEC_UNITSAN *EXEC_UNIT;
+  MEMORYSAN *MEMORY;
 
   GPU5PV17Impulse5();
   ~GPU5PV17Impulse5();
@@ -982,9 +982,9 @@ class GPU5PV17Impulse14:public IntervalOfTimeImpulse
 class GPU5PV17Impulse15:public IntervalOfTimeImpulse
 {
  public:
-  EXEC_UNITSAN *EXEC_UNIT;
-  WARPSAN *WARP;
   MEMORYSAN *MEMORY;
+  WARPSAN *WARP;
+  EXEC_UNITSAN *EXEC_UNIT;
 
   GPU5PV17Impulse15();
   ~GPU5PV17Impulse15();

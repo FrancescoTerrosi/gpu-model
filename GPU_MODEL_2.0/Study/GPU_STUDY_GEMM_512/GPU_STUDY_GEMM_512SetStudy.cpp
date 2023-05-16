@@ -202,7 +202,7 @@ void GPU_STUDY_GEMM_512SetStudy::SetValues_failure_index() {
 // set values for global_read_dram
 //******************************************************
 void GPU_STUDY_GEMM_512SetStudy::SetValues_global_read_dram() {
-  global_read_dramValues[0] = 0.01;
+  global_read_dramValues[0] = 0.0;
 }
 
 
@@ -210,7 +210,7 @@ void GPU_STUDY_GEMM_512SetStudy::SetValues_global_read_dram() {
 // set values for global_read_l1
 //******************************************************
 void GPU_STUDY_GEMM_512SetStudy::SetValues_global_read_l1() {
-  global_read_l1Values[0] = 0.95;
+  global_read_l1Values[0] = 0.99;
 }
 
 
@@ -218,7 +218,7 @@ void GPU_STUDY_GEMM_512SetStudy::SetValues_global_read_l1() {
 // set values for global_read_l2
 //******************************************************
 void GPU_STUDY_GEMM_512SetStudy::SetValues_global_read_l2() {
-  global_read_l2Values[0] = 0.04;
+  global_read_l2Values[0] = 0.01;
 }
 
 
@@ -226,7 +226,7 @@ void GPU_STUDY_GEMM_512SetStudy::SetValues_global_read_l2() {
 // set values for global_write_dram
 //******************************************************
 void GPU_STUDY_GEMM_512SetStudy::SetValues_global_write_dram() {
-  global_write_dramValues[0] = 0.1;
+  global_write_dramValues[0] = 0.0;
 }
 
 
@@ -234,7 +234,7 @@ void GPU_STUDY_GEMM_512SetStudy::SetValues_global_write_dram() {
 // set values for global_write_l1
 //******************************************************
 void GPU_STUDY_GEMM_512SetStudy::SetValues_global_write_l1() {
-  global_write_l1Values[0] = 0.0;
+  global_write_l1Values[0] = 0.99;
 }
 
 
@@ -242,7 +242,7 @@ void GPU_STUDY_GEMM_512SetStudy::SetValues_global_write_l1() {
 // set values for global_write_l2
 //******************************************************
 void GPU_STUDY_GEMM_512SetStudy::SetValues_global_write_l2() {
-  global_write_l2Values[0] = 0.99;
+  global_write_l2Values[0] = 0.01;
 }
 
 
@@ -266,7 +266,7 @@ void GPU_STUDY_GEMM_512SetStudy::SetValues_l2_size() {
 // set values for local_read_dram
 //******************************************************
 void GPU_STUDY_GEMM_512SetStudy::SetValues_local_read_dram() {
-  local_read_dramValues[0] = 0;
+  local_read_dramValues[0] = 0.0;
 }
 
 
@@ -274,7 +274,7 @@ void GPU_STUDY_GEMM_512SetStudy::SetValues_local_read_dram() {
 // set values for local_read_l1
 //******************************************************
 void GPU_STUDY_GEMM_512SetStudy::SetValues_local_read_l1() {
-  local_read_l1Values[0] = 0.0;
+  local_read_l1Values[0] = 1.0;
 }
 
 
@@ -298,7 +298,7 @@ void GPU_STUDY_GEMM_512SetStudy::SetValues_local_write_dram() {
 // set values for local_write_l1
 //******************************************************
 void GPU_STUDY_GEMM_512SetStudy::SetValues_local_write_l1() {
-  local_write_l1Values[0] = 0;
+  local_write_l1Values[0] = 1.0;
 }
 
 
@@ -354,7 +354,7 @@ void GPU_STUDY_GEMM_512SetStudy::SetValues_nsm() {
 // set values for nwarps
 //******************************************************
 void GPU_STUDY_GEMM_512SetStudy::SetValues_nwarps() {
-  nwarpsValues[0] = 2;
+  nwarpsValues[0] = 179;
 }
 
 

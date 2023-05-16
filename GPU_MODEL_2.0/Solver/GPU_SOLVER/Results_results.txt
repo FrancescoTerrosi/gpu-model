@@ -1,14 +1,14 @@
 _______________________________Simulator Results______________________________
-Date:                        Thu Apr 27 12:19:18 CEST 2023
+Date:                        Tue May 16 12:23:38 CEST 2023
 
 ____________________________Simulator Configuration___________________________
 Simulation Type:             Terminating
 Project Name:                GPU_MODEL_2.0
-Study Name:                  GPU_STUDY_KMEANS_1
+Study Name:                  GPU_STUDY_GEMM_256
 Random Number Generator:     Lagged Fibonacci
 Random Number Seed:          42
-Maximum Batches:             10000
-Minimum Batches:             1000
+Maximum Batches:             100000
+Minimum Batches:             100000
 Data Reporting Frequency:    1
 Display Update Frequency:    1
 BuildType:                   Optimize
@@ -20,63 +20,63 @@ Jackknife Variance:          On
 Processors Per Experiment:   1
 Maximize Processor Usage:    false
 Processors Selected for Simulation: 
-        DESKTOP-3AHUC0F      amd64
+        mobius-VirtualBox    amd64
 
 _________________________________Experiment 1_________________________________
-Start Time:                  Thu Apr 27 11:29:26 CEST 2023
-Finish Time:                 Thu Apr 27 12:19:16 CEST 2023
-Elapsed Running Time:        2989.713
-Total CPU Time:              2988.448
-Batches Completed:           188
+Start Time:                  Tue May 16 12:22:18 CEST 2023
+Finish Time:                 Tue May 16 12:23:38 CEST 2023
+Elapsed Running Time:        79.409
+Total CPU Time:              30.872992999999997
+Batches Completed:           97
 Experiment Name:             Experiment 1
 Global Variable Settings:    
         short                dram_size                100                    
-        short                end                      100                    
-        short                failure_index            10000                  
-        float                global_read_dram         0.989                  
-        float                global_read_l1           0.01                   
-        float                global_read_l2           0.001                  
-        float                global_write_dram        1.0                    
-        float                global_write_l1          0                      
-        float                global_write_l2          0                      
+        short                failure_index            1000                   
+        float                global_read_dram         0.0                    
+        float                global_read_l1           1.0                    
+        float                global_read_l2           0.0                    
+        float                global_write_dram        0.0                    
+        float                global_write_l1          1.0                    
+        float                global_write_l2          0.0                    
         short                l1_size                  100                    
         short                l2_size                  100                    
         float                local_read_dram          0                      
-        float                local_read_l1            0                      
+        float                local_read_l1            1.0                    
         float                local_read_l2            0                      
-        float                local_write_dram         0                      
-        float                local_write_l1           0                      
+        float                local_write_dram         0.0                    
+        float                local_write_l1           1.0                    
         float                local_write_l2           0                      
         short                nfailedprocessors        0                      
         short                nfailedsm                0                      
         short                nfailedwarps             0                      
         short                nprocessors              1                      
         short                nsm                      1                      
-        short                nwarps                   148                    
+        short                nwarps                   12                     
         short                register_count_index     0                      
-        short                size                     184                    
+        short                sim_end                  100                    
+        short                size                     1478                   
 
 
 _________________________________Mean Results_________________________________
 Name                  Time               Mean                     Confidence Interval
-warp                  0.0 - 100         2.7232000000E04   +/-   8.5485572387E-05
-exec_dispatch         0.0 - 100         2.7232000000E04   +/-   8.5485572387E-05
-l1_read               0.0 - 100         4.5643617021E01   +/-   1.0291725413E00 
-l2_read               0.0 - 100         4.5425531915E00   +/-   3.0091540381E-01
-dram_read             0.0 - 100         4.6858138298E03   +/-   1.0551425290E00 
-alu_ok                0.0 - 100         1.7908000000E04   +/-   0.0000000000E00 
+warp                  0.0 - 100         1.7724000000E04   +/-   8.4153248163E-05
+exec_dispatch         0.0 - 100         1.7736000000E04   +/-   0.0000000000E00 
+l1_read               0.0 - 100         5.5440000000E03   +/-   0.0000000000E00 
+l2_read               0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
+dram_read             0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
+alu_ok                0.0 - 100         9.4800000000E03   +/-   0.0000000000E00 
 alu_ko                0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
-l1_read_ko            0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
+l1_read_ko            0.0 - 100         1.2000000000E01   +/-   0.0000000000E00 
 l2_read_ko            0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 dram_read_ko          0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 failure               100               0.0000000000E00   +/-   0.0000000000E00 
-l1_access             0.0 - 100         6.7552553191E03   +/-   1.5231753611E02 
-l2_access             0.0 - 100         6.7229787234E02   +/-   4.4535479764E01 
-dram_access           0.0 - 100         1.3725244468E06   +/-   1.5616109431E02 
-inst_ready            100               2.7084000000E04   +/-   6.9798677572E-05
-clocks                0.0 - 100         4.1582747332E08   +/-   3.0600937070E04 
-clocks2               0.0 - 100         8.2404070889E08   +/-   8.6754122353E04 
-clocks3               0.0 - 100         5.7122186277E06   +/-   5.8617650254E02 
+l1_access             0.0 - 100         9.8928000000E04   +/-   0.0000000000E00 
+l2_access             0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
+dram_access           0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
+inst_ready            100               1.7724000000E04   +/-   8.4153248163E-05
+clocks                0.0 - 100         9.4029407216E06   +/-   1.6606453795E03 
+clocks2               0.0 - 100         3.0032880000E06   +/-   8.7949874431E-03
+clocks3               0.0 - 100         5.6397400000E05   +/-   0.0000000000E00 
 
 
 _______________________________Variance Results_______________________________

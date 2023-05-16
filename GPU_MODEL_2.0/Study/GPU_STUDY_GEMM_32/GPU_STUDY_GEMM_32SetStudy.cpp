@@ -314,7 +314,7 @@ void GPU_STUDY_GEMM_32SetStudy::SetValues_local_write_l2() {
 // set values for nfailedprocessors
 //******************************************************
 void GPU_STUDY_GEMM_32SetStudy::SetValues_nfailedprocessors() {
-  nfailedprocessorsValues[0] = 1;
+  nfailedprocessorsValues[0] = 0;
 }
 
 
@@ -322,7 +322,7 @@ void GPU_STUDY_GEMM_32SetStudy::SetValues_nfailedprocessors() {
 // set values for nfailedsm
 //******************************************************
 void GPU_STUDY_GEMM_32SetStudy::SetValues_nfailedsm() {
-  nfailedsmValues[0] = 1;
+  nfailedsmValues[0] = 0;
 }
 
 
@@ -330,7 +330,7 @@ void GPU_STUDY_GEMM_32SetStudy::SetValues_nfailedsm() {
 // set values for nfailedwarps
 //******************************************************
 void GPU_STUDY_GEMM_32SetStudy::SetValues_nfailedwarps() {
-  nfailedwarpsValues[0] = 1;
+  nfailedwarpsValues[0] = 0;
 }
 
 
@@ -338,7 +338,7 @@ void GPU_STUDY_GEMM_32SetStudy::SetValues_nfailedwarps() {
 // set values for nprocessors
 //******************************************************
 void GPU_STUDY_GEMM_32SetStudy::SetValues_nprocessors() {
-  nprocessorsValues[0] = 0;
+  nprocessorsValues[0] = 1;
 }
 
 
@@ -346,7 +346,7 @@ void GPU_STUDY_GEMM_32SetStudy::SetValues_nprocessors() {
 // set values for nsm
 //******************************************************
 void GPU_STUDY_GEMM_32SetStudy::SetValues_nsm() {
-  nsmValues[0] = 0;
+  nsmValues[0] = 1;
 }
 
 
@@ -354,7 +354,7 @@ void GPU_STUDY_GEMM_32SetStudy::SetValues_nsm() {
 // set values for nwarps
 //******************************************************
 void GPU_STUDY_GEMM_32SetStudy::SetValues_nwarps() {
-  nwarpsValues[0] = 1;
+  nwarpsValues[0] = 44;
 }
 
 
