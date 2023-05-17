@@ -354,7 +354,7 @@ void GPU_STUDY_KMEANS_2SetStudy::SetValues_nsm() {
 // set values for nwarps
 //******************************************************
 void GPU_STUDY_KMEANS_2SetStudy::SetValues_nwarps() {
-  nwarpsValues[0] = 37;
+  nwarpsValues[0] = 142;
 }
 
 

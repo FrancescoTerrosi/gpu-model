@@ -1223,16 +1223,16 @@
 					<string id="0">MEMORY</string>
 				</vector>
 				<vector id="AffectingActionsList">
-					<string id="0">MEMORY-&gt;LOCAL_READ_FROM_case3</string>
-					<string id="1">MEMORY-&gt;GLOBAL_READ_FROM_case3</string>
-					<string id="2">MEMORY-&gt;LOCAL_WRITE_TO_case3</string>
-					<string id="3">MEMORY-&gt;GLOBAL_WRITE_TO_case3</string>
+					<string id="0">MEMORY-&gt;GLOBAL_WRITE_TO_case3</string>
+					<string id="1">MEMORY-&gt;LOCAL_WRITE_TO_case3</string>
+					<string id="2">MEMORY-&gt;GLOBAL_READ_FROM_case3</string>
+					<string id="3">MEMORY-&gt;LOCAL_READ_FROM_case3</string>
 				</vector>
 				<vector id="ImpulseFunctionsList">
-					<string id="0">return 600;</string>
-					<string id="1">return 600;</string>
-					<string id="2">return 600;</string>
-					<string id="3">return 600;</string>
+					<string id="0">return 700;</string>
+					<string id="1">return 700;</string>
+					<string id="2">return 700;</string>
+					<string id="3">return 700;</string>
 				</vector>
 				<string id="RewardFunction"></string>
 				<int id="Type">1</int>

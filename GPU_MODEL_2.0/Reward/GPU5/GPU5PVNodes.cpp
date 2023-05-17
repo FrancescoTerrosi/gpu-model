@@ -1968,7 +1968,7 @@ GPU5PV22Impulse0::~GPU5PV22Impulse0() {
 
 double GPU5PV22Impulse0::Impulse_Function(double FiringTime)
 {
-return 600;
+return 700;
 
 return(0);
 }
@@ -2004,7 +2004,7 @@ GPU5PV22Impulse1::~GPU5PV22Impulse1() {
 
 double GPU5PV22Impulse1::Impulse_Function(double FiringTime)
 {
-return 600;
+return 700;
 
 return(0);
 }
@@ -2040,7 +2040,7 @@ GPU5PV22Impulse2::~GPU5PV22Impulse2() {
 
 double GPU5PV22Impulse2::Impulse_Function(double FiringTime)
 {
-return 600;
+return 700;
 
 return(0);
 }
@@ -2076,7 +2076,7 @@ GPU5PV22Impulse3::~GPU5PV22Impulse3() {
 
 double GPU5PV22Impulse3::Impulse_Function(double FiringTime)
 {
-return 600;
+return 700;
 
 return(0);
 }
@@ -2098,10 +2098,10 @@ GPU5PV22::GPU5PV22(int timeindex) {
   double startpts[1]={0.0};
   double stoppts[1]={sim_end};
   Initialize("dram_clock",(RewardType)1,1, startpts, stoppts, timeindex, 4,0, 0);
-  AddImpulse("LOCAL_READ_FROM_case3","MEMORY",&Impulse0);
-  AddImpulse("GLOBAL_READ_FROM_case3","MEMORY",&Impulse1);
-  AddImpulse("LOCAL_WRITE_TO_case3","MEMORY",&Impulse2);
-  AddImpulse("GLOBAL_WRITE_TO_case3","MEMORY",&Impulse3);
+  AddImpulse("GLOBAL_WRITE_TO_case3","MEMORY",&Impulse0);
+  AddImpulse("LOCAL_WRITE_TO_case3","MEMORY",&Impulse1);
+  AddImpulse("GLOBAL_READ_FROM_case3","MEMORY",&Impulse2);
+  AddImpulse("LOCAL_READ_FROM_case3","MEMORY",&Impulse3);
 }
 
 GPU5PV22::~GPU5PV22() {
