@@ -27,11 +27,10 @@
 			<int id="DisplayUpdateFrequency">1</int>
 			<boolean id="MaximizeProcessorUsage">false</boolean>
 			<int id="ProcessorsPerExperiment">1</int>
-			<int id="NumMachines">2</int>
-			<string id="MachineName">mobius-VirtualBox</string>
-			<string id="MachineName">mobius-VirtualBox</string>
+			<int id="NumMachines">1</int>
+			<string id="MachineName">DESKTOP-3AHUC0F</string>
 			<int id="NumGroups">0</int>
-			<string id="StudyName">GPU_STUDY_GEMM_512</string>
+			<string id="StudyName">GPU_STUDY_KMEANS_1</string>
 			<boolean id="TerminatingSimulation">true</boolean>
 			<boolean id="StoreOutput">false</boolean>
 			<boolean id="OutputASCII">false</boolean>

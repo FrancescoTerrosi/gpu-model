@@ -162,6 +162,8 @@ public:
 
   Place* WARP_ACCESS_L1;
   short* WARP_ACCESS_L1_Mobius_Mark;
+  Place* Place1;
+  short* Place1_Mobius_Mark;
 
   double* TheDistributionParameters;
   L1_CLOCKActivity();
@@ -182,6 +184,8 @@ public:
 
   Place* WARP_ACCESS_L2;
   short* WARP_ACCESS_L2_Mobius_Mark;
+  Place* Place1;
+  short* Place1_Mobius_Mark;
 
   double* TheDistributionParameters;
   L2_CLOCKActivity();
@@ -202,6 +206,8 @@ public:
 
   Place* WARP_ACCESS_DRAM;
   short* WARP_ACCESS_DRAM_Mobius_Mark;
+  Place* Place1;
+  short* Place1_Mobius_Mark;
 
   double* TheDistributionParameters;
   DRAM_CLOCKActivity();
@@ -228,6 +234,7 @@ public:
   Place* WARP_ACCESS_DRAM;
   Place* WARP_ACCESS_L2;
   Place* WARP_ACCESS_L1;
+  Place* Place1;
   instructions* WARP;
   ExtendedPlace<short>* SCHEDULER;
   ExtendedPlace<short>* FAILURE_INST;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<models:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:models="http://www.mobius.illinois.edu/projects" name="GPU_MODEL_2.0" author="The_A" creationDate="2022-01-11T19:07:29.792+0100" lastSavedVersion="2.5.10.201907151645">
+<models:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:models="http://www.mobius.illinois.edu/projects" name="GPU_MODEL_2.0" author="The_A" creationDate="2022-01-11T19:07:29.792+0100" lastSavedVersion="2.5.10.201907161116">
   <atomic key="L2_CACHE">
     <value name="L2_CACHE" type="SAN Model"/>
   </atomic>
