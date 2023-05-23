@@ -234,7 +234,7 @@ void GPU_STUDY_GEMM_128SetStudy::SetValues_global_write_dram() {
 // set values for global_write_l1
 //******************************************************
 void GPU_STUDY_GEMM_128SetStudy::SetValues_global_write_l1() {
-  global_write_l1Values[0] = 0.97;
+  global_write_l1Values[0] = 0.75;
 }
 
 
@@ -242,7 +242,7 @@ void GPU_STUDY_GEMM_128SetStudy::SetValues_global_write_l1() {
 // set values for global_write_l2
 //******************************************************
 void GPU_STUDY_GEMM_128SetStudy::SetValues_global_write_l2() {
-  global_write_l2Values[0] = 0.03;
+  global_write_l2Values[0] = 0.25;
 }
 
 
@@ -354,7 +354,7 @@ void GPU_STUDY_GEMM_128SetStudy::SetValues_nsm() {
 // set values for nwarps
 //******************************************************
 void GPU_STUDY_GEMM_128SetStudy::SetValues_nwarps() {
-  nwarpsValues[0] = 3;
+  nwarpsValues[0] = 2;
 }
 
 

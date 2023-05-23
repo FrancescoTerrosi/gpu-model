@@ -1770,10 +1770,10 @@ GPU5PV20::GPU5PV20(int timeindex) {
   double startpts[1]={0.0};
   double stoppts[1]={sim_end};
   Initialize("l1_clock",(RewardType)1,1, startpts, stoppts, timeindex, 4,0, 0);
-  AddImpulse("GLOBAL_READ_FROM_case1","MEMORY",&Impulse0);
-  AddImpulse("LOCAL_READ_FROM_case1","MEMORY",&Impulse1);
-  AddImpulse("LOCAL_WRITE_TO_case1","MEMORY",&Impulse2);
-  AddImpulse("GLOBAL_WRITE_TO_case1","MEMORY",&Impulse3);
+  AddImpulse("GLOBAL_WRITE_TO_case1","MEMORY",&Impulse0);
+  AddImpulse("LOCAL_WRITE_TO_case1","MEMORY",&Impulse1);
+  AddImpulse("GLOBAL_READ_FROM_case1","MEMORY",&Impulse2);
+  AddImpulse("LOCAL_READ_FROM_case1","MEMORY",&Impulse3);
 }
 
 GPU5PV20::~GPU5PV20() {

@@ -29,8 +29,8 @@
 						<boolean id="DisplayToolTips">true</boolean>
 					</class>
 					<string id="FullPath">
-						C:\\Users\\The_A\\gpu-model\\GPU_MODEL_2.0\\Study\\GPU_STUDY
-						_GEMM_128\\
+						/home/mobius/gpu-model/GPU_MODEL_2.0/Study/GPU_STUDY_GEMM_12
+						8/
 					</string>
 					<string id="PVModelName">GPU5</string>
 					<vector id="ActiveExpVector">
@@ -101,8 +101,8 @@
 					<string id="3">0.94</string>
 					<string id="4">0.04</string>
 					<string id="5">0.0</string>
-					<string id="6">0.97</string>
-					<string id="7">0.03</string>
+					<string id="6">0.75</string>
+					<string id="7">0.25</string>
 					<string id="8">100</string>
 					<string id="9">100</string>
 					<string id="10">0</string>
@@ -116,7 +116,7 @@
 					<string id="18">0</string>
 					<string id="19">1</string>
 					<string id="20">1</string>
-					<string id="21">3</string>
+					<string id="21">2</string>
 					<string id="22">0</string>
 					<string id="23">100</string>
 					<string id="24">896</string>

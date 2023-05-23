@@ -1,5 +1,5 @@
 
-#include "Study/GPU_STUDY_GEMM_256/GPU_STUDY_GEMM_256SetStudy.h"
+#include "Study/GPU_STUDY_GEMM_1024/GPU_STUDY_GEMM_1024SetStudy.h"
 
 //******************************************************
 //Global Variables
@@ -31,9 +31,9 @@ Short sim_end;
 Short size;
 
 //********************************************************
-//GPU_STUDY_GEMM_256SetStudy Constructor
+//GPU_STUDY_GEMM_1024SetStudy Constructor
 //********************************************************
-GPU_STUDY_GEMM_256SetStudy::GPU_STUDY_GEMM_256SetStudy() {
+GPU_STUDY_GEMM_1024SetStudy::GPU_STUDY_GEMM_1024SetStudy() {
 
   // define arrays of global variable names and types
   NumGVs = 25;
@@ -150,9 +150,9 @@ GPU_STUDY_GEMM_256SetStudy::GPU_STUDY_GEMM_256SetStudy() {
 
 
 //******************************************************
-//GPU_STUDY_GEMM_256SetStudy Destructor
+//GPU_STUDY_GEMM_1024SetStudy Destructor
 //******************************************************
-GPU_STUDY_GEMM_256SetStudy::~GPU_STUDY_GEMM_256SetStudy() {
+GPU_STUDY_GEMM_1024SetStudy::~GPU_STUDY_GEMM_1024SetStudy() {
   delete [] dram_sizeValues;
   delete [] failure_indexValues;
   delete [] global_read_dramValues;
@@ -185,7 +185,7 @@ GPU_STUDY_GEMM_256SetStudy::~GPU_STUDY_GEMM_256SetStudy() {
 //******************************************************
 // set values for dram_size
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_dram_size() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_dram_size() {
   dram_sizeValues[0] = 100;
 }
 
@@ -193,7 +193,7 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_dram_size() {
 //******************************************************
 // set values for failure_index
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_failure_index() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_failure_index() {
   failure_indexValues[0] = 1000;
 }
 
@@ -201,7 +201,7 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_failure_index() {
 //******************************************************
 // set values for global_read_dram
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_global_read_dram() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_global_read_dram() {
   global_read_dramValues[0] = 0.01;
 }
 
@@ -209,23 +209,23 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_global_read_dram() {
 //******************************************************
 // set values for global_read_l1
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_global_read_l1() {
-  global_read_l1Values[0] = 0.94;
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_global_read_l1() {
+  global_read_l1Values[0] = 0.95;
 }
 
 
 //******************************************************
 // set values for global_read_l2
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_global_read_l2() {
-  global_read_l2Values[0] = 0.05;
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_global_read_l2() {
+  global_read_l2Values[0] = 0.04;
 }
 
 
 //******************************************************
 // set values for global_write_dram
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_global_write_dram() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_global_write_dram() {
   global_write_dramValues[0] = 0.0;
 }
 
@@ -233,23 +233,23 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_global_write_dram() {
 //******************************************************
 // set values for global_write_l1
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_global_write_l1() {
-  global_write_l1Values[0] = 0.99;
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_global_write_l1() {
+  global_write_l1Values[0] = 1.0;
 }
 
 
 //******************************************************
 // set values for global_write_l2
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_global_write_l2() {
-  global_write_l2Values[0] = 0.01;
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_global_write_l2() {
+  global_write_l2Values[0] = 0.0;
 }
 
 
 //******************************************************
 // set values for l1_size
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_l1_size() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_l1_size() {
   l1_sizeValues[0] = 100;
 }
 
@@ -257,7 +257,7 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_l1_size() {
 //******************************************************
 // set values for l2_size
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_l2_size() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_l2_size() {
   l2_sizeValues[0] = 100;
 }
 
@@ -265,15 +265,15 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_l2_size() {
 //******************************************************
 // set values for local_read_dram
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_local_read_dram() {
-  local_read_dramValues[0] = 0;
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_local_read_dram() {
+  local_read_dramValues[0] = 0.0;
 }
 
 
 //******************************************************
 // set values for local_read_l1
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_local_read_l1() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_local_read_l1() {
   local_read_l1Values[0] = 1.0;
 }
 
@@ -281,23 +281,23 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_local_read_l1() {
 //******************************************************
 // set values for local_read_l2
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_local_read_l2() {
-  local_read_l2Values[0] = 0.0;
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_local_read_l2() {
+  local_read_l2Values[0] = 0;
 }
 
 
 //******************************************************
 // set values for local_write_dram
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_local_write_dram() {
-  local_write_dramValues[0] = 0.0;
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_local_write_dram() {
+  local_write_dramValues[0] = 0;
 }
 
 
 //******************************************************
 // set values for local_write_l1
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_local_write_l1() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_local_write_l1() {
   local_write_l1Values[0] = 1.0;
 }
 
@@ -305,7 +305,7 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_local_write_l1() {
 //******************************************************
 // set values for local_write_l2
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_local_write_l2() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_local_write_l2() {
   local_write_l2Values[0] = 0;
 }
 
@@ -313,7 +313,7 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_local_write_l2() {
 //******************************************************
 // set values for nfailedprocessors
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_nfailedprocessors() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_nfailedprocessors() {
   nfailedprocessorsValues[0] = 0;
 }
 
@@ -321,7 +321,7 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_nfailedprocessors() {
 //******************************************************
 // set values for nfailedsm
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_nfailedsm() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_nfailedsm() {
   nfailedsmValues[0] = 0;
 }
 
@@ -329,7 +329,7 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_nfailedsm() {
 //******************************************************
 // set values for nfailedwarps
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_nfailedwarps() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_nfailedwarps() {
   nfailedwarpsValues[0] = 0;
 }
 
@@ -337,7 +337,7 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_nfailedwarps() {
 //******************************************************
 // set values for nprocessors
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_nprocessors() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_nprocessors() {
   nprocessorsValues[0] = 1;
 }
 
@@ -345,7 +345,7 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_nprocessors() {
 //******************************************************
 // set values for nsm
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_nsm() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_nsm() {
   nsmValues[0] = 1;
 }
 
@@ -353,15 +353,15 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_nsm() {
 //******************************************************
 // set values for nwarps
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_nwarps() {
-  nwarpsValues[0] = 8;
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_nwarps() {
+  nwarpsValues[0] = 179;
 }
 
 
 //******************************************************
 // set values for register_count_index
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_register_count_index() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_register_count_index() {
   register_count_indexValues[0] = 0;
 }
 
@@ -369,7 +369,7 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_register_count_index() {
 //******************************************************
 // set values for sim_end
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_sim_end() {
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_sim_end() {
   sim_endValues[0] = 100;
 }
 
@@ -377,8 +377,8 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_sim_end() {
 //******************************************************
 // set values for size
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetValues_size() {
-  sizeValues[0] = 1792;
+void GPU_STUDY_GEMM_1024SetStudy::SetValues_size() {
+  sizeValues[0] = 7424;
 }
 
 
@@ -386,7 +386,7 @@ void GPU_STUDY_GEMM_256SetStudy::SetValues_size() {
 //******************************************************
 //print values of gv (for debugging)
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::PrintGlobalValues(int expNum) {
+void GPU_STUDY_GEMM_1024SetStudy::PrintGlobalValues(int expNum) {
   if (NumGVs == 0) {
     cout<<"There are no global variables."<<endl;
     return;
@@ -427,7 +427,7 @@ void GPU_STUDY_GEMM_256SetStudy::PrintGlobalValues(int expNum) {
 //******************************************************
 //retrieve the value of a global variable
 //******************************************************
-void *GPU_STUDY_GEMM_256SetStudy::GetGVValue(char *TheGVName) {
+void *GPU_STUDY_GEMM_1024SetStudy::GetGVValue(char *TheGVName) {
   if (strcmp("dram_size", TheGVName) == 0)
     return &dram_size;
   else if (strcmp("failure_index", TheGVName) == 0)
@@ -479,7 +479,7 @@ void *GPU_STUDY_GEMM_256SetStudy::GetGVValue(char *TheGVName) {
   else if (strcmp("size", TheGVName) == 0)
     return &size;
   else 
-    cerr<<"!! GPU_STUDY_GEMM_256SetStudy::GetGVValue: Global Variable "<<TheGVName<<" does not exist."<<endl;
+    cerr<<"!! GPU_STUDY_GEMM_1024SetStudy::GetGVValue: Global Variable "<<TheGVName<<" does not exist."<<endl;
   return NULL;
 }
 
@@ -487,7 +487,7 @@ void *GPU_STUDY_GEMM_256SetStudy::GetGVValue(char *TheGVName) {
 //******************************************************
 //override the value of a global variable
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::OverrideGVValue(char *TheGVName,void *TheGVValue) {
+void GPU_STUDY_GEMM_1024SetStudy::OverrideGVValue(char *TheGVName,void *TheGVValue) {
   if (strcmp("dram_size", TheGVName) == 0)
     SetGvValue(dram_size, *(short *)TheGVValue);
   else if (strcmp("failure_index", TheGVName) == 0)
@@ -539,14 +539,14 @@ void GPU_STUDY_GEMM_256SetStudy::OverrideGVValue(char *TheGVName,void *TheGVValu
   else if (strcmp("size", TheGVName) == 0)
     SetGvValue(size, *(short *)TheGVValue);
   else 
-    cerr<<"!! GPU_STUDY_GEMM_256SetStudy::OverrideGVValue: Global Variable "<<TheGVName<<" does not exist."<<endl;
+    cerr<<"!! GPU_STUDY_GEMM_1024SetStudy::OverrideGVValue: Global Variable "<<TheGVName<<" does not exist."<<endl;
 }
 
 
 //******************************************************
 //set the value of all global variables to the given exp
 //******************************************************
-void GPU_STUDY_GEMM_256SetStudy::SetGVs(int expNum) {
+void GPU_STUDY_GEMM_1024SetStudy::SetGVs(int expNum) {
   SetGvValue(dram_size, dram_sizeValues[expNum]);
   SetGvValue(failure_index, failure_indexValues[expNum]);
   SetGvValue(global_read_dram, global_read_dramValues[expNum]);
@@ -582,7 +582,7 @@ void GPU_STUDY_GEMM_256SetStudy::SetGVs(int expNum) {
 BaseStudyClass* GlobalStudyPtr = NULL;
 BaseStudyClass * GenerateStudy() {
   if (GlobalStudyPtr == NULL)
-    GlobalStudyPtr = new GPU_STUDY_GEMM_256SetStudy();
+    GlobalStudyPtr = new GPU_STUDY_GEMM_1024SetStudy();
   return GlobalStudyPtr;
 }
 
@@ -593,7 +593,7 @@ void DestructStudy() {
 //******************************************************
 //get and create the PVModel
 //******************************************************
-PVModel* GPU_STUDY_GEMM_256SetStudy::GetPVModel(bool expandTimeArrays) {
+PVModel* GPU_STUDY_GEMM_1024SetStudy::GetPVModel(bool expandTimeArrays) {
   if (ThePVModel!=NULL)
     delete ThePVModel;
   // create the PV model

@@ -234,7 +234,7 @@ void GPU_STUDY_KMEANS_1SetStudy::SetValues_global_write_dram() {
 // set values for global_write_l1
 //******************************************************
 void GPU_STUDY_KMEANS_1SetStudy::SetValues_global_write_l1() {
-  global_write_l1Values[0] = 0;
+  global_write_l1Values[0] = 0.0;
 }
 
 
@@ -242,7 +242,7 @@ void GPU_STUDY_KMEANS_1SetStudy::SetValues_global_write_l1() {
 // set values for global_write_l2
 //******************************************************
 void GPU_STUDY_KMEANS_1SetStudy::SetValues_global_write_l2() {
-  global_write_l2Values[0] = 0;
+  global_write_l2Values[0] = 0.0;
 }
 
 
@@ -354,7 +354,7 @@ void GPU_STUDY_KMEANS_1SetStudy::SetValues_nsm() {
 // set values for nwarps
 //******************************************************
 void GPU_STUDY_KMEANS_1SetStudy::SetValues_nwarps() {
-  nwarpsValues[0] = 142;
+  nwarpsValues[0] = 38;
 }
 
 

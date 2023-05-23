@@ -1,10 +1,10 @@
 _______________________________Simulator Results______________________________
-Date:                        Wed May 17 14:25:39 CEST 2023
+Date:                        Mon May 22 16:57:08 CEST 2023
 
 ____________________________Simulator Configuration___________________________
 Simulation Type:             Terminating
 Project Name:                GPU_MODEL_2.0
-Study Name:                  GPU_STUDY_KMEANS_1
+Study Name:                  GPU_STUDY_GEMM_1024
 Random Number Generator:     Lagged Fibonacci
 Random Number Seed:          42
 Maximum Batches:             100000
@@ -20,27 +20,27 @@ Jackknife Variance:          On
 Processors Per Experiment:   1
 Maximize Processor Usage:    false
 Processors Selected for Simulation: 
-        DESKTOP-3AHUC0F      amd64
+        mobius-VirtualBox    amd64
 
 _________________________________Experiment 1_________________________________
-Start Time:                  Wed May 17 14:24:58 CEST 2023
-Finish Time:                 Wed May 17 14:25:39 CEST 2023
-Elapsed Running Time:        40.162
-Total CPU Time:              39.414
-Batches Completed:           92
+Start Time:                  Mon May 22 16:06:28 CEST 2023
+Finish Time:                 Mon May 22 16:55:00 CEST 2023
+Elapsed Running Time:        2911.474
+Total CPU Time:              2754.9556549999998
+Batches Completed:           2
 Experiment Name:             Experiment 1
 Global Variable Settings:    
         short                dram_size                100                    
-        short                failure_index            10000                  
-        float                global_read_dram         0.989                  
-        float                global_read_l1           0.01                   
-        float                global_read_l2           0.001                  
-        float                global_write_dram        1.0                    
-        float                global_write_l1          0                      
-        float                global_write_l2          0                      
+        short                failure_index            1000                   
+        float                global_read_dram         0.01                   
+        float                global_read_l1           0.95                   
+        float                global_read_l2           0.04                   
+        float                global_write_dram        0.0                    
+        float                global_write_l1          1.0                    
+        float                global_write_l2          0.0                    
         short                l1_size                  100                    
         short                l2_size                  100                    
-        float                local_read_dram          0                      
+        float                local_read_dram          0.0                    
         float                local_read_l1            1.0                    
         float                local_read_l2            0                      
         float                local_write_dram         0                      
@@ -51,38 +51,38 @@ Global Variable Settings:
         short                nfailedwarps             0                      
         short                nprocessors              1                      
         short                nsm                      1                      
-        short                nwarps                   37                     
+        short                nwarps                   179                    
         short                register_count_index     0                      
         short                sim_end                  100                    
-        short                size                     184                    
+        short                size                     7424                   
 
 
 _________________________________Mean Results_________________________________
 Name                  Time               Mean                     Confidence Interval
-warp                  0.0 - 100         6.8080000000E03   +/-   3.0550466314E-05
-exec_dispatch         0.0 - 100         1.3616000000E04   +/-   6.1100932628E-05
-l1_read               0.0 - 100         4.8282608696E01   +/-   7.1260199237E-01
-l2_read               0.0 - 100         1.0434782609E00   +/-   2.1615783849E-01  (*)
-dram_read             0.0 - 100         1.1346739130E03   +/-   7.2142238284E-01
-alu_ok                0.0 - 100         4.4770000000E03   +/-   1.2472175646E-05
+warp                  0.0 - 100         1.3287170000E06   +/-   0.0000000000E00 
+exec_dispatch         0.0 - 100         2.6577920000E06   +/-   0.0000000000E00 
+l1_read               0.0 - 100         3.6498600000E05   +/-   0.0000000000E00 
+l2_read               0.0 - 100         1.4955500000E04   +/-   0.0000000000E00 
+dram_read             0.0 - 100         3.7185000000E03   +/-   0.0000000000E00 
+alu_ok                0.0 - 100         7.6164500000E05   +/-   0.0000000000E00 
 alu_ko                0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
-l1_read_ko            0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
+l1_read_ko            0.0 - 100         1.7900000000E02   +/-   0.0000000000E00 
 l2_read_ko            0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 dram_read_ko          0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 failure               100               0.0000000000E00   +/-   0.0000000000E00 
-l1_access             0.0 - 100         1.7864565217E03   +/-   2.6366273718E01 
-l2_access             0.0 - 100         3.8608695652E01   +/-   7.9978400240E00   (*)
-dram_access           0.0 - 100         8.4421934783E04   +/-   2.6692628167E01 
-inst_ready            100               6.7710000000E03   +/-   2.4944351291E-05
-clocks                0.0 - 100         2.5215726565E07   +/-   6.3481967663E03 
-clocks2               0.0 - 100         5.0735814043E07   +/-   1.4936689412E04 
-clocks3               0.0 - 100         1.3616000000E04   +/-   6.1100932628E-05
-clocks4               0.0 - 100         6.8080000000E04   +/-   0.0000000000E00 
-alu                   0.0 - 100         8.9540000000E03   +/-   2.4944351291E-05
-l1_clock              0.0 - 100         1.5450434783E03   +/-   2.2803263756E01 
-l2_clock              0.0 - 100         4.1739130435E02   +/-   8.6463135394E01   (*)
-dram_clock            0.0 - 100         1.5971717391E06   +/-   5.0499566799E02 
-pipeline              0.0 - 100         1.3616000000E05   +/-   0.0000000000E00 
+l1_access             0.0 - 100         9.8163242000E07   +/-   0.0000000000E00 
+l2_access             0.0 - 100         2.6770345000E06   +/-   0.0000000000E00 
+dram_access           0.0 - 100         6.6561150000E05   +/-   0.0000000000E00 
+inst_ready            100               1.3287170000E06   +/-   0.0000000000E00 
+clocks                0.0 - 100         1.0770725902E10   +/-   0.0000000000E00 
+clocks2               0.0 - 100         4.4177353940E09   +/-   0.0000000000E00 
+clocks3               0.0 - 100         2.6574340000E06   +/-   0.0000000000E00 
+clocks4               0.0 - 100         1.3287170000E07   +/-   0.0000000000E00 
+alu                   0.0 - 100         1.5236480000E06   +/-   0.0000000000E00 
+l1_clock              0.0 - 100         1.7548736000E07   +/-   0.0000000000E00 
+l2_clock              0.0 - 100         5.9822000000E06   +/-   0.0000000000E00 
+dram_clock            0.0 - 100         2.6029500000E06   +/-   0.0000000000E00 
+pipeline              0.0 - 100         2.6577920000E07   +/-   0.0000000000E00 
 barrier               0.0 - 100         0.0000000000E00   +/-   0.0000000000E00 
 
 
@@ -93,8 +93,5 @@ _______________________________Interval Results_______________________________
 
 
 _____________________________Distribution Results_____________________________
-
-
-(*) This result did not converge to within the specified confidence interval
 
 <END_MOBIUS_RESULTS>

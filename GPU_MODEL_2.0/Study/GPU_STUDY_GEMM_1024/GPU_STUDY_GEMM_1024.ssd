@@ -5,7 +5,7 @@
 		<int id="ClassVersion">1</int>
 		<class id="Mobius.BaseClasses.BaseInterfaceClass">
 			<int id="ClassVersion">3</int>
-			<string id="ModelName">GPU_STUDY_KMEANS_1</string>
+			<string id="ModelName">GPU_STUDY_GEMM_1024</string>
 			<class id="Mobius.Studies.SetStudy.SetStudyInfoClass">
 				<int id="ClassVersion">1</int>
 				<class id="Mobius.Studies.BaseStudyInfoClass">
@@ -29,8 +29,8 @@
 						<boolean id="DisplayToolTips">true</boolean>
 					</class>
 					<string id="FullPath">
-						/home/mobius/gpu-model/GPU_MODEL_2.0/Study/GPU_STUDY_KMEANS_
-						1/
+						/home/mobius/gpu-model/GPU_MODEL_2.0/Study/GPU_STUDY_GEMM_10
+						24/
 					</string>
 					<string id="PVModelName">GPU5</string>
 					<vector id="ActiveExpVector">
@@ -96,16 +96,16 @@
 				<string id="Name">Experiment 1</string>
 				<vector id="GVValueVector">
 					<string id="0">100</string>
-					<string id="1">10000</string>
-					<string id="2">0.989</string>
-					<string id="3">0.01</string>
-					<string id="4">0.001</string>
-					<string id="5">1.0</string>
-					<string id="6">0.0</string>
+					<string id="1">1000</string>
+					<string id="2">0.01</string>
+					<string id="3">0.95</string>
+					<string id="4">0.04</string>
+					<string id="5">0.0</string>
+					<string id="6">1.0</string>
 					<string id="7">0.0</string>
 					<string id="8">100</string>
 					<string id="9">100</string>
-					<string id="10">0</string>
+					<string id="10">0.0</string>
 					<string id="11">1.0</string>
 					<string id="12">0</string>
 					<string id="13">0</string>
@@ -116,10 +116,10 @@
 					<string id="18">0</string>
 					<string id="19">1</string>
 					<string id="20">1</string>
-					<string id="21">38</string>
+					<string id="21">179</string>
 					<string id="22">0</string>
 					<string id="23">100</string>
-					<string id="24">184</string>
+					<string id="24">7424</string>
 				</vector>
 			</class>
 			<boolean id="Valid">true</boolean>

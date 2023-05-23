@@ -9,26 +9,26 @@
 			<class id="Mobius.BaseClasses.BaseInfoClass">
 				<int id="ClassVersion">2</int>
 			</class>
-			<string id="OutputDirectory">Reward\\GPU5\\</string>
+			<string id="OutputDirectory">Reward/GPU5/</string>
 			<string id="PVModelFileName">GPU5PVModel</string>
 			<string id="PVNodeFileName">GPU5PVNodes</string>
 			<string id="PVArchiveName">GPU5PV</string>
 			<vector id="IncludePath">
-				<string id="0">Composed\\GPU5\\GPU5RJ__Rep1.h</string>
-				<string id="1">Composed\\GPU5\\GPU5RJ__PROCESSOR_REP.h</string>
-				<string id="2">Composed\\GPU5\\GPU5RJ__SM_REP.h</string>
-				<string id="3">Composed\\GPU5\\GPU5RJ__PROCESSOR.h</string>
-				<string id="4">Composed\\GPU5\\GPU5RJ__STREAMING_MULTIPROCESSOR.h</string>
-				<string id="5">Composed\\GPU5\\GPU5RJ.h</string>
-				<string id="6">Composed\\GPU5\\GPU5RJ__WARP_REG.h</string>
+				<string id="0">Composed/GPU5/GPU5RJ__Rep1.h</string>
+				<string id="1">Composed/GPU5/GPU5RJ__PROCESSOR_REP.h</string>
+				<string id="2">Composed/GPU5/GPU5RJ__SM_REP.h</string>
+				<string id="3">Composed/GPU5/GPU5RJ__PROCESSOR.h</string>
+				<string id="4">Composed/GPU5/GPU5RJ__STREAMING_MULTIPROCESSOR.h</string>
+				<string id="5">Composed/GPU5/GPU5RJ.h</string>
+				<string id="6">Composed/GPU5/GPU5RJ__WARP_REG.h</string>
 			</vector>
 			<vector id="HeaderFileList">
-				<string id="0">Reward\\GPU5\\GPU5PVNodes.h</string>
-				<string id="1">Reward\\GPU5\\GPU5PVModel.h</string>
+				<string id="0">Reward/GPU5/GPU5PVNodes.h</string>
+				<string id="1">Reward/GPU5/GPU5PVModel.h</string>
 			</vector>
 			<vector id="CodeFileList">
-				<string id="0">Reward\\GPU5\\GPU5PVNodes.cpp</string>
-				<string id="1">Reward\\GPU5\\GPU5PVModel.cpp</string>
+				<string id="0">Reward/GPU5/GPU5PVNodes.cpp</string>
+				<string id="1">Reward/GPU5/GPU5PVModel.cpp</string>
 			</vector>
 			<int id="NumVars">25</int>
 			<class id="Mobius.RewardModels.pvs.VariableInfo">
@@ -1096,10 +1096,10 @@
 					<string id="0">MEMORY</string>
 				</vector>
 				<vector id="AffectingActionsList">
-					<string id="0">MEMORY-&gt;GLOBAL_READ_FROM_case1</string>
-					<string id="1">MEMORY-&gt;LOCAL_READ_FROM_case1</string>
-					<string id="2">MEMORY-&gt;LOCAL_WRITE_TO_case1</string>
-					<string id="3">MEMORY-&gt;GLOBAL_WRITE_TO_case1</string>
+					<string id="0">MEMORY-&gt;GLOBAL_WRITE_TO_case1</string>
+					<string id="1">MEMORY-&gt;LOCAL_WRITE_TO_case1</string>
+					<string id="2">MEMORY-&gt;GLOBAL_READ_FROM_case1</string>
+					<string id="3">MEMORY-&gt;LOCAL_READ_FROM_case1</string>
 				</vector>
 				<vector id="ImpulseFunctionsList">
 					<string id="0">return 32;</string>

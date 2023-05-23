@@ -354,7 +354,7 @@ void GPU_STUDY_GEMM_512SetStudy::SetValues_nsm() {
 // set values for nwarps
 //******************************************************
 void GPU_STUDY_GEMM_512SetStudy::SetValues_nwarps() {
-  nwarpsValues[0] = 45;
+  nwarpsValues[0] = 29;
 }
 
 
