@@ -19,14 +19,14 @@ WARP_nofailSAN::WARP_nofailSAN(){
 
 
   Activity* InitialActionList[4]={
-    &DISPATCHER_Copy, //0
+    &DISPATCHER, //0
     &L1_CLOCK, //1
     &L2_CLOCK, //2
     &DRAM_CLOCK  // 3
   };
 
   BaseGroupClass* InitialGroupList[4]={
-    (BaseGroupClass*) &(DISPATCHER_Copy), 
+    (BaseGroupClass*) &(DISPATCHER), 
     (BaseGroupClass*) &(L1_CLOCK), 
     (BaseGroupClass*) &(L2_CLOCK), 
     (BaseGroupClass*) &(DRAM_CLOCK)
@@ -96,11 +96,11 @@ WARP_nofailSAN::~WARP_nofailSAN(){
 };
 
 void WARP_nofailSAN::assignPlacesToActivitiesInst(){
-  DISPATCHER_Copy.INST_COUNTER = (Place*) LocalStateVariables[0];
-  DISPATCHER_Copy.INSTRUCTION_READY = (Place*) LocalStateVariables[1];
-  DISPATCHER_Copy.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[8];
-  DISPATCHER_Copy.REGISTERS_FILL = (Place*) LocalStateVariables[2];
-  DISPATCHER_Copy.WARP = (instructions*) LocalStateVariables[7];
+  DISPATCHER.INST_COUNTER = (Place*) LocalStateVariables[0];
+  DISPATCHER.INSTRUCTION_READY = (Place*) LocalStateVariables[1];
+  DISPATCHER.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[8];
+  DISPATCHER.REGISTERS_FILL = (Place*) LocalStateVariables[2];
+  DISPATCHER.WARP = (instructions*) LocalStateVariables[7];
   L1_CLOCK.WARP_ACCESS_L1 = (Place*) LocalStateVariables[5];
   L1_CLOCK.Place1 = (Place*) LocalStateVariables[6];
   L2_CLOCK.WARP_ACCESS_L2 = (Place*) LocalStateVariables[4];
@@ -114,14 +114,14 @@ void WARP_nofailSAN::assignPlacesToActivitiesTimed(){
 /*                  Activity Method Definitions                  */
 /*****************************************************************/
 
-/*======================DISPATCHER_CopyActivity========================*/
+/*======================DISPATCHERActivity========================*/
 
 
-WARP_nofailSAN::DISPATCHER_CopyActivity::DISPATCHER_CopyActivity(){
-  ActivityInitialize("DISPATCHER_Copy",0,Instantaneous , RaceEnabled, 5,2, false);
+WARP_nofailSAN::DISPATCHERActivity::DISPATCHERActivity(){
+  ActivityInitialize("DISPATCHER",0,Instantaneous , RaceEnabled, 5,2, false);
 }
 
-void WARP_nofailSAN::DISPATCHER_CopyActivity::LinkVariables(){
+void WARP_nofailSAN::DISPATCHERActivity::LinkVariables(){
   INST_COUNTER->Register(&INST_COUNTER_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 
@@ -129,37 +129,37 @@ void WARP_nofailSAN::DISPATCHER_CopyActivity::LinkVariables(){
 
 }
 
-bool WARP_nofailSAN::DISPATCHER_CopyActivity::Enabled(){
+bool WARP_nofailSAN::DISPATCHERActivity::Enabled(){
   OldEnabled=NewEnabled;
   NewEnabled=(((INST_COUNTER->Mark() < size-1) && (INSTRUCTION_READY->Mark() > 0)));
   return NewEnabled;
 }
 
-double WARP_nofailSAN::DISPATCHER_CopyActivity::Weight(){ 
+double WARP_nofailSAN::DISPATCHERActivity::Weight(){ 
   return 1;
 }
 
-bool WARP_nofailSAN::DISPATCHER_CopyActivity::ReactivationPredicate(){ 
+bool WARP_nofailSAN::DISPATCHERActivity::ReactivationPredicate(){ 
   return false;
 }
 
-bool WARP_nofailSAN::DISPATCHER_CopyActivity::ReactivationFunction(){ 
+bool WARP_nofailSAN::DISPATCHERActivity::ReactivationFunction(){ 
   return false;
 }
 
-double WARP_nofailSAN::DISPATCHER_CopyActivity::SampleDistribution(){
+double WARP_nofailSAN::DISPATCHERActivity::SampleDistribution(){
   return 0;
 }
 
-double* WARP_nofailSAN::DISPATCHER_CopyActivity::ReturnDistributionParameters(){
+double* WARP_nofailSAN::DISPATCHERActivity::ReturnDistributionParameters(){
     return NULL;
 }
 
-int WARP_nofailSAN::DISPATCHER_CopyActivity::Rank(){
+int WARP_nofailSAN::DISPATCHERActivity::Rank(){
   return 1;
 }
 
-BaseActionClass* WARP_nofailSAN::DISPATCHER_CopyActivity::Fire(){
+BaseActionClass* WARP_nofailSAN::DISPATCHERActivity::Fire(){
   INSTRUCTION_READY->Mark()--;
 INST_COUNTER->Mark()++;
   SCHEDULER->Mark() = WARP->Index(INST_COUNTER->Mark())->Mark();

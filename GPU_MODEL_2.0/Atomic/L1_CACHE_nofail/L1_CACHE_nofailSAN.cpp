@@ -19,13 +19,13 @@ L1_CACHE_nofailSAN::L1_CACHE_nofailSAN(){
 
 
   Activity* InitialActionList[2]={
-    &Instantaneous_Activity1, //0
-    &Instantaneous_Activity2  // 1
+    &PERFORM_READ, //0
+    &PERFORM_WRITE  // 1
   };
 
   BaseGroupClass* InitialGroupList[2]={
-    (BaseGroupClass*) &(Instantaneous_Activity1), 
-    (BaseGroupClass*) &(Instantaneous_Activity2)
+    (BaseGroupClass*) &(PERFORM_READ), 
+    (BaseGroupClass*) &(PERFORM_WRITE)
   };
 
   WRITE_L1 = new Place("WRITE_L1" ,0);
@@ -77,10 +77,10 @@ L1_CACHE_nofailSAN::~L1_CACHE_nofailSAN(){
 };
 
 void L1_CACHE_nofailSAN::assignPlacesToActivitiesInst(){
-  Instantaneous_Activity1.READ_L1 = (Place*) LocalStateVariables[2];
-  Instantaneous_Activity1.INSTRUCTION_READY = (Place*) LocalStateVariables[1];
-  Instantaneous_Activity2.WRITE_L1 = (Place*) LocalStateVariables[0];
-  Instantaneous_Activity2.INSTRUCTION_READY = (Place*) LocalStateVariables[1];
+  PERFORM_READ.READ_L1 = (Place*) LocalStateVariables[2];
+  PERFORM_READ.INSTRUCTION_READY = (Place*) LocalStateVariables[1];
+  PERFORM_WRITE.WRITE_L1 = (Place*) LocalStateVariables[0];
+  PERFORM_WRITE.INSTRUCTION_READY = (Place*) LocalStateVariables[1];
 }
 void L1_CACHE_nofailSAN::assignPlacesToActivitiesTimed(){
 }
@@ -88,97 +88,97 @@ void L1_CACHE_nofailSAN::assignPlacesToActivitiesTimed(){
 /*                  Activity Method Definitions                  */
 /*****************************************************************/
 
-/*======================Instantaneous_Activity1Activity========================*/
+/*======================PERFORM_READActivity========================*/
 
 
-L1_CACHE_nofailSAN::Instantaneous_Activity1Activity::Instantaneous_Activity1Activity(){
-  ActivityInitialize("Instantaneous_Activity1",0,Instantaneous , RaceEnabled, 2,1, false);
+L1_CACHE_nofailSAN::PERFORM_READActivity::PERFORM_READActivity(){
+  ActivityInitialize("PERFORM_READ",0,Instantaneous , RaceEnabled, 2,1, false);
 }
 
-void L1_CACHE_nofailSAN::Instantaneous_Activity1Activity::LinkVariables(){
+void L1_CACHE_nofailSAN::PERFORM_READActivity::LinkVariables(){
   READ_L1->Register(&READ_L1_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 }
 
-bool L1_CACHE_nofailSAN::Instantaneous_Activity1Activity::Enabled(){
+bool L1_CACHE_nofailSAN::PERFORM_READActivity::Enabled(){
   OldEnabled=NewEnabled;
   NewEnabled=(((*(READ_L1_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
-double L1_CACHE_nofailSAN::Instantaneous_Activity1Activity::Weight(){ 
+double L1_CACHE_nofailSAN::PERFORM_READActivity::Weight(){ 
   return 1;
 }
 
-bool L1_CACHE_nofailSAN::Instantaneous_Activity1Activity::ReactivationPredicate(){ 
+bool L1_CACHE_nofailSAN::PERFORM_READActivity::ReactivationPredicate(){ 
   return false;
 }
 
-bool L1_CACHE_nofailSAN::Instantaneous_Activity1Activity::ReactivationFunction(){ 
+bool L1_CACHE_nofailSAN::PERFORM_READActivity::ReactivationFunction(){ 
   return false;
 }
 
-double L1_CACHE_nofailSAN::Instantaneous_Activity1Activity::SampleDistribution(){
+double L1_CACHE_nofailSAN::PERFORM_READActivity::SampleDistribution(){
   return 0;
 }
 
-double* L1_CACHE_nofailSAN::Instantaneous_Activity1Activity::ReturnDistributionParameters(){
+double* L1_CACHE_nofailSAN::PERFORM_READActivity::ReturnDistributionParameters(){
     return NULL;
 }
 
-int L1_CACHE_nofailSAN::Instantaneous_Activity1Activity::Rank(){
+int L1_CACHE_nofailSAN::PERFORM_READActivity::Rank(){
   return 1;
 }
 
-BaseActionClass* L1_CACHE_nofailSAN::Instantaneous_Activity1Activity::Fire(){
+BaseActionClass* L1_CACHE_nofailSAN::PERFORM_READActivity::Fire(){
   (*(READ_L1_Mobius_Mark))--;
   (*(INSTRUCTION_READY_Mobius_Mark))++;
   return this;
 }
 
-/*======================Instantaneous_Activity2Activity========================*/
+/*======================PERFORM_WRITEActivity========================*/
 
 
-L1_CACHE_nofailSAN::Instantaneous_Activity2Activity::Instantaneous_Activity2Activity(){
-  ActivityInitialize("Instantaneous_Activity2",1,Instantaneous , RaceEnabled, 2,1, false);
+L1_CACHE_nofailSAN::PERFORM_WRITEActivity::PERFORM_WRITEActivity(){
+  ActivityInitialize("PERFORM_WRITE",1,Instantaneous , RaceEnabled, 2,1, false);
 }
 
-void L1_CACHE_nofailSAN::Instantaneous_Activity2Activity::LinkVariables(){
+void L1_CACHE_nofailSAN::PERFORM_WRITEActivity::LinkVariables(){
   WRITE_L1->Register(&WRITE_L1_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 }
 
-bool L1_CACHE_nofailSAN::Instantaneous_Activity2Activity::Enabled(){
+bool L1_CACHE_nofailSAN::PERFORM_WRITEActivity::Enabled(){
   OldEnabled=NewEnabled;
   NewEnabled=(((*(WRITE_L1_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
-double L1_CACHE_nofailSAN::Instantaneous_Activity2Activity::Weight(){ 
+double L1_CACHE_nofailSAN::PERFORM_WRITEActivity::Weight(){ 
   return 1;
 }
 
-bool L1_CACHE_nofailSAN::Instantaneous_Activity2Activity::ReactivationPredicate(){ 
+bool L1_CACHE_nofailSAN::PERFORM_WRITEActivity::ReactivationPredicate(){ 
   return false;
 }
 
-bool L1_CACHE_nofailSAN::Instantaneous_Activity2Activity::ReactivationFunction(){ 
+bool L1_CACHE_nofailSAN::PERFORM_WRITEActivity::ReactivationFunction(){ 
   return false;
 }
 
-double L1_CACHE_nofailSAN::Instantaneous_Activity2Activity::SampleDistribution(){
+double L1_CACHE_nofailSAN::PERFORM_WRITEActivity::SampleDistribution(){
   return 0;
 }
 
-double* L1_CACHE_nofailSAN::Instantaneous_Activity2Activity::ReturnDistributionParameters(){
+double* L1_CACHE_nofailSAN::PERFORM_WRITEActivity::ReturnDistributionParameters(){
     return NULL;
 }
 
-int L1_CACHE_nofailSAN::Instantaneous_Activity2Activity::Rank(){
+int L1_CACHE_nofailSAN::PERFORM_WRITEActivity::Rank(){
   return 1;
 }
 
-BaseActionClass* L1_CACHE_nofailSAN::Instantaneous_Activity2Activity::Fire(){
+BaseActionClass* L1_CACHE_nofailSAN::PERFORM_WRITEActivity::Fire(){
   (*(WRITE_L1_Mobius_Mark))--;
   (*(INSTRUCTION_READY_Mobius_Mark))++;
   return this;

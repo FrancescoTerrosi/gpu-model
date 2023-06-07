@@ -21,20 +21,19 @@ EXEC_UNIT_nofailSAN::EXEC_UNIT_nofailSAN(){
   Activity* InitialActionList[4]={
     &DISPATCHER, //0
     &BARRIER_SYNC, //1
-    &Instantaneous_Activity1, //2
-    &Instantaneous_Activity2  // 3
+    &FLOAT_OP, //2
+    &INT_OP  // 3
   };
 
   BaseGroupClass* InitialGroupList[4]={
     (BaseGroupClass*) &(DISPATCHER), 
     (BaseGroupClass*) &(BARRIER_SYNC), 
-    (BaseGroupClass*) &(Instantaneous_Activity1), 
-    (BaseGroupClass*) &(Instantaneous_Activity2)
+    (BaseGroupClass*) &(FLOAT_OP), 
+    (BaseGroupClass*) &(INT_OP)
   };
 
   INSTRUCTION_READY = new Place("INSTRUCTION_READY" ,1);
   FLOAT_ALU = new Place("FLOAT_ALU" ,0);
-  MEM_OP_COMPLETE = new Place("MEM_OP_COMPLETE" ,0);
   INT_ALU = new Place("INT_ALU" ,0);
   REGISTERS_FILL = new Place("REGISTERS_FILL" ,0);
   BARRIER = new Place("BARRIER" ,0);
@@ -44,20 +43,19 @@ EXEC_UNIT_nofailSAN::EXEC_UNIT_nofailSAN(){
   READ = new ExtendedPlace<short>("READ",temp_READshort);
   short temp_WRITEshort = -1;
   WRITE = new ExtendedPlace<short>("WRITE",temp_WRITEshort);
-  BaseStateVariableClass* InitialPlaces[9]={
+  BaseStateVariableClass* InitialPlaces[8]={
     INSTRUCTION_READY,  // 0
     FLOAT_ALU,  // 1
-    MEM_OP_COMPLETE,  // 2
-    INT_ALU,  // 3
-    REGISTERS_FILL,  // 4
-    BARRIER,  // 5
-    SCHEDULER,  // 6
-    READ,  // 7
-    WRITE   // 8
+    INT_ALU,  // 2
+    REGISTERS_FILL,  // 3
+    BARRIER,  // 4
+    SCHEDULER,  // 5
+    READ,  // 6
+    WRITE   // 7
   };
   BaseStateVariableClass* InitialROPlaces[0]={
   };
-  initializeSANModelNow("EXEC_UNIT_nofail", 9, InitialPlaces, 
+  initializeSANModelNow("EXEC_UNIT_nofail", 8, InitialPlaces, 
                         0, InitialROPlaces, 
                         4, InitialActionList, 4, InitialGroupList);
 
@@ -66,15 +64,15 @@ EXEC_UNIT_nofailSAN::EXEC_UNIT_nofailSAN(){
   assignPlacesToActivitiesTimed();
 
   int AffectArcs[12][2]={ 
-    {0,0}, {6,0}, {7,0}, {8,0}, {3,0}, {5,0}, {5,1}, {0,1}, {1,2}, 
-    {0,2}, {3,3}, {0,3}
+    {0,0}, {5,0}, {6,0}, {7,0}, {2,0}, {4,0}, {4,1}, {0,1}, {1,2}, 
+    {0,2}, {2,3}, {0,3}
   };
   for(int n=0;n<12;n++) {
     AddAffectArc(InitialPlaces[AffectArcs[n][0]],
                  InitialActionList[AffectArcs[n][1]]);
   }
   int EnableArcs[5][2]={ 
-    {6,0}, {4,0}, {5,1}, {1,2}, {3,3}
+    {5,0}, {3,0}, {4,1}, {1,2}, {2,3}
   };
   for(int n=0;n<5;n++) {
     AddEnableArc(InitialPlaces[EnableArcs[n][0]],
@@ -97,19 +95,19 @@ EXEC_UNIT_nofailSAN::~EXEC_UNIT_nofailSAN(){
 };
 
 void EXEC_UNIT_nofailSAN::assignPlacesToActivitiesInst(){
-  DISPATCHER.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[6];
-  DISPATCHER.REGISTERS_FILL = (Place*) LocalStateVariables[4];
+  DISPATCHER.SCHEDULER = (ExtendedPlace<short>*) LocalStateVariables[5];
+  DISPATCHER.REGISTERS_FILL = (Place*) LocalStateVariables[3];
   DISPATCHER.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
-  DISPATCHER.READ = (ExtendedPlace<short>*) LocalStateVariables[7];
-  DISPATCHER.WRITE = (ExtendedPlace<short>*) LocalStateVariables[8];
-  DISPATCHER.INT_ALU = (Place*) LocalStateVariables[3];
-  DISPATCHER.BARRIER = (Place*) LocalStateVariables[5];
-  BARRIER_SYNC.BARRIER = (Place*) LocalStateVariables[5];
+  DISPATCHER.READ = (ExtendedPlace<short>*) LocalStateVariables[6];
+  DISPATCHER.WRITE = (ExtendedPlace<short>*) LocalStateVariables[7];
+  DISPATCHER.INT_ALU = (Place*) LocalStateVariables[2];
+  DISPATCHER.BARRIER = (Place*) LocalStateVariables[4];
+  BARRIER_SYNC.BARRIER = (Place*) LocalStateVariables[4];
   BARRIER_SYNC.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
-  Instantaneous_Activity1.FLOAT_ALU = (Place*) LocalStateVariables[1];
-  Instantaneous_Activity1.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
-  Instantaneous_Activity2.INT_ALU = (Place*) LocalStateVariables[3];
-  Instantaneous_Activity2.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
+  FLOAT_OP.FLOAT_ALU = (Place*) LocalStateVariables[1];
+  FLOAT_OP.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
+  INT_OP.INT_ALU = (Place*) LocalStateVariables[2];
+  INT_OP.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
 }
 void EXEC_UNIT_nofailSAN::assignPlacesToActivitiesTimed(){
 }
@@ -259,97 +257,97 @@ BaseActionClass* EXEC_UNIT_nofailSAN::BARRIER_SYNCActivity::Fire(){
   return this;
 }
 
-/*======================Instantaneous_Activity1Activity========================*/
+/*======================FLOAT_OPActivity========================*/
 
 
-EXEC_UNIT_nofailSAN::Instantaneous_Activity1Activity::Instantaneous_Activity1Activity(){
-  ActivityInitialize("Instantaneous_Activity1",2,Instantaneous , RaceEnabled, 2,1, false);
+EXEC_UNIT_nofailSAN::FLOAT_OPActivity::FLOAT_OPActivity(){
+  ActivityInitialize("FLOAT_OP",2,Instantaneous , RaceEnabled, 2,1, false);
 }
 
-void EXEC_UNIT_nofailSAN::Instantaneous_Activity1Activity::LinkVariables(){
+void EXEC_UNIT_nofailSAN::FLOAT_OPActivity::LinkVariables(){
   FLOAT_ALU->Register(&FLOAT_ALU_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 }
 
-bool EXEC_UNIT_nofailSAN::Instantaneous_Activity1Activity::Enabled(){
+bool EXEC_UNIT_nofailSAN::FLOAT_OPActivity::Enabled(){
   OldEnabled=NewEnabled;
   NewEnabled=(((*(FLOAT_ALU_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
-double EXEC_UNIT_nofailSAN::Instantaneous_Activity1Activity::Weight(){ 
+double EXEC_UNIT_nofailSAN::FLOAT_OPActivity::Weight(){ 
   return 1;
 }
 
-bool EXEC_UNIT_nofailSAN::Instantaneous_Activity1Activity::ReactivationPredicate(){ 
+bool EXEC_UNIT_nofailSAN::FLOAT_OPActivity::ReactivationPredicate(){ 
   return false;
 }
 
-bool EXEC_UNIT_nofailSAN::Instantaneous_Activity1Activity::ReactivationFunction(){ 
+bool EXEC_UNIT_nofailSAN::FLOAT_OPActivity::ReactivationFunction(){ 
   return false;
 }
 
-double EXEC_UNIT_nofailSAN::Instantaneous_Activity1Activity::SampleDistribution(){
+double EXEC_UNIT_nofailSAN::FLOAT_OPActivity::SampleDistribution(){
   return 0;
 }
 
-double* EXEC_UNIT_nofailSAN::Instantaneous_Activity1Activity::ReturnDistributionParameters(){
+double* EXEC_UNIT_nofailSAN::FLOAT_OPActivity::ReturnDistributionParameters(){
     return NULL;
 }
 
-int EXEC_UNIT_nofailSAN::Instantaneous_Activity1Activity::Rank(){
+int EXEC_UNIT_nofailSAN::FLOAT_OPActivity::Rank(){
   return 1;
 }
 
-BaseActionClass* EXEC_UNIT_nofailSAN::Instantaneous_Activity1Activity::Fire(){
+BaseActionClass* EXEC_UNIT_nofailSAN::FLOAT_OPActivity::Fire(){
   (*(FLOAT_ALU_Mobius_Mark))--;
   (*(INSTRUCTION_READY_Mobius_Mark))++;
   return this;
 }
 
-/*======================Instantaneous_Activity2Activity========================*/
+/*======================INT_OPActivity========================*/
 
 
-EXEC_UNIT_nofailSAN::Instantaneous_Activity2Activity::Instantaneous_Activity2Activity(){
-  ActivityInitialize("Instantaneous_Activity2",3,Instantaneous , RaceEnabled, 2,1, false);
+EXEC_UNIT_nofailSAN::INT_OPActivity::INT_OPActivity(){
+  ActivityInitialize("INT_OP",3,Instantaneous , RaceEnabled, 2,1, false);
 }
 
-void EXEC_UNIT_nofailSAN::Instantaneous_Activity2Activity::LinkVariables(){
+void EXEC_UNIT_nofailSAN::INT_OPActivity::LinkVariables(){
   INT_ALU->Register(&INT_ALU_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 }
 
-bool EXEC_UNIT_nofailSAN::Instantaneous_Activity2Activity::Enabled(){
+bool EXEC_UNIT_nofailSAN::INT_OPActivity::Enabled(){
   OldEnabled=NewEnabled;
   NewEnabled=(((*(INT_ALU_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
-double EXEC_UNIT_nofailSAN::Instantaneous_Activity2Activity::Weight(){ 
+double EXEC_UNIT_nofailSAN::INT_OPActivity::Weight(){ 
   return 1;
 }
 
-bool EXEC_UNIT_nofailSAN::Instantaneous_Activity2Activity::ReactivationPredicate(){ 
+bool EXEC_UNIT_nofailSAN::INT_OPActivity::ReactivationPredicate(){ 
   return false;
 }
 
-bool EXEC_UNIT_nofailSAN::Instantaneous_Activity2Activity::ReactivationFunction(){ 
+bool EXEC_UNIT_nofailSAN::INT_OPActivity::ReactivationFunction(){ 
   return false;
 }
 
-double EXEC_UNIT_nofailSAN::Instantaneous_Activity2Activity::SampleDistribution(){
+double EXEC_UNIT_nofailSAN::INT_OPActivity::SampleDistribution(){
   return 0;
 }
 
-double* EXEC_UNIT_nofailSAN::Instantaneous_Activity2Activity::ReturnDistributionParameters(){
+double* EXEC_UNIT_nofailSAN::INT_OPActivity::ReturnDistributionParameters(){
     return NULL;
 }
 
-int EXEC_UNIT_nofailSAN::Instantaneous_Activity2Activity::Rank(){
+int EXEC_UNIT_nofailSAN::INT_OPActivity::Rank(){
   return 1;
 }
 
-BaseActionClass* EXEC_UNIT_nofailSAN::Instantaneous_Activity2Activity::Fire(){
+BaseActionClass* EXEC_UNIT_nofailSAN::INT_OPActivity::Fire(){
   (*(INT_ALU_Mobius_Mark))--;
   (*(INSTRUCTION_READY_Mobius_Mark))++;
   return this;

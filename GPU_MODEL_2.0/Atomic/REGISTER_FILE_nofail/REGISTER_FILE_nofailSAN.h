@@ -95,7 +95,7 @@ class registers_counter: public ArrayStateVariable<ExtendedPlace<short> > {
 class REGISTER_FILE_nofailSAN:public SANModel{
 public:
 
-class Instantaneous_Activity3Activity:public Activity {
+class INCREASE_REGISTERSActivity:public Activity {
 public:
 
   Place* indexes;
@@ -106,7 +106,7 @@ public:
   short* ACTIVE_REGISTERS_Mobius_Mark;
 
   double* TheDistributionParameters;
-  Instantaneous_Activity3Activity();
+  INCREASE_REGISTERSActivity();
   double Rate(){return 0;}
   bool Enabled();
   void LinkVariables();
@@ -117,21 +117,19 @@ public:
   double* ReturnDistributionParameters();
   int Rank();
   BaseActionClass* Fire();
-}; // Instantaneous_Activity3ActivityActivity
+}; // INCREASE_REGISTERSActivityActivity
 
   //List of user-specified place names
   Place* indexes;
   Place* REGISTERS_FILL;
   Place* ACTIVE_REGISTERS;
-  Place* RESULT_OK;
-  Place* RESULT_KO;
   registers_counter* LIVE_REGISTERS;
 
   // Create instances of all actvities
-  Instantaneous_Activity3Activity Instantaneous_Activity3;
+  INCREASE_REGISTERSActivity INCREASE_REGISTERS;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
-  PostselectGroup Instantaneous_Activity3Group;
+  PostselectGroup INCREASE_REGISTERSGroup;
 
   REGISTER_FILE_nofailSAN();
   ~REGISTER_FILE_nofailSAN();

@@ -95,7 +95,7 @@ class instructions: public ArrayStateVariable<ExtendedPlace<short> > {
 class WARP_nofailSAN:public SANModel{
 public:
 
-class DISPATCHER_CopyActivity:public Activity {
+class DISPATCHERActivity:public Activity {
 public:
 
   Place* INST_COUNTER;
@@ -108,7 +108,7 @@ public:
   instructions* WARP;
 
   double* TheDistributionParameters;
-  DISPATCHER_CopyActivity();
+  DISPATCHERActivity();
   double Rate(){return 0;}
   bool Enabled();
   void LinkVariables();
@@ -119,7 +119,7 @@ public:
   double* ReturnDistributionParameters();
   int Rank();
   BaseActionClass* Fire();
-}; // DISPATCHER_CopyActivityActivity
+}; // DISPATCHERActivityActivity
 
 class L1_CLOCKActivity:public Activity {
 public:
@@ -199,13 +199,13 @@ public:
   ExtendedPlace<short>* SCHEDULER;
 
   // Create instances of all actvities
-  DISPATCHER_CopyActivity DISPATCHER_Copy;
+  DISPATCHERActivity DISPATCHER;
   L1_CLOCKActivity L1_CLOCK;
   L2_CLOCKActivity L2_CLOCK;
   DRAM_CLOCKActivity DRAM_CLOCK;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
-  PostselectGroup DISPATCHER_CopyGroup;
+  PostselectGroup DISPATCHERGroup;
   PostselectGroup L1_CLOCKGroup;
   PostselectGroup L2_CLOCKGroup;
   PostselectGroup DRAM_CLOCKGroup;

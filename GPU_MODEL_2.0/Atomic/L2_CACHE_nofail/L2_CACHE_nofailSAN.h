@@ -23,7 +23,7 @@ void MemoryError();
 class L2_CACHE_nofailSAN:public SANModel{
 public:
 
-class Instantaneous_Activity1Activity:public Activity {
+class PERFORM_READActivity:public Activity {
 public:
 
   Place* READ_L2;
@@ -32,7 +32,7 @@ public:
   short* INSTRUCTION_READY_Mobius_Mark;
 
   double* TheDistributionParameters;
-  Instantaneous_Activity1Activity();
+  PERFORM_READActivity();
   double Rate(){return 0;}
   bool Enabled();
   void LinkVariables();
@@ -43,9 +43,9 @@ public:
   double* ReturnDistributionParameters();
   int Rank();
   BaseActionClass* Fire();
-}; // Instantaneous_Activity1ActivityActivity
+}; // PERFORM_READActivityActivity
 
-class Instantaneous_Activity2Activity:public Activity {
+class PERFORM_WRITEActivity:public Activity {
 public:
 
   Place* WRITE_L2;
@@ -54,7 +54,7 @@ public:
   short* INSTRUCTION_READY_Mobius_Mark;
 
   double* TheDistributionParameters;
-  Instantaneous_Activity2Activity();
+  PERFORM_WRITEActivity();
   double Rate(){return 0;}
   bool Enabled();
   void LinkVariables();
@@ -65,7 +65,7 @@ public:
   double* ReturnDistributionParameters();
   int Rank();
   BaseActionClass* Fire();
-}; // Instantaneous_Activity2ActivityActivity
+}; // PERFORM_WRITEActivityActivity
 
   //List of user-specified place names
   Place* INSTRUCTION_READY;
@@ -73,12 +73,12 @@ public:
   Place* WRITE_L2;
 
   // Create instances of all actvities
-  Instantaneous_Activity1Activity Instantaneous_Activity1;
-  Instantaneous_Activity2Activity Instantaneous_Activity2;
+  PERFORM_READActivity PERFORM_READ;
+  PERFORM_WRITEActivity PERFORM_WRITE;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
-  PostselectGroup Instantaneous_Activity1Group;
-  PostselectGroup Instantaneous_Activity2Group;
+  PostselectGroup PERFORM_READGroup;
+  PostselectGroup PERFORM_WRITEGroup;
 
   L2_CACHE_nofailSAN();
   ~L2_CACHE_nofailSAN();

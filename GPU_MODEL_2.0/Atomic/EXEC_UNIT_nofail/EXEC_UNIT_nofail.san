@@ -86,25 +86,6 @@
 							<int id="ClassVersion">3</int>
 							<class id="Mobius.BaseClasses.BasePanelObjectClass">
 								<int id="ClassVersion">5</int>
-								<string id="Name">MEM_OP_COMPLETE</string>
-								<boolean id="ContainsLabel">true</boolean>
-								<boolean id="IsLabelShown">true</boolean>
-							</class>
-							<point id="CenterPoint">
-								<int id="x">300</int>
-								<int id="y">60</int>
-							</point>
-						</class>
-						<boolean id="ReadOnly">false</boolean>
-						<boolean id="ConstantMarking">true</boolean>
-						<int id="InitialState">0</int>
-					</class>
-					<class id="Mobius.AtomicModels.San.PlacePanelObject">
-						<int id="ClassVersion">1</int>
-						<class id="Mobius.BaseClasses.BaseVertexClass">
-							<int id="ClassVersion">3</int>
-							<class id="Mobius.BaseClasses.BasePanelObjectClass">
-								<int id="ClassVersion">5</int>
 								<string id="Name">INT_ALU</string>
 								<boolean id="ContainsLabel">true</boolean>
 								<boolean id="IsLabelShown">true</boolean>
@@ -349,7 +330,7 @@
 									<int id="ClassVersion">3</int>
 									<class id="Mobius.BaseClasses.BasePanelObjectClass">
 										<int id="ClassVersion">5</int>
-										<string id="Name">Instantaneous_Activity1</string>
+										<string id="Name">FLOAT_OP</string>
 										<boolean id="ContainsLabel">true</boolean>
 										<boolean id="IsLabelShown">true</boolean>
 									</class>
@@ -375,7 +356,7 @@
 									<int id="ClassVersion">3</int>
 									<class id="Mobius.BaseClasses.BasePanelObjectClass">
 										<int id="ClassVersion">5</int>
-										<string id="Name">Instantaneous_Activity2</string>
+										<string id="Name">INT_OP</string>
 										<boolean id="ContainsLabel">true</boolean>
 										<boolean id="IsLabelShown">true</boolean>
 									</class>
@@ -411,7 +392,7 @@
 					<class id="Mobius.BaseClasses.BaseEdgeClass">
 						<int id="ClassVersion">3</int>
 						<int id="LineType">2</int>
-						<string id="StartVertex">Instantaneous_Activity1</string>
+						<string id="StartVertex">FLOAT_OP</string>
 						<string id="FinishVertex">INSTRUCTION_READY</string>
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
@@ -440,7 +421,7 @@
 					<class id="Mobius.BaseClasses.BaseEdgeClass">
 						<int id="ClassVersion">3</int>
 						<int id="LineType">2</int>
-						<string id="StartVertex">Instantaneous_Activity2</string>
+						<string id="StartVertex">INT_OP</string>
 						<string id="FinishVertex">INSTRUCTION_READY</string>
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
@@ -648,7 +629,7 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">FLOAT_ALU</string>
-						<string id="FinishVertex">Instantaneous_Activity1</string>
+						<string id="FinishVertex">FLOAT_OP</string>
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
@@ -665,7 +646,7 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">INT_ALU</string>
-						<string id="FinishVertex">Instantaneous_Activity2</string>
+						<string id="FinishVertex">INT_OP</string>
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">

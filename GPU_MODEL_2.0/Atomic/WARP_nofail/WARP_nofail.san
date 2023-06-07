@@ -4491,7 +4491,7 @@
 							</class>
 							<point id="CenterPoint">
 								<int id="x">188</int>
-								<int id="y">604</int>
+								<int id="y">435</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -4510,7 +4510,7 @@
 							</class>
 							<point id="CenterPoint">
 								<int id="x">149</int>
-								<int id="y">162</int>
+								<int id="y">175</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -4528,8 +4528,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">253</int>
-								<int id="y">71</int>
+								<int id="x">279</int>
+								<int id="y">123</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -4626,7 +4626,7 @@
 								</class>
 								<point id="CenterPoint">
 									<int id="x">84</int>
-									<int id="y">370</int>
+									<int id="y">253</int>
 								</point>
 							</class>
 							<boolean id="ReadOnly">false</boolean>
@@ -4651,8 +4651,8 @@
 									<boolean id="IsLabelShown">true</boolean>
 								</class>
 								<point id="CenterPoint">
-									<int id="x">552</int>
-									<int id="y">84</int>
+									<int id="x">422</int>
+									<int id="y">19</int>
 								</point>
 							</class>
 							<boolean id="ReadOnly">false</boolean>
@@ -4670,13 +4670,13 @@
 							<int id="ClassVersion">3</int>
 							<class id="Mobius.BaseClasses.BasePanelObjectClass">
 								<int id="ClassVersion">5</int>
-								<string id="Name">Input_Gate1_Copy</string>
+								<string id="Name">Input_Gate1</string>
 								<boolean id="ContainsLabel">true</boolean>
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
 								<int id="x">331</int>
-								<int id="y">461</int>
+								<int id="y">370</int>
 							</point>
 						</class>
 						<boolean id="MirrorImage">false</boolean>
@@ -4692,13 +4692,13 @@
 							<int id="ClassVersion">3</int>
 							<class id="Mobius.BaseClasses.BasePanelObjectClass">
 								<int id="ClassVersion">5</int>
-								<string id="Name">Output_Gate_Copy</string>
+								<string id="Name">Output_Gate1</string>
 								<boolean id="ContainsLabel">true</boolean>
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">409</int>
-								<int id="y">188</int>
+								<int id="x">422</int>
+								<int id="y">97</int>
 							</point>
 						</class>
 						<boolean id="MirrorImage">false</boolean>
@@ -4717,13 +4717,13 @@
 									<int id="ClassVersion">3</int>
 									<class id="Mobius.BaseClasses.BasePanelObjectClass">
 										<int id="ClassVersion">5</int>
-										<string id="Name">DISPATCHER_Copy</string>
+										<string id="Name">DISPATCHER</string>
 										<boolean id="ContainsLabel">true</boolean>
 										<boolean id="IsLabelShown">true</boolean>
 									</class>
 									<point id="CenterPoint">
 										<int id="x">422</int>
-										<int id="y">292</int>
+										<int id="y">201</int>
 									</point>
 								</class>
 							</class>
@@ -4865,13 +4865,13 @@
 					<class id="Mobius.BaseClasses.BaseEdgeClass">
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
-						<string id="StartVertex">Output_Gate_Copy</string>
+						<string id="StartVertex">Output_Gate1</string>
 						<string id="FinishVertex">SCHEDULER</string>
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">413</int>
-								<int id="y">186</int>
+								<int id="x">426</int>
+								<int id="y">95</int>
 							</point>
 							<point id="1">
 								<int id="x">538</int>
@@ -4883,12 +4883,12 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">WARP</string>
-						<string id="FinishVertex">Input_Gate1_Copy</string>
+						<string id="FinishVertex">Input_Gate1</string>
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
 								<int id="x">84</int>
-								<int id="y">374</int>
+								<int id="y">257</int>
 							</point>
 							<point id="1">
 								<int id="x">318</int>
@@ -4900,12 +4900,12 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">INST_COUNTER</string>
-						<string id="FinishVertex">Input_Gate1_Copy</string>
+						<string id="FinishVertex">Input_Gate1</string>
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
 								<int id="x">193</int>
-								<int id="y">598</int>
+								<int id="y">429</int>
 							</point>
 							<point id="1">
 								<int id="x">316</int>
@@ -4917,12 +4917,12 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">INSTRUCTION_READY</string>
-						<string id="FinishVertex">Input_Gate1_Copy</string>
+						<string id="FinishVertex">Input_Gate1</string>
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
 								<int id="x">145</int>
-								<int id="y">163</int>
+								<int id="y">176</int>
 							</point>
 							<point id="1">
 								<int id="x">318</int>
@@ -4934,12 +4934,12 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">REGISTERS_FILL</string>
-						<string id="FinishVertex">Input_Gate1_Copy</string>
+						<string id="FinishVertex">Input_Gate1</string>
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">261</int>
-								<int id="y">71</int>
+								<int id="x">287</int>
+								<int id="y">123</int>
 							</point>
 							<point id="1">
 								<int id="x">317</int>
@@ -4950,13 +4950,13 @@
 					<class id="Mobius.BaseClasses.BaseEdgeClass">
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
-						<string id="StartVertex">DISPATCHER_Copy</string>
-						<string id="FinishVertex">Output_Gate_Copy</string>
+						<string id="StartVertex">DISPATCHER</string>
+						<string id="FinishVertex">Output_Gate1</string>
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
 								<int id="x">422</int>
-								<int id="y">288</int>
+								<int id="y">197</int>
 							</point>
 							<point id="1">
 								<int id="x">309</int>
@@ -4967,13 +4967,13 @@
 					<class id="Mobius.BaseClasses.BaseEdgeClass">
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
-						<string id="StartVertex">Input_Gate1_Copy</string>
-						<string id="FinishVertex">DISPATCHER_Copy</string>
+						<string id="StartVertex">Input_Gate1</string>
+						<string id="FinishVertex">DISPATCHER</string>
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
 								<int id="x">336</int>
-								<int id="y">465</int>
+								<int id="y">374</int>
 							</point>
 							<point id="1">
 								<int id="x">324</int>

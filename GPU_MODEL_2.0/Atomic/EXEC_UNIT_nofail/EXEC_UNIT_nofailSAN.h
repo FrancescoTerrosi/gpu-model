@@ -145,7 +145,7 @@ public:
   BaseActionClass* Fire();
 }; // BARRIER_SYNCActivityActivity
 
-class Instantaneous_Activity1Activity:public Activity {
+class FLOAT_OPActivity:public Activity {
 public:
 
   Place* FLOAT_ALU;
@@ -154,7 +154,7 @@ public:
   short* INSTRUCTION_READY_Mobius_Mark;
 
   double* TheDistributionParameters;
-  Instantaneous_Activity1Activity();
+  FLOAT_OPActivity();
   double Rate(){return 0;}
   bool Enabled();
   void LinkVariables();
@@ -165,9 +165,9 @@ public:
   double* ReturnDistributionParameters();
   int Rank();
   BaseActionClass* Fire();
-}; // Instantaneous_Activity1ActivityActivity
+}; // FLOAT_OPActivityActivity
 
-class Instantaneous_Activity2Activity:public Activity {
+class INT_OPActivity:public Activity {
 public:
 
   Place* INT_ALU;
@@ -176,7 +176,7 @@ public:
   short* INSTRUCTION_READY_Mobius_Mark;
 
   double* TheDistributionParameters;
-  Instantaneous_Activity2Activity();
+  INT_OPActivity();
   double Rate(){return 0;}
   bool Enabled();
   void LinkVariables();
@@ -187,12 +187,11 @@ public:
   double* ReturnDistributionParameters();
   int Rank();
   BaseActionClass* Fire();
-}; // Instantaneous_Activity2ActivityActivity
+}; // INT_OPActivityActivity
 
   //List of user-specified place names
   Place* INSTRUCTION_READY;
   Place* FLOAT_ALU;
-  Place* MEM_OP_COMPLETE;
   Place* INT_ALU;
   Place* REGISTERS_FILL;
   Place* BARRIER;
@@ -203,14 +202,14 @@ public:
   // Create instances of all actvities
   DISPATCHERActivity DISPATCHER;
   BARRIER_SYNCActivity BARRIER_SYNC;
-  Instantaneous_Activity1Activity Instantaneous_Activity1;
-  Instantaneous_Activity2Activity Instantaneous_Activity2;
+  FLOAT_OPActivity FLOAT_OP;
+  INT_OPActivity INT_OP;
   //Create instances of all groups 
   PreselectGroup ImmediateGroup;
   PostselectGroup DISPATCHERGroup;
   PostselectGroup BARRIER_SYNCGroup;
-  PostselectGroup Instantaneous_Activity1Group;
-  PostselectGroup Instantaneous_Activity2Group;
+  PostselectGroup FLOAT_OPGroup;
+  PostselectGroup INT_OPGroup;
 
   EXEC_UNIT_nofailSAN();
   ~EXEC_UNIT_nofailSAN();

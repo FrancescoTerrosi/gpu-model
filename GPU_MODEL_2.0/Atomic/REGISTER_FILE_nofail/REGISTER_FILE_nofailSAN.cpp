@@ -19,31 +19,27 @@ REGISTER_FILE_nofailSAN::REGISTER_FILE_nofailSAN(){
 
 
   Activity* InitialActionList[1]={
-    &Instantaneous_Activity3  // 0
+    &INCREASE_REGISTERS  // 0
   };
 
   BaseGroupClass* InitialGroupList[1]={
-    (BaseGroupClass*) &(Instantaneous_Activity3)
+    (BaseGroupClass*) &(INCREASE_REGISTERS)
   };
 
   indexes = new Place("indexes" ,-1);
   REGISTERS_FILL = new Place("REGISTERS_FILL" ,0);
   ACTIVE_REGISTERS = new Place("ACTIVE_REGISTERS" ,0);
-  RESULT_OK = new Place("RESULT_OK" ,0);
-  RESULT_KO = new Place("RESULT_KO" ,0);
   short temp_LIVE_REGISTERSregisters_countervalue = 0;
   LIVE_REGISTERS = new registers_counter("LIVE_REGISTERS",temp_LIVE_REGISTERSregisters_countervalue);
-  BaseStateVariableClass* InitialPlaces[6]={
+  BaseStateVariableClass* InitialPlaces[4]={
     indexes,  // 0
     REGISTERS_FILL,  // 1
     ACTIVE_REGISTERS,  // 2
-    RESULT_OK,  // 3
-    RESULT_KO,  // 4
-    LIVE_REGISTERS   // 5
+    LIVE_REGISTERS   // 3
   };
   BaseStateVariableClass* InitialROPlaces[0]={
   };
-  initializeSANModelNow("REGISTER_FILE_nofail", 6, InitialPlaces, 
+  initializeSANModelNow("REGISTER_FILE_nofail", 4, InitialPlaces, 
                         0, InitialROPlaces, 
                         1, InitialActionList, 1, InitialGroupList);
 
@@ -82,9 +78,9 @@ REGISTER_FILE_nofailSAN::~REGISTER_FILE_nofailSAN(){
 };
 
 void REGISTER_FILE_nofailSAN::assignPlacesToActivitiesInst(){
-  Instantaneous_Activity3.indexes = (Place*) LocalStateVariables[0];
-  Instantaneous_Activity3.REGISTERS_FILL = (Place*) LocalStateVariables[1];
-  Instantaneous_Activity3.ACTIVE_REGISTERS = (Place*) LocalStateVariables[2];
+  INCREASE_REGISTERS.indexes = (Place*) LocalStateVariables[0];
+  INCREASE_REGISTERS.REGISTERS_FILL = (Place*) LocalStateVariables[1];
+  INCREASE_REGISTERS.ACTIVE_REGISTERS = (Place*) LocalStateVariables[2];
 }
 void REGISTER_FILE_nofailSAN::assignPlacesToActivitiesTimed(){
 }
@@ -92,50 +88,50 @@ void REGISTER_FILE_nofailSAN::assignPlacesToActivitiesTimed(){
 /*                  Activity Method Definitions                  */
 /*****************************************************************/
 
-/*======================Instantaneous_Activity3Activity========================*/
+/*======================INCREASE_REGISTERSActivity========================*/
 
 
-REGISTER_FILE_nofailSAN::Instantaneous_Activity3Activity::Instantaneous_Activity3Activity(){
-  ActivityInitialize("Instantaneous_Activity3",0,Instantaneous , RaceEnabled, 3,2, false);
+REGISTER_FILE_nofailSAN::INCREASE_REGISTERSActivity::INCREASE_REGISTERSActivity(){
+  ActivityInitialize("INCREASE_REGISTERS",0,Instantaneous , RaceEnabled, 3,2, false);
 }
 
-void REGISTER_FILE_nofailSAN::Instantaneous_Activity3Activity::LinkVariables(){
+void REGISTER_FILE_nofailSAN::INCREASE_REGISTERSActivity::LinkVariables(){
   indexes->Register(&indexes_Mobius_Mark);
   REGISTERS_FILL->Register(&REGISTERS_FILL_Mobius_Mark);
   ACTIVE_REGISTERS->Register(&ACTIVE_REGISTERS_Mobius_Mark);
 }
 
-bool REGISTER_FILE_nofailSAN::Instantaneous_Activity3Activity::Enabled(){
+bool REGISTER_FILE_nofailSAN::INCREASE_REGISTERSActivity::Enabled(){
   OldEnabled=NewEnabled;
   NewEnabled=((indexes->Mark() < size-1 && REGISTERS_FILL->Mark() == 1));
   return NewEnabled;
 }
 
-double REGISTER_FILE_nofailSAN::Instantaneous_Activity3Activity::Weight(){ 
+double REGISTER_FILE_nofailSAN::INCREASE_REGISTERSActivity::Weight(){ 
   return 1;
 }
 
-bool REGISTER_FILE_nofailSAN::Instantaneous_Activity3Activity::ReactivationPredicate(){ 
+bool REGISTER_FILE_nofailSAN::INCREASE_REGISTERSActivity::ReactivationPredicate(){ 
   return false;
 }
 
-bool REGISTER_FILE_nofailSAN::Instantaneous_Activity3Activity::ReactivationFunction(){ 
+bool REGISTER_FILE_nofailSAN::INCREASE_REGISTERSActivity::ReactivationFunction(){ 
   return false;
 }
 
-double REGISTER_FILE_nofailSAN::Instantaneous_Activity3Activity::SampleDistribution(){
+double REGISTER_FILE_nofailSAN::INCREASE_REGISTERSActivity::SampleDistribution(){
   return 0;
 }
 
-double* REGISTER_FILE_nofailSAN::Instantaneous_Activity3Activity::ReturnDistributionParameters(){
+double* REGISTER_FILE_nofailSAN::INCREASE_REGISTERSActivity::ReturnDistributionParameters(){
     return NULL;
 }
 
-int REGISTER_FILE_nofailSAN::Instantaneous_Activity3Activity::Rank(){
+int REGISTER_FILE_nofailSAN::INCREASE_REGISTERSActivity::Rank(){
   return 1;
 }
 
-BaseActionClass* REGISTER_FILE_nofailSAN::Instantaneous_Activity3Activity::Fire(){
+BaseActionClass* REGISTER_FILE_nofailSAN::INCREASE_REGISTERSActivity::Fire(){
   REGISTERS_FILL->Mark() = 0;
 indexes->Mark()++;
   (*(ACTIVE_REGISTERS_Mobius_Mark))++;

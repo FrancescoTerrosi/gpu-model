@@ -98,7 +98,7 @@
 									<int id="ClassVersion">3</int>
 									<class id="Mobius.BaseClasses.BasePanelObjectClass">
 										<int id="ClassVersion">5</int>
-										<string id="Name">Instantaneous_Activity1</string>
+										<string id="Name">PERFORM_READ</string>
 										<boolean id="ContainsLabel">true</boolean>
 										<boolean id="IsLabelShown">true</boolean>
 									</class>
@@ -124,7 +124,7 @@
 									<int id="ClassVersion">3</int>
 									<class id="Mobius.BaseClasses.BasePanelObjectClass">
 										<int id="ClassVersion">5</int>
-										<string id="Name">Instantaneous_Activity2</string>
+										<string id="Name">PERFORM_WRITE</string>
 										<boolean id="ContainsLabel">true</boolean>
 										<boolean id="IsLabelShown">true</boolean>
 									</class>
@@ -143,7 +143,7 @@
 					<class id="Mobius.BaseClasses.BaseEdgeClass">
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
-						<string id="StartVertex">Instantaneous_Activity1</string>
+						<string id="StartVertex">PERFORM_READ</string>
 						<string id="FinishVertex">INSTRUCTION_READY</string>
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
@@ -160,7 +160,7 @@
 					<class id="Mobius.BaseClasses.BaseEdgeClass">
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
-						<string id="StartVertex">Instantaneous_Activity2</string>
+						<string id="StartVertex">PERFORM_WRITE</string>
 						<string id="FinishVertex">INSTRUCTION_READY</string>
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
@@ -178,7 +178,7 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">READ_L1</string>
-						<string id="FinishVertex">Instantaneous_Activity1</string>
+						<string id="FinishVertex">PERFORM_READ</string>
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
@@ -195,7 +195,7 @@
 						<int id="ClassVersion">3</int>
 						<int id="LineType">0</int>
 						<string id="StartVertex">WRITE_L1</string>
-						<string id="FinishVertex">Instantaneous_Activity2</string>
+						<string id="FinishVertex">PERFORM_WRITE</string>
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">

@@ -19,13 +19,13 @@ DRAM_nofailSAN::DRAM_nofailSAN(){
 
 
   Activity* InitialActionList[2]={
-    &Instantaneous_Activity1, //0
-    &Instantaneous_Activity2  // 1
+    &PERFORM_READ, //0
+    &PERFORM_WRITE  // 1
   };
 
   BaseGroupClass* InitialGroupList[2]={
-    (BaseGroupClass*) &(Instantaneous_Activity1), 
-    (BaseGroupClass*) &(Instantaneous_Activity2)
+    (BaseGroupClass*) &(PERFORM_READ), 
+    (BaseGroupClass*) &(PERFORM_WRITE)
   };
 
   INSTRUCTION_READY = new Place("INSTRUCTION_READY" ,1);
@@ -77,10 +77,10 @@ DRAM_nofailSAN::~DRAM_nofailSAN(){
 };
 
 void DRAM_nofailSAN::assignPlacesToActivitiesInst(){
-  Instantaneous_Activity1.READ_DRAM = (Place*) LocalStateVariables[1];
-  Instantaneous_Activity1.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
-  Instantaneous_Activity2.WRITE_DRAM = (Place*) LocalStateVariables[2];
-  Instantaneous_Activity2.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
+  PERFORM_READ.READ_DRAM = (Place*) LocalStateVariables[1];
+  PERFORM_READ.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
+  PERFORM_WRITE.WRITE_DRAM = (Place*) LocalStateVariables[2];
+  PERFORM_WRITE.INSTRUCTION_READY = (Place*) LocalStateVariables[0];
 }
 void DRAM_nofailSAN::assignPlacesToActivitiesTimed(){
 }
@@ -88,97 +88,97 @@ void DRAM_nofailSAN::assignPlacesToActivitiesTimed(){
 /*                  Activity Method Definitions                  */
 /*****************************************************************/
 
-/*======================Instantaneous_Activity1Activity========================*/
+/*======================PERFORM_READActivity========================*/
 
 
-DRAM_nofailSAN::Instantaneous_Activity1Activity::Instantaneous_Activity1Activity(){
-  ActivityInitialize("Instantaneous_Activity1",0,Instantaneous , RaceEnabled, 2,1, false);
+DRAM_nofailSAN::PERFORM_READActivity::PERFORM_READActivity(){
+  ActivityInitialize("PERFORM_READ",0,Instantaneous , RaceEnabled, 2,1, false);
 }
 
-void DRAM_nofailSAN::Instantaneous_Activity1Activity::LinkVariables(){
+void DRAM_nofailSAN::PERFORM_READActivity::LinkVariables(){
   READ_DRAM->Register(&READ_DRAM_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 }
 
-bool DRAM_nofailSAN::Instantaneous_Activity1Activity::Enabled(){
+bool DRAM_nofailSAN::PERFORM_READActivity::Enabled(){
   OldEnabled=NewEnabled;
   NewEnabled=(((*(READ_DRAM_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
-double DRAM_nofailSAN::Instantaneous_Activity1Activity::Weight(){ 
+double DRAM_nofailSAN::PERFORM_READActivity::Weight(){ 
   return 1;
 }
 
-bool DRAM_nofailSAN::Instantaneous_Activity1Activity::ReactivationPredicate(){ 
+bool DRAM_nofailSAN::PERFORM_READActivity::ReactivationPredicate(){ 
   return false;
 }
 
-bool DRAM_nofailSAN::Instantaneous_Activity1Activity::ReactivationFunction(){ 
+bool DRAM_nofailSAN::PERFORM_READActivity::ReactivationFunction(){ 
   return false;
 }
 
-double DRAM_nofailSAN::Instantaneous_Activity1Activity::SampleDistribution(){
+double DRAM_nofailSAN::PERFORM_READActivity::SampleDistribution(){
   return 0;
 }
 
-double* DRAM_nofailSAN::Instantaneous_Activity1Activity::ReturnDistributionParameters(){
+double* DRAM_nofailSAN::PERFORM_READActivity::ReturnDistributionParameters(){
     return NULL;
 }
 
-int DRAM_nofailSAN::Instantaneous_Activity1Activity::Rank(){
+int DRAM_nofailSAN::PERFORM_READActivity::Rank(){
   return 1;
 }
 
-BaseActionClass* DRAM_nofailSAN::Instantaneous_Activity1Activity::Fire(){
+BaseActionClass* DRAM_nofailSAN::PERFORM_READActivity::Fire(){
   (*(READ_DRAM_Mobius_Mark))--;
   (*(INSTRUCTION_READY_Mobius_Mark))++;
   return this;
 }
 
-/*======================Instantaneous_Activity2Activity========================*/
+/*======================PERFORM_WRITEActivity========================*/
 
 
-DRAM_nofailSAN::Instantaneous_Activity2Activity::Instantaneous_Activity2Activity(){
-  ActivityInitialize("Instantaneous_Activity2",1,Instantaneous , RaceEnabled, 2,1, false);
+DRAM_nofailSAN::PERFORM_WRITEActivity::PERFORM_WRITEActivity(){
+  ActivityInitialize("PERFORM_WRITE",1,Instantaneous , RaceEnabled, 2,1, false);
 }
 
-void DRAM_nofailSAN::Instantaneous_Activity2Activity::LinkVariables(){
+void DRAM_nofailSAN::PERFORM_WRITEActivity::LinkVariables(){
   WRITE_DRAM->Register(&WRITE_DRAM_Mobius_Mark);
   INSTRUCTION_READY->Register(&INSTRUCTION_READY_Mobius_Mark);
 }
 
-bool DRAM_nofailSAN::Instantaneous_Activity2Activity::Enabled(){
+bool DRAM_nofailSAN::PERFORM_WRITEActivity::Enabled(){
   OldEnabled=NewEnabled;
   NewEnabled=(((*(WRITE_DRAM_Mobius_Mark)) >=1));
   return NewEnabled;
 }
 
-double DRAM_nofailSAN::Instantaneous_Activity2Activity::Weight(){ 
+double DRAM_nofailSAN::PERFORM_WRITEActivity::Weight(){ 
   return 1;
 }
 
-bool DRAM_nofailSAN::Instantaneous_Activity2Activity::ReactivationPredicate(){ 
+bool DRAM_nofailSAN::PERFORM_WRITEActivity::ReactivationPredicate(){ 
   return false;
 }
 
-bool DRAM_nofailSAN::Instantaneous_Activity2Activity::ReactivationFunction(){ 
+bool DRAM_nofailSAN::PERFORM_WRITEActivity::ReactivationFunction(){ 
   return false;
 }
 
-double DRAM_nofailSAN::Instantaneous_Activity2Activity::SampleDistribution(){
+double DRAM_nofailSAN::PERFORM_WRITEActivity::SampleDistribution(){
   return 0;
 }
 
-double* DRAM_nofailSAN::Instantaneous_Activity2Activity::ReturnDistributionParameters(){
+double* DRAM_nofailSAN::PERFORM_WRITEActivity::ReturnDistributionParameters(){
     return NULL;
 }
 
-int DRAM_nofailSAN::Instantaneous_Activity2Activity::Rank(){
+int DRAM_nofailSAN::PERFORM_WRITEActivity::Rank(){
   return 1;
 }
 
-BaseActionClass* DRAM_nofailSAN::Instantaneous_Activity2Activity::Fire(){
+BaseActionClass* DRAM_nofailSAN::PERFORM_WRITEActivity::Fire(){
   (*(WRITE_DRAM_Mobius_Mark))--;
   (*(INSTRUCTION_READY_Mobius_Mark))++;
   return this;
