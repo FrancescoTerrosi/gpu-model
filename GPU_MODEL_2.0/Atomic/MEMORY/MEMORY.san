@@ -23,10 +23,10 @@
 				<class id="Mobius.BaseClasses.BasePanelClass">
 					<int id="ClassVersion">2</int>
 					<point id="Size of Panel">
-						<int id="x">3805</int>
-						<int id="y">1864</int>
+						<int id="x">1897</int>
+						<int id="y">845</int>
 					</point>
-					<double id="ZoomFactor">1.953125</double>
+					<double id="ZoomFactor">1.0</double>
 					<boolean id="ShowGridEnabled">true</boolean>
 					<int id="ShowGridStep">10</int>
 					<boolean id="SnapGridEnabled">true</boolean>
@@ -42,8 +42,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">990</int>
-								<int id="y">50</int>
+								<int id="x">995</int>
+								<int id="y">35</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -137,8 +137,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">710</int>
-								<int id="y">430</int>
+								<int id="x">735</int>
+								<int id="y">425</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -156,8 +156,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">710</int>
-								<int id="y">530</int>
+								<int id="x">735</int>
+								<int id="y">525</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -175,8 +175,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">990</int>
-								<int id="y">370</int>
+								<int id="x">985</int>
+								<int id="y">415</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -194,8 +194,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">1025</int>
-								<int id="y">445</int>
+								<int id="x">985</int>
+								<int id="y">485</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -251,8 +251,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">610</int>
-								<int id="y">630</int>
+								<int id="x">645</int>
+								<int id="y">625</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -271,7 +271,7 @@
 							</class>
 							<point id="CenterPoint">
 								<int id="x">1405</int>
-								<int id="y">65</int>
+								<int id="y">75</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -289,7 +289,7 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">1435</int>
+								<int id="x">1415</int>
 								<int id="y">265</int>
 							</point>
 						</class>
@@ -308,8 +308,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">1445</int>
-								<int id="y">495</int>
+								<int id="x">1425</int>
+								<int id="y">485</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -441,8 +441,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">550</int>
-								<int id="y">470</int>
+								<int id="x">605</int>
+								<int id="y">465</int>
 							</point>
 						</class>
 						<boolean id="MirrorImage">false</boolean>
@@ -483,7 +483,7 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">1295</int>
+								<int id="x">1215</int>
 								<int id="y">265</int>
 							</point>
 						</class>
@@ -501,7 +501,7 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">1295</int>
+								<int id="x">1225</int>
 								<int id="y">485</int>
 							</point>
 						</class>
@@ -816,8 +816,8 @@
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">552</int>
-								<int id="y">466</int>
+								<int id="x">607</int>
+								<int id="y">461</int>
 							</point>
 							<point id="1">
 								<int id="x">709</int>
@@ -833,8 +833,8 @@
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">556</int>
-								<int id="y">476</int>
+								<int id="x">611</int>
+								<int id="y">471</int>
 							</point>
 							<point id="1">
 								<int id="x">707</int>
@@ -969,8 +969,8 @@
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">545</int>
-								<int id="y">476</int>
+								<int id="x">600</int>
+								<int id="y">471</int>
 							</point>
 							<point id="1">
 								<int id="x">609</int>
@@ -1003,7 +1003,7 @@
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">1293</int>
+								<int id="x">1213</int>
 								<int id="y">265</int>
 							</point>
 							<point id="1">
@@ -1020,7 +1020,7 @@
 						<boolean id="Arrows">false</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">1291</int>
+								<int id="x">1221</int>
 								<int id="y">483</int>
 							</point>
 							<point id="1">
@@ -1377,8 +1377,8 @@
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">712</int>
-								<int id="y">425</int>
+								<int id="x">737</int>
+								<int id="y">420</int>
 							</point>
 							<point id="1">
 								<int id="x">847</int>
@@ -1394,8 +1394,8 @@
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">707</int>
-								<int id="y">528</int>
+								<int id="x">732</int>
+								<int id="y">523</int>
 							</point>
 							<point id="1">
 								<int id="x">854</int>

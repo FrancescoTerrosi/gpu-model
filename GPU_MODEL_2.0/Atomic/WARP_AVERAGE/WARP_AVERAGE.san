@@ -34,8 +34,8 @@
 				<class id="Mobius.BaseClasses.BasePanelClass">
 					<int id="ClassVersion">2</int>
 					<point id="Size of Panel">
-						<int id="x">2970</int>
-						<int id="y">1526</int>
+						<int id="x">500</int>
+						<int id="y">400</int>
 					</point>
 					<double id="ZoomFactor">1.5625</double>
 					<boolean id="ShowGridEnabled">true</boolean>
