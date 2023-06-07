@@ -13,10 +13,10 @@
 			<class id="Mobius.BaseClasses.BasePanelClass">
 				<int id="ClassVersion">2</int>
 				<point id="Size of Panel">
-					<int id="x">3375</int>
-					<int id="y">1911</int>
+					<int id="x">2160</int>
+					<int id="y">1223</int>
 				</point>
-				<double id="ZoomFactor">1.5625</double>
+				<double id="ZoomFactor">1.0</double>
 				<boolean id="ShowGridEnabled">false</boolean>
 				<int id="ShowGridStep">10</int>
 				<boolean id="SnapGridEnabled">true</boolean>
@@ -32,8 +32,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">984</int>
-							<int id="y">488</int>
+							<int id="x">685</int>
+							<int id="y">395</int>
 						</point>
 					</class>
 					<string id="RepCount">nwarps</string>
@@ -64,8 +64,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">856</int>
-							<int id="y">296</int>
+							<int id="x">535</int>
+							<int id="y">245</int>
 						</point>
 					</class>
 					<string id="RepCount">nprocessors</string>
@@ -93,8 +93,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">280</int>
-							<int id="y">280</int>
+							<int id="x">195</int>
+							<int id="y">165</int>
 						</point>
 					</class>
 					<string id="RepCount">nsm</string>
@@ -117,8 +117,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">680</int>
-							<int id="y">456</int>
+							<int id="x">535</int>
+							<int id="y">315</int>
 						</point>
 					</class>
 					<int id="SharingInfoSize">22</int>
@@ -302,8 +302,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">616</int>
-							<int id="y">280</int>
+							<int id="x">375</int>
+							<int id="y">165</int>
 						</point>
 					</class>
 					<int id="SharingInfoSize">8</int>
@@ -379,8 +379,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">264</int>
-							<int id="y">184</int>
+							<int id="x">195</int>
+							<int id="y">85</int>
 						</point>
 					</class>
 					<int id="SharingInfoSize">10</int>
@@ -477,8 +477,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">936</int>
-							<int id="y">632</int>
+							<int id="x">685</int>
+							<int id="y">465</int>
 						</point>
 					</class>
 					<int id="SharingInfoSize">15</int>
@@ -600,8 +600,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">856</int>
-							<int id="y">744</int>
+							<int id="x">615</int>
+							<int id="y">535</int>
 						</point>
 					</class>
 					<string id="Model Name">REGISTER_FILE</string>
@@ -617,8 +617,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">472</int>
-							<int id="y">328</int>
+							<int id="x">375</int>
+							<int id="y">245</int>
 						</point>
 					</class>
 					<string id="Model Name">L1_CACHE</string>
@@ -634,8 +634,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">136</int>
-							<int id="y">56</int>
+							<int id="x">65</int>
+							<int id="y">25</int>
 						</point>
 					</class>
 					<string id="Model Name">DRAM</string>
@@ -651,8 +651,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">424</int>
-							<int id="y">56</int>
+							<int id="x">355</int>
+							<int id="y">25</int>
 						</point>
 					</class>
 					<string id="Model Name">L2_CACHE</string>
@@ -668,8 +668,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">1048</int>
-							<int id="y">744</int>
+							<int id="x">755</int>
+							<int id="y">535</int>
 						</point>
 					</class>
 					<string id="Model Name">WARP</string>
@@ -685,8 +685,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">536</int>
-							<int id="y">520</int>
+							<int id="x">385</int>
+							<int id="y">395</int>
 						</point>
 					</class>
 					<string id="Model Name">EXEC_UNIT</string>
@@ -702,8 +702,8 @@
 							<boolean id="IsLabelShown">true</boolean>
 						</class>
 						<point id="CenterPoint">
-							<int id="x">600</int>
-							<int id="y">600</int>
+							<int id="x">535</int>
+							<int id="y">395</int>
 						</point>
 					</class>
 					<string id="Model Name">MEMORY</string>
@@ -716,8 +716,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">678</int>
-							<int id="y">462</int>
+							<int id="x">533</int>
+							<int id="y">321</int>
 						</point>
 						<point id="1">
 							<int id="x">1024</int>
@@ -733,8 +733,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">653</int>
-							<int id="y">281</int>
+							<int id="x">412</int>
+							<int id="y">166</int>
 						</point>
 						<point id="1">
 							<int id="x">884</int>
@@ -750,8 +750,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">243</int>
-							<int id="y">184</int>
+							<int id="x">174</int>
+							<int id="y">85</int>
 						</point>
 						<point id="1">
 							<int id="x">380</int>
@@ -767,8 +767,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">850</int>
-							<int id="y">296</int>
+							<int id="x">529</int>
+							<int id="y">245</int>
 						</point>
 						<point id="1">
 							<int id="x">965</int>
@@ -784,8 +784,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">270</int>
-							<int id="y">279</int>
+							<int id="x">185</int>
+							<int id="y">164</int>
 						</point>
 						<point id="1">
 							<int id="x">687</int>
@@ -801,8 +801,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">993</int>
-							<int id="y">490</int>
+							<int id="x">694</int>
+							<int id="y">397</int>
 						</point>
 						<point id="1">
 							<int id="x">1211</int>
@@ -818,8 +818,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">935</int>
-							<int id="y">628</int>
+							<int id="x">684</int>
+							<int id="y">461</int>
 						</point>
 						<point id="1">
 							<int id="x">1151</int>
@@ -835,8 +835,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">615</int>
-							<int id="y">275</int>
+							<int id="x">374</int>
+							<int id="y">160</int>
 						</point>
 						<point id="1">
 							<int id="x">823</int>
@@ -852,8 +852,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">267</int>
-							<int id="y">185</int>
+							<int id="x">198</int>
+							<int id="y">86</int>
 						</point>
 						<point id="1">
 							<int id="x">747</int>
@@ -869,8 +869,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">268</int>
-							<int id="y">186</int>
+							<int id="x">199</int>
+							<int id="y">87</int>
 						</point>
 						<point id="1">
 							<int id="x">982</int>
@@ -886,8 +886,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">971</int>
-							<int id="y">632</int>
+							<int id="x">720</int>
+							<int id="y">465</int>
 						</point>
 						<point id="1">
 							<int id="x">1298</int>
@@ -903,8 +903,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">644</int>
-							<int id="y">452</int>
+							<int id="x">499</int>
+							<int id="y">311</int>
 						</point>
 						<point id="1">
 							<int id="x">681</int>
@@ -920,8 +920,8 @@
 					<boolean id="Arrows">false</boolean>
 					<vector id="PointList">
 						<point id="0">
-							<int id="x">671</int>
-							<int id="y">460</int>
+							<int id="x">526</int>
+							<int id="y">319</int>
 						</point>
 						<point id="1">
 							<int id="x">881</int>

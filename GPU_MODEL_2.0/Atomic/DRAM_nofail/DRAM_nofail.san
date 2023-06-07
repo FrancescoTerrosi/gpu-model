@@ -42,8 +42,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">375</int>
-								<int id="y">225</int>
+								<int id="x">355</int>
+								<int id="y">75</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -61,8 +61,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">85</int>
-								<int id="y">175</int>
+								<int id="x">65</int>
+								<int id="y">25</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -80,8 +80,8 @@
 								<boolean id="IsLabelShown">true</boolean>
 							</class>
 							<point id="CenterPoint">
-								<int id="x">75</int>
-								<int id="y">275</int>
+								<int id="x">55</int>
+								<int id="y">125</int>
 							</point>
 						</class>
 						<boolean id="ReadOnly">false</boolean>
@@ -103,8 +103,8 @@
 										<boolean id="IsLabelShown">true</boolean>
 									</class>
 									<point id="CenterPoint">
-										<int id="x">205</int>
-										<int id="y">175</int>
+										<int id="x">185</int>
+										<int id="y">25</int>
 									</point>
 								</class>
 							</class>
@@ -129,8 +129,8 @@
 										<boolean id="IsLabelShown">true</boolean>
 									</class>
 									<point id="CenterPoint">
-										<int id="x">205</int>
-										<int id="y">275</int>
+										<int id="x">185</int>
+										<int id="y">125</int>
 									</point>
 								</class>
 							</class>
@@ -148,8 +148,8 @@
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">205</int>
-								<int id="y">175</int>
+								<int id="x">185</int>
+								<int id="y">25</int>
 							</point>
 							<point id="1">
 								<int id="x">426</int>
@@ -165,8 +165,8 @@
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">205</int>
-								<int id="y">275</int>
+								<int id="x">185</int>
+								<int id="y">125</int>
 							</point>
 							<point id="1">
 								<int id="x">425</int>
@@ -182,8 +182,8 @@
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">83</int>
-								<int id="y">170</int>
+								<int id="x">63</int>
+								<int id="y">20</int>
 							</point>
 							<point id="1">
 								<int id="x">224</int>
@@ -199,8 +199,8 @@
 						<boolean id="Arrows">true</boolean>
 						<vector id="PointList">
 							<point id="0">
-								<int id="x">78</int>
-								<int id="y">276</int>
+								<int id="x">58</int>
+								<int id="y">126</int>
 							</point>
 							<point id="1">
 								<int id="x">225</int>
